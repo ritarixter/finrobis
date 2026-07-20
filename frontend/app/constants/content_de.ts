@@ -1,3 +1,3 @@
-import type { ContentType } from "./content_en";
+import { content_en, type ContentType } from "./content_en";
 
-export const content_de: ContentType = {};
+export const content_de: ContentType = content_en;

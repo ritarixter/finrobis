@@ -28,9 +28,10 @@ export const content_en = {
         title: "Page Not Found - Finorbis",
         description: "The page you are looking for does not exist.",
       },
-      title: "Page Not Found",
-      subtitle: "The page you are looking for does not exist.",
-      button: "Go to Homepage",
+      title: "404",
+      subtitle: "Page Not Found",
+      description: "The page you are looking for does not exist.",
+      backHome: "Go to Homepage",
     },
     terms: {
       meta: {

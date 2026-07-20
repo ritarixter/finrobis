@@ -1,4 +1,4 @@
-import { Button } from "../Button/Button";
+import { Button, ThemeButton } from "../../components/ui/Button/Button";
 import styles from "./Intro.module.scss";
 import succesIcon from "../../assets/images/icons/success.svg";
 
@@ -27,10 +27,10 @@ export function Intro({ title, subtitle, badgeText, imageSrc, button1, button2 }
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.subtitle}>{subtitle}</p>
       <div className={styles.buttons}>
-        <Button theme="black" onClick={button1.onClick}>
+        <Button theme={ThemeButton.BLACK} onClick={button1.onClick}>
           {button1.text}
         </Button>
-        <Button theme="red" onClick={button2.onClick}>
+        <Button theme={ThemeButton.GREEN} onClick={button2.onClick}>
           {button2.text}
         </Button>
       </div>

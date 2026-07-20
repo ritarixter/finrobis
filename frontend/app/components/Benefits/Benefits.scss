@@ -1,0 +1,14 @@
+@use "../../styles/responsive.scss" as *;
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+@include responsive(phone) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
