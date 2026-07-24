@@ -1,21 +1,28 @@
 import type { CSSProperties, ReactNode } from "react";
 import { Button, ThemeButton } from "~/components/ui/Button/Button";
+import { Slider } from "~/components/Slider/Slider";
 import { Intro } from "~/components/Intro/Intro";
 import { Form } from "~/components/Form/Form";
 import { Benefit } from "~/components/Benefit/Benefit";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { ItemTextWithImage } from "~/components/ItemTextWithImage/ItemTextWithImage";
-import { ItemTextWithImageList, type ItemTextWithImageListItem } from "~/components/ItemTextWithImageList/ItemTextWithImageList";
+import {
+  ItemTextWithImageList,
+  type ItemTextWithImageListItem,
+} from "~/components/ItemTextWithImageList/ItemTextWithImageList";
 import { TextList } from "~/components/TextList/TextList";
 import { InfoBlockList, type InfoBlockListItem } from "~/components/InfoBlockList/InfoBlockList";
-import { MarketDataCard, type MarketDataCardItem } from "~/components/MarketDataCard/MarketDataCard";
+import {
+  MarketDataCard,
+  type MarketDataCardItem,
+} from "~/components/MarketDataCard/MarketDataCard";
 import { Benefits, type BenefitsItem } from "~/components/Benefits/Benefits";
 import apartmentIcon from "~/assets/images/icons/apartment_1.svg";
-import timesIcon from "~/assets/images/icons/times.svg"
-import groupsIcon from "~/assets/images/icons/groups.svg"
-import assetsIcon from "~/assets/images/icons/assets.svg"
-import regulationIcon from "~/assets/images/icons/regulation.svg"
+import timesIcon from "~/assets/images/icons/times.svg";
+import groupsIcon from "~/assets/images/icons/groups.svg";
+import assetsIcon from "~/assets/images/icons/assets.svg";
+import regulationIcon from "~/assets/images/icons/regulation.svg";
 import assetLiquidityImage from "~/assets/images/Asset_Liquidity.png";
 import hedgingImage from "~/assets/images/FX_Hedging.png";
 import crossBorderPaymentsImage from "~/assets/images/Cross_Border_Payments.png";
@@ -95,11 +102,11 @@ const benefitItems: BenefitsItem[] = [
 ];
 
 const textListItems = [
-  '•   Finorbis AG guarantees neither returns nor the preservation of the value of investments.',
-  '•   The value of digital assets can fluctuate significantly and may both rise and fall.',
-  '•   Investment decisions should be made on the basis of individual risk appetite, investment horizon, and financial situation.',
+  "•   Finorbis AG guarantees neither returns nor the preservation of the value of investments.",
+  "•   The value of digital assets can fluctuate significantly and may both rise and fall.",
+  "•   Investment decisions should be made on the basis of individual risk appetite, investment horizon, and financial situation.",
   '•   Prior to concluding a contract, all clients receive the brochure "Risks in Trading Financial Instruments" — also available at www.swissbanking.org.',
-  '•   Past performance is not a reliable indicator of future results.',
+  "•   Past performance is not a reliable indicator of future results.",
 ];
 
 const infoBlockShowcase = {
@@ -209,12 +216,7 @@ const sections: ShowcaseSection[] = [
     label: "Benefit",
     title: "Single benefit item",
     preview: (
-      <Benefit
-        iconSrc={apartmentIcon}
-        iconAlt="Apartment icon"
-        title="2019"
-        text="Founded"
-      />
+      <Benefit iconSrc={apartmentIcon} iconAlt="Apartment icon" title="2019" text="Founded" />
     ),
   },
   {
@@ -258,9 +260,7 @@ const sections: ShowcaseSection[] = [
     id: "item-text-image-list",
     label: "ItemTextWithImageList",
     title: "Vertical list of image text cards",
-    preview: (
-      <ItemTextWithImageList items={itemTextWithImageListItems} />
-    ),
+    preview: <ItemTextWithImageList items={itemTextWithImageListItems} />,
   },
   {
     id: "text-list",
@@ -279,6 +279,12 @@ const sections: ShowcaseSection[] = [
     label: "Benefits",
     title: "Responsive benefit grid",
     preview: <Benefits items={benefitItems} />,
+  },
+  {
+    id: "slider",
+    label: "Slider",
+    title: "Carousel (embla-carousel-react)",
+    preview: <Slider slides={[]} />,
   },
   {
     id: "form",

@@ -11,7 +11,9 @@
   padding: 50px;
   box-sizing: border-box;
   align-content: start;
-  background: linear-gradient(106deg, rgba(202, 255, 51, 0.05) -29.45%, rgba(202, 255, 51, 0.00) 27.86%), linear-gradient(267deg, #1C1C1C 40.67%, rgba(28, 28, 28, 0.00) 99.81%);
+  background:
+    linear-gradient(106deg, rgba(202, 255, 51, 0.05) -29.45%, rgba(202, 255, 51, 0) 27.86%),
+    linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%);
   overflow: hidden;
   border-radius: 20px 50px;
   gap: 30px;

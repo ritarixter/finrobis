@@ -31,7 +31,9 @@ export function CardWithIcon({
   textClassName = "",
 }: CardWithIconProps) {
   const rootClassName = ["card-with-icon", className].filter(Boolean).join(" ");
-  const iconWrapperName = ["card-with-icon__icon-wrapper", iconWrapperClassName].filter(Boolean).join(" ");
+  const iconWrapperName = ["card-with-icon__icon-wrapper", iconWrapperClassName]
+    .filter(Boolean)
+    .join(" ");
   const iconName = ["card-with-icon__icon", iconClassName].filter(Boolean).join(" ");
   const contentName = ["card-with-icon__content", contentClassName].filter(Boolean).join(" ");
   const titleName = ["card-with-icon__title", titleClassName].filter(Boolean).join(" ");

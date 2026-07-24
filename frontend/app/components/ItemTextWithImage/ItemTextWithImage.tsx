@@ -1,13 +1,13 @@
 import type { CSSProperties, ReactNode } from "react";
 import { ItemText } from "../ItemText/ItemText";
 import "./ItemTextWithImage.scss";
-
+export type ImagePlacement = "right" | "left" | "bottom";
 export interface ItemTextWithImageProps {
   title: ReactNode;
   text: ReactNode;
   imageSrc: string;
   imageAlt?: string;
-  imagePlacement?: "right" | "left" | "bottom";
+  imagePlacement?: ImagePlacement;
   className?: string;
   style?: CSSProperties;
   itemTextClassName?: string;
@@ -37,11 +37,7 @@ export function ItemTextWithImage({
   return (
     <section className={rootClassName} style={style}>
       <div className="item-text-with-image__content">
-        <ItemText
-          title={title}
-          text={text}
-          className={itemTextClassName}
-        />
+        <ItemText title={title} text={text} className={itemTextClassName} />
       </div>
       <img className={imageName} src={imageSrc} alt={imageAlt} />
     </section>

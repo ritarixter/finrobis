@@ -8,12 +8,7 @@ export interface TextListProps {
   itemClassName?: string;
 }
 
-export function TextList({
-  items,
-  className = "",
-  style,
-  itemClassName = "",
-}: TextListProps) {
+export function TextList({ items, className = "", style, itemClassName = "" }: TextListProps) {
   const rootClassName = ["text-list", className].filter(Boolean).join(" ");
   const itemName = ["text-list__item", itemClassName].filter(Boolean).join(" ");
 

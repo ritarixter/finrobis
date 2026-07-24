@@ -49,7 +49,9 @@ export function MarketDataCard({
   imageWrapperClassName = "",
   imageClassName = "",
 }: MarketDataCardProps) {
-  const rootClassName = ["market-data-card", `market-data-card--${variant}`, className].filter(Boolean).join(" ");
+  const rootClassName = ["market-data-card", `market-data-card--${variant}`, className]
+    .filter(Boolean)
+    .join(" ");
   const contentName = ["market-data-card__content", contentClassName].filter(Boolean).join(" ");
   const titleName = ["market-data-card__title", titleClassName].filter(Boolean).join(" ");
   const bodyName = ["market-data-card__body", bodyClassName].filter(Boolean).join(" ");
@@ -57,8 +59,12 @@ export function MarketDataCard({
   const itemName = ["market-data-card__item", itemClassName].filter(Boolean).join(" ");
   const methodName = ["market-data-card__method", methodClassName].filter(Boolean).join(" ");
   const pathName = ["market-data-card__path", pathClassName].filter(Boolean).join(" ");
-  const descriptionName = ["market-data-card__description", descriptionClassName].filter(Boolean).join(" ");
-  const imageWrapperName = ["market-data-card__image-wrapper", imageWrapperClassName].filter(Boolean).join(" ");
+  const descriptionName = ["market-data-card__description", descriptionClassName]
+    .filter(Boolean)
+    .join(" ");
+  const imageWrapperName = ["market-data-card__image-wrapper", imageWrapperClassName]
+    .filter(Boolean)
+    .join(" ");
   const imageName = ["market-data-card__image", imageClassName].filter(Boolean).join(" ");
 
   return (

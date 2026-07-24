@@ -2,11 +2,12 @@
 
 .item-text {
   display: flex;
-  width: min(716px, 100%);
+  width: 100%;
   padding-left: 30px;
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
+  justify-content: center;
   border-left: 1px solid var(--cl-main, #caff33);
   box-sizing: border-box;
 }

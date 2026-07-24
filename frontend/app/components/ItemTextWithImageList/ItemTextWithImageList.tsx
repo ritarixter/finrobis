@@ -1,8 +1,14 @@
 import type { CSSProperties } from "react";
-import { ItemTextWithImage, type ItemTextWithImageProps } from "../ItemTextWithImage/ItemTextWithImage";
+import {
+  ItemTextWithImage,
+  type ItemTextWithImageProps,
+} from "../ItemTextWithImage/ItemTextWithImage";
 import "./ItemTextWithImageList.scss";
 
-export interface ItemTextWithImageListItem extends Omit<ItemTextWithImageProps, "className" | "style"> {
+export interface ItemTextWithImageListItem extends Omit<
+  ItemTextWithImageProps,
+  "className" | "style"
+> {
   id?: string | number;
 }
 
@@ -26,13 +32,7 @@ export function ItemTextWithImageList({
       {items.map((item, index) => {
         const { id, ...itemProps } = item;
 
-        return (
-          <ItemTextWithImage
-            key={id ?? index}
-            {...itemProps}
-            className={itemClassName}
-          />
-        );
+        return <ItemTextWithImage key={id ?? index} {...itemProps} className={itemClassName} />;
       })}
     </div>
   );

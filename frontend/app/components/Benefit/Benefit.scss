@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 100%;
+  gap: 30px;
+  width: max-content;
   color: var(--cl-white);
   font-family: var(--font-family-main, "Lexend", sans-serif);
 }
@@ -15,8 +15,8 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  width: clamp(56px, 4.5vw, 72px);
-  height: clamp(56px, 4.5vw, 72px);
+  width: clamp(56px, 4.5vw, 98px);
+  height: clamp(56px, 4.5vw, 98px);
 }
 
 .benefit__icon {
@@ -30,15 +30,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 20px;
   min-width: 0;
   text-align: center;
 }
 
 .benefit__title {
   color: var(--cl-white);
-  font-size: 36px;
-  line-height: 1.1;
+  font-size: 48px;
+  line-height: 150%; /* 72px */
+
   font-weight: 400;
   letter-spacing: 0;
   font-family: var(--font-family-main, "Lexend", sans-serif);
@@ -47,7 +48,7 @@
 
 .benefit__text {
   color: var(--cl-white-subtitle);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 300;
   font-family: var(--font-family-main, "Lexend", sans-serif);

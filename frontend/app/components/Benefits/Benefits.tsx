@@ -21,13 +21,7 @@ export function Benefits({ items, className = "", style, itemClassName = "" }: B
       {items.map((item, index) => {
         const { id, ...benefitProps } = item;
 
-        return (
-          <Benefit
-            key={id ?? index}
-            {...benefitProps}
-            className={itemClassName}
-          />
-        );
+        return <Benefit key={id ?? index} {...benefitProps} className={itemClassName} />;
       })}
     </div>
   );

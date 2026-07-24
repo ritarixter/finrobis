@@ -11,11 +11,9 @@
   width: 100%;
 }
 
-.item-text-with-image-list .item-text-with-image__image {
-  width: min(620px, 100%);
-  max-width: 620px;
+.item-text-with-image-list .item-text-with-image__image,
+.item-text-with-image-list .item-text {
   height: 156px;
-  flex-basis: 620px;
 }
 
 @include responsive(screen) {

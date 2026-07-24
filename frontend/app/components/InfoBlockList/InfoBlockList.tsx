@@ -26,13 +26,7 @@ export function InfoBlockList({
       {items.map((item, index) => {
         const { id, ...itemProps } = item;
 
-        return (
-          <InfoBlock
-            key={id ?? index}
-            {...itemProps}
-            className={itemClassName}
-          />
-        );
+        return <InfoBlock key={id ?? index} {...itemProps} className={itemClassName} />;
       })}
     </div>
   );

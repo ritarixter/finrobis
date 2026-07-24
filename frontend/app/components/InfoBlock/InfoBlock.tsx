@@ -29,7 +29,9 @@ export function InfoBlock({
   textClassName = "",
 }: InfoBlockProps) {
   const rootClassName = ["info-block", className].filter(Boolean).join(" ");
-  const imageWrapperName = ["info-block__image-wrapper", imageWrapperClassName].filter(Boolean).join(" ");
+  const imageWrapperName = ["info-block__image-wrapper", imageWrapperClassName]
+    .filter(Boolean)
+    .join(" ");
   const imageName = ["info-block__image", imageClassName].filter(Boolean).join(" ");
   const contentName = ["info-block__content", contentClassName].filter(Boolean).join(" ");
   const titleName = ["info-block__title", titleClassName].filter(Boolean).join(" ");
