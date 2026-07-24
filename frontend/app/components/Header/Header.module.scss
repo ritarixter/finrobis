@@ -1,1 +1,189 @@
 @use "../../styles/responsive" as *;
+
+.header {
+  width: 100%;
+  max-width: 1596px;
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 55px;
+  padding: 20px 34px;
+  border: 1px solid #262626;
+  border-radius: 100px;
+  background: #1c1c1c;
+  color: #fff;
+  font-family: var(--font-familycd-main, "Lexend", sans-serif);
+  gap: 26px;
+}
+
+.logoLink {
+  display: flex;
+  flex: 0 0 154px;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  width: 154px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  white-space: nowrap;
+}
+
+.navigation a,
+.login {
+  color: inherit;
+  font-size: 18px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.navigation a:hover,
+.login:hover {
+  color: #caff33;
+}
+
+.actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.language,
+.login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 30px;
+  border-radius: 82px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.language {
+  border: 1px solid #caff33;
+  background: #caff33;
+  color: #1c1c1c;
+  cursor: pointer;
+}
+
+.login {
+  border: 1px solid #caff33;
+}
+
+.menuToggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid #caff33;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuToggle span {
+  display: block;
+  height: 1px;
+  margin: 5px 0;
+  background: #caff33;
+}
+
+@include responsive(tablet) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .navigation a,
+  .login,
+  .language {
+    font-size: 15px;
+  }
+
+  .language,
+  .login {
+    min-height: 42px;
+    padding: 0 20px;
+  }
+}
+
+@include responsive(phone) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .navbar {
+    padding: 10px 14px;
+    border-radius: 32px;
+  }
+
+  .logoLink,
+  .logo {
+    width: 118px;
+    height: 42px;
+  }
+
+  .navigation {
+    top: calc(100% + 12px);
+    left: 0;
+    display: none;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #262626;
+    border-radius: 24px;
+    background: #1c1c1c;
+    transform: none;
+    white-space: normal;
+  }
+
+  .navigation_open {
+    display: grid;
+    gap: 16px;
+  }
+
+  .navigation a,
+  .login,
+  .language {
+    font-size: 14px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .language,
+  .login {
+    min-height: 38px;
+    padding: 0 14px;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+}

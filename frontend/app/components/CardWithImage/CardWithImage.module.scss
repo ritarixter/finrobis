@@ -1,0 +1,53 @@
+@use "../../styles/responsive.scss" as *;
+.card {
+  padding: 30px;
+  padding-bottom: 90px;
+
+  flex-direction: column;
+  gap: 51px;
+  border-radius: 40px 40px 16px 16px;
+  border: 1px solid var(--cl-gray-15, #262626);
+  background: var(--cl-gray-11, #1c1c1c);
+}
+
+.card__image {
+  border-radius: 40px 40px 16px 16px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 333px;
+}
+
+.card__title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(24px, 2vw, 32px);
+  margin-bottom: 30px;
+  margin-top: 50px;
+  padding: 0 30px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.card__text {
+  margin-top: 30px;
+  padding: 0 30px;
+}
+
+.card__date {
+  padding: 0 30px;
+  padding-bottom: 10px;
+  &__badge {
+    padding: 8px 16px;
+    border-radius: 68px;
+    border: 1px solid var(--Grey-15, #262626);
+    background: var(--Grey-10, #1a1a1a);
+    box-sizing: border-box;
+  }
+}
+
+@include responsive(phone) {
+}

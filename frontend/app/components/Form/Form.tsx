@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import styles from "./Form.module.scss";
-import { Button } from "../Button/Button";
+import { Button, ThemeButton } from "../ui/Button/Button";
 
 const MAX_MESSAGE_LENGTH = 200;
 const COUNTER_THRESHOLD = 100;
@@ -217,7 +217,7 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
       </div>
 
       <div className={styles.btnWrapper}>
-        <Button type="submit" theme="red">
+        <Button type="submit" theme={ThemeButton.GREEN}>
           {buttonText}
         </Button>
       </div>

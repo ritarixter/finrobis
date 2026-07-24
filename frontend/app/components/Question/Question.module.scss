@@ -1,0 +1,123 @@
+@use "../../styles/responsive.scss" as *;
+
+.item {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--cl-gray-15, #262626);
+  background-size: 30% 100%;
+  border-radius: 20px;
+  border: 1px solid #262626;
+  background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
+  background: url("../../assets/images/bg_circles.svg") no-repeat 30% center;
+
+  overflow: hidden;
+  transition: border-color 0.2s ease-in-out;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  padding: 32px;
+}
+
+.item_open {
+  border-color: var(--cl-main, #caff33);
+}
+
+.heading {
+  margin: 0;
+  font-weight: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  background: none;
+  color: var(--cl-white, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  outline: none;
+}
+
+.item_open .trigger {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #353945;
+}
+
+.question {
+  flex: 1 1 auto;
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: var(--cl-white, #fff);
+  transition: transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.icon path {
+  stroke: currentColor;
+}
+
+.item_open .icon {
+  color: var(--cl-main, #caff33);
+  transform: rotate(180deg);
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.answer {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  padding-top: 16px;
+  line-height: 120%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .icon {
+    transition: none;
+  }
+}
+
+@include responsive(tablet) {
+  .trigger {
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+
+  .answer {
+    padding: 0 20px 18px;
+    font-size: 14px;
+  }
+}
+
+@include responsive(phone) {
+  .trigger {
+    padding: 16px;
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .answer {
+    padding: 0 16px 16px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,112 @@
+@use "../../styles/responsive.scss" as *;
+
+.technology-cards {
+  position: relative;
+  width: 100%;
+  padding: 50px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--cl-gray-11);
+}
+
+.technology-cards__pattern {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 335px;
+  height: 330px;
+  pointer-events: none;
+  opacity: 0.75;
+  background-image: radial-gradient(var(--cl-main) 1.5px, transparent 1.5px);
+  background-position: 0 0;
+  background-size: 9px 9px;
+  mask-image: linear-gradient(135deg, #000 0%, transparent 72%);
+}
+
+.technology-cards__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.technology-cards__card {
+  display: flex;
+  min-height: 262px;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  border: 1px solid var(--cl-gray-15);
+  border-radius: 16px;
+  background: var(--cl-black);
+}
+
+.technology-cards__icon-container {
+  display: flex;
+  width: 147px;
+  height: 142px;
+  padding: 10px;
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 70px;
+  background: linear-gradient(180deg, rgba(202, 255, 51, 0.05), rgba(202, 255, 51, 0));
+}
+
+.technology-cards__icon-frame {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: linear-gradient(180deg, rgba(202, 255, 51, 0.05) 0%, rgba(202, 255, 51, 0) 100%);
+}
+
+.technology-cards__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.technology-cards__title {
+  display: block;
+  color: var(--cl-white);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.technology-cards__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@include responsive(phone) {
+  .technology-cards {
+    padding: 20px;
+  }
+
+  .technology-cards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technology-cards__card,
+  .technology-cards__card:nth-child(3) {
+    width: 100%;
+  }
+
+  .technology-cards__title {
+    font-size: 20px;
+  }
+}

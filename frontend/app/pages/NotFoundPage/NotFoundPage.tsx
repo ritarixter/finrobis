@@ -5,7 +5,7 @@ import styles from "./NotFoundPage.module.scss";
 
 export function NotFoundPage() {
   const { content, buildHref } = useLang();
-  const { title, subtitle, description, backHome } = content.notFound;
+  const { title, subtitle, description, backHome } = content.pages.notFound;
 
   return (
     <main className={styles.page}>

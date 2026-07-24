@@ -1,0 +1,29 @@
+.sectionTitle {
+  margin-bottom: 80px;
+}
+
+.trust {
+  padding: 193px 0;
+}
+
+.why {
+  padding-top: 220px;
+  padding-bottom: 205px;
+
+  & .sectionTitle {
+    margin-bottom: 60px;
+  }
+}
+
+.programmaticAccess {
+  padding: 205px 0;
+}
+
+.technologyCardsContainer {
+  display: flex;
+  gap: 100px;
+}
+
+.institutions {
+  padding-bottom: 230px;
+}

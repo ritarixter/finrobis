@@ -1,7 +1,6 @@
+import { Button, ThemeButton } from "../ui/Button/Button";
 import styles from "./Intro.module.scss";
 import succesIcon from "../../assets/images/icons/success.svg";
-import { Button } from "../ui";
-import { ThemeButton } from "../ui/Button/Button";
 
 interface IntroProps {
   title: string;
@@ -16,11 +15,22 @@ interface IntroProps {
     text: string;
     onClick: () => void;
   };
+  type?: "with-border" | "without-border";
 }
 
-export function Intro({ title, subtitle, badgeText, imageSrc, button1, button2 }: IntroProps) {
+export function Intro({
+  title,
+  subtitle,
+  badgeText,
+  imageSrc,
+  button1,
+  button2,
+  type = "with-border",
+}: IntroProps) {
   return (
-    <section className={styles.intro}>
+    <section
+      className={`${styles.intro} ${type === "with-border" ? styles.withBorder : styles.withoutBorder}`}
+    >
       <div className={styles.content}>
         <div className={styles.badge}>
           <img src={succesIcon} alt="Success" />
@@ -37,6 +47,7 @@ export function Intro({ title, subtitle, badgeText, imageSrc, button1, button2 }
           </Button>
         </div>
       </div>
+
       <img className={styles.image} src={imageSrc} alt={`Intro ${title}`} />
     </section>
   );

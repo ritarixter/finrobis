@@ -1,32 +1,124 @@
+@use "../../styles/responsive.scss" as *;
+
 .intro {
-  display: grid;
-  grid-template-columns: minmax(564px, 1fr) 2fr;
-  gap: 60px;
+  position: relative;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 60px);
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  padding: clamp(32px, 6vw, 80px);
+  border-radius: 20px;
+  border: 1px solid var(--cl-gray-15, #262626);
+  background:
+    url("../../assets/images/bg_circles.svg") no-repeat 100% center,
+    var(--cl-gray-11, #1c1c1c);
+
+  &.withoutBorder {
+    border: none;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+
+    & .image {
+      width: 100%;
+      max-width: 760px;
+    }
+  }
+}
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .badge {
-  display: flex;
-  padding: 10px 20px 10px 12px;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  border-radius: 61px;
-  background: var(--cl-gray-15, #262626);
+  gap: 8px;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  border-radius: 82px;
+  border: 1px solid var(--cl-gray-15, #262626);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.badgeText {
   color: var(--cl-white);
-  max-width: fit-content;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .title {
-  margin-top: 20px;
-  margin-bottom: 14px;
+  margin: 0 0 24px;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 700;
+  line-height: 1.3;
   white-space: pre-line;
+  word-break: break-word;
 }
 
 .subtitle {
-  margin-bottom: 54px;
+  margin: 0 0 40px;
+  max-width: 520px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
 }
 
 .buttons {
   display: flex;
-  gap: 45px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: min(560px, 45%);
+  height: auto;
+}
+
+@include responsive(tablet) {
+  .intro {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .subtitle {
+    max-width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 420px;
+    align-self: center;
+  }
+}
+
+@include responsive(phone) {
+  .intro {
+    padding: 32px 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

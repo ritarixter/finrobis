@@ -1,0 +1,24 @@
+@use "../../styles/responsive.scss" as *;
+
+.list {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.pagging {
+  padding-left: 100px;
+}
+@include responsive(tablet) {
+  .list {
+    gap: 14px;
+  }
+}
+
+@include responsive(phone) {
+  .list {
+    gap: 12px;
+  }
+}

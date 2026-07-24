@@ -1,0 +1,48 @@
+@use "../../styles/responsive.scss" as *;
+
+.item-text-with-image-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.item-text-with-image-list > * {
+  width: 100%;
+}
+
+.item-text-with-image-list .item-text-with-image__image,
+.item-text-with-image-list .item-text {
+  height: 156px;
+}
+
+@include responsive(screen) {
+  .item-text-with-image-list .item-text-with-image__image {
+    width: min(560px, 100%);
+    max-width: 560px;
+    height: 144px;
+    flex-basis: 560px;
+  }
+}
+
+@include responsive(tablet) {
+  .item-text-with-image-list .item-text-with-image__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-basis: auto;
+  }
+}
+
+@include responsive(phone) {
+  .item-text-with-image-list {
+    gap: 28px;
+  }
+
+  .item-text-with-image-list .item-text-with-image__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-basis: auto;
+  }
+}
