@@ -199,6 +199,10 @@
     margin-bottom: 96px;
   }
 
+  .benefitsSection :global(.benefits) {
+    gap: 36px 28px;
+  }
+
   .workCultureSection,
   .offerSection,
   .processSection {
@@ -251,6 +255,10 @@
 
   .benefitsSection {
     margin-bottom: 64px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    gap: 24px;
   }
 
   .workCultureSection,

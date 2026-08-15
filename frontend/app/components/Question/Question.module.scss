@@ -114,6 +114,14 @@
 }
 
 @include responsive(phone) {
+  .item {
+    background-size:
+      auto,
+      clamp(340px, 52vw, 500px) 100%,
+      auto;
+    background-position: 0 0, 24px center, 0 0;
+  }
+
   .trigger {
     padding: 16px;
     gap: 12px;

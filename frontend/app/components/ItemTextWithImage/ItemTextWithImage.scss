@@ -7,6 +7,7 @@
   gap: clamp(40px, 8vw, 122px);
   width: 100%;
   box-sizing: border-box;
+  @include responsive-split-stack(tablet, 24px, stretch);
 }
 .item-text-with-image--left {
   > *:first-child {
@@ -54,11 +55,13 @@
 }
 
 @include responsive(tablet) {
-  .item-text-with-image {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
+  .item-text-with-image > * {
+    order: initial;
+  }
+
+  .item-text-with-image--left > *:first-child,
+  .item-text-with-image--left > *:last-child {
+    order: initial;
   }
 
   .item-text-with-image--left {
@@ -84,9 +87,16 @@
 
 @include responsive(phone) {
   .item-text-with-image {
-    flex-direction: column;
     gap: 24px;
-    align-items: stretch;
+  }
+
+  .item-text-with-image > * {
+    order: initial;
+  }
+
+  .item-text-with-image--left > *:first-child,
+  .item-text-with-image--left > *:last-child {
+    order: initial;
   }
 
   .item-text-with-image--left {

@@ -44,6 +44,7 @@
 }
 
 .whyItemTextWithImageList :global(.item-text) {
+  height: auto;
   min-height: 258px;
   justify-content: center;
 }

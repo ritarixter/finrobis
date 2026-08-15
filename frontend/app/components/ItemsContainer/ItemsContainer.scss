@@ -6,6 +6,7 @@
   gap: 50px clamp(32px, 10.5vw, 200px);
   width: 100%;
   color: var(--cl-white);
+  @include responsive-grid-stack(tablet, 40px);
 }
 
 .items-container__item {
@@ -103,11 +104,6 @@
 }
 
 @include responsive(tablet) {
-  .items-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .items-container__item {
     gap: 24px;
   }

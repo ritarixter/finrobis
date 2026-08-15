@@ -22,3 +22,44 @@ $small-screen: 600px;
     }
   }
 }
+
+@mixin responsive-grid-stack($breakpoint, $gap: 24px) {
+  @include responsive($breakpoint) {
+    grid-template-columns: 1fr;
+    gap: $gap;
+  }
+}
+
+@mixin responsive-flex-stack(
+  $breakpoint,
+  $gap: 24px,
+  $align-items: stretch,
+  $justify-content: flex-start
+) {
+  @include responsive($breakpoint) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    align-items: $align-items;
+    justify-content: $justify-content;
+  }
+}
+
+@mixin responsive-split-stack(
+  $breakpoint,
+  $gap: 24px,
+  $align-items: stretch,
+  $content-width: 100%
+) {
+  @include responsive($breakpoint) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    align-items: $align-items;
+
+    > * {
+      width: $content-width;
+      max-width: 100%;
+    }
+  }
+}

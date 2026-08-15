@@ -257,6 +257,10 @@
     margin-top: 0;
   }
 
+  .benefitsSection :global(.benefits) {
+    gap: 36px 28px;
+  }
+
   .missionSection {
     gap: 40px;
     margin-top: 96px;
@@ -339,6 +343,10 @@
 
   .benefitsSection {
     margin-top: 0;
+  }
+
+  .benefitsSection :global(.benefits) {
+    gap: 24px;
   }
 
   .missionSection {

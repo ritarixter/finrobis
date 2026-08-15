@@ -77,6 +77,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
+  object-position: left top;
 }
 
 .market-data-card__content {
@@ -270,6 +271,7 @@
 
   .market-data-card__image-wrapper {
     width: min(120px, 32vw);
+    align-self: flex-start;
   }
 
   .market-data-card__content {
@@ -288,9 +290,9 @@
   }
 
   .market-data-card--wide {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: block;
+    position: relative;
+    gap: 0;
     padding: 24px;
     min-height: unset;
     height: auto;
@@ -298,12 +300,17 @@
   }
 
   .market-data-card--wide .market-data-card__image-wrapper {
-    position: static;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: min(220px, 42vw);
-    align-self: flex-start;
+    height: 100%;
+    margin: 0;
   }
 
   .market-data-card--wide .market-data-card__content {
+    position: relative;
+    z-index: 1;
     width: 100%;
     gap: 14px;
   }

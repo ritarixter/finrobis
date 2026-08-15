@@ -3,7 +3,7 @@
 .item-text-with-image-list {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
   width: 100%;
 }
 
@@ -36,7 +36,7 @@
 
 @include responsive(phone) {
   .item-text-with-image-list {
-    gap: 28px;
+    gap: 36px;
   }
 
   .item-text-with-image-list .item-text-with-image__image {

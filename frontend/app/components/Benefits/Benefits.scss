@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.benefits {
+  @include responsive-flex-stack(phone, 18px, center, flex-start);
+}
+
 @include responsive(screen) {
   .benefits {
     justify-content: center;
@@ -27,10 +31,6 @@
 
 @include responsive(phone) {
   .benefits {
-    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 18px;
   }
 }
