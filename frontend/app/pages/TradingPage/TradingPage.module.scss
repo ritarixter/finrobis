@@ -1,0 +1,280 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 80px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 143px;
+  width: 100%;
+}
+
+.solutionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-bottom: 143px;
+  width: 100%;
+}
+
+.solutionsTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.solutionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: stretch;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.whyTradingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.whyTradingHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.whyTradingTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.whyTradingDescription {
+  margin: 0;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 1096px;
+}
+
+.whyTradingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  align-items: stretch;
+}
+
+.supportedFiatSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 143px;
+  width: 100%;
+}
+
+.supportedFiatTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 143px;
+  width: 100%;
+}
+
+.faqTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection {
+    margin-bottom: 64px;
+  }
+
+  .solutionsSection {
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+
+  .solutionsTitle {
+    font-size: 42px;
+  }
+
+  .solutionsGrid {
+    gap: 56px;
+  }
+
+  .whyTradingSection {
+    gap: 64px;
+  }
+
+  .whyTradingTitle {
+    font-size: 42px;
+  }
+
+  .whyTradingDescription {
+    font-size: 17px;
+  }
+
+  .whyTradingGrid {
+    gap: 36px;
+  }
+
+  .supportedFiatSection {
+    gap: 64px;
+    margin-top: 96px;
+  }
+
+  .supportedFiatTitle {
+    font-size: 42px;
+  }
+
+  .faqSection {
+    gap: 64px;
+    margin-top: 96px;
+  }
+
+  .faqTitle {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 48px;
+  }
+
+  .benefitsSection {
+    margin-bottom: 48px;
+  }
+
+  .solutionsSection {
+    gap: 40px;
+    margin-bottom: 64px;
+  }
+
+  .solutionsTitle {
+    font-size: 36px;
+  }
+
+  .solutionsGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .whyTradingSection {
+    gap: 40px;
+  }
+
+  .whyTradingTitle {
+    font-size: 36px;
+  }
+
+  .whyTradingDescription {
+    font-size: 16px;
+  }
+
+  .whyTradingGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .supportedFiatSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .supportedFiatTitle {
+    font-size: 36px;
+  }
+
+  .faqSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .faqTitle {
+    font-size: 36px;
+  }
+}

@@ -1,4 +1,5 @@
 import { useCallback, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import styles from "./Form.module.scss";
 import { Button, ThemeButton } from "../ui/Button/Button";
 
@@ -12,9 +13,12 @@ function isValidEmail(email: string): boolean {
 type EmailError = "" | "required" | "invalid";
 
 export type TFormLabels = {
-  name: string;
+  name?: string;
+  firstName?: string;
+  lastName?: string;
   company: string;
   email: string;
+  phoneNumber?: string;
   message: string;
 };
 
@@ -28,26 +32,45 @@ type TFormProps = {
   labels: TFormLabels;
   buttonText: string;
   errorMessages: TFormErrors;
+  variant?: "default" | "contact";
+  decorImageSrc?: string;
+  style?: CSSProperties;
   onSubmit?: (data: {
-    name: string;
+    firstName: string;
+    lastName: string;
     company: string;
     email: string;
+    phoneNumber: string;
     message: string;
   }) => Promise<void>;
 };
 
 type FormData = {
-  name: string;
+  firstName: string;
+  lastName: string;
   company: string;
   email: string;
+  phoneNumber: string;
   message: string;
 };
 
-export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFormProps) {
+export function Form({
+  title,
+  labels,
+  buttonText,
+  errorMessages,
+  variant = "default",
+  decorImageSrc,
+  style,
+  onSubmit,
+}: TFormProps) {
+  const isContactVariant = variant === "contact";
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    firstName: "",
+    lastName: "",
     company: "",
     email: "",
+    phoneNumber: "",
     message: "",
   });
   const [emailError, setEmailError] = useState<EmailError>("");
@@ -55,6 +78,18 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isFloating = (field: keyof FormData) => focusedField === field || formData[field] !== "";
+
+  const rootStyle = decorImageSrc
+    ? ({
+        ...style,
+        ["--form-decor-image" as string]: `url("${decorImageSrc}")`,
+      } as CSSProperties)
+    : style;
+
+  const firstNameLabel = labels.firstName ?? labels.name ?? "";
+  const showExtendedFields = isContactVariant || Boolean(labels.lastName) || Boolean(labels.phoneNumber);
+  const hideLabel = (field: keyof FormData) =>
+    isContactVariant && (focusedField === field || formData[field].length > 0);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,6 +105,9 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
   const handleTextareaChange = useCallback(
     (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       handleChange(e);
+      if (isContactVariant) {
+        return;
+      }
       const ta = textareaRef.current;
       if (ta) {
         ta.style.height = "auto";
@@ -108,37 +146,66 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
   const emailErrorText =
     emailError === "required" ? errorMessages.emailRequired : errorMessages.emailInvalid;
 
+  const rootClassName = [
+    styles.form,
+    isContactVariant ? styles["form--contact"] : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <form className={rootClassName} style={rootStyle} onSubmit={handleSubmit} noValidate>
       <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.fields}>
-        {/* Name */}
+        {/* First name */}
         <div className={styles.field}>
           <label
-            htmlFor="form-name"
-            className={`${styles.label} ${isFloating("name") ? styles.labelFloating : ""}`}
+            htmlFor="form-firstName"
+            className={`${styles.label} ${isFloating("firstName") ? styles.labelFloating : ""} ${hideLabel("firstName") ? styles.labelHidden : ""}`}
           >
-            {labels.name}
+            {firstNameLabel}
           </label>
           <input
-            id="form-name"
-            name="name"
+            id="form-firstName"
+            name="firstName"
             type="text"
             autoComplete="name"
             className={styles.input}
-            value={formData.name}
+            value={formData.firstName}
             onChange={handleChange}
-            onFocus={() => handleFocus("name")}
+            onFocus={() => handleFocus("firstName")}
             onBlur={handleBlur}
           />
         </div>
+
+        {showExtendedFields ? (
+          <div className={styles.field}>
+          <label
+            htmlFor="form-lastName"
+            className={`${styles.label} ${isFloating("lastName") ? styles.labelFloating : ""} ${hideLabel("lastName") ? styles.labelHidden : ""}`}
+          >
+              {labels.lastName ?? "Last Name"}
+            </label>
+            <input
+              id="form-lastName"
+              name="lastName"
+              type="text"
+              autoComplete="family-name"
+              className={styles.input}
+              value={formData.lastName}
+              onChange={handleChange}
+              onFocus={() => handleFocus("lastName")}
+              onBlur={handleBlur}
+            />
+          </div>
+        ) : null}
 
         {/* Company */}
         <div className={styles.field}>
           <label
             htmlFor="form-company"
-            className={`${styles.label} ${isFloating("company") ? styles.labelFloating : ""}`}
+            className={`${styles.label} ${isFloating("company") ? styles.labelFloating : ""} ${hideLabel("company") ? styles.labelHidden : ""}`}
           >
             {labels.company}
           </label>
@@ -160,7 +227,7 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
           <div className={styles.field}>
             <label
               htmlFor="form-email"
-              className={`${styles.label} ${isFloating("email") ? styles.labelFloating : ""} ${emailError ? styles.labelError : ""}`}
+              className={`${styles.label} ${isFloating("email") ? styles.labelFloating : ""} ${hideLabel("email") ? styles.labelHidden : ""} ${emailError ? styles.labelError : ""}`}
             >
               {labels.email}*
             </label>
@@ -185,11 +252,33 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
           )}
         </div>
 
+        {showExtendedFields ? (
+          <div className={styles.field}>
+          <label
+            htmlFor="form-phoneNumber"
+            className={`${styles.label} ${isFloating("phoneNumber") ? styles.labelFloating : ""} ${hideLabel("phoneNumber") ? styles.labelHidden : ""}`}
+          >
+              {labels.phoneNumber ?? "Phone Number"}
+            </label>
+            <input
+              id="form-phoneNumber"
+              name="phoneNumber"
+              type="tel"
+              autoComplete="tel"
+              className={styles.input}
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              onFocus={() => handleFocus("phoneNumber")}
+              onBlur={handleBlur}
+            />
+          </div>
+        ) : null}
+
         {/* Message */}
         <div className={styles.field}>
           <label
             htmlFor="form-message"
-            className={`${styles.label} ${styles.labelTextarea} ${isFloating("message") ? styles.labelFloating : ""}`}
+            className={`${styles.label} ${styles.labelTextarea} ${isFloating("message") ? styles.labelFloating : ""} ${hideLabel("message") ? styles.labelHidden : ""}`}
           >
             {labels.message}
           </label>
@@ -203,7 +292,7 @@ export function Form({ title, labels, buttonText, errorMessages, onSubmit }: TFo
             onFocus={() => handleFocus("message")}
             onBlur={handleBlur}
             maxLength={MAX_MESSAGE_LENGTH}
-            rows={3}
+            rows={isContactVariant ? 1 : 3}
           />
           {formData.message.length >= COUNTER_THRESHOLD && (
             <span

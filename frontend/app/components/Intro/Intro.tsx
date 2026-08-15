@@ -11,7 +11,8 @@ interface IntroProps {
     text: string;
     onClick: () => void;
   };
-  button2: {
+  button1Theme?: ThemeButton;
+  button2?: {
     text: string;
     onClick: () => void;
   };
@@ -24,6 +25,7 @@ export function Intro({
   badgeText,
   imageSrc,
   button1,
+  button1Theme = ThemeButton.BLACK,
   button2,
   type = "with-border",
 }: IntroProps) {
@@ -39,12 +41,14 @@ export function Intro({
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
         <div className={styles.buttons}>
-          <Button theme={ThemeButton.BLACK} onClick={button1.onClick}>
+          <Button theme={button1Theme} onClick={button1.onClick}>
             {button1.text}
           </Button>
-          <Button theme={ThemeButton.GREEN} onClick={button2.onClick}>
-            {button2.text}
-          </Button>
+          {button2 ? (
+            <Button theme={ThemeButton.GREEN} onClick={button2.onClick}>
+              {button2.text}
+            </Button>
+          ) : null}
         </div>
       </div>
 

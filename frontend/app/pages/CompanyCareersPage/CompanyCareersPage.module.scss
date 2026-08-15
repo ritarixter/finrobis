@@ -1,0 +1,279 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  position: relative;
+  width: min(1599px, 100%);
+  min-height: 739px;
+  margin: 0 auto;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-sizing: border-box;
+}
+
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, 28vw);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  width: min(968px, calc(100% - 100px));
+  height: calc(100% - 100px);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.heroCard {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: min(791px, calc(100% - 160px));
+  min-height: 418px;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  flex-shrink: 0;
+  border-radius: 20px 0 80px 20px;
+  background: var(--Grey-10, #1a1a1a);
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(48px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 561px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 150px;
+  margin-bottom: 143px;
+  width: 100%;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 315px;
+  min-height: 315px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.workCultureSection,
+.offerSection,
+.processSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.workCultureSection,
+.offerSection,
+.processSection {
+  margin-top: 143px;
+}
+
+.faqSection {
+  margin-top: 226px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.offerItems {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.processItems {
+  gap: 26px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroDecor {
+    width: min(280px, 40vw);
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 56px;
+    order: 1;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .marketDataSection :global(.market-data-card--wide) {
+    height: 315px;
+    min-height: 315px;
+  }
+
+  .benefitsSection {
+    margin-bottom: 96px;
+  }
+
+  .workCultureSection,
+  .offerSection,
+  .processSection {
+    margin-top: 96px;
+    gap: 64px;
+  }
+
+  .faqSection {
+    margin-top: 96px;
+    gap: 64px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .offerItems {
+    gap: 24px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .heroCard {
+    padding: 28px 24px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection :global(.market-data-card--wide) {
+    height: auto;
+    min-height: unset;
+  }
+
+  .benefitsSection {
+    margin-bottom: 64px;
+  }
+
+  .workCultureSection,
+  .offerSection,
+  .processSection {
+    margin-top: 64px;
+    gap: 40px;
+  }
+
+  .faqSection {
+    margin-top: 64px;
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .offerItems {
+    gap: 20px;
+  }
+
+  .processItems {
+    gap: 20px;
+  }
+}

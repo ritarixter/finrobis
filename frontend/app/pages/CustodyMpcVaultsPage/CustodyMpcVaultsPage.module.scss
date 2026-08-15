@@ -1,0 +1,229 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 80px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 342px;
+  min-height: 342px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsSection :global(.benefits) {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 270px;
+}
+
+.whyMpcSection,
+.technicalArchitectureSection,
+.vaultArchitectureSection,
+.walletConnectSection,
+.governanceSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.whyMpcSection,
+.technicalArchitectureSection,
+.vaultArchitectureSection,
+.governanceSection {
+  gap: 80px;
+  margin-bottom: 143px;
+}
+
+.walletConnectSection {
+  gap: 60px;
+  margin-bottom: 143px;
+}
+
+.faqSection {
+  gap: 80px;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.whyMpcGrid,
+.vaultArchitectureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: start;
+}
+
+.whyMpcGrid :global(.item-text),
+.vaultArchitectureGrid :global(.item-text) {
+  width: 100%;
+}
+
+.whyMpcBottomLeft,
+.vaultArchitectureBottomLeft {
+  grid-column: 1 / 2;
+}
+
+.technicalCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 60px;
+  align-items: start;
+}
+
+.technicalCardsGrid :global(.card-with-image) {
+  width: 100%;
+}
+
+.walletConnectItem {
+  align-items: center;
+}
+
+.walletConnectText :global(.item-text__title) {
+  display: none;
+}
+
+.walletConnectText :global(.item-text) {
+  justify-content: center;
+}
+
+.walletConnectImage {
+  width: min(716px, 100%);
+  height: auto;
+}
+
+.governanceItems {
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .benefitsSection,
+  .whyMpcSection,
+  .technicalArchitectureSection,
+  .vaultArchitectureSection,
+  .walletConnectSection,
+  .governanceSection {
+    margin-bottom: 96px;
+  }
+
+  .whyMpcSection,
+  .technicalArchitectureSection,
+  .vaultArchitectureSection,
+  .walletConnectSection,
+  .governanceSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-wrap: wrap;
+    gap: 64px 48px;
+  }
+
+  .whyMpcGrid,
+  .vaultArchitectureGrid,
+  .technicalCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection,
+  .whyMpcSection,
+  .technicalArchitectureSection,
+  .vaultArchitectureSection,
+  .walletConnectSection,
+  .governanceSection {
+    margin-bottom: 64px;
+  }
+
+  .whyMpcSection,
+  .technicalArchitectureSection,
+  .vaultArchitectureSection,
+  .walletConnectSection,
+  .governanceSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .walletConnectImage {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -6,13 +6,31 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 24px 32px;
   max-width: 1596px;
   width: 100%;
+}
+
+@include responsive(screen) {
+  .benefits {
+    justify-content: center;
+    gap: 20px 24px;
+  }
+}
+
+@include responsive(tablet) {
+  .benefits {
+    justify-content: center;
+    gap: 18px 20px;
+  }
 }
 
 @include responsive(phone) {
   .benefits {
     flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
   }
 }

@@ -1,36 +1,43 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import logo from "../../assets/images/logo.svg";
 import { useLang } from "../../hooks/useLang";
 import styles from "./Header.module.scss";
 
-const navigation = [
-  { label: "Trading", href: "/" },
-  { label: "Company", href: "/" },
-  { label: "Custody", href: "/" },
-  { label: "Who We Serve", href: "/" },
-  { label: "Asset Management", href: "/" },
-  { label: "Resources", href: "/" },
-];
-
 export function Header() {
-  const { lang, setLang } = useLang();
+  const { lang, setLang, buildHref } = useLang();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigation = [
+    { label: "Trading", href: buildHref("/trading") },
+    { label: "Company", href: buildHref("/company-about") },
+    { label: "Custody", href: buildHref("/custody") },
+    { label: "Who We Serve", href: buildHref("/whoweserve") },
+    { label: "Asset Management", href: buildHref("/asset-management") },
+    { label: "Resources", href: buildHref("/resources") },
+  ];
 
   return (
     <header className={styles.header}>
       <div className={styles.navbar}>
-        <a className={styles.logoLink} href="/" aria-label="Finorbis home">
+        <Link className={styles.logoLink} to={buildHref("/")} aria-label="Finorbis home">
           <img className={styles.logo} src={logo} alt="Finorbis" />
-        </a>
+        </Link>
 
         <nav
+          id="primary-navigation"
           className={`${styles.navigation} ${isMenuOpen ? styles.navigation_open : ""}`.trim()}
           aria-label="Primary navigation"
         >
           {navigation.map((item) => (
-            <a key={item.label} href={item.href} onClick={() => setIsMenuOpen(false)}>
-              {item.label}
-            </a>
+            item.href ? (
+              <Link key={item.label} to={item.href} onClick={() => setIsMenuOpen(false)}>
+                {item.label}
+              </Link>
+            ) : (
+              <span key={item.label} className={styles.navigationPlaceholder} aria-disabled="true">
+                {item.label}
+              </span>
+            )
           ))}
         </nav>
 
@@ -43,9 +50,9 @@ export function Header() {
           >
             {lang.toUpperCase()}
           </button>
-          <a className={styles.login} href="/">
+          <Link className={styles.login} to={buildHref("/")}>
             Log in
-          </a>
+          </Link>
           <button
             type="button"
             className={styles.menuToggle}

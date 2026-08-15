@@ -1,0 +1,287 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 122px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 390px;
+  width: 100%;
+}
+
+.strategiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.sectionDescription {
+  margin: 0;
+  color: var(--cl-gray-70);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 1380px;
+}
+
+.strategiesCardsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.strategiesCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 60px;
+  row-gap: 50px;
+  align-items: start;
+}
+
+.processSection {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+  margin-bottom: 197px;
+}
+
+.processItems {
+  width: 100%;
+}
+
+.structuredProductsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.structuredProductsList {
+  margin-top: 66px;
+}
+
+.structuredProductsList :global(.item-text-with-image__image) {
+  width: min(716px, 100%);
+  height: 258px;
+}
+
+.structuredProductsList :global(.item-text-with-image) {
+  align-items: center;
+}
+
+.structuredProductsList :global(.item-text) {
+  min-height: 258px;
+  justify-content: center;
+}
+
+.structuredProductsList :global(.item-text__title) {
+  font-size: clamp(48px, 4vw, 58px);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.reportingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.reportingCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 60px;
+  row-gap: 50px;
+  align-items: start;
+}
+
+.reportingCard {
+  width: 100%;
+}
+
+.reportingCardWide {
+  grid-column: 1 / -1;
+  justify-self: start;
+  width: min(715px, 100%);
+}
+
+.riskSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.riskDisclaimerItems {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.riskDisclaimerItems :global(.items-container__item) {
+  width: 100%;
+  max-width: 1120px;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection,
+  .marketDataSection,
+  .benefitsSection,
+  .strategiesCardsSection,
+  .processSection,
+  .structuredProductsSection,
+  .riskSection {
+    margin-bottom: 96px;
+  }
+
+  .strategiesSection {
+    margin-bottom: 64px;
+  }
+
+  .benefitsGrid,
+  .strategiesCardsGrid,
+  .reportingCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .benefitsGrid {
+    display: grid;
+  }
+
+  .structuredProductsList {
+    margin-top: 40px;
+  }
+
+  .structuredProductsList :global(.item-text-with-image__image) {
+    width: 100%;
+    height: auto;
+  }
+
+  .structuredProductsList :global(.item-text) {
+    min-height: auto;
+  }
+
+  .structuredProductsList :global(.item-text__title) {
+    font-size: 42px;
+  }
+
+  .reportingCardWide {
+    grid-column: auto;
+    justify-self: stretch;
+    width: 100%;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection,
+  .marketDataSection,
+  .benefitsSection,
+  .strategiesCardsSection,
+  .processSection,
+  .structuredProductsSection,
+  .riskSection {
+    margin-bottom: 64px;
+  }
+
+  .strategiesSection {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionDescription {
+    font-size: 16px;
+  }
+
+  .benefitsGrid,
+  .strategiesCardsGrid,
+  .reportingCardsGrid {
+    gap: 20px;
+  }
+
+  .structuredProductsList {
+    margin-top: 32px;
+  }
+
+  .structuredProductsList :global(.item-text-with-image__image) {
+    width: 100%;
+    height: auto;
+  }
+
+  .structuredProductsList :global(.item-text) {
+    min-height: auto;
+  }
+
+  .structuredProductsList :global(.item-text__title) {
+    font-size: 36px;
+  }
+
+  .faqSection {
+    gap: 40px;
+  }
+}

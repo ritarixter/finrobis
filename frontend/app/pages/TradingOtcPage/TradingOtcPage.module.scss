@@ -1,0 +1,219 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 80px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 143px;
+  width: 100%;
+}
+
+.benefitsSection {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  :global(.benefits) {
+    width: fit-content;
+    max-width: none;
+    margin: 0;
+    gap: 774px;
+    justify-content: space-between;
+  }
+}
+
+.orderTypesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 143px;
+  width: 100%;
+}
+
+.pricingSpreadsSection {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 143px;
+  margin-top: 143px;
+  width: 100%;
+}
+
+.faqTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.supportedAssetsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 143px;
+  width: 100%;
+}
+
+.supportedAssetsTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.orderTypesTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 96px;
+  }
+
+  .benefitsSection {
+    :global(.benefits) {
+      width: 100%;
+      max-width: 1029px;
+      gap: 64px;
+      justify-content: space-between;
+    }
+  }
+
+  .orderTypesSection {
+    gap: 64px;
+    margin-top: 96px;
+  }
+
+  .pricingSpreadsSection {
+    margin-top: 64px;
+  }
+
+  .faqSection {
+    gap: 96px;
+    margin-top: 96px;
+  }
+
+  .supportedAssetsSection {
+    gap: 64px;
+    margin-top: 96px;
+  }
+
+  .orderTypesTitle {
+    font-size: 42px;
+  }
+
+  .supportedAssetsTitle {
+    font-size: 42px;
+  }
+
+  .faqTitle {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection {
+    justify-content: center;
+
+    :global(.benefits) {
+      width: 100%;
+      max-width: none;
+      gap: 24px;
+      justify-content: center;
+    }
+  }
+
+  .orderTypesSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .pricingSpreadsSection {
+    margin-top: 48px;
+  }
+
+  .faqSection {
+    gap: 64px;
+    margin-top: 64px;
+  }
+
+  .supportedAssetsSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .orderTypesTitle {
+    font-size: 36px;
+  }
+
+  .supportedAssetsTitle {
+    font-size: 36px;
+  }
+
+  .faqTitle {
+    font-size: 36px;
+  }
+}

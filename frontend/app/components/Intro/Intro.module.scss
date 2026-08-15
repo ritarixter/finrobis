@@ -95,26 +95,56 @@
     flex-direction: column;
     align-items: stretch;
     text-align: left;
+    gap: 32px;
   }
 
   .content {
     width: 100%;
   }
 
+  .title {
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.15;
+  }
+
   .subtitle {
     max-width: 100%;
+    font-size: 17px;
+  }
+
+  .buttons {
+    gap: 12px;
   }
 
   .image {
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     align-self: center;
   }
 }
 
 @include responsive(phone) {
   .intro {
-    padding: 32px 20px;
+    padding: 28px 16px;
+    gap: 24px;
+  }
+
+  .badge {
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-size: clamp(28px, 8vw, 36px);
+    margin-bottom: 18px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .image {
+    max-width: 100%;
   }
 
   .buttons {

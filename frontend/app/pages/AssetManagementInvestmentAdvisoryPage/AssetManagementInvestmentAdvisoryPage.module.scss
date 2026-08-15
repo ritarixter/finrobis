@@ -1,0 +1,230 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 122px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 315px;
+  min-height: 315px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsGrid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 690px;
+  width: 100%;
+}
+
+.cardsWithImageTitleSection,
+.whoSection,
+.processSection,
+.researchSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cardsWithImageTitleSection {
+  margin-bottom: 80px;
+}
+
+.cardsWithImageSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.whoSection {
+  gap: 80px;
+  margin-bottom: 143px;
+}
+
+.whoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 80px;
+  row-gap: 44px;
+  align-items: start;
+}
+
+.processSection {
+  gap: 60px;
+  margin-bottom: 143px;
+}
+
+.processItems {
+  width: 100%;
+}
+
+.researchSection {
+  gap: 14px;
+  margin-bottom: 80px;
+}
+
+.researchCardsSection {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.researchCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 60px;
+  align-items: start;
+}
+
+.riskSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.riskDisclaimerItems {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.riskDisclaimerItems :global(.items-container__item) {
+  width: 100%;
+  max-width: 1120px;
+}
+
+.faqSection {
+  gap: 90px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.sectionDescription {
+  margin: 0;
+  color: var(--cl-gray-70);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 1380px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection,
+  .marketDataSection,
+  .benefitsSection,
+  .cardsWithImageSection,
+  .whoSection,
+  .processSection,
+  .researchCardsSection,
+  .riskSection {
+    margin-bottom: 96px;
+  }
+
+  .cardsWithImageTitleSection {
+    margin-bottom: 64px;
+  }
+
+  .researchSection {
+    margin-bottom: 64px;
+  }
+
+  .benefitsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .whoGrid {
+    grid-template-columns: 1fr;
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+  .researchCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .faqSection {
+    gap: 64px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection,
+  .marketDataSection,
+  .benefitsSection,
+  .cardsWithImageSection,
+  .whoSection,
+  .processSection,
+  .researchCardsSection,
+  .riskSection {
+    margin-bottom: 64px;
+  }
+
+  .cardsWithImageTitleSection {
+    margin-bottom: 40px;
+  }
+
+  .researchSection {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionDescription {
+    font-size: 16px;
+  }
+
+  .faqSection {
+    gap: 40px;
+  }
+}

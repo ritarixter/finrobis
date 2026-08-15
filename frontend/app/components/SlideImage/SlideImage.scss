@@ -1,0 +1,82 @@
+@use "../../styles/responsive.scss" as *;
+
+.slide-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  color: var(--Absolute-White, #fff);
+}
+
+.slide-image__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.slide-image__title {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  text-align: center;
+  font-family: Lexend, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  word-break: break-word;
+}
+
+.slide-image__text {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  text-align: center;
+  font-family: Lexend, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+  word-break: break-word;
+}
+
+@include responsive(screen) {
+  .slide-image {
+    gap: 44px;
+  }
+
+  .slide-image__title {
+    font-size: 28px;
+  }
+}
+
+@include responsive(tablet) {
+  .slide-image {
+    gap: 40px;
+  }
+
+  .slide-image__title {
+    font-size: 26px;
+  }
+
+  .slide-image__text {
+    font-size: 16px;
+  }
+}
+
+@include responsive(phone) {
+  .slide-image {
+    gap: 28px;
+  }
+
+  .slide-image__title {
+    font-size: 24px;
+  }
+
+  .slide-image__text {
+    font-size: 15px;
+  }
+}

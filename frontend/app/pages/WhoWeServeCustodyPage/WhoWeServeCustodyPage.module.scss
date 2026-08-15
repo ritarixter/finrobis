@@ -1,0 +1,223 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 80px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 342px;
+  min-height: 342px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsSection :global(.benefits) {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 230px;
+}
+
+.solutionsSection,
+.securityArchitectureSection,
+.segregatedCustodySection,
+.complianceSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.solutionsSection,
+.securityArchitectureSection,
+.segregatedCustodySection,
+.complianceSection {
+  gap: 80px;
+  margin-bottom: 143px;
+}
+
+.faqSection {
+  gap: 80px;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.solutionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: start;
+}
+
+.solutionsGrid :global(.item-text) {
+  width: 100%;
+}
+
+.securityCardsGrid {
+  gap: 50px 60px;
+}
+
+.securityCardsGrid :global(.card-with-image) {
+  width: 100%;
+}
+
+.segregatedCustodyItem {
+  align-items: center;
+}
+
+.segregatedCustodyImage {
+  width: min(716px, 100%);
+  height: 258px;
+}
+
+.segregatedCustodyText {
+  min-height: 258px;
+}
+
+.segregatedCustodyText :global(.item-text__title) {
+  display: none;
+}
+
+.segregatedCustodyText :global(.item-text__text) {
+  max-width: 760px;
+}
+
+.complianceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 60px;
+  align-items: start;
+}
+
+.complianceGrid :global(.card-with-icon) {
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .benefitsSection,
+  .solutionsSection,
+  .securityArchitectureSection,
+  .segregatedCustodySection,
+  .complianceSection {
+    margin-bottom: 96px;
+  }
+
+  .solutionsSection,
+  .securityArchitectureSection,
+  .segregatedCustodySection,
+  .complianceSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-wrap: wrap;
+    gap: 64px 48px;
+  }
+
+  .solutionsGrid,
+  .complianceGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection,
+  .solutionsSection,
+  .securityArchitectureSection,
+  .segregatedCustodySection,
+  .complianceSection {
+    margin-bottom: 64px;
+  }
+
+  .solutionsSection,
+  .securityArchitectureSection,
+  .segregatedCustodySection,
+  .complianceSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .segregatedCustodyImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .segregatedCustodyText {
+    min-height: auto;
+  }
+}

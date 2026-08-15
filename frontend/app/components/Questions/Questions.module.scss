@@ -2,23 +2,49 @@
 
 .list {
   box-sizing: border-box;
-  width: 100%;
+  width: min(1920px, 100%);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 26px;
 }
 
-.pagging {
-  padding-left: 100px;
+.leftOffset,
+.rightOffset {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.leftOffset {
+  padding-left: 104px;
+}
+
+.rightOffset {
+  padding-right: 104px;
 }
 @include responsive(tablet) {
   .list {
+    width: 100%;
     gap: 14px;
+  }
+
+  .leftOffset {
+    padding-left: 32px;
+  }
+
+  .rightOffset {
+    padding-right: 32px;
   }
 }
 
 @include responsive(phone) {
   .list {
     gap: 12px;
+  }
+
+  .leftOffset,
+  .rightOffset {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

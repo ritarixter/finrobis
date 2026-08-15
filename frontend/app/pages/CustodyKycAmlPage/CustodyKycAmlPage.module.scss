@@ -1,0 +1,243 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 100px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  min-height: 342px;
+  height: 342px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsSection :global(.benefits) {
+  justify-content: center;
+}
+
+.kycSection,
+.amlSection,
+.complianceSection,
+.onboardingSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.kycSection,
+.amlSection,
+.complianceSection,
+.onboardingSection {
+  margin-bottom: 143px;
+}
+
+.kycSection {
+  gap: 0;
+}
+
+.amlSection {
+  gap: 143px;
+}
+
+.complianceSection,
+.onboardingSection,
+.faqSection {
+  gap: 60px;
+}
+
+.faqSection {
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.sectionDescription {
+  margin: 14px 0 80px;
+  max-width: 1096px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.kycCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 60px;
+  align-items: start;
+  width: 100%;
+}
+
+.kycCardsGrid :global(.card-with-icon) {
+  width: 100%;
+}
+
+.amlList,
+.complianceList {
+  width: 100%;
+}
+
+.amlList :global(.item-text-with-image__image),
+.complianceList :global(.item-text-with-image__image) {
+  width: 716px;
+  max-width: 716px;
+  height: 258px;
+  object-fit: cover;
+}
+
+.onboardingItems {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 80px;
+}
+
+.onboardingItems :global(.items-container__item) {
+  align-items: center;
+}
+
+.onboardingItems :global(.items-container__content) {
+  align-items: center;
+}
+
+.onboardingItems :global(.items-container__title),
+.onboardingItems :global(.items-container__subtitle),
+.onboardingItems :global(.items-container__text) {
+  text-align: center;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection,
+  .kycSection,
+  .amlSection,
+  .complianceSection,
+  .onboardingSection {
+    margin-bottom: 96px;
+  }
+
+  .faqSection {
+    margin-top: 96px;
+  }
+
+  .amlSection {
+    gap: 64px;
+  }
+
+  .complianceSection,
+  .onboardingSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .sectionDescription {
+    font-size: 17px;
+  }
+
+  .kycCardsGrid,
+  .onboardingItems {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .amlList :global(.item-text-with-image__image),
+  .complianceList :global(.item-text-with-image__image) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 48px;
+  }
+
+  .benefitsSection,
+  .kycSection,
+  .amlSection,
+  .complianceSection,
+  .onboardingSection {
+    margin-bottom: 64px;
+  }
+
+  .faqSection {
+    margin-top: 64px;
+  }
+
+  .amlSection {
+    gap: 40px;
+  }
+
+  .complianceSection,
+  .onboardingSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionDescription {
+    font-size: 16px;
+    margin-bottom: 48px;
+  }
+}

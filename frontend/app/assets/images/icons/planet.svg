@@ -1,0 +1,20 @@
+<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="98" height="98" rx="49" fill="url(#paint0_linear_160_2150)" fill-opacity="0.05"/>
+<rect x="12" y="12" width="74" height="74" rx="37" fill="url(#paint1_linear_160_2150)" fill-opacity="0.1"/>
+<rect x="12.5" y="12.5" width="73" height="73" rx="36.5" stroke="url(#paint2_linear_160_2150)" stroke-opacity="0.2"/>
+<path d="M49 36.5C42.1 36.5 36.5 42.1 36.5 49C36.5 55.9 42.1 61.5 49 61.5C55.9 61.5 61.5 55.9 61.5 49C61.5 42.1 55.9 36.5 49 36.5ZM39 49C39 48.2375 39.1 47.4875 39.2625 46.775L45.2375 52.75V54C45.2375 55.375 46.3625 56.5 47.7375 56.5V58.9125C42.825 58.2875 39 54.0875 39 49ZM56.3625 55.75C56.0375 54.7375 55.1125 54 53.9875 54H52.7375V50.25C52.7375 49.5625 52.175 49 51.4875 49H43.9875V46.5H46.4875C47.175 46.5 47.7375 45.9375 47.7375 45.25V42.75H50.2375C51.6125 42.75 52.7375 41.625 52.7375 40.25V39.7375C56.4 41.2125 59 44.8125 59 49C59 51.6 57.9875 53.975 56.3625 55.75Z" fill="#CAFF33"/>
+<defs>
+<linearGradient id="paint0_linear_160_2150" x1="49" y1="0" x2="49" y2="98" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="1" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_160_2150" x1="49" y1="-37" x2="49" y2="203" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="0.467671" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_160_2150" x1="49" y1="-116.5" x2="49" y2="153" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="0.716291" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -66,11 +66,52 @@
   align-items: center;
 }
 
+@include responsive(tablet) {
+  .card-with-icon {
+    width: 100%;
+    aspect-ratio: auto;
+    padding: 32px;
+    column-gap: 20px;
+    row-gap: 14px;
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .card-with-icon__icon-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .card-with-icon__title {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  .card-with-icon__text {
+    font-size: 16px;
+  }
+}
+
 @include responsive(phone) {
   .card-with-icon {
     width: 100%;
     padding: 20px;
     column-gap: 16px;
     row-gap: 12px;
+    aspect-ratio: auto;
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .card-with-icon__icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-with-icon__title {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  .card-with-icon__text {
+    font-size: 15px;
   }
 }

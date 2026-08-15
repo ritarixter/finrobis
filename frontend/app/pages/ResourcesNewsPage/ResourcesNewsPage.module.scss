@@ -1,0 +1,544 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  position: relative;
+  width: min(1599px, 100%);
+  min-height: 739px;
+  margin: 0 auto;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-sizing: border-box;
+}
+
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, 28vw);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  width: min(968px, calc(100% - 100px));
+  height: calc(100% - 100px);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.heroCard {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: min(791px, calc(100% - 160px));
+  min-height: 418px;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  flex-shrink: 0;
+  border-radius: 20px 0 80px 20px;
+  background: var(--Grey-10, #1a1a1a);
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(48px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 560px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 65px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 342px;
+  min-height: 342px;
+}
+
+.newsSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+}
+
+.categoriesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.newsSidebar {
+  display: flex;
+  flex-direction: column;
+  width: 303px;
+  min-width: 303px;
+  height: 337px;
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 24px;
+  border-radius: 12px;
+  background: var(--Grey-11, #1c1c1c);
+}
+
+.categoryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 64px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid #262626;
+  background: transparent;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  align-self: flex-start;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.categoryButtonActive {
+  color: #caff33;
+}
+
+.categoryButton:hover,
+.categoryButton:focus-visible {
+  color: #caff33;
+  border-color: #caff33;
+  outline: none;
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 616px);
+  gap: 30px;
+}
+
+.newsCard {
+  width: 616px;
+  height: 416px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--Grey-15, #262626);
+  border-radius: 12px;
+  background: var(--Grey-11, #1c1c1c);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 100%;
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.datePill {
+  width: fit-content;
+  padding: 8px 18px;
+  border-radius: 68px;
+  border: 1px solid var(--Grey-15, #262626);
+  background: var(--Grey-10, #1a1a1a);
+  color: var(--Grey-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 10px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--Grey-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.categoriesItems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px 60px;
+  width: 100%;
+}
+
+.categoriesItems :global(.items-container__item) {
+  width: 100%;
+}
+
+.categoriesItems :global(.items-container__item:nth-child(4)) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(980px, 100%);
+}
+
+.categoriesItems :global(.items-container__item:nth-child(4) .items-container__content) {
+  align-items: center;
+  gap: 28px;
+}
+
+.categoriesItems :global(.items-container__item:nth-child(4) .items-container__title) {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.categoriesItems :global(.items-container__item:nth-child(4) .items-container__subtitle) {
+  color: var(--cl-white);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.categoriesItems :global(.items-container__item:nth-child(4) .items-container__text) {
+  color: var(--Grey-70, #b3b3b3);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    min-height: 640px;
+  }
+
+  .heroDecor {
+    width: min(280px, 40vw);
+  }
+
+  .heroImage {
+    top: 32px;
+    right: 32px;
+    bottom: 32px;
+    width: min(968px, calc(100% - 64px));
+    height: calc(100% - 64px);
+  }
+
+  .heroCard {
+    top: 32px;
+    left: 32px;
+    width: min(680px, calc(100% - 64px));
+    min-height: 380px;
+    padding: 48px;
+    gap: 18px;
+  }
+
+  .title {
+    font-size: clamp(40px, 4.6vw, 56px);
+  }
+
+  .text {
+    max-width: 500px;
+    font-size: 17px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .newsSection {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .newsSidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 24px;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .categoryButton {
+    min-height: 56px;
+    padding: 10px 18px;
+    font-size: 16px;
+    align-self: center;
+  }
+
+  .newsGrid {
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .newsCard {
+    width: min(616px, 100%);
+    height: auto;
+    min-height: 340px;
+  }
+
+  .categoriesSection,
+  .faqSection {
+    gap: 48px;
+    margin-top: 96px;
+  }
+
+  .categoriesItems {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .categoriesItems :global(.items-container__item:nth-child(4)) {
+    width: 100%;
+  }
+
+  .categoriesItems :global(.items-container__item:nth-child(4) .items-container__title) {
+    font-size: 48px;
+  }
+}
+
+@include responsive(screen) {
+  .newsSection {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .newsSidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 28px;
+    gap: 16px;
+  }
+
+  .newsGrid {
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .newsCard {
+    width: min(616px, 100%);
+    height: auto;
+    min-height: 320px;
+    padding: 40px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .datePill {
+    font-size: 16px;
+  }
+
+  .line {
+    font-size: 16px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 28px 24px;
+    gap: 16px;
+    border-radius: 20px 20px 0 0;
+    order: 1;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .newsSidebar {
+    padding: 20px;
+    align-items: center;
+  }
+
+  .categoryButton {
+    min-height: 54px;
+    padding: 10px 16px;
+    font-size: 15px;
+    align-self: center;
+  }
+
+  .newsGrid {
+    gap: 20px;
+  }
+
+  .newsCard {
+    width: min(100%, 616px);
+    padding: 32px 24px;
+    min-height: 300px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .datePill {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+
+  .line {
+    font-size: 14px;
+  }
+
+  .lines {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .categoriesSection,
+  .faqSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .categoriesItems {
+    gap: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .categoriesItems :global(.items-container__item:nth-child(4) .items-container__title) {
+    font-size: 40px;
+  }
+}

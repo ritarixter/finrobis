@@ -1,0 +1,314 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  position: relative;
+  width: min(1599px, 100%);
+  min-height: 739px;
+  margin: 0 auto;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-sizing: border-box;
+}
+
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, 28vw);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  width: min(968px, calc(100% - 100px));
+  height: calc(100% - 100px);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.heroCard {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: min(791px, calc(100% - 160px));
+  min-height: 418px;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  flex-shrink: 0;
+  border-radius: 20px 0 80px 20px;
+  background: var(--Grey-10, #1a1a1a);
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(48px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 560px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 342px;
+  min-height: 342px;
+  padding: 80px;
+}
+
+.marketDataSection :global(.market-data-card--wide .market-data-card__content) {
+  gap: 10px;
+  max-width: 1180px;
+}
+
+.marketDataSection :global(.market-data-card--wide .market-data-card__body) {
+  line-height: 1.45;
+}
+
+.commonSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.commonList {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  width: 100%;
+}
+
+.commonList :global(.item-text-with-image__image) {
+  width: min(716px, 100%);
+  height: 258px;
+}
+
+.commonList :global(.item-text-with-image) {
+  align-items: center;
+}
+
+.commonList :global(.item-text) {
+  min-height: 258px;
+  justify-content: center;
+}
+
+.commonList :global(.item-text__title) {
+  font-size: clamp(48px, 4vw, 58px);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroDecor {
+    width: min(280px, 40vw);
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 56px;
+    order: 1;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .commonSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .commonSection {
+    margin-bottom: 96px;
+  }
+
+  .faqSection {
+    margin-top: 96px;
+  }
+
+  .commonList {
+    gap: 48px;
+  }
+
+  .commonList :global(.item-text-with-image__image) {
+    width: 100%;
+    height: auto;
+  }
+
+  .commonList :global(.item-text) {
+    min-height: auto;
+  }
+
+  .commonList :global(.item-text__title) {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 28px 24px;
+    gap: 16px;
+    border-radius: 20px 20px 0 0;
+    order: 1;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .commonSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .commonSection {
+    margin-bottom: 64px;
+  }
+
+  .faqSection {
+    margin-top: 64px;
+  }
+
+  .commonList {
+    gap: 32px;
+  }
+
+  .commonList :global(.item-text__title) {
+    font-size: 36px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+}

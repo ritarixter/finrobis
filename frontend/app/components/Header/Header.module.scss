@@ -44,6 +44,7 @@
 }
 
 .navigation a,
+.navigationPlaceholder,
 .login {
   color: inherit;
   font-size: 18px;
@@ -53,6 +54,7 @@
 }
 
 .navigation a:hover,
+.navigationPlaceholder:hover,
 .login:hover {
   color: #caff33;
 }
@@ -121,6 +123,7 @@
   }
 
   .navigation a,
+  .navigationPlaceholder,
   .login,
   .language {
     font-size: 15px;
@@ -168,6 +171,7 @@
   }
 
   .navigation a,
+  .navigationPlaceholder,
   .login,
   .language {
     font-size: 14px;

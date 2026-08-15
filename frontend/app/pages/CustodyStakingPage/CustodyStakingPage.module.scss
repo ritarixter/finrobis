@@ -1,0 +1,247 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 80px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  min-height: 342px;
+  height: 342px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.benefitsSection :global(.benefits) {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 270px;
+}
+
+.stakingFlowSection,
+.stakingModelsSection,
+.riskManagementSection,
+.rewardsReportingSection,
+.supportedNetworksSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stakingFlowSection,
+.stakingModelsSection,
+.riskManagementSection,
+.rewardsReportingSection,
+.supportedNetworksSection {
+  margin-bottom: 143px;
+  gap: 60px;
+}
+
+.riskManagementSection {
+  gap: 80px;
+}
+
+.faqSection {
+  margin-top: 143px;
+  gap: 80px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.stakingFlowItem {
+  align-items: center;
+}
+
+.stakingFlowText :global(.item-text__title) {
+  display: none;
+}
+
+.stakingFlowText :global(.item-text) {
+  gap: 0;
+}
+
+.stakingFlowImage {
+  width: min(716px, 100%);
+  height: auto;
+}
+
+.stakingModelsItems {
+  width: 100%;
+}
+
+.riskManagementList {
+  width: 100%;
+}
+
+.riskManagementList :global(.item-text-with-image__image) {
+  width: 716px;
+  max-width: 716px;
+  height: 258px;
+  object-fit: cover;
+}
+
+.riskManagementList :global(.item-text__title) {
+  white-space: pre-line;
+}
+
+.rewardsCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  align-items: start;
+  width: 100%;
+}
+
+.rewardsCards :global(.card-with-icon) {
+  width: 100%;
+}
+
+.supportedNetworksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 80px;
+  align-items: start;
+  width: 100%;
+}
+
+.supportedNetworksGrid :global(.item-text) {
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .benefitsSection,
+  .stakingFlowSection,
+  .stakingModelsSection,
+  .riskManagementSection,
+  .rewardsReportingSection,
+  .supportedNetworksSection {
+    margin-bottom: 96px;
+  }
+
+  .faqSection {
+    margin-top: 96px;
+  }
+
+  .stakingFlowSection,
+  .stakingModelsSection,
+  .riskManagementSection,
+  .rewardsReportingSection,
+  .supportedNetworksSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-wrap: wrap;
+    gap: 64px 48px;
+  }
+
+  .rewardsCards,
+  .supportedNetworksGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .riskManagementList :global(.item-text-with-image__image) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 48px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection,
+  .stakingFlowSection,
+  .stakingModelsSection,
+  .riskManagementSection,
+  .rewardsReportingSection,
+  .supportedNetworksSection {
+    margin-bottom: 64px;
+  }
+
+  .faqSection {
+    margin-top: 64px;
+  }
+
+  .stakingFlowSection,
+  .stakingModelsSection,
+  .riskManagementSection,
+  .rewardsReportingSection,
+  .supportedNetworksSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .benefitsSection :global(.benefits) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,26 @@
+@use "../../styles/responsive.scss" as *;
+
+.slide-image-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 157px;
+  width: 100%;
+}
+
+.slide-image-list > * {
+  min-width: 0;
+}
+
+@include responsive(tablet) {
+  .slide-image-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+  }
+}
+
+@include responsive(phone) {
+  .slide-image-list {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

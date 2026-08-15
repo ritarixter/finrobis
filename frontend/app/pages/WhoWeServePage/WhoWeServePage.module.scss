@@ -1,0 +1,264 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  position: relative;
+  width: min(1599px, 100%);
+  min-height: 739px;
+  margin: 0 auto;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-sizing: border-box;
+}
+
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, 28vw);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  width: min(968px, calc(100% - 100px));
+  height: calc(100% - 100px);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.heroCard {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: min(791px, calc(100% - 160px));
+  min-height: 418px;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  flex-shrink: 0;
+  border-radius: 20px 0 80px 20px;
+  background: var(--Grey-10, #1a1a1a);
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(48px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 560px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+  margin-bottom: 143px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 342px;
+  min-height: 342px;
+}
+
+.benefitsSection {
+  width: 100%;
+  margin-bottom: clamp(120px, 16vw, 270px);
+}
+
+.benefitsSection :global(.benefits) {
+  justify-content: center;
+  gap: 270px;
+}
+
+.segmentsSection,
+.providersSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.segmentsSection {
+  margin-bottom: 143px;
+}
+
+.providersSection {
+  margin-bottom: 0;
+}
+
+.faqSection {
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.providersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 60px;
+  align-items: start;
+}
+
+.providersGrid :global(.card-with-icon) {
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroDecor {
+    width: min(280px, 40vw);
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 56px;
+    order: 1;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .benefitsSection,
+  .segmentsSection,
+  .providersSection {
+    margin-bottom: 180px;
+  }
+
+  .segmentsSection,
+  .providersSection,
+  .faqSection {
+    gap: 64px;
+  }
+
+  .providersGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .faqSection {
+    margin-top: 96px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .heroCard {
+    padding: 28px 24px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .benefitsSection,
+  .segmentsSection,
+  .providersSection {
+    margin-bottom: 120px;
+  }
+
+  .segmentsSection,
+  .providersSection,
+  .faqSection {
+    gap: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+}

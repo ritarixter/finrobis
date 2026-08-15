@@ -2,15 +2,6 @@ import styles from "./Footer.module.scss";
 import logo from "../../assets/images/logo.svg";
 import { useLang } from "../../hooks/useLang";
 
-const navigation = [
-  { label: "Trading", href: "/" },
-  { label: "Company", href: "/" },
-  { label: "Custody", href: "/" },
-  { label: "Who We Serve", href: "/" },
-  { label: "Asset Management", href: "/" },
-  { label: "Resources", href: "/" },
-];
-
 const contacts = [
   { label: "11111111111.com", icon: "globe" },
   { label: "+111111111111111", icon: "phone" },
@@ -47,6 +38,14 @@ function ContactIcon({ type }: { type: string }) {
 
 export function Footer() {
   const { buildHref } = useLang();
+  const navigation = [
+    { label: "Trading", href: buildHref("/trading") },
+    { label: "Company", href: buildHref("/company-about") },
+    { label: "Custody", href: buildHref("/custody") },
+    { label: "Who We Serve", href: buildHref("/whoweserve") },
+    { label: "Asset Management", href: buildHref("/asset-management") },
+    { label: "Resources", href: buildHref("/resources") },
+  ];
 
   return (
     <footer className={styles.footer}>

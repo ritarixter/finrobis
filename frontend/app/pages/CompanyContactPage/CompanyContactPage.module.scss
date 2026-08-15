@@ -1,0 +1,446 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  position: relative;
+  width: min(1599px, 100%);
+  min-height: 739px;
+  margin: 0 auto;
+  border: 1px solid #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-sizing: border-box;
+}
+
+.heroDecor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(360px, 28vw);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  bottom: 50px;
+  width: min(968px, calc(100% - 100px));
+  height: calc(100% - 100px);
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.heroCard {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  width: min(791px, calc(100% - 160px));
+  min-height: 418px;
+  padding: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+  flex-shrink: 0;
+  border-radius: 20px 0 80px 20px;
+  background: var(--Grey-10, #1a1a1a);
+  z-index: 2;
+}
+
+.title {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(48px, 4.5vw, 64px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 561px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.ctaSection {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 150px;
+  margin-bottom: 70px;
+  width: 100%;
+}
+
+.ctaSection :global(.market-data-card--wide) {
+  height: 288px;
+  min-height: 288px;
+}
+
+.summarySection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 174px;
+  row-gap: 44px;
+  align-items: start;
+  width: 100%;
+  margin-top: 0;
+}
+
+.summaryItemText {
+  max-width: 100%;
+}
+
+.formSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.contactDetailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.contactDetailsHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 150px;
+  align-items: end;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.onboardingTitle {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-style: normal;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.contactCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 100px;
+  align-items: start;
+  width: 100%;
+}
+
+.contactCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 748px;
+  min-height: 643px;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: var(--Grey-11, #1c1c1c);
+  overflow: hidden;
+}
+
+.contactCardDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(250px, 34%);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.contactCardPanel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 533px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid var(--Grey-15, #262626);
+  background: var(--Grey-10, #1a1a1a);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 42px;
+}
+
+.contactRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: center;
+  width: 100%;
+}
+
+.contactRowTitle,
+.locationCardTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(24px, 1.8vw, 28px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.contactRowText,
+.locationCardText {
+  margin: 0;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.locationCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 80px;
+  gap: 24px;
+}
+
+.onboardingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.onboardingPrimary,
+.onboardingSecondary {
+  width: 100%;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin-top: 226px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .heroDecor {
+    width: min(280px, 40vw);
+  }
+
+  .heroImage {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 153 / 101;
+    border-radius: 0 0 20px 20px;
+    order: 2;
+  }
+
+  .heroCard {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 56px;
+    order: 1;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .ctaSection {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
+
+  .ctaSection :global(.market-data-card--wide) {
+    height: 288px;
+    min-height: 288px;
+  }
+
+  .summarySection,
+  .formSection,
+  .contactDetailsSection,
+  .onboardingSection,
+  .faqSection {
+    margin-top: 96px;
+  }
+
+  .contactDetailsHeader,
+  .contactCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .summarySection {
+    column-gap: 64px;
+    row-gap: 32px;
+  }
+
+  .sectionTitle,
+  .onboardingTitle {
+    font-size: 42px;
+  }
+
+  .contactCard {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .contactCardPanel {
+    min-height: auto;
+  }
+
+  .locationCardContent {
+    margin-top: 48px;
+  }
+
+  .contactList {
+    gap: 32px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .heroCard {
+    padding: 28px 24px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .ctaSection {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  .ctaSection :global(.market-data-card--wide) {
+    height: auto;
+    min-height: unset;
+  }
+
+  .summarySection,
+  .formSection,
+  .contactDetailsSection,
+  .onboardingSection,
+  .faqSection {
+    margin-top: 64px;
+  }
+
+  .summarySection {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 24px;
+  }
+
+  .contactDetailsHeader,
+  .contactCardsGrid {
+    gap: 40px;
+  }
+
+  .sectionTitle,
+  .onboardingTitle {
+    font-size: 36px;
+  }
+
+  .contactCard {
+    padding: 24px;
+  }
+
+  .contactCardPanel {
+    padding: 20px;
+  }
+
+  .contactRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contactList {
+    gap: 24px;
+  }
+
+  .locationCardContent {
+    margin-top: 32px;
+  }
+}

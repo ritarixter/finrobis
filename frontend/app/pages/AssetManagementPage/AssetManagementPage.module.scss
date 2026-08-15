@@ -1,0 +1,255 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 140px;
+}
+
+.introSection {
+  margin-bottom: 272px;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.solutionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.whySection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-bottom: 117px;
+}
+
+.whyItemTextWithImageList :global(.item-text-with-image__image) {
+  width: min(716px, 100%);
+  height: 258px;
+}
+
+.whyItemTextWithImageList :global(.item-text-with-image) {
+  align-items: center;
+}
+
+.whyItemTextWithImageList :global(.item-text) {
+  min-height: 258px;
+  justify-content: center;
+}
+
+.whyItemTextWithImageList :global(.item-text__title) {
+  font-size: clamp(48px, 4vw, 58px);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.productStructureSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.riskSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 143px;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--cl-white);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(40px, 4vw, 48px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+
+  span {
+    color: #ffd700;
+  }
+}
+
+.solutionsItems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  align-items: start;
+  width: 100%;
+}
+
+.productStructureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 123px;
+  column-gap: 60px;
+  row-gap: 50px;
+  align-items: stretch;
+}
+
+.riskDisclaimerItems {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.riskDisclaimerItems :global(.items-container__item) {
+  width: 100%;
+  max-width: 1120px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 24px;
+    padding-bottom: 100px;
+  }
+
+  .introSection {
+    margin-bottom: 96px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 96px;
+  }
+
+  .solutionsSection {
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+
+  .whySection {
+    gap: 64px;
+    margin-bottom: 96px;
+  }
+
+  .whyItemTextWithImageList :global(.item-text-with-image__image) {
+    width: 100%;
+    height: auto;
+  }
+
+  .whyItemTextWithImageList :global(.item-text) {
+    min-height: auto;
+  }
+
+  .whyItemTextWithImageList :global(.item-text__title) {
+    font-size: 42px;
+  }
+
+  .productStructureSection {
+    margin-bottom: 56px;
+  }
+
+  .productStructureGrid {
+    margin-top: 64px;
+  }
+
+  .riskSection {
+    margin-bottom: 96px;
+  }
+
+  .faqSection {
+    gap: 64px;
+    margin-top: 96px;
+  }
+
+  .solutionsItems {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .productStructureGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .introSection {
+    margin-bottom: 64px;
+  }
+
+  .marketDataSection {
+    margin-bottom: 64px;
+  }
+
+  .solutionsSection {
+    gap: 40px;
+    margin-bottom: 64px;
+  }
+
+  .whySection {
+    gap: 40px;
+    margin-bottom: 64px;
+  }
+
+  .whyItemTextWithImageList :global(.item-text-with-image__image) {
+    width: 100%;
+    height: auto;
+  }
+
+  .whyItemTextWithImageList :global(.item-text) {
+    min-height: auto;
+  }
+
+  .whyItemTextWithImageList :global(.item-text__title) {
+    font-size: 36px;
+  }
+
+  .productStructureSection {
+    margin-bottom: 48px;
+  }
+
+  .productStructureGrid {
+    margin-top: 40px;
+  }
+
+  .riskSection {
+    margin-bottom: 64px;
+  }
+
+  .faqSection {
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .solutionsItems {
+    gap: 20px;
+  }
+
+  .productStructureGrid {
+    gap: 20px;
+  }
+}

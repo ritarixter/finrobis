@@ -23,9 +23,10 @@ export function Questions({ items, defaultOpenIndex = -1 }: QuestionsProps) {
     <div className={styles.list}>
       {items.map((item, index) => {
         const { id, ...itemProps } = item;
+        const wrapperClassName = index % 2 === 0 ? styles.leftOffset : styles.rightOffset;
 
         return (
-          <div key={id ?? index} className={index % 2 !== 0 ? styles.pagging : ""}>
+          <div key={id ?? index} className={wrapperClassName}>
             <Question
               {...itemProps}
               isOpen={openIndex === index}

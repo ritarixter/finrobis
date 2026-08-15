@@ -1,0 +1,25 @@
+<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="98" height="98" rx="49" fill="url(#paint0_linear_301_710)" fill-opacity="0.05"/>
+<rect x="12" y="12" width="74" height="74" rx="37" fill="url(#paint1_linear_301_710)" fill-opacity="0.1"/>
+<rect x="12.5" y="12.5" width="73" height="73" rx="36.5" stroke="url(#paint2_linear_301_710)" stroke-opacity="0.2"/>
+<g clip-path="url(#clip0_301_710)">
+<path d="M37.6654 37.6673H60.332V54.6673H39.3229L37.6654 56.3248V37.6673ZM37.6654 34.834C36.107 34.834 34.8462 36.109 34.8462 37.6673L34.832 63.1673L40.4987 57.5007H60.332C61.8904 57.5007 63.1654 56.2257 63.1654 54.6673V37.6673C63.1654 36.109 61.8904 34.834 60.332 34.834H37.6654ZM40.4987 49.0007H57.4987V51.834H40.4987V49.0007ZM40.4987 44.7507H57.4987V47.584H40.4987V44.7507ZM40.4987 40.5007H57.4987V43.334H40.4987V40.5007Z" fill="#CAFF33"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_301_710" x1="49" y1="0" x2="49" y2="98" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="1" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_301_710" x1="49" y1="-37" x2="49" y2="203" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="0.467671" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_301_710" x1="49" y1="-116.5" x2="49" y2="153" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAFF33"/>
+<stop offset="0.716291" stop-color="#CAFF33" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_301_710">
+<rect width="34" height="34" fill="white" transform="translate(32 32)"/>
+</clipPath>
+</defs>
+</svg>

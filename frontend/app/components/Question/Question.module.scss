@@ -4,12 +4,13 @@
   box-sizing: border-box;
   width: 100%;
   border: 1px solid var(--cl-gray-15, #262626);
-  background-size: 30% 100%;
   border-radius: 20px;
   border: 1px solid #262626;
-  background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
-  background: url("../../assets/images/bg_circles.svg") no-repeat 30% center;
-
+  background:
+    linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%),
+    url("../../assets/images/bg_circles.svg") no-repeat 30% center,
+    #1c1c1c;
+  background-size: auto, 30% 100%, auto;
   overflow: hidden;
   transition: border-color 0.2s ease-in-out;
   -webkit-transition: border-color 0.2s ease-in-out;
@@ -18,6 +19,9 @@
 
 .item_open {
   border-color: var(--cl-main, #caff33);
+  background:
+    linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%),
+    #1c1c1c;
 }
 
 .heading {
@@ -29,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   width: 100%;
   box-sizing: border-box;
   border: none;
