@@ -87,8 +87,20 @@
   position: relative;
   z-index: 2;
   flex-shrink: 0;
-  width: min(560px, 45%);
+  width: min(520px, 38%);
   height: auto;
+}
+
+@include responsive(fullscreen) {
+  .image {
+    width: min(460px, 36%);
+  }
+}
+
+@include responsive(screen) {
+  .image {
+    width: min(420px, 34%);
+  }
 }
 
 @include responsive(tablet) {
@@ -116,7 +128,7 @@
 
   .image {
     width: 100%;
-    max-width: 520px;
+    max-width: 380px;
     align-self: center;
   }
 }

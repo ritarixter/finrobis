@@ -5,6 +5,7 @@ import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
 import { TextList } from "~/components/TextList/TextList";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./CompanyAboutPage.module.scss";
@@ -12,6 +13,11 @@ import styles from "./CompanyAboutPage.module.scss";
 export function CompanyAboutPage() {
   const { company } = useLang().content.pages;
   const about = company.about;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -29,7 +35,7 @@ export function CompanyAboutPage() {
           <h1 className={styles.title}>{about.intro.title}</h1>
           <p className={styles.text}>{about.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {about.intro.button1}
           </Button>
         </div>

@@ -2,12 +2,18 @@ import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemTextWithImageList } from "~/components/ItemTextWithImageList/ItemTextWithImageList";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./ResourcesCaseStudiesPage.module.scss";
 
 export function ResourcesCaseStudiesPage() {
   const { resourcesCaseStudies } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -29,7 +35,7 @@ export function ResourcesCaseStudiesPage() {
           <h1 className={styles.title}>{resourcesCaseStudies.intro.title}</h1>
           <p className={styles.text}>{resourcesCaseStudies.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {resourcesCaseStudies.intro.button1}
           </Button>
         </div>

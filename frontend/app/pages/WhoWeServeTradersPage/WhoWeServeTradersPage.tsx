@@ -5,12 +5,18 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { ItemTextWithImage } from "~/components/ItemTextWithImage/ItemTextWithImage";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./WhoWeServeTradersPage.module.scss";
 
 export function WhoWeServeTradersPage() {
   const { whoWeServeTraders } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -32,7 +38,7 @@ export function WhoWeServeTradersPage() {
           <h1 className={styles.title}>{whoWeServeTraders.intro.title}</h1>
           <p className={styles.text}>{whoWeServeTraders.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {whoWeServeTraders.intro.button1}
           </Button>
         </div>

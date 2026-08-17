@@ -6,12 +6,18 @@ import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./ResourcesApiDocumentationPage.module.scss";
 
 export function ResourcesApiDocumentationPage() {
   const { resourcesApiDocumentation } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -33,7 +39,7 @@ export function ResourcesApiDocumentationPage() {
           <h1 className={styles.title}>{resourcesApiDocumentation.intro.title}</h1>
           <p className={styles.text}>{resourcesApiDocumentation.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {resourcesApiDocumentation.intro.button1}
           </Button>
         </div>

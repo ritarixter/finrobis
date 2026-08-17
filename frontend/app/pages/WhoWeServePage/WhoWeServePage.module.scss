@@ -246,6 +246,10 @@
     margin-bottom: 64px;
   }
 
+  .benefitsSection :global(.benefits) {
+    gap: 12px;
+  }
+
   .benefitsSection,
   .segmentsSection,
   .providersSection {

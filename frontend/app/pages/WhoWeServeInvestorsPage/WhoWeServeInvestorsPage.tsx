@@ -5,12 +5,18 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./WhoWeServeInvestorsPage.module.scss";
 
 export function WhoWeServeInvestorsPage() {
   const { whoWeServeInvestors } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -32,7 +38,7 @@ export function WhoWeServeInvestorsPage() {
           <h1 className={styles.title}>{whoWeServeInvestors.intro.title}</h1>
           <p className={styles.text}>{whoWeServeInvestors.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {whoWeServeInvestors.intro.button1}
           </Button>
         </div>

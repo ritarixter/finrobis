@@ -11,6 +11,10 @@ import styles from "./CompanyContactPage.module.scss";
 export function CompanyContactPage() {
   const { contact } = useLang().content.pages;
 
+  const handleScrollToForm = () => {
+    document.getElementById("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
@@ -27,7 +31,7 @@ export function CompanyContactPage() {
           <h1 className={styles.title}>{contact.intro.title}</h1>
           <p className={styles.text}>{contact.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleScrollToForm}>
             {contact.intro.button1}
           </Button>
         </div>
@@ -49,7 +53,7 @@ export function CompanyContactPage() {
         ))}
       </section>
 
-      <section className={styles.formSection}>
+      <section className={styles.formSection} id="form">
         <Form
           title={contact.form.title}
           labels={contact.form.labels}

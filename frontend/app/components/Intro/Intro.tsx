@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { Button, ThemeButton } from "../ui/Button/Button";
 import styles from "./Intro.module.scss";
 import succesIcon from "../../assets/images/icons/success.svg";
@@ -9,12 +10,12 @@ interface IntroProps {
   imageSrc: string;
   button1: {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
   };
   button1Theme?: ThemeButton;
   button2?: {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
   };
   type?: "with-border" | "without-border";
 }
@@ -29,6 +30,13 @@ export function Intro({
   button2,
   type = "with-border",
 }: IntroProps) {
+  const navigate = useNavigate();
+
+  const handleButton1Click = () => {
+    button1.onClick?.();
+    navigate("/company/contact#form");
+  };
+
   return (
     <section
       className={`${styles.intro} ${type === "with-border" ? styles.withBorder : styles.withoutBorder}`}
@@ -41,7 +49,7 @@ export function Intro({
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
         <div className={styles.buttons}>
-          <Button theme={button1Theme} onClick={button1.onClick}>
+          <Button theme={button1Theme} onClick={handleButton1Click}>
             {button1.text}
           </Button>
           {button2 ? (

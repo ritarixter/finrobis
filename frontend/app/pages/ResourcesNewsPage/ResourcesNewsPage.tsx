@@ -2,12 +2,18 @@ import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./ResourcesNewsPage.module.scss";
 
 export function ResourcesNewsPage() {
   const { resourcesNews } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -25,7 +31,7 @@ export function ResourcesNewsPage() {
           <h1 className={styles.title}>{resourcesNews.intro.title}</h1>
           <p className={styles.text}>{resourcesNews.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {resourcesNews.intro.button1}
           </Button>
         </div>

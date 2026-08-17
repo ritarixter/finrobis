@@ -46,6 +46,27 @@ body {
   margin: 0 auto;
 }
 
+@include responsive(screen) {
+  .section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@include responsive(tablet) {
+  .section {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+@include responsive(phone) {
+  .section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
 .bold {
   font-weight: 600;
 }

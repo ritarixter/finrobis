@@ -4,12 +4,18 @@ import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
+import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./WhoWeServeInstitutionsPage.module.scss";
 
 export function WhoWeServeInstitutionsPage() {
   const { whoWeServeInstitutions } = useLang().content.pages;
+  const navigate = useNavigate();
+
+  const handleContactUsClick = () => {
+    navigate("/company/contact#form");
+  };
 
   return (
     <main className={`section ${styles.page}`}>
@@ -31,7 +37,7 @@ export function WhoWeServeInstitutionsPage() {
           <h1 className={styles.title}>{whoWeServeInstitutions.intro.title}</h1>
           <p className={styles.text}>{whoWeServeInstitutions.intro.text}</p>
 
-          <Button theme={ThemeButton.GREEN} onClick={() => {}}>
+          <Button theme={ThemeButton.GREEN} onClick={handleContactUsClick}>
             {whoWeServeInstitutions.intro.button1}
           </Button>
         </div>
