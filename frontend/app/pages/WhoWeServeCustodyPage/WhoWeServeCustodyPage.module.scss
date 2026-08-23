@@ -186,6 +186,11 @@
     margin-bottom: 64px;
   }
 
+  .marketDataSection :global(.market-data-card--wide) {
+    height: auto;
+    min-height: auto;
+  }
+
   .benefitsSection,
   .solutionsSection,
   .securityArchitectureSection,

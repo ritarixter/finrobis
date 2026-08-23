@@ -13,36 +13,48 @@
 
 .item-text-with-image-list .item-text-with-image__image,
 .item-text-with-image-list .item-text {
-  height: 156px;
+  height: var(--item-text-with-image-list-item-height, 156px);
 }
 
 @include responsive(screen) {
   .item-text-with-image-list .item-text-with-image__image {
-    width: min(560px, 100%);
-    max-width: 560px;
-    height: 144px;
-    flex-basis: 560px;
+    width: var(--item-text-with-image-tablet-image-width, min(560px, 100%));
+    max-width: var(--item-text-with-image-tablet-image-max-width, 560px);
+    height: var(--item-text-with-image-tablet-image-height, 144px);
+    flex-basis: var(--item-text-with-image-tablet-image-width, 560px);
   }
 }
 
 @include responsive(tablet) {
-  .item-text-with-image-list .item-text-with-image__image {
-    width: 100%;
-    max-width: 100%;
+  .item-text-with-image-list .item-text {
     height: auto;
-    flex-basis: auto;
+    min-height: auto;
+  }
+
+  .item-text-with-image-list .item-text-with-image__image {
+    width: var(--item-text-with-image-tablet-image-width, 100%);
+    max-width: var(--item-text-with-image-tablet-image-max-width, 100%);
+    height: var(--item-text-with-image-tablet-image-height, auto);
+    flex-basis: var(--item-text-with-image-tablet-image-width, auto);
   }
 }
 
 @include responsive(phone) {
   .item-text-with-image-list {
-    gap: 36px;
+    gap: var(--item-text-with-image-list-phone-gap, 44px);
+  }
+
+  .item-text-with-image-list .item-text {
+    height: auto;
+    min-height: auto;
   }
 
   .item-text-with-image-list .item-text-with-image__image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    flex-basis: auto;
+    width: var(--item-text-with-image-phone-image-width, min(586px, 100%));
+    max-width: var(--item-text-with-image-phone-image-max-width, 586px);
+    height: var(--item-text-with-image-phone-image-height, 170px);
+    min-height: var(--item-text-with-image-phone-image-height, 170px);
+    flex-basis: var(--item-text-with-image-phone-image-width, min(586px, 100%));
+    object-fit: cover;
   }
 }

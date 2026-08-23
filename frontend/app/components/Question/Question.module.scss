@@ -117,9 +117,9 @@
   .item {
     background-size:
       auto,
-      clamp(340px, 52vw, 500px) 100%,
+      clamp(440px, 70vw, 560px) 100%,
       auto;
-    background-position: 0 0, 24px center, 0 0;
+    background-position: 0 0, -24px center, 0 0;
   }
 
   .trigger {
@@ -129,7 +129,7 @@
   }
 
   .answer {
-    padding: 0 16px 16px;
+    padding: 6px 16px 16px;
     font-size: 13px;
   }
 }

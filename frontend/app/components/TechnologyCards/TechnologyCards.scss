@@ -26,20 +26,22 @@
 .technology-cards__grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 246px);
+  justify-content: center;
+  grid-auto-rows: 264px;
   gap: 20px;
 }
 
 .technology-cards__card {
   display: flex;
-  min-height: 262px;
-  width: 100%;
-  padding: 30px;
+  width: 246px;
+  height: 264px;
+  padding: 24px;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 24px;
+  gap: 18px;
   border: 1px solid var(--cl-gray-15);
   border-radius: 16px;
   background: var(--cl-black);
@@ -47,9 +49,9 @@
 
 .technology-cards__icon-container {
   display: flex;
-  width: 147px;
-  height: 142px;
-  padding: 10px;
+  width: 127px;
+  height: 122px;
+  padding: 8px;
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: center;
@@ -61,7 +63,7 @@
   display: flex;
   width: 100%;
   height: 100%;
-  padding: 14px;
+  padding: 10px;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -71,8 +73,8 @@
 
 .technology-cards__icon {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 73px;
+  height: 67px;
   object-fit: contain;
 }
 
@@ -94,19 +96,165 @@
 
 @include responsive(phone) {
   .technology-cards {
-    padding: 20px;
+    padding: 8px;
   }
 
   .technology-cards__grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 8px;
+    justify-items: center;
   }
 
   .technology-cards__card,
   .technology-cards__card:nth-child(3) {
-    width: 100%;
+    width: 167px;
+    min-width: 167px;
+    height: 220px;
+    min-height: 220px;
+    padding: 10px 8px;
+    gap: 8px;
+  }
+
+  .technology-cards__icon-container {
+    width: 61px;
+    height: 65px;
+    padding: 2px;
+  }
+
+  .technology-cards__icon-frame {
+    padding: 5px;
+  }
+
+  .technology-cards__icon {
+    width: 44px;
+    height: 48px;
   }
 
   .technology-cards__title {
-    font-size: 20px;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .technology-cards {
+    padding: 6px;
+  }
+
+  .technology-cards__grid {
+    gap: 6px;
+  }
+
+  .technology-cards__card,
+  .technology-cards__card:nth-child(3) {
+    width: 150px;
+    min-width: 150px;
+    height: 198px;
+    min-height: 198px;
+    padding: 8px 7px;
+    gap: 6px;
+  }
+
+  .technology-cards__icon-container {
+    width: 54px;
+    height: 58px;
+    padding: 2px;
+  }
+
+  .technology-cards__icon-frame {
+    padding: 4px;
+  }
+
+  .technology-cards__icon {
+    width: 40px;
+    height: 44px;
+  }
+
+  .technology-cards__title {
+    font-size: 12px;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 375px) {
+  .technology-cards {
+    padding: 5px;
+  }
+
+  .technology-cards__grid {
+    gap: 5px;
+  }
+
+  .technology-cards__card,
+  .technology-cards__card:nth-child(3) {
+    width: 138px;
+    min-width: 138px;
+    height: 188px;
+    min-height: 188px;
+    padding: 7px 6px;
+    gap: 6px;
+  }
+
+  .technology-cards__icon-container {
+    width: 60px;
+    height: 64px;
+    padding: 2px;
+  }
+
+  .technology-cards__icon-frame {
+    padding: 4px;
+  }
+
+  .technology-cards__icon {
+    width: 38px;
+    height: 42px;
+  }
+
+  .technology-cards__title {
+    font-size: 11px;
+    line-height: 1.1;
+  }
+}
+
+@include responsive(tablet) {
+  .technology-cards {
+    padding: 16px;
+  }
+
+  .technology-cards__grid {
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    grid-auto-rows: 1fr;
+  }
+
+  .technology-cards__card {
+    width: 100%;
+    min-height: 176px;
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .technology-cards__icon-container {
+    width: 86px;
+    height: 82px;
+    padding: 5px;
+  }
+
+  .technology-cards__icon-frame {
+    padding: 8px;
+  }
+
+  .technology-cards__icon {
+    width: 68px;
+    height: 64px;
+  }
+
+  .technology-cards__title {
+    font-size: 16px;
+    line-height: 1.25;
+    white-space: normal;
   }
 }

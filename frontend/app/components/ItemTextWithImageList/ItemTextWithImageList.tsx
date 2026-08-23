@@ -7,7 +7,7 @@ import "./ItemTextWithImageList.scss";
 
 export interface ItemTextWithImageListItem extends Omit<
   ItemTextWithImageProps,
-  "className" | "style"
+  "className"
 > {
   id?: string | number;
 }

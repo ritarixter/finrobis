@@ -247,6 +247,12 @@
 .codeExampleCard :global(.market-data-card__content) {
   padding: 80px;
   box-sizing: border-box;
+  height: auto;
+  max-height: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: flex-start;
+  align-self: flex-start;
 }
 
 .codeExampleCard:global(.market-data-card--wide) > :global(.market-data-card__image-wrapper) {
@@ -465,8 +471,10 @@
   }
 
   .title {
-    font-size: 36px;
-    white-space: nowrap;
+    max-width: 240px;
+    font-size: 34px;
+    white-space: normal;
+    line-height: 1.08;
   }
 
   .text,

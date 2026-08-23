@@ -1,1 +1,434 @@
 @use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 143px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.hiddenTitle {
+  display: none;
+}
+
+.marketDataBody {
+  max-width: 1120px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 214px;
+  min-height: 214px;
+}
+
+.marketDataSection :global(.market-data-card--wide .market-data-card__content) {
+  gap: 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.sectionTitleAccent {
+  color: #ffd700;
+}
+
+.investmentDisclaimerTitle {
+  max-width: 860px;
+}
+
+.disclaimerSection,
+.targetAudienceSection,
+.investmentDisclaimerSection,
+.termsSection,
+.copyrightSection,
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.applicableLawSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.applicableLawGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+  margin-top: 80px;
+  align-items: stretch;
+}
+
+.applicableLawCard {
+  width: 100%;
+}
+
+.amendmentHistorySection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.amendmentHistoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 700px));
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  margin-top: 80px;
+  gap: 40px;
+}
+
+.amendmentHistoryCardFirst,
+.amendmentHistoryCardSecond {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid var(--cl-gray-15, #262626);
+  background: var(--cl-gray-11, #1c1c1c);
+  width: 700px;
+  height: 369px;
+}
+
+.amendmentHistoryCardFirst {
+  width: 100%;
+  height: 369px;
+  padding: 43px 80px 77px;
+}
+
+.amendmentHistoryCardSecond {
+  width: 100%;
+  height: 369px;
+  padding: 80px 80px 133px;
+}
+
+.amendmentHistoryImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.amendmentHistoryTitle,
+.amendmentHistoryText {
+  position: relative;
+  z-index: 1;
+}
+
+.amendmentHistoryTitle {
+  margin: 0 0 10px;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.amendmentHistoryText {
+  margin: 0;
+  max-width: 520px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  width: 100%;
+  margin-top: 80px;
+  align-items: stretch;
+}
+
+.itemCard {
+  width: 100%;
+}
+
+.sectionLeadText {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.bulletList {
+  margin-top: 80px;
+  max-width: 1120px;
+}
+
+.lineOnlyList {
+  margin-top: 80px;
+  max-width: 1120px;
+  padding-left: 30px;
+  gap: 15px;
+}
+
+.lineOnlyListItem {
+  padding-left: 0;
+}
+
+.lineOnlyList :global(.text-list__item)::before {
+  content: none;
+}
+
+.faqQuestions {
+  margin-top: 80px;
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 96px;
+    padding-bottom: 100px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .title,
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .text,
+  .sectionLeadText {
+    font-size: 17px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+  }
+
+  .marketDataSection :global(.market-data-card--wide).marketDataHeroCard {
+    padding: 40px;
+  }
+
+  .disclaimerSection,
+  .targetAudienceSection,
+  .investmentDisclaimerSection,
+  .termsSection,
+  .copyrightSection,
+  .faqSection,
+  .applicableLawSection,
+  .amendmentHistorySection {
+    margin-top: 96px;
+  }
+
+  .itemsGrid {
+    gap: 36px;
+    margin-top: 64px;
+  }
+
+  .investmentDisclaimerTitle {
+    max-width: 860px;
+  }
+
+  .applicableLawGrid {
+    gap: 36px;
+    margin-top: 64px;
+  }
+
+  .amendmentHistoryGrid {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    justify-items: center;
+    gap: 28px;
+    margin-top: 64px;
+  }
+
+  .faqQuestions {
+    margin-top: 64px;
+  }
+
+  .amendmentHistoryCardFirst,
+  .amendmentHistoryCardSecond {
+    height: auto;
+    width: min(100%, 680px);
+    min-height: 349px;
+    padding: 11px 23px 27px;
+    justify-self: center;
+  }
+
+  .amendmentHistoryImage {
+    width: 220px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  .title,
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .text,
+  .sectionLeadText {
+    font-size: 16px;
+  }
+
+  .marketDataSection {
+    margin-top: 100px;
+    justify-content: center;
+  }
+
+  .marketDataSection :global(.market-data-card--wide).marketDataHeroCard {
+    padding: 20px;
+  }
+
+  .marketDataHeroCard :global(.market-data-card__content) {
+    gap: 12px;
+  }
+
+  .marketDataHeroCard :global(.market-data-card__image-wrapper) {
+    top: -32px;
+    left: -32px;
+    width: min(260px, 58vw);
+    height: auto;
+  }
+
+  .marketDataHeroCard :global(.market-data-card__image) {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+
+  .disclaimerSection,
+  .targetAudienceSection,
+  .investmentDisclaimerSection,
+  .termsSection,
+  .copyrightSection,
+  .faqSection,
+  .applicableLawSection,
+  .amendmentHistorySection {
+    margin-top: 100px;
+  }
+
+  .itemsGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 60px;
+  }
+
+  .bulletList,
+  .lineOnlyList {
+    margin-top: 60px;
+  }
+
+  .lineOnlyList {
+    padding-left: 30px;
+    gap: 15px;
+  }
+
+  .applicableLawGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 60px;
+  }
+
+  .amendmentHistoryGrid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .faqQuestions {
+    margin-top: 60px;
+  }
+
+  .amendmentHistoryCardFirst,
+  .amendmentHistoryCardSecond {
+    width: min(100%, 670px);
+    min-height: 339px;
+    padding: 3px 14px 15px;
+    justify-self: center;
+  }
+
+  .amendmentHistoryImage {
+    width: 180px;
+  }
+
+  .amendmentHistoryTitle {
+    margin-bottom: 18px;
+    font-size: 28px;
+  }
+
+  .amendmentHistoryText {
+    font-size: 16px;
+  }
+}

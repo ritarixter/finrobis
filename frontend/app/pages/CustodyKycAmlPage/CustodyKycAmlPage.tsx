@@ -65,7 +65,11 @@ export function CustodyKycAmlPage() {
           {custodyKycAml.aml.title} <span>{custodyKycAml.aml.accentTitle}</span>
         </h2>
 
-        <ItemTextWithImageList items={custodyKycAml.aml.items} className={styles.amlList} />
+        <ItemTextWithImageList
+          items={custodyKycAml.aml.items}
+          className={styles.amlList}
+          itemClassName={styles.compactItemTextWithImage}
+        />
       </section>
 
       <section className={styles.complianceSection}>
@@ -77,6 +81,7 @@ export function CustodyKycAmlPage() {
         <ItemTextWithImageList
           items={custodyKycAml.complianceFramework.items}
           className={styles.complianceList}
+          itemClassName={styles.compactItemTextWithImage}
         />
       </section>
 

@@ -173,6 +173,11 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
+    justify-items: center;
+  }
+
+  .benefitsGrid > * {
+    justify-self: center;
   }
 
   .whoGrid {

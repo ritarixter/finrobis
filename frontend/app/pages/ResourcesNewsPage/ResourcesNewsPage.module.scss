@@ -91,8 +91,10 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  height: 342px;
-  min-height: 342px;
+  height: 288px;
+  min-height: 288px;
+  padding-top: 80px;
+  padding-left: 80px;
 }
 
 .newsSection {
@@ -128,9 +130,9 @@
 .newsSidebar {
   display: flex;
   flex-direction: column;
-  width: 303px;
-  min-width: 303px;
-  height: 337px;
+  width: 283px;
+  min-width: 283px;
+  height: 317px;
   padding: 50px;
   box-sizing: border-box;
   gap: 24px;
@@ -175,13 +177,13 @@
 
 .newsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 616px);
+  grid-template-columns: repeat(2, 600px);
   gap: 30px;
 }
 
 .newsCard {
-  width: 616px;
-  height: 416px;
+  width: 600px;
+  height: 400px;
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -296,7 +298,7 @@
   margin-top: 143px;
 }
 
-@include responsive(tablet) {
+@media (min-width: 601px) and (max-width: 1366px) {
   .page {
     padding-top: 24px;
     padding-bottom: 100px;
@@ -343,16 +345,20 @@
 
   .newsSection {
     flex-direction: column;
-    gap: 24px;
+    gap: 30px;
+    align-items: center;
   }
 
   .newsSidebar {
     width: 100%;
     min-width: 0;
     height: auto;
-    padding: 24px;
+    padding: 24px 20px;
     gap: 16px;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
   }
 
   .categoryButton {
@@ -362,16 +368,27 @@
     align-self: center;
   }
 
-  .newsGrid {
-    justify-items: center;
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .cardTop {
+    gap: 14px;
   }
 
-  .newsCard {
-    width: min(616px, 100%);
-    height: auto;
-    min-height: 340px;
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .datePill {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .lines {
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .line {
+    font-size: 12px;
+    line-height: 1.15;
   }
 
   .categoriesSection,
@@ -394,44 +411,65 @@
   }
 }
 
-@include responsive(screen) {
-  .newsSection {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .newsSidebar {
-    width: 100%;
-    min-width: 0;
-    height: auto;
-    padding: 28px;
-    gap: 16px;
-  }
-
+@media (min-width: 1181px) and (max-width: 1366px) {
   .newsGrid {
-    width: 100%;
+    width: fit-content;
+    margin: 0 auto;
     justify-items: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 550px);
     gap: 24px;
+    align-self: center;
   }
 
   .newsCard {
-    width: min(616px, 100%);
-    height: auto;
-    min-height: 320px;
-    padding: 40px;
+    width: 550px;
+    max-width: 550px;
+    height: 350px;
+    min-height: 350px;
+    padding: 50px;
   }
 
   .cardTitle {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .datePill {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .line {
-    font-size: 16px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1180px) {
+  .newsGrid {
+    width: fit-content;
+    margin: 0 auto;
+    justify-items: center;
+    grid-template-columns: 550px;
+    gap: 24px;
+    align-self: center;
+  }
+
+  .newsCard {
+    width: 550px;
+    max-width: 550px;
+    height: 350px;
+    min-height: 350px;
+    padding: 50px;
+  }
+
+  .cardTitle {
+    font-size: 19px;
+  }
+
+  .datePill {
+    font-size: 14px;
+  }
+
+  .line {
+    font-size: 14px;
   }
 }
 
@@ -484,9 +522,17 @@
     margin-bottom: 64px;
   }
 
+  .marketDataSection :global(.market-data-card--wide) {
+    height: auto;
+    min-height: auto;
+  }
+
   .newsSidebar {
     padding: 20px;
     align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
   }
 
   .categoryButton {
@@ -497,31 +543,37 @@
   }
 
   .newsGrid {
-    gap: 20px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
 
   .newsCard {
-    width: min(100%, 616px);
-    padding: 32px 24px;
-    min-height: 300px;
+    width: min(100%, 360px);
+    max-width: 360px;
+    padding: 24px 18px;
+    min-height: 260px;
   }
 
   .cardTitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .datePill {
-    font-size: 14px;
-    padding: 7px 14px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .line {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .lines {
-    gap: 6px;
-    margin-top: 8px;
+    gap: 4px;
+    margin-top: 5px;
   }
 
   .categoriesSection,

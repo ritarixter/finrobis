@@ -1,1 +1,559 @@
 @use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 143px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.hiddenTitle {
+  display: none;
+}
+
+.marketDataBody {
+  max-width: 860px;
+}
+
+.marketDataSection :global(.market-data-card--wide) {
+  height: 214px;
+  min-height: 214px;
+}
+
+.marketDataSection :global(.market-data-card--wide .market-data-card__content) {
+  gap: 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.sectionTitleAccent {
+  color: #ffd700;
+}
+
+.controllerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.controllerCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1367px, 100%);
+  min-height: 555px;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: var(--Grey-11, #1c1c1c);
+  overflow: hidden;
+}
+
+.controllerDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(240px, 22vw);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.controllerPanel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 455px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid var(--Grey-15, #262626);
+  background: var(--Grey-10, #1a1a1a);
+}
+
+.controllerList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+}
+
+.controllerRow {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.1fr) minmax(0, 1.7fr);
+  column-gap: 48px;
+  align-items: center;
+  width: 100%;
+}
+
+.controllerRowTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.controllerRowText {
+  margin: 0;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.legalBasesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.legalBasesText {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.sectionLeadText {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.legalBasesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 66px;
+}
+
+.categoriesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.dataCategoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 80px;
+  width: 100%;
+  margin-top: 80px;
+  align-items: stretch;
+}
+
+.dataCategoryItem {
+  width: 100%;
+}
+
+.purposesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.purposesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+  margin-top: 80px;
+  align-items: stretch;
+}
+
+.purposeCard {
+  width: 100%;
+}
+
+.thirdPartiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.retentionPeriodsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.rightsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.rightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.rightCard {
+  width: 100%;
+}
+
+.dataSecuritySection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.dataSecurityList {
+  margin-top: 80px;
+}
+
+.dataSecurityList :global(.text-list__item)::before {
+  content: none;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.faqQuestions {
+  width: 100%;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 96px;
+    padding-bottom: 100px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .marketDataSection {
+    margin-top: 96px;
+  }
+
+  .controllerSection {
+    margin-top: 96px;
+    gap: 64px;
+  }
+
+  .legalBasesSection {
+    margin-top: 96px;
+  }
+
+  .categoriesSection,
+  .purposesSection,
+  .thirdPartiesSection,
+  .retentionPeriodsSection,
+  .rightsSection,
+  .dataSecuritySection,
+  .faqSection {
+    margin-top: 96px;
+  }
+
+  .legalBasesList {
+    margin-top: 48px;
+  }
+
+  .controllerCard {
+    min-height: auto;
+    padding: 40px;
+  }
+
+  .controllerDecor {
+    width: min(220px, 30vw);
+  }
+
+  .controllerPanel {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .controllerList {
+    gap: 40px;
+  }
+
+  .controllerRow {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    column-gap: 0;
+  }
+
+  .legalBasesText {
+    max-width: 100%;
+  }
+
+  .sectionLeadText {
+    max-width: 100%;
+  }
+
+  .dataCategoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .purposesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .retentionPeriodsSection {
+    gap: 64px;
+  }
+
+  .rightsSection {
+    gap: 64px;
+  }
+
+  .rightsGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .dataSecuritySection {
+    gap: 12px;
+  }
+
+  .dataSecurityList {
+    margin-top: 48px;
+  }
+
+  .faqSection {
+    gap: 64px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .marketDataSection {
+    margin-top: 64px;
+  }
+
+  .controllerSection {
+    margin-top: 64px;
+    gap: 40px;
+  }
+
+  .legalBasesSection {
+    margin-top: 64px;
+  }
+
+  .categoriesSection,
+  .purposesSection,
+  .thirdPartiesSection,
+  .retentionPeriodsSection,
+  .rightsSection,
+  .dataSecuritySection,
+  .faqSection {
+    margin-top: 64px;
+  }
+
+  .legalBasesText {
+    font-size: 16px;
+  }
+
+  .sectionLeadText {
+    font-size: 16px;
+  }
+
+  .legalBasesList {
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .controllerCard {
+    padding: 24px;
+  }
+
+  .controllerDecor {
+    width: min(180px, 42vw);
+  }
+
+  .controllerPanel {
+    padding: 20px;
+  }
+
+  .controllerList {
+    gap: 28px;
+  }
+
+  .controllerRow {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    column-gap: 0;
+  }
+
+  .controllerRowTitle {
+    font-size: 24px;
+  }
+
+  .controllerRowText {
+    font-size: 16px;
+  }
+
+  .legalBasesSection {
+    gap: 12px;
+  }
+
+  .legalBasesText {
+    max-width: 100%;
+  }
+
+  .categoriesSection,
+  .purposesSection,
+  .thirdPartiesSection,
+  .retentionPeriodsSection,
+  .rightsSection,
+  .dataSecuritySection,
+  .faqSection {
+    gap: 12px;
+  }
+
+  .dataCategoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .purposesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+
+  .retentionPeriodsSection {
+    gap: 40px;
+  }
+
+  .rightsSection {
+    gap: 40px;
+  }
+
+  .rightsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .dataSecuritySection {
+    gap: 12px;
+  }
+
+  .dataSecurityList {
+    margin-top: 32px;
+  }
+
+  .faqSection {
+    gap: 40px;
+  }
+}

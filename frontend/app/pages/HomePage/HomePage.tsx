@@ -35,7 +35,11 @@ export const HomePage = () => {
           {homepage.sections.core.title}{" "}
           <span className="yellow">{homepage.sections.core.accentTitle}</span>
         </h2>
-        <ItemTextWithImageList items={homepage.solutions} />
+        <ItemTextWithImageList
+          className={styles.solutionsList}
+          itemClassName={styles.solutionItem}
+          items={homepage.solutions}
+        />
       </section>
 
       <section className={styles.why}>

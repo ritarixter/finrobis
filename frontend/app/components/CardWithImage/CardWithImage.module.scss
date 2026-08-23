@@ -85,12 +85,13 @@
   .card {
     padding: 20px;
     padding-bottom: 48px;
-    gap: 20px;
+    gap: 16px;
     border-radius: 24px 24px 16px 16px;
   }
 
   .card__image {
-    max-height: 220px;
+    max-height: 200px;
+    object-position: center top;
     border-radius: 24px 24px 16px 16px;
   }
 

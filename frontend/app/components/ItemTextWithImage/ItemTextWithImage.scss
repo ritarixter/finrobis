@@ -34,8 +34,10 @@
 
 .item-text-with-image__image {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: var(--item-text-with-image-image-width, 100%);
+  max-width: var(--item-text-with-image-image-max-width, 100%);
+  height: var(--item-text-with-image-image-height, auto);
+  flex-basis: var(--item-text-with-image-image-width, auto);
   object-fit: cover;
   border-radius: 10px;
   align-self: center;

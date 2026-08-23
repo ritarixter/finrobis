@@ -1,1 +1,349 @@
 @use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 143px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.marketDataSection {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.noteSection {
+  display: flex;
+  width: 100%;
+  margin-top: 33px;
+}
+
+.noteList {
+  max-width: 1120px;
+}
+
+.noteList :global(.text-list__item)::before {
+  content: none;
+}
+
+.noteListItem {
+  padding-left: 0;
+}
+
+.categoriesSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.sectionTitleAccent {
+  color: #ffd700;
+}
+
+.categoriesCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 720px;
+  margin-top: 80px;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: var(--Grey-11, #1c1c1c);
+  overflow: hidden;
+}
+
+.categoriesDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(240px, 22vw);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.categoriesPanel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding: 50px 40px 60px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid var(--Grey-15, #262626);
+  background: var(--Grey-10, #1a1a1a);
+}
+
+.categoriesHeaderRow,
+.categoriesRow {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(260px, 1.4fr) minmax(180px, 0.95fr) minmax(120px, 0.55fr);
+  column-gap: 56px;
+  align-items: start;
+  width: 100%;
+}
+
+.categoriesHeaderRow {
+  margin-bottom: 48px;
+}
+
+.categoriesHeaderCell {
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  word-break: break-word;
+}
+
+.categoriesBody {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+.categoriesCell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.categoriesCellLabel {
+  display: none;
+}
+
+.categoriesCellLabelAccent {
+  color: #ffd700;
+}
+
+.categoriesCellValue {
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.specificCookiesSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.specificCookiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px 80px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.specificCookiesItem {
+  width: 100%;
+}
+
+.cookieUseSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.cookieUseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.cookieUseCard {
+  width: 100%;
+}
+
+.consentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.faqSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.faqQuestions {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.consentList {
+  margin-top: 80px;
+  max-width: 1120px;
+}
+
+.consentListItem {
+  width: 100%;
+}
+
+.consentWithdrawal {
+  margin: 25px 0 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 1120px;
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+
+  .title,
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .marketDataSection {
+    margin-top: 100px;
+  }
+
+  .categoriesSection {
+    margin-top: 100px;
+  }
+
+  .categoriesCard {
+    min-height: 0;
+    padding: 30px;
+  }
+
+  .categoriesPanel {
+    padding: 30px 20px 40px;
+  }
+
+  .categoriesHeaderRow {
+    display: none;
+  }
+
+  .categoriesBody {
+    gap: 28px;
+  }
+
+  .categoriesRow {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .categoriesCell {
+    gap: 6px;
+  }
+
+  .categoriesCellLabel {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .categoriesCellLabelAccent {
+    color: #ffd700;
+  }
+
+  .categoriesCellValue {
+    font-size: 16px;
+  }
+
+  .specificCookiesSection,
+  .cookieUseSection,
+  .consentSection,
+  .faqSection {
+    margin-top: 100px;
+  }
+
+  .specificCookiesGrid,
+  .cookieUseGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 60px;
+  }
+
+  .consentList {
+    margin-top: 60px;
+  }
+
+  .consentWithdrawal {
+    font-size: 16px;
+  }
+
+  .faqQuestions {
+    margin-top: 60px;
+  }
+}

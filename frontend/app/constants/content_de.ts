@@ -56,6 +56,9 @@ import mensIcon from "../assets/images/icons/mens.svg";
 import metricsIcon from "../assets/images/icons/metrics.svg";
 import macroIcon from "../assets/images/icons/macro.svg";
 import likeIcon from "../assets/images/icons/like.svg";
+import dislikeIcon from "../assets/images/icons/dislike.svg";
+import scalesIcon from "../assets/images/icons/scales.svg";
+import apiIcon from "../assets/images/icons/API.svg";
 import moneyIcon from "../assets/images/icons/money.svg";
 import planetIcon from "../assets/images/icons/planet.svg";
 import menIcon from "../assets/images/icons/men.svg";
@@ -81,6 +84,15 @@ import timesIcon from "../assets/images/icons/times.svg";
 import nutsIcon from "../assets/images/icons/nuts.svg";
 import nutsTimeIcon from "../assets/images/icons/nuts_time.svg";
 import regulation2Icon from "../assets/images/icons/regulation_2.svg";
+import websiteIcon from "../assets/images/icons/website.svg";
+import clientIcon from "../assets/images/icons/client.svg";
+import men2Icon from "../assets/images/icons/men_2.svg";
+import like1Icon from "../assets/images/icons/like_1.svg";
+import noneIcon from "../assets/images/icons/none.svg";
+import importantIcon from "../assets/images/icons/important.svg";
+import arrowBigIcon from "../assets/images/icons/arrow_big.svg";
+import cookieIcon from "../assets/images/icons/cookie.svg";
+import cookieNoneIcon from "../assets/images/icons/cookie_none.svg";
 import hundredIcon from "../assets/images/icons/100.svg";
 import errorIcon from "../assets/images/icons/error.svg";
 import whoWeServeIntroImage from "../assets/images/whoweserve/intro_wws.png";
@@ -2487,11 +2499,11 @@ export const content_de: ContentType = {
         ],
       },
       complianceFramework: {
-        title: "Compliance-Rahmen",
+        title: "Compliance",
         accentTitle: "Rahmen",
         items: [
           {
-            title: "",
+            title: "Sanktions\nscreening",
             text: "Automatischer Abgleich gegen OFAC-, EU-, UN- und Schweizer Sanktionslisten — bei jeder Transaktion und bei Adressänderungen.",
             imageSrc: whoWeServeCustodyCompliance1Image,
             imageAlt: "Sanctions Screening",
@@ -4044,9 +4056,176 @@ export const content_de: ContentType = {
     },
     terms: {
       meta: {
-        title: "Allgemeine Geschäftsbedingungen - Finorbis",
-        description:
-          "Lesen Sie die Allgemeinen Geschäftsbedingungen für die Nutzung der Finorbis-Dienste.",
+        title: "Haftungsausschluss & Nutzungsbedingungen - Finorbis",
+        description: "Rechtliche Hinweise zur Nutzung von finorbis.com.",
+      },
+      hero: {
+        title: "Haftungsausschluss & Nutzungsbedingungen",
+        text:
+          "Rechtliche Hinweise zur Nutzung von finorbis.com — Haftungsausschluss, Urheberrecht und zulässige Nutzung.",
+      },
+      marketData: {
+        text:
+          'Die Nutzung von finorbis.com (die "Website") unterliegt diesen Nutzungsbedingungen. Mit dem Zugriff auf die Website akzeptieren Sie diese Bedingungen ausdrücklich. Wenn Sie nicht einverstanden sind, verlassen Sie bitte die Website. Betreiber: Finorbis AG',
+        imageSrc: assetLiquidityImage,
+        imageAlt: "Asset Liquidity",
+      },
+      disclaimer: {
+        title: "I. Haftungsausschluss —",
+        accentTitle: "Haftungsausschluss",
+        items: [
+          {
+            title: "1.1 Allgemeiner Haftungsausschluss",
+            text:
+              "Die auf finorbis.com bereitgestellten Informationen dienen ausschließlich Informationszwecken. Sie stellen keine Anlage-, Steuer- oder Rechtsberatung dar und sind auch nicht so zu verstehen. Finorbis übernimmt keine Haftung für Verluste oder Schäden, die aus der Nutzung der auf dieser Website enthaltenen Informationen entstehen.",
+          },
+          {
+            title: "1.2 Keine Anlageempfehlung",
+            text:
+              "Alle auf dieser Website dargestellten Finanzstrategien, Anlagebeispiele und Renditeangaben dienen ausschließlich der Veranschaulichung. Sie stellen keine Empfehlung zum Kauf, Verkauf oder Halten von Kryptowährungen oder anderen Finanzinstrumenten dar. Die Wertentwicklung in der Vergangenheit ist kein verlässlicher Indikator für zukünftige Ergebnisse.",
+          },
+          {
+            title: "1.3 Richtigkeit und Vollständigkeit",
+            text:
+              "Finorbis bemüht sich um die Richtigkeit und Vollständigkeit der auf der Website veröffentlichten Informationen. Dennoch übernimmt Finorbis keine Gewähr für deren Aktualität, Richtigkeit, Vollständigkeit oder Eignung für einen bestimmten Zweck. Informationen können ohne vorherige Ankündigung geändert werden.",
+          },
+          {
+            title: "1.4 Externe Links",
+            text:
+              "Die Website kann Links zu externen Websites enthalten. Finorbis hat keinen Einfluss auf deren Inhalte und übernimmt keine Haftung für deren Inhalte, Angebote oder Dienstleistungen. Der Zugriff auf verlinkte externe Seiten erfolgt auf eigenes Risiko.",
+          },
+        ],
+      },
+      targetAudience: {
+        title: "II. Zielgruppe und",
+        accentTitle: "geografische Beschränkungen",
+        items: [
+          "Die auf finorbis.com veröffentlichten Informationen richten sich unter anderem an institutionelle und professionelle Investoren und Kunden. Sie sind nicht für Privatpersonen bestimmt, die nicht über das erforderliche Fachwissen verfügen.",
+          "Die Website und die dort beschriebenen Dienstleistungen sind nicht für Personen oder Unternehmen bestimmt, deren Wohnsitz oder Gesellschaftssitz in einem Land liegt, in dem die Verbreitung, Veröffentlichung oder Nutzung gegen geltende Gesetze oder Vorschriften verstoßen würde — insbesondere für US-Personen im Sinne der SEC-Vorschriften.",
+        ],
+      },
+      investmentDisclaimer: {
+        title: "III. Anlage-Disclaimer",
+        accentTitle: "(FINMA-regulierte Tätigkeiten)",
+        text:
+          "Finorbis AG ist ein VQF-lizenzierter Vermögensverwalter. Für alle anlagebezogenen Inhalte gelten die folgenden Hinweise:",
+        items: [
+          "Die Informationen richten sich ausschließlich an qualifizierte Anleger und Kunden.",
+          "Die Inhalte berücksichtigen nicht die individuellen Umstände, Ziele oder die finanzielle Situation der Nutzer.",
+          "Anlegern wird ausdrücklich empfohlen, vor jeder Anlageentscheidung eine unabhängige fachliche Beratung (rechtlich, steuerlich, finanziell) einzuholen.",
+          "Finorbis AG behält sich das Recht vor, die auf dieser Website beschriebenen Anlagestrategien jederzeit und ohne vorherige Ankündigung zu ändern.",
+        ],
+      },
+      termsOfUse: {
+        title: "IV. Nutzungs",
+        accentTitle: "bedingungen",
+        items: [
+          {
+            title: "4.1 Zulässige Nutzung",
+            text:
+              "Die Website darf nur für rechtmäßige Zwecke genutzt werden. Jede Nutzung, die gegen geltendes schweizerisches oder internationales Recht verstößt, ist untersagt. Insbesondere ist es verboten, die Website für Geldwäsche, Terrorismusfinanzierung, Marktmanipulation oder andere illegale Aktivitäten zu verwenden.",
+          },
+          {
+            title: "4.2 Verbotene Aktivitäten",
+            text:
+              "Folgende Aktivitäten sind ausdrücklich untersagt: (i) Scraping, automatisiertes Auslesen oder massenhaftes Herunterladen von Inhalten; (ii) Versuche, Sicherheitsmechanismen zu umgehen; (iii) Verbreitung von Malware oder schädlichem Code; (iv) Nutzung der Website zur Verbreitung falscher oder irreführender Informationen über Finorbis oder Kryptomärkte.",
+          },
+          {
+            title: "4.3 Zugang und Verfügbarkeit",
+            text:
+              "Finorbis behält sich das Recht vor, den Zugang zur Website jederzeit und ohne Angabe von Gründen einzuschränken oder zu beenden. Finorbis übernimmt keine Gewähr für die ununterbrochene Verfügbarkeit der Website.",
+          },
+        ],
+      },
+      copyright: {
+        title: "V. Urheberrecht und",
+        accentTitle: "geistiges Eigentum",
+        text:
+          "Alle Inhalte der Website — Texte, Grafiken, Logos, Icons, Bilder, Audiodateien, digitale Downloads und Software — sind Eigentum von Finorbis oder deren Lizenzgebern und durch schweizerisches und internationales Urheberrecht geschützt.",
+      },
+      applicableLaw: {
+        title: "VI. Anwendbares Recht und",
+        accentTitle: "Gerichtsstand",
+        items: [
+          {
+            title: "Anwendbares Recht",
+            text:
+              "Schweizer Recht, insbesondere das Bundesgesetz über das Internationale Privatrecht (IPRG) und das Obligationenrecht (OR).",
+            iconSrc: likeIcon,
+            iconAlt: "Anwendbares Recht",
+          },
+          {
+            title: "Gerichtsstand",
+            text:
+              "Zürich, Schweiz — für alle Streitigkeiten im Zusammenhang mit der Nutzung dieser Website oder der dort beschriebenen Dienstleistungen.",
+            iconSrc: dislikeIcon,
+            iconAlt: "Gerichtsstand",
+          },
+          {
+            title: "Sprache",
+            text:
+              "Im Streitfall ist die deutsche Fassung dieser Nutzungsbedingungen maßgeblich.",
+            iconSrc: scalesIcon,
+            iconAlt: "Sprache",
+          },
+          {
+            title: "Änderungsrecht",
+            text:
+              "Finorbis behält sich das Recht vor, diese Nutzungsbedingungen jederzeit und ohne vorherige Ankündigung zu ändern. Die fortgesetzte Nutzung der Website gilt als Zustimmung zu den geänderten Bedingungen.",
+            iconSrc: apiIcon,
+            iconAlt: "Änderungsrecht",
+          },
+        ],
+      },
+      amendmentHistory: {
+        title: "VII.",
+        accentTitle: "Änderungshistorie",
+        items: [
+          {
+            title: "April 2026",
+            text:
+              "Erstveröffentlichung des Haftungsausschlusses und der Nutzungsbedingungen für finorbis.com. Angepasst an das revDSG (September 2023) und die aktuellen FINMA-Anforderungen.",
+            srcImage: assetLiquidityImage,
+          },
+          {
+            title: "Geplant 2026",
+            text:
+              "Aktualisierung im Zuge der CARF-Umsetzung (Crypto-Asset Reporting Framework, OECD) zum 1. Januar 2026 in der Schweiz.",
+            srcImage: assetLiquidityImage,
+          },
+        ],
+      },
+      faq: {
+        title: "FAQ —",
+        accentTitle: "Haftungsausschluss und Nutzungsbedingungen",
+        items: [
+          {
+            id: 1,
+            question: "Gilt diese Website auch für US-Personen?",
+            answer: "answer",
+          },
+          {
+            id: 2,
+            question: "Sind die auf der Website genannten Renditen garantiert?",
+            answer:
+              "Nein. Alle Renditeangaben, Staking-Erträge und Performancewerte auf finorbis.com sind historische Werte oder Schätzungen. Finorbis garantiert keine zukünftigen Erträge. Krypto-Investitionen sind mit erheblichen Risiken verbunden.",
+          },
+          {
+            id: 3,
+            question: "An wen kann ich mich bei rechtlichen Fragen wenden?",
+            answer: "answer",
+          },
+          {
+            id: 4,
+            question: "An wen kann ich mich bei rechtlichen Fragen wenden?",
+            answer: "answer",
+          },
+          {
+            id: 5,
+            question: "An wen kann ich mich bei rechtlichen Fragen wenden?",
+            answer: "answer",
+          },
+        ],
       },
     },
     privacy: {
@@ -4054,11 +4233,411 @@ export const content_de: ContentType = {
         title: "Datenschutzrichtlinie - Finorbis",
         description: "Lesen Sie die Datenschutzrichtlinie von Finorbis.",
       },
+      hero: {
+        title: "Datenschutzrichtlinie",
+        text:
+          "Wie Finorbis personenbezogene Daten erhebt, verarbeitet und schützt — in Übereinstimmung mit dem revDSG (Schweiz) und der DSGVO (EU).",
+      },
+      marketData: {
+        title: "Geltungsbereich",
+        text:
+          "Diese Datenschutzrichtlinie gilt für die Website finorbis.com und alle zugehörigen Plattformen der Finorbis AG.",
+        imageSrc: assetLiquidityImage,
+        imageAlt: "Asset Liquidity",
+      },
+      controller: {
+        title: "I.",
+        accentTitle: "Verantwortlicher",
+        items: [
+          { title: "Unternehmen", text: "Finorbis AG" },
+          { title: "Adresse", text: "Zugerstrasse 46, 6314 Unterägeri, Schweiz" },
+          { title: "E-Mail", text: "privacy@finorbis.com" },
+          { title: "Datenschutzbeauftragter", text: "compliance@finorbis.com" },
+        ],
+      },
+      legalBases: {
+        title: "II.",
+        accentTitle: "Rechtsgrundlagen",
+        text:
+          "Die Verarbeitung personenbezogener Daten durch Finorbis erfolgt auf Grundlage der folgenden Rechtsgrundlagen:",
+        items: [
+          "Bundesgesetz über den Datenschutz (nDSG / DSG), in Kraft seit September 2023",
+          "Fernmeldegesetz (FMG), Art. 45c — Regelung zur Verwendung von Cookies und Tracking-Technologien",
+          "Datenschutz-Grundverordnung (DSGVO) für Nutzer aus EU-Mitgliedstaaten",
+          "Erfüllung gesetzlicher Pflichten gemäß VQF-SRO-Mitgliedschaft und FINMA-Anforderungen (FinSA, FinIA, AMLA)",
+        ],
+      },
+      categories: {
+        title: "III.",
+        accentTitle: "Kategorien der erhobenen Daten",
+        text:
+          "Finorbis erhebt und verarbeitet je nach Art der Interaktion und des Rechtsverhältnisses die folgenden Kategorien personenbezogener Daten:",
+        items: [
+          {
+            title: "3.1 Technische Nutzungsdaten",
+            text:
+              "Beim Besuch der Website werden automatisch folgende Daten erfasst: IP-Adresse (nach 6 Monaten anonymisiert), Browsertyp und -version, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs, besuchte Seiten und Verweildauer. Rechtsgrundlage: berechtigtes Interesse (Art. 31 nDSG).",
+          },
+          {
+            title: "3.2 Kontakt- und Vertragsdaten",
+            text:
+              "Bei Nutzung des Kontaktformulars oder im Rahmen einer Geschäftsbeziehung: Vor- und Nachname, Firmenname, E-Mail-Adresse, Telefonnummer, Position/Rolle. Rechtsgrundlage: Vertragserfüllung, berechtigtes Interesse.",
+          },
+          {
+            title: "3.3 KYC/AML-Daten (Kunden)",
+            text:
+              "Im Rahmen der gesetzlich vorgeschriebenen Kundenidentifikation: Ausweisdokumente (Reisepass, Personalausweis), Wohnsitznachweis, Firmendokumente (für juristische Personen), wirtschaftlich Berechtigte (UBO). Rechtsgrundlage: rechtliche Verpflichtung (AMLA, FinSA).",
+          },
+        ],
+      },
+      purposes: {
+        title: "IV.",
+        accentTitle: "Zwecke der Datenverarbeitung",
+        text:
+          "Finorbis verwendet personenbezogene Daten ausschließlich für definierte, rechtmäßige und verhältnismäßige Zwecke:",
+        items: [
+          {
+            title: "Website-Betrieb",
+            text: "Technische Bereitstellung, Fehlerbehebung, Sicherheit und Missbrauchsprävention.",
+            iconSrc: websiteIcon,
+            iconAlt: "Website-Betrieb",
+          },
+          {
+            title: "Kundenkommunikation",
+            text: "Beantwortung von Anfragen, Versand von Vertragsdokumenten und operative Kommunikation.",
+            iconSrc: clientIcon,
+            iconAlt: "Kundenkommunikation",
+          },
+          {
+            title: "Vertragserfüllung",
+            text: "Abwicklung von Mandaten für Trading, Verwahrung, Staking und Vermögensverwaltung.",
+            iconSrc: regulation2Icon,
+            iconAlt: "Vertragserfüllung",
+          },
+          {
+            title: "Regulatorische Compliance",
+            text: "KYC/AML-Prüfungen, Transaktionsüberwachung und Berichtspflichten gegenüber Behörden.",
+            iconSrc: courtIcon,
+            iconAlt: "Regulatorische Compliance",
+          },
+          {
+            title: "Produktverbesserung",
+            text: "Analyse der Website-Nutzung zur Optimierung von Inhalten und Nutzerführung (anonymisiert).",
+            iconSrc: arrow2Icon,
+            iconAlt: "Produktverbesserung",
+          },
+          {
+            title: "Marketing (mit Einwilligung)",
+            text: "Newsletter, Veranstaltungseinladungen und Produkt-Updates — nur mit ausdrücklicher Einwilligung.",
+            iconSrc: men2Icon,
+            iconAlt: "Marketing mit Einwilligung",
+          },
+        ],
+      },
+      thirdParties: {
+        title: "V.",
+        accentTitle: "Weitergabe von Daten an Dritte",
+        text: "Finorbis gibt personenbezogene Daten nur in den folgenden Fällen an Dritte weiter:",
+        items: [
+          "Dienstleister: Hosting, CRM, Compliance-Tools — vertraglich zur Vertraulichkeit und zum Datenschutz verpflichtet",
+          "Behörden: auf rechtliche Anfrage — FINMA, MROS (Meldestelle für Geldwäscherei), VQF-SRO",
+          "Partner: Bank- und Zahlungspartner für die operative Abwicklung — nur soweit vertraglich erforderlich",
+          "Drittländer: Datenübermittlungen in Länder ohne angemessenes Datenschutzniveau (z. B. die USA) erfolgen nur mit geeigneten Garantien (SCCs, Einwilligung)",
+        ],
+      },
+      retentionPeriods: {
+        title: "VI.",
+        accentTitle: "Aufbewahrungsfristen",
+        items: [
+          { title: "Technische Protokolle", text: "6 Monate" },
+          {
+            title: "Kontaktdaten aus dem Formular",
+            text: "2 Jahre nach dem letzten Kontakt (ohne Vertragsabschluss)",
+          },
+          {
+            title: "KYC/AML-Dokumente",
+            text: "10 Jahre nach Ende der Geschäftsbeziehung (gesetzliche Aufbewahrungspflicht)",
+          },
+          { title: "Transaktionsdaten", text: "10 Jahre (AMLA-Anforderung)" },
+          { title: "Cookie-Einwilligungen", text: "12 Monate" },
+          { title: "Marketingdaten", text: "Bis zum Widerruf der Einwilligung" },
+        ],
+      },
+      rights: {
+        title: "VII.",
+        accentTitle: "Ihre Rechte",
+        items: [
+          {
+            title: "Auskunftsrecht",
+            text: "Sie haben das Recht zu erfahren, welche Daten Finorbis über Sie gespeichert hat — auf Anfrage an privacy@finorbis.com.",
+            iconSrc: like1Icon,
+            iconAlt: "Auskunftsrecht",
+          },
+          {
+            title: "Recht auf Berichtigung",
+            text: "Sie können unrichtige oder unvollständige Daten jederzeit berichtigen lassen.",
+            iconSrc: nutsIcon,
+            iconAlt: "Recht auf Berichtigung",
+          },
+          {
+            title: "Recht auf Löschung",
+            text: "Sie können die Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+            iconSrc: noneIcon,
+            iconAlt: "Recht auf Löschung",
+          },
+          {
+            title: "Widerspruchsrecht",
+            text: "Sie können der Verarbeitung Ihrer Daten auf Grundlage berechtigter Interessen jederzeit widersprechen.",
+            iconSrc: importantIcon,
+            iconAlt: "Widerspruchsrecht",
+          },
+          {
+            title: "Recht auf Datenübertragbarkeit",
+            text: "Sie können Ihre Daten in einem strukturierten, maschinenlesbaren Format anfordern.",
+            iconSrc: arrowBigIcon,
+            iconAlt: "Recht auf Datenübertragbarkeit",
+          },
+          {
+            title: "Beschwerde beim FDPIC",
+            text: "Bei Verstößen können Sie beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB/FDPIC) Beschwerde einreichen.",
+            iconSrc: support2Icon,
+            iconAlt: "Beschwerde beim FDPIC",
+          },
+        ],
+      },
+      dataSecurity: {
+        title: "VIII.",
+        accentTitle: "Datensicherheit",
+        items: [
+          "Finorbis setzt technische und organisatorische Maßnahmen ein, um personenbezogene Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen: TLS-1.3-Verschlüsselung aller Datenübertragungen, Zugriffskontrolle nach dem Need-to-know-Prinzip, regelmäßige Penetrationstests (ComSec / NCC Group), SOC2-konforme Infrastruktur und Verschlüsselung aller gespeicherten sensiblen Daten.",
+        ],
+      },
+      faq: {
+        title: "FAQ —",
+        accentTitle: "Datenschutzrichtlinie",
+        items: [
+          {
+            id: 1,
+            question: "Wie kann ich meine gespeicherten Daten einsehen?",
+            answer: "answer",
+          },
+          {
+            id: 2,
+            question: "Übermittelt Finorbis Daten in die USA?",
+            answer:
+              "Einzelne Dienstleister (z. B. Cloudflare) haben ihren Sitz in den USA. Datenübermittlungen erfolgen auf Basis der EU-Standardvertragsklauseln (SCCs). Details sind auf Anfrage in unseren Verarbeitungsverzeichnissen verfügbar.",
+          },
+          {
+            id: 3,
+            question: "Übermittelt Finorbis Daten in die USA?",
+            answer: "answer",
+          },
+          {
+            id: 4,
+            question: "Übermittelt Finorbis Daten in die USA?",
+            answer: "answer",
+          },
+          {
+            id: 5,
+            question: "Übermittelt Finorbis Daten in die USA?",
+            answer: "answer",
+          },
+        ],
+      },
+    },
+    regulatoryInformation: {
+      meta: {
+        title: "Regulatorische Informationen - Finorbis",
+        description: "Rechtliche Informationen zu den regulierten Finorbis-Gesellschaften.",
+      },
+      hero: {
+        title: "Regulatorische Informationen",
+        text:
+          "Rechtliche Informationen zu den regulierten Finorbis-Gesellschaften — für Kunden und Investoren",
+      },
+      entity: {
+        title: "Finorbis",
+        accentTitle: "AG",
+        items: [
+          { title: "Vollständiger Name", text: "Finorbis AG" },
+          { title: "Handelsregisternummer", text: "CH-170.3.051.619-2" },
+          { title: "Eingetragener Sitz", text: "Zugerstrasse 46, 6314 Unterägeri, Schweiz" },
+          {
+            title: "Regulatorischer Status",
+            text: "Mitglied der VQF — Association for Quality Assurance of Financial Services (SRO)",
+          },
+          {
+            title: "Tätigkeiten",
+            text: "Handel mit digitalen Vermögenswerten, Staking, Verwahrung, Geld- und Vermögenstransfer",
+          },
+          {
+            title: "AML-Aufsicht",
+            text: "Jährliche AML-Prüfung gemäß dem Schweizer Geldwäschereigesetz (AMLA)",
+          },
+          { title: "Kontakt", text: "info@finorbis.com" },
+        ],
+      },
+      riskNotices: {
+        title: "Allgemeine Risikohinweise",
+        text:
+          "Die von der Finorbis AG angebotenen Vermögensverwaltungs- und Anlageberatungsdienstleistungen sind mit erheblichen finanziellen Risiken verbunden. Finorbis weist ausdrücklich auf Folgendes hin:",
+        items: [
+          "Die Finorbis AG garantiert weder Renditen noch die Werterhaltung von Anlagen.",
+          "Der Wert digitaler Vermögenswerte kann erheblich schwanken und sowohl steigen als auch fallen.",
+          "Anlageentscheidungen sollten auf Grundlage der individuellen Risikobereitschaft, des Anlagehorizonts und der finanziellen Situation getroffen werden.",
+          'Vor Vertragsabschluss erhalten alle Kunden die Broschüre "Risiken im Handel mit Finanzinstrumenten" — auch verfügbar unter www.swissbanking.org.',
+          "Die Wertentwicklung in der Vergangenheit ist kein verlässlicher Indikator für zukünftige Ergebnisse.",
+        ],
+      },
     },
     cookies: {
       meta: {
         title: "Cookie-Richtlinie - Finorbis",
-        description: "Lesen Sie die Cookie-Richtlinie von Finorbis.",
+        description:
+          "Welche Cookies Finorbis verwendet, zu welchem Zweck und wie Sie Ihre Einwilligung verwalten können.",
+      },
+      hero: {
+        title: "Cookie-Richtlinie",
+        text:
+          "Welche Cookies Finorbis verwendet, zu welchem Zweck — und wie Sie Ihre Einwilligung verwalten können",
+      },
+      marketData: {
+        title: "Was sind Cookies?",
+        text:
+          "Cookies sind kleine Textdateien, die auf Ihrem Gerät (Computer, Tablet, Smartphone) gespeichert werden, wenn Sie eine Website besuchen. Sie ermöglichen es Websites, Informationen über Ihren Besuch zu speichern und bei einem späteren Besuch abzurufen. Cookies enthalten in der Regel keine personenbezogenen Informationen, können jedoch mit anderen Daten kombiniert werden.",
+        imageSrc: assetLiquidityImage,
+        imageAlt: "Asset Liquidity",
+      },
+      policyNote: {
+        items: [
+          "Diese Cookie-Richtlinie gilt für finorbis.com und alle Subdomains. Sie ergänzt unsere Datenschutzrichtlinie. Rechtsgrundlage: Fernmeldegesetz (FMG) Art. 45c (Schweiz) und DSGVO (für EU-Nutzer). Letzte Aktualisierung: April 2026.",
+        ],
+      },
+      categories: {
+        title: "Cookie",
+        accentTitle: "Kategorien",
+        headers: ["Kategorie", "Zweck", "Beispiele", "Deaktivierbar"],
+        rows: [
+          {
+            category: "Notwendig",
+            purpose: "Grundlegende Website-Funktionen: Login-Status, Sicherheit, Lastverteilung",
+            examples: "__cf_bm, AWSALB, session_id",
+            deactivatable: "Nein",
+          },
+          {
+            category: "Präferenzen",
+            purpose: "Speicherung von Nutzereinstellungen wie Sprache und Region",
+            examples: "lang, region_pref",
+            deactivatable: "Ja",
+          },
+          {
+            category: "Analyse",
+            purpose: "Anonymisierte Nutzungsanalyse zur Verbesserung der Website (keine Personenidentifikation)",
+            examples: "_ga, _gid (anonymisiert)",
+            deactivatable: "Ja",
+          },
+          {
+            category: "Marketing",
+            purpose: "Personalisierte Werbung und Cross-Website-Tracking",
+            examples: "_fbp, _gcl_au",
+            deactivatable: "Ja",
+          },
+        ],
+      },
+      specificCookies: {
+        title: "Spezifische Cookies auf",
+        accentTitle: "finorbis.com",
+        items: [
+          {
+            title: "__cf_bm (Cloudflare)",
+            text: "Notwendig. Unterscheidet Menschen von Bots. Gültigkeit: 30 Minuten. Anbieter: Cloudflare Inc.",
+          },
+          {
+            title: "AWSALB/AWSALBCORS",
+            text: "Notwendig. Lastverteilung zwischen Server-Clustern. Gültigkeit: 7 Tage. Anbieter: Amazon Web Services.",
+          },
+          {
+            title: "_ga / _gid (Google)",
+            text: "Analyse (nur mit Einwilligung). Anonymisierte Nutzungsanalyse. Gültigkeit: 2 Jahre / 24 Stunden. Anbieter: Google LLC.",
+          },
+          {
+            title: "Cookie-Einwilligung",
+            text: "Notwendig. Speichert Ihre Cookie-Einwilligung. Gültigkeit: 12 Monate. Anbieter: Finorbis.",
+          },
+        ],
+      },
+      legalBasesForCookieUse: {
+        title: "Rechtsgrundlagen für",
+        accentTitle: "die Cookie-Nutzung",
+        items: [
+          {
+            title: "Notwendige Cookies (kein Consent nötig)",
+            text:
+              "Technisch erforderliche Cookies dürfen ohne Einwilligung gesetzt werden, da ihre Verwendung als verhältnismäßig gilt — sie sind für den Betrieb der Website wesentlich (Art. 45c FMG, nDSG).",
+            iconSrc: cookieIcon,
+            iconAlt: "Notwendige Cookies",
+          },
+          {
+            title: "Nicht notwendige Cookies (Einwilligung erforderlich)",
+            text:
+              "Analyse-, Präferenz- und Marketing-Cookies erfordern Ihre ausdrückliche Einwilligung. Diese kann jederzeit über das Cookie-Banner oder das Consent-Management-Tool erteilt oder widerrufen werden.",
+            iconSrc: cookieNoneIcon,
+            iconAlt: "Nicht notwendige Cookies",
+          },
+          {
+            title: "EU-Nutzer (DSGVO)",
+            text:
+              "Für Nutzer aus EU-Mitgliedstaaten gilt zusätzlich die DSGVO. Alle nicht notwendigen Cookies erfordern eine ausdrückliche, vorherige Einwilligung (Opt-in). Keine vorausgewählten Häkchen, keine Dark Patterns.",
+            iconSrc: mensIcon,
+            iconAlt: "EU-Nutzer",
+          },
+          {
+            title: "Cookies von Drittanbietern",
+            text:
+              "Einige Cookies werden von Drittanbietern gesetzt (Google, HubSpot, Cloudflare). Deren Datenschutzrichtlinien gelten zusätzlich zu dieser Cookie-Richtlinie.",
+            iconSrc: hsmIcon,
+            iconAlt: "Cookies von Drittanbietern",
+          },
+        ],
+      },
+      managingConsent: {
+        title: "Verwaltung",
+        accentTitle: "der Einwilligung",
+        items: [
+          "Cookie-Banner: Beim ersten Besuch von finorbis.com erscheint ein Banner, über das Sie Ihre Einstellungen festlegen können.",
+          'Consent-Management-Tool: jederzeit über den Link "Cookie Settings" in der Fußzeile der Website verfügbar.',
+          "Browser-Einstellungen: Die meisten Browser erlauben das Blockieren oder Löschen von Cookies unter Einstellungen > Datenschutz.",
+          "Opt-out-Links: Für Google Analytics: tools.google.com/dlpage/gaoptout. Für HubSpot: Widerspruch per E-Mail an privacy@finorbis.com.",
+        ],
+        withdrawalText:
+          "Der Widerruf Ihrer Einwilligung für nicht notwendige Cookies ist jederzeit möglich und wird ab dem Zeitpunkt des Widerrufs wirksam. Die Rechtmäßigkeit der bis zu diesem Zeitpunkt erfolgten Datenverarbeitung bleibt davon unberührt.",
+      },
+      faqCookiePolicy: {
+        title: "FAQ —",
+        accentTitle: "Cookie-Richtlinie",
+        items: [
+          {
+            question: "Kann ich die Website ohne Cookies nutzen?",
+            answer: "answer",
+          },
+          {
+            question: "Wie lange werden Cookie-Daten gespeichert?",
+            answer:
+              "Die Speicherdauer variiert je nach Cookie — von 30 Minuten (Session-Cookies) bis zu 13 Monaten (Marketing-Cookies). Die genaue Dauer ist in der Cookie-Tabelle aufgeführt.",
+          },
+          {
+            question: "Was passiert, wenn ich Cookies ablehne?",
+            answer: "answer",
+          },
+          {
+            question: "Was passiert, wenn ich Cookies ablehne?",
+            answer: "answer",
+          },
+          {
+            question: "Was passiert, wenn ich Cookies ablehne?",
+            answer: "answer",
+          },
+        ],
       },
     },
   },

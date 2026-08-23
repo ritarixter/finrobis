@@ -126,6 +126,10 @@
   line-height: 1.5;
 }
 
+.legalPrimary {
+  margin-right: 179px;
+}
+
 .legal span {
   width: 1px;
   height: 24px;
@@ -144,6 +148,10 @@
 
   .contacts {
     flex-wrap: wrap;
+  }
+
+  .legalPrimary {
+    margin-right: 20px;
   }
 
   .bottom {
@@ -189,6 +197,10 @@
     justify-content: center;
     gap: 8px 12px;
     text-align: center;
+  }
+
+  .legalPrimary {
+    margin-right: 0;
   }
 
   .legal span {

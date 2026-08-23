@@ -210,6 +210,17 @@
     margin-top: 40px;
   }
 
+  .structuredProductsList :global(.item-text-with-image) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .structuredProductsList :global(.item-text-with-image__content) {
+    width: 100%;
+  }
+
   .structuredProductsList :global(.item-text-with-image__image) {
     width: 100%;
     height: auto;
@@ -264,8 +275,26 @@
     gap: 20px;
   }
 
+  .benefitsGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   .structuredProductsList {
     margin-top: 32px;
+  }
+
+  .structuredProductsList :global(.item-text-with-image) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .structuredProductsList :global(.item-text-with-image__content) {
+    width: 100%;
   }
 
   .structuredProductsList :global(.item-text-with-image__image) {

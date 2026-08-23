@@ -1,3 +1,5 @@
+@use "../../styles/responsive.scss" as *;
+
 .sectionTitle {
   margin-bottom: 80px;
 }
@@ -26,4 +28,46 @@
 
 .institutions {
   padding-bottom: 230px;
+}
+
+.solutionsList {
+  width: 100%;
+}
+
+.solutionItem {
+  width: 100%;
+}
+
+@include responsive(phone) {
+  .technologyCardsContainer {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .solutionItem {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .solutionItem :global(.item-text-with-image__content) {
+    width: 100%;
+  }
+
+  .solutionItem :global(.item-text-with-image__image) {
+    width: 100%;
+    max-width: 375px;
+    aspect-ratio: 375 / 95;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .solutionItem :global(.item-text__title) {
+    font-size: 36px;
+  }
+
+  .solutionItem :global(.item-text__text) {
+    font-size: 15px;
+  }
 }

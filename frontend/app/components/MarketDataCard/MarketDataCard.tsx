@@ -27,6 +27,8 @@ export interface MarketDataCardProps {
   descriptionClassName?: string;
   imageWrapperClassName?: string;
   imageClassName?: string;
+  imageWrapperStyle?: CSSProperties;
+  imageStyle?: CSSProperties;
 }
 
 export function MarketDataCard({
@@ -48,6 +50,8 @@ export function MarketDataCard({
   descriptionClassName = "",
   imageWrapperClassName = "",
   imageClassName = "",
+  imageWrapperStyle,
+  imageStyle,
 }: MarketDataCardProps) {
   const rootClassName = ["market-data-card", `market-data-card--${variant}`, className]
     .filter(Boolean)
@@ -90,8 +94,8 @@ export function MarketDataCard({
         ) : null}
       </div>
 
-      <div className={imageWrapperName} aria-hidden={imageAlt === ""}>
-        <img className={imageName} src={imageSrc} alt={imageAlt} />
+      <div className={imageWrapperName} aria-hidden={imageAlt === ""} style={imageWrapperStyle}>
+        <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />
       </div>
     </article>
   );

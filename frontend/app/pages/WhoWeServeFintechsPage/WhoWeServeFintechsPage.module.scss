@@ -250,6 +250,12 @@
     margin-bottom: 64px;
   }
 
+  .benefitsSection :global(.benefits) {
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   .solutionsSection,
   .useCasesSection,
   .faqSection {
@@ -258,6 +264,17 @@
 
   .sectionTitle {
     font-size: 36px;
+  }
+
+  .benefitsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .benefitsGrid > * {
+    justify-self: center;
   }
 
   .faqSection {

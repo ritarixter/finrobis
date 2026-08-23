@@ -1,0 +1,264 @@
+@use "../../styles/responsive.scss" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 143px;
+  padding-bottom: 140px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.text {
+  margin: 0;
+  max-width: 1120px;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.entitySection {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.riskNoticesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 143px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.sectionTitleAccent {
+  color: #ffd700;
+}
+
+.entityCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1367px, 100%);
+  min-height: 555px;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: var(--Grey-11, #1c1c1c);
+  overflow: hidden;
+}
+
+.entityDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(240px, 22vw);
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.entityPanel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 455px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid var(--Grey-15, #262626);
+  background: var(--Grey-10, #1a1a1a);
+}
+
+.entityList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+}
+
+.entityRow {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.1fr) minmax(0, 1.7fr);
+  column-gap: 48px;
+  align-items: center;
+  width: 100%;
+}
+
+.entityRowTitle {
+  margin: 0;
+  color: var(--Absolute-White, #fff);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.entityRowText {
+  margin: 0;
+  color: var(--cl-gray-70, #b3b3b3);
+  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+.riskList {
+  margin-top: 80px;
+}
+
+@include responsive(tablet) {
+  .page {
+    padding-top: 96px;
+    padding-bottom: 100px;
+  }
+
+  .title,
+  .sectionTitle {
+    font-size: 42px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  .entitySection {
+    margin-top: 96px;
+    gap: 64px;
+  }
+
+  .riskNoticesSection {
+    margin-top: 96px;
+  }
+
+  .entityCard {
+    min-height: auto;
+    padding: 40px;
+  }
+
+  .entityDecor {
+    width: min(220px, 30vw);
+  }
+
+  .entityPanel {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .entityList {
+    gap: 40px;
+  }
+
+  .entityRow {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    column-gap: 0;
+  }
+
+  .riskList {
+    margin-top: 48px;
+  }
+}
+
+@include responsive(phone) {
+  .page {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .entitySection {
+    margin-top: 64px;
+    gap: 40px;
+  }
+
+  .riskNoticesSection {
+    margin-top: 64px;
+  }
+
+  .entityCard {
+    padding: 24px;
+  }
+
+  .entityDecor {
+    width: min(180px, 42vw);
+  }
+
+  .entityPanel {
+    padding: 20px;
+  }
+
+  .entityList {
+    gap: 28px;
+  }
+
+  .entityRow {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    column-gap: 0;
+  }
+
+  .entityRowTitle {
+    font-size: 24px;
+  }
+
+  .entityRowText {
+    font-size: 16px;
+  }
+
+  .riskList {
+    margin-top: 32px;
+  }
+}

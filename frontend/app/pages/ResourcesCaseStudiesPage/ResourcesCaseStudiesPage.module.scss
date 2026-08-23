@@ -287,6 +287,10 @@
     margin-bottom: 64px;
   }
 
+  .marketDataSection :global(.market-data-card--wide) {
+    padding: 20px;
+  }
+
   .commonSection,
   .faqSection {
     gap: 40px;

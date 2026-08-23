@@ -83,9 +83,12 @@ export function Footer() {
             ))}
           </div>
           <nav className={styles.legal} aria-label="Legal navigation">
-            <a href={buildHref("/privacy")}>Privacy Policy</a>
+            <a href={buildHref("/terms")} className={styles.legalPrimary}>
+              Finorbis All Rights Reserved
+            </a>
+            <a href={buildHref("/privacypolicy")}>Privacy Policy</a>
             <span aria-hidden="true" />
-            <a href={buildHref("/terms")}>Regulator Information</a>
+            <a href={buildHref("/regulatory-information")}>Regulatory Information</a>
             <span aria-hidden="true" />
             <a href={buildHref("/cookies")}>Cookie Policy</a>
           </nav>

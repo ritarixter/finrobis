@@ -12,7 +12,7 @@
 }
 
 .benefits {
-  @include responsive-flex-stack(phone, 18px, center, flex-start);
+  @include responsive-flex-stack(phone, 20px, center, flex-start);
 }
 
 @include responsive(screen) {
@@ -31,6 +31,11 @@
 
 @include responsive(phone) {
   .benefits {
-    flex-wrap: nowrap;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 20px !important;
   }
 }

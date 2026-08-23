@@ -12,6 +12,7 @@ export interface ItemTextWithImageProps {
   style?: CSSProperties;
   itemTextClassName?: string;
   imageClassName?: string;
+  imageStyle?: CSSProperties;
 }
 
 export function ItemTextWithImage({
@@ -24,6 +25,7 @@ export function ItemTextWithImage({
   style,
   itemTextClassName = "",
   imageClassName = "",
+  imageStyle,
 }: ItemTextWithImageProps) {
   const rootClassName = [
     "item-text-with-image",
@@ -39,7 +41,7 @@ export function ItemTextWithImage({
       <div className="item-text-with-image__content">
         <ItemText title={title} text={text} className={itemTextClassName} />
       </div>
-      <img className={imageName} src={imageSrc} alt={imageAlt} />
+      <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />
     </section>
   );
 }

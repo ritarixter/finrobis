@@ -27,6 +27,8 @@ export default [
   route("company/contact", "routes/company.contact.tsx"),
   route("dev/components", "routes/dev.components.tsx"),
   route("terms", "routes/terms.tsx"),
+  route("regulatory-information", "routes/regulatory-information.tsx"),
+  route("privacypolicy", "routes/privacypolicy.tsx"),
   route("privacy", "routes/privacy.tsx"),
   route("cookies", "routes/cookies.tsx"),
   route("resources/casestudies", "routes/resources.casestudies.tsx"),
