@@ -201,8 +201,7 @@
 }
 
 .securitySection,
-.sandboxSection,
-.codeExamplesSection {
+.sandboxSection {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -228,49 +227,6 @@
 
 .sandboxGrid :global(.item-text) {
   width: 100%;
-}
-
-.codeExampleCardSection {
-  width: 100%;
-  margin-top: 80px;
-}
-
-.codeExampleCard {
-  min-height: 612px;
-  height: auto;
-}
-
-.codeExampleCard:global(.market-data-card--wide) {
-  padding: 0;
-}
-
-.codeExampleCard :global(.market-data-card__content) {
-  padding: 80px;
-  box-sizing: border-box;
-  height: auto;
-  max-height: none;
-  margin-top: 0;
-  margin-bottom: 0;
-  justify-content: flex-start;
-  align-self: flex-start;
-}
-
-.codeExampleCard:global(.market-data-card--wide) > :global(.market-data-card__image-wrapper) {
-  top: 0;
-  left: 0;
-  transform: none;
-  margin: 0;
-}
-
-.codeExampleCard :global(.market-data-card__image) {
-  object-position: top left;
-}
-
-.codeExampleCard :global(.market-data-card__body) {
-  white-space: pre-wrap;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 16px;
-  line-height: 1.65;
 }
 
 .versionsSection {
@@ -414,14 +370,8 @@
 
   .securitySection,
   .sandboxSection,
-  .codeExamplesSection,
   .versionsSection {
     margin-top: 96px;
-  }
-
-  .securityCardsSection,
-  .codeExampleCardSection {
-    margin-top: 64px;
   }
 
   .sandboxGrid {
@@ -557,14 +507,8 @@
 
   .securitySection,
   .sandboxSection,
-  .codeExamplesSection,
   .versionsSection {
     margin-top: 64px;
-  }
-
-  .securityCardsSection,
-  .codeExampleCardSection {
-    margin-top: 48px;
   }
 
   .sandboxGrid {

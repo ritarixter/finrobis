@@ -1750,17 +1750,6 @@ export const content_de: ContentType = {
           },
         ],
       },
-      codeExamples: {
-        title: "Code",
-        accentTitle: "Beispiele",
-        marketData: {
-          title: "Python — Market-Order platzieren",
-          text:
-            'import requests, hmac, hashlib, time, json\n\nAPI_KEY    = "your_api_key"\nAPI_SECRET = "your_api_secret"\nBASE_URL   = "https://api.finorbis.com/v1"\n\ndef place_order(symbol, side, quantity):\n    ts      = str(int(time.time() * 1000))\n    payload = json.dumps({"symbol": symbol, "side": side,\n                           "type": "MARKET", "quantity": quantity})\n    sig     = hmac.new(API_SECRET.encode(), (ts + payload).encode(),\n                        hashlib.sha256).hexdigest()\n    headers = {"X-API-Key": API_KEY, "X-Timestamp": ts, "X-Signature": sig}\n    return requests.post(f"{BASE_URL}/orders", data=payload, headers=headers).json()',
-          imageSrc: assetLiquidityImage,
-          imageAlt: "Python — Market-Order platzieren",
-        },
-      },
       versions: {
         items: [
           {

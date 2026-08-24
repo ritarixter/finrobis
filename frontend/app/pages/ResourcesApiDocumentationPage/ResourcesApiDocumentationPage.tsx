@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
@@ -14,6 +15,10 @@ import styles from "./ResourcesApiDocumentationPage.module.scss";
 export function ResourcesApiDocumentationPage() {
   const { resourcesApiDocumentation } = useLang().content.pages;
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleContactUsClick = () => {
     navigate("/company/contact#form");
@@ -139,25 +144,6 @@ export function ResourcesApiDocumentationPage() {
             <ItemText key={item.title} title={item.title} text={item.text} />
           ))}
         </div>
-      </section>
-
-      <section className={styles.codeExamplesSection}>
-        <h2 className={styles.sectionTitle}>
-          {resourcesApiDocumentation.codeExamples.title}{" "}
-          <span>{resourcesApiDocumentation.codeExamples.accentTitle}</span>
-        </h2>
-
-        <section className={styles.codeExampleCardSection}>
-          <MarketDataCard
-            title={resourcesApiDocumentation.codeExamples.marketData.title}
-            body={resourcesApiDocumentation.codeExamples.marketData.text}
-            imageSrc={resourcesApiDocumentation.codeExamples.marketData.imageSrc}
-            imageAlt={resourcesApiDocumentation.codeExamples.marketData.imageAlt}
-            variant="wide"
-            bodyClassName={styles.codeExampleBody}
-            className={styles.codeExampleCard}
-          />
-        </section>
       </section>
 
       <section className={styles.versionsSection}>
