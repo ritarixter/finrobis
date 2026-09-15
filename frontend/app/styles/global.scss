@@ -17,6 +17,7 @@
   --cl-gray-15: #262626;
   --cl-gray-70: #b3b3b3;
   --cl-gray-11: #1c1c1c;
+
 }
 
 * {
@@ -71,6 +72,112 @@ body {
   font-weight: 600;
 }
 
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 42px, 0) scale(1);
+    text-shadow: none;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    text-shadow: none;
+  }
+}
+
+@keyframes blockReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 52px), 0) scale(1);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.section,
+section,
+article,
+.benefit,
+.item-text-with-image,
+.item-text,
+.market-data-card,
+.technology-cards__card,
+.items-container__item,
+.card-with-image,
+.card-with-icon,
+[class*="Section"],
+[class*="Card"],
+[class*="Block"] {
+  --reveal-x: 0px;
+  --reveal-y: 52px;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: blockReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 68%;
+}
+
+.section:nth-of-type(odd),
+section:nth-of-type(odd),
+article:nth-of-type(odd),
+.benefit:nth-of-type(odd),
+.item-text-with-image:nth-of-type(odd),
+.market-data-card:nth-of-type(odd),
+.technology-cards__card:nth-of-type(odd),
+.items-container__item:nth-of-type(odd),
+.card-with-image:nth-of-type(odd),
+.card-with-icon:nth-of-type(odd),
+[class*="Section"]:nth-of-type(odd),
+[class*="Card"]:nth-of-type(odd),
+[class*="Block"]:nth-of-type(odd) {
+  --reveal-x: -96px;
+}
+
+.section:nth-of-type(even),
+section:nth-of-type(even),
+article:nth-of-type(even),
+.benefit:nth-of-type(even),
+.item-text-with-image:nth-of-type(even),
+.market-data-card:nth-of-type(even),
+.technology-cards__card:nth-of-type(even),
+.items-container__item:nth-of-type(even),
+.card-with-image:nth-of-type(even),
+.card-with-icon:nth-of-type(even),
+[class*="Section"]:nth-of-type(even),
+[class*="Card"]:nth-of-type(even),
+[class*="Block"]:nth-of-type(even) {
+  --reveal-x: 96px;
+}
+
+h1,
+h2,
+h3,
+p,
+.item-text__title,
+.item-text__text,
+.benefit__title,
+.benefit__text,
+.card__title,
+.card__text,
+.items-container__title,
+.items-container__subtitle,
+.items-container__text,
+.technology-cards__title {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: textReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 15% cover 70%;
+}
+
 h1 {
   font-size: 48px;
   font-style: normal;
@@ -97,4 +204,39 @@ h3 {
 
 .yellow {
   color: var(--cl-yellow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  section,
+  article,
+  .benefit,
+  .item-text-with-image,
+  .item-text,
+  .market-data-card,
+  .technology-cards__card,
+  .items-container__item,
+  .card-with-image,
+  .card-with-icon,
+  [class*="Section"],
+  [class*="Card"],
+  [class*="Block"],
+  h1,
+  h2,
+  h3,
+  p,
+  .item-text__title,
+  .item-text__text,
+  .benefit__title,
+  .benefit__text,
+  .card__title,
+  .card__text,
+  .items-container__title,
+  .items-container__subtitle,
+  .items-container__text,
+  .technology-cards__title {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
