@@ -1,6 +1,13 @@
 @use "../../styles/responsive.scss" as *;
 
+@property --card-glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .card-with-icon {
+  position: relative;
   display: grid;
   grid-template-columns: clamp(64px, 13vw, 94px) minmax(0, 1fr);
   grid-template-rows: auto auto;
@@ -14,9 +21,51 @@
   background:
     linear-gradient(106deg, rgba(202, 255, 51, 0.05) -29.45%, rgba(202, 255, 51, 0) 27.86%),
     linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%);
-  overflow: hidden;
   border-radius: 20px 50px;
-  gap: 30px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.card-with-icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;                             
+  border-radius: inherit;              
+  padding: 2px;                         
+  box-sizing: border-box;
+  background: conic-gradient(
+    from var(--card-glow-angle),
+    transparent        0deg,
+    transparent      270deg,
+    rgba(202, 255, 51, 0.15) 290deg,
+    #CAFF33          320deg,
+    #ffffff          340deg,
+    #CAFF33          355deg,
+    rgba(202, 255, 51, 0.15) 358deg,
+    transparent      360deg
+  );
+  animation: cardWithIconContourGlow 3s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(1.5px) saturate(1.3);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+          mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes cardWithIconContourGlow {
+  to { --card-glow-angle: 360deg; }
+}
+
+.card-with-icon > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card-with-icon__icon-wrapper {

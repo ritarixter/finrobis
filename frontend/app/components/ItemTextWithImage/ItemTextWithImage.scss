@@ -9,13 +9,10 @@
   box-sizing: border-box;
   @include responsive-split-stack(tablet, 24px, stretch);
 }
+
 .item-text-with-image--left {
-  > *:first-child {
-    order: 2;
-  }
-  > *:last-child {
-    order: 1;
-  }
+  > *:first-child { order: 2; }
+  > *:last-child  { order: 1; }
 }
 
 .item-text-with-image--bottom {
@@ -32,7 +29,66 @@
   max-width: 100%;
 }
 
+/* ============================================================
+   MEDIA — рамка + вращающийся блик
+   ============================================================ */
+.item-text-with-image__media {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px;
+  padding: 2px;                 /* толщина обводки */
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(202, 255, 51, 0.1); /* лёгкий фон рамки в покое */
+}
+
+/* Вращающийся conic-gradient — источник света. Без маски! */
+.item-text-with-image__media::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  aspect-ratio: 1 / 1;          /* квадрат, чтобы при вращении не оголялись углы */
+  translate: -50% -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent        0deg,
+    transparent      280deg,
+    rgba(202, 255, 51, 0.4) 300deg,
+    #CAFF33          330deg,
+    #ffffff          345deg,
+    #CAFF33          355deg,
+    transparent      360deg
+  );
+  animation: itemTextImageContourGlow 2.5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px) saturate(1.3);
+}
+
+/* Крышка: перекрывает центр, оставляя видимой только рамку 2px.
+   Цвет крышки = цвет фона карточки. Если фон прозрачный — используй
+   background: inherit от родителя или задай явный цвет. */
+.item-text-with-image__media::after {
+  content: "";
+  position: absolute;
+  inset: 2px;                   /* = padding у media → толщина рамки */
+  border-radius: 10px;          /* = border-radius media − padding */
+  background: var(--item-text-with-image-bg, #0e0e0e);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes itemTextImageContourGlow {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   КАРТИНКА
+   ============================================================ */
 .item-text-with-image__image {
+  position: relative;
   display: block;
   width: var(--item-text-with-image-image-width, 100%);
   max-width: var(--item-text-with-image-image-max-width, 100%);
@@ -41,80 +97,43 @@
   object-fit: cover;
   border-radius: 10px;
   align-self: center;
+  z-index: 2;                   /* поверх крышки и блика */
 }
 
 .item-text-with-image--bottom .item-text-with-image__content {
   width: 100%;
 }
 
-@include responsive(screen) {
-  // .item-text-with-image-list .item-text-with-image__image {
-  //   width: min(560px, 100%);
-  //   max-width: 560px;
-  //   height: 144px;
-  //   flex-basis: 560px;
-  // }
-}
-
+/* ============================================================
+   АДАПТИВ
+   ============================================================ */
 @include responsive(tablet) {
-  .item-text-with-image > * {
-    order: initial;
-  }
+  .item-text-with-image > * { order: initial; }
 
   .item-text-with-image--left > *:first-child,
-  .item-text-with-image--left > *:last-child {
-    order: initial;
-  }
+  .item-text-with-image--left > *:last-child { order: initial; }
 
-  .item-text-with-image--left {
-    flex-direction: column;
-  }
+  .item-text-with-image--left { flex-direction: column; }
 
-  .item-text-with-image__content {
-    width: 100%;
-  }
+  .item-text-with-image__content { width: 100%; }
 
   .item-text-with-image__image {
     width: 100%;
     max-width: 100%;
   }
-
-  // .item-text-with-image__image {
-  //   width: 100%;
-  //   max-width: 100%;
-  //   height: auto;
-  //   flex-basis: auto;
-  // }
 }
 
 @include responsive(phone) {
-  .item-text-with-image {
-    gap: 24px;
-  }
+  .item-text-with-image { gap: 24px; }
 
-  .item-text-with-image > * {
-    order: initial;
-  }
+  .item-text-with-image > * { order: initial; }
 
   .item-text-with-image--left > *:first-child,
-  .item-text-with-image--left > *:last-child {
-    order: initial;
-  }
+  .item-text-with-image--left > *:last-child { order: initial; }
 
-  .item-text-with-image--left {
-    flex-direction: column;
-  }
+  .item-text-with-image--left { flex-direction: column; }
 
-  // .item-text-with-image__image {
-  //   width: 100%;
-  //   max-width: 100%;
-  //   height: auto;
-  //   flex-basis: auto;
-  // }
-
-  .item-text-with-image__content {
-    width: 100%;
-  }
+  .item-text-with-image__content { width: 100%; }
 
   .item-text-with-image__image {
     width: 100%;
