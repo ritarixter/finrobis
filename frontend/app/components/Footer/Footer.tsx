@@ -1,5 +1,8 @@
 import styles from "./Footer.module.scss";
 import logo from "../../assets/images/logo.svg";
+import linkedinIcon from "../../assets/images/icons/in.svg";
+import telegramIcon from "../../assets/images/icons/tg.svg";
+import xIcon from "../../assets/images/icons/x.svg";
 import { useLang } from "../../hooks/useLang";
 
 const contacts = [
@@ -8,7 +11,11 @@ const contacts = [
   { label: "Somewhere in the World", icon: "pin" },
 ];
 
-const socialLinks = ["LinkedIn", "X", "Telegram"];
+const socialLinks = [
+  { label: "LinkedIn", icon: linkedinIcon },
+  { label: "X", icon: xIcon },
+  { label: "Telegram", icon: telegramIcon },
+];
 
 function ContactIcon({ type }: { type: string }) {
   if (type === "phone") {
@@ -77,8 +84,8 @@ export function Footer() {
         <div className={styles.bottom}>
           <div className={styles.socials} aria-label="Social media">
             {socialLinks.map((label) => (
-              <a key={label} href="/" aria-label={label}>
-                {label === "LinkedIn" ? "in" : label}
+              <a key={label.label} href="/" aria-label={label.label}>
+                <img src={label.icon} alt="" aria-hidden="true" />
               </a>
             ))}
           </div>

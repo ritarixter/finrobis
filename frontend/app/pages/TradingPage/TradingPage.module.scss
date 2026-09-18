@@ -122,6 +122,16 @@
   }
 }
 
+.supportedFiatList {
+  --item-text-with-image-image-width: 716px;
+  --item-text-with-image-image-max-width: 716px;
+  --item-text-with-image-image-height: 144px;
+  --item-text-with-image-list-item-height: 144px;
+  --item-text-with-image-tablet-image-width: min(716px, 100%);
+  --item-text-with-image-tablet-image-max-width: 716px;
+  --item-text-with-image-tablet-image-height: 144px;
+}
+
 .faqSection {
   display: flex;
   flex-direction: column;

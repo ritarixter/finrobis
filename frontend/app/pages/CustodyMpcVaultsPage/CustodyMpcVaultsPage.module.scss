@@ -8,7 +8,7 @@
 }
 
 .introSection {
-  margin-bottom: 80px;
+  margin-bottom: 0;
 }
 
 .marketDataSection {
@@ -20,8 +20,9 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  height: 342px;
-  min-height: 342px;
+  height: fit-content;
+  min-height: unset;
+  padding: 80px;
 }
 
 .benefitsSection {
@@ -62,6 +63,11 @@
 .faqSection {
   gap: 80px;
   margin-top: 143px;
+}
+
+.whyMpcSection .sectionTitle span,
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 .sectionTitle {

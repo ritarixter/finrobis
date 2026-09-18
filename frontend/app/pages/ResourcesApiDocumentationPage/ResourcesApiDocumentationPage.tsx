@@ -9,8 +9,24 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
+import assetLiquidityImage from "~/assets/images/Asset_Liquidity.png";
 
 import styles from "./ResourcesApiDocumentationPage.module.scss";
+
+const codeExample = `import requests, hmac, hashlib, time, json
+
+API_KEY = «your_api_key»
+API_SECRET = «your_api_secret»
+BASE_URL = «https://api.finorbis.com/v1»
+
+def place_order(symbol, side, quantity):
+ts = str(int(time.time() * 1000))
+payload = json.dumps({«symbol»: symbol, «side»: side,
+«type»: «MARKET», «quantity»: quantity})
+sig = hmac.new(API_SECRET.encode(), (ts + payload).encode(),
+hashlib.sha256).hexdigest()
+headers = {«X-API-Key»: API_KEY, «X-Timestamp»: ts, «X-Signature»: sig}
+return requests.post(f“{BASE_URL}/orders“, data=payload, headers=headers).json()`;
 
 export function ResourcesApiDocumentationPage() {
   const { resourcesApiDocumentation } = useLang().content.pages;
@@ -82,6 +98,7 @@ export function ResourcesApiDocumentationPage() {
             imageSrc={card.imageSrc}
             imageAlt={card.imageAlt}
             variant="compact"
+            className={card.title === "Authentication" ? styles.authenticationCard : ""}
           />
         ))}
       </section>
@@ -98,6 +115,25 @@ export function ResourcesApiDocumentationPage() {
           {resourcesApiDocumentation.websocketApi.items.map((item) => (
             <ItemText key={item.title} title={item.title} text={item.text} />
           ))}
+        </div>
+      </section>
+
+      <section className={styles.codeExamplesSection}>
+        <h2 className={`${styles.sectionTitle} ${styles.codeExamplesTitle}`}>
+          Code <span>Examples</span>
+        </h2>
+
+        <div className={styles.codeExampleCard}>
+          <img
+            className={styles.codeExampleImage}
+            src={assetLiquidityImage}
+            alt=""
+            aria-hidden="true"
+          />
+          <div className={styles.codeExampleContent}>
+            <h3 className={styles.codeExampleTitle}>Python — Place Market Order</h3>
+            <pre className={styles.codeExampleText}>{codeExample}</pre>
+          </div>
         </div>
       </section>
 

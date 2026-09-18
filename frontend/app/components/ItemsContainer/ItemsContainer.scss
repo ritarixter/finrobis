@@ -31,18 +31,14 @@
 
 .items-container__title {
   margin: 0;
-  color: transparent;
+  color: #CAFF33;
   font-family: var(--font-family-main, "Lexend", sans-serif);
-  font-size: clamp(40px, 3vw, 48px);
+  font-size: clamp(35px, 3vw, 40px);
   font-style: normal;
   font-weight: 800;
   line-height: 1.5;
   letter-spacing: 0;
   text-align: center;
-  background: linear-gradient(180deg, #caff33 39.17%, #191919 75%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   word-break: break-word;
 }
 
@@ -81,15 +77,17 @@
   flex: 0 0 60px;
   width: 60px;
   height: 60px;
-  color: var(--cl-main);
+  color: #CAFF33;
   font-size: 40px;
   font-weight: 800;
   line-height: 1.5;
-  background: linear-gradient(180deg, var(--cl-main) 40%, var(--cl-gray-11) 75%);
+  background: none;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #CAFF33;
 }
+
+
 
 .items-container__text {
   margin: 0;

@@ -90,6 +90,7 @@
 }
 
 .bottom {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -110,12 +111,13 @@
   width: 52px;
   height: 52px;
   place-items: center;
-  border-radius: 50%;
-  background: #caff33;
-  color: #1c1c1c;
-  font-size: 17px;
-  font-weight: 600;
   text-decoration: none;
+}
+
+.socials img {
+  display: block;
+  width: 51px;
+  height: 51px;
 }
 
 .legal {
@@ -127,7 +129,10 @@
 }
 
 .legalPrimary {
-  margin-right: 179px;
+  position: absolute;
+  left: 50%;
+  margin-right: 0;
+  transform: translateX(-50%);
 }
 
 .legal span {
@@ -151,7 +156,9 @@
   }
 
   .legalPrimary {
+    position: static;
     margin-right: 20px;
+    transform: none;
   }
 
   .bottom {
@@ -200,7 +207,9 @@
   }
 
   .legalPrimary {
+    position: static;
     margin-right: 0;
+    transform: none;
   }
 
   .legal span {

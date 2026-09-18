@@ -18,6 +18,10 @@
   margin-bottom: 143px;
 }
 
+.marketDataSection :global(.market-data-card--wide) {
+  padding: 80px;
+}
+
 .benefitsSection {
   width: 100%;
   margin-bottom: 143px;
@@ -98,6 +102,10 @@
   margin-bottom: 143px;
 }
 
+.structuredProductsSection .sectionTitle span {
+  color: var(--cl-white);
+}
+
 .structuredProductsList {
   margin-top: 66px;
 }
@@ -173,6 +181,10 @@
   flex-direction: column;
   gap: 90px;
   width: 100%;
+}
+
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 @include responsive(tablet) {

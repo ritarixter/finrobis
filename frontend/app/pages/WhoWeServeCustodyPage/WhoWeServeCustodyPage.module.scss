@@ -8,7 +8,7 @@
 }
 
 .introSection {
-  margin-bottom: 80px;
+  margin-bottom: 0;
 }
 
 .marketDataSection {
@@ -20,8 +20,9 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  height: 342px;
-  min-height: 342px;
+  height: fit-content;
+  min-height: unset;
+  padding: 80px;
 }
 
 .benefitsSection {
@@ -56,6 +57,10 @@
 .faqSection {
   gap: 80px;
   margin-top: 143px;
+}
+
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 .sectionTitle {
@@ -97,8 +102,9 @@
 }
 
 .segregatedCustodyImage {
-  width: min(716px, 100%);
-  height: 258px;
+  width: min(813px, 100%);
+  height: 423px;
+  object-fit: contain;
 }
 
 .segregatedCustodyText {
@@ -110,6 +116,7 @@
 }
 
 .segregatedCustodyText :global(.item-text__text) {
+  color: var(--Grey-70, #b3b3b3);
   max-width: 760px;
 }
 

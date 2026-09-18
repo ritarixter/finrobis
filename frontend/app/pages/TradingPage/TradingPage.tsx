@@ -79,7 +79,7 @@ export function TradingPage() {
           {trading.supportedFiat.title} <span>{trading.supportedFiat.accentTitle}</span>
         </h2>
 
-        <ItemTextWithImageList items={trading.supportedFiat.items} />
+        <ItemTextWithImageList className={styles.supportedFiatList} items={trading.supportedFiat.items} />
       </section>
 
       <section className={styles.faqSection}>
