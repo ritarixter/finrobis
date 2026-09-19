@@ -123,9 +123,7 @@ export default function PrivacyPage() {
       <section className={styles.retentionPeriodsSection}>
         <h2 className={styles.sectionTitle}>
           {privacy.retentionPeriods.title}{" "}
-          <span className={styles.sectionTitleAccent}>
-            {privacy.retentionPeriods.accentTitle}
-          </span>
+          <span className={styles.sectionTitleAccent}>{privacy.retentionPeriods.accentTitle}</span>
         </h2>
 
         <article className={styles.controllerCard}>

@@ -126,7 +126,15 @@ export function Benefit({
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
         >
-          {icon ? icon : <img className={["benefit__icon", iconClassName].filter(Boolean).join(" ")} src={iconSrc} alt={iconAlt} />}
+          {icon ? (
+            icon
+          ) : (
+            <img
+              className={["benefit__icon", iconClassName].filter(Boolean).join(" ")}
+              src={iconSrc}
+              alt={iconAlt}
+            />
+          )}
         </motion.div>
       )}
 
@@ -153,12 +161,23 @@ export function Benefit({
               {(showTitleMeta || hasNumericTitle) && (
                 <span className="benefit__title-meta" aria-label="Title trend">
                   {titleAscent !== undefined && (
-                    <span className={["benefit__title-ascent", titleAscentClassName].filter(Boolean).join(" ")} aria-hidden="true">
+                    <span
+                      className={["benefit__title-ascent", titleAscentClassName]
+                        .filter(Boolean)
+                        .join(" ")}
+                      aria-hidden="true"
+                    >
                       {titleAscent === true ? "▲" : titleAscent}
                     </span>
                   )}
                   {titleCounter !== undefined && (
-                    <span className={["benefit__title-counter", titleCounterClassName].filter(Boolean).join(" ")}>{titleCounter}</span>
+                    <span
+                      className={["benefit__title-counter", titleCounterClassName]
+                        .filter(Boolean)
+                        .join(" ")}
+                    >
+                      {titleCounter}
+                    </span>
                   )}
                 </span>
               )}

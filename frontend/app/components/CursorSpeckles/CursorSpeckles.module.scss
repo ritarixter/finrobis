@@ -1,0 +1,17 @@
+.canvas {
+  position: fixed;
+  z-index: 9;
+  inset: 0;
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  pointer-events: none;
+  user-select: none;
+  contain: strict;
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .canvas {
+    display: none;
+  }
+}

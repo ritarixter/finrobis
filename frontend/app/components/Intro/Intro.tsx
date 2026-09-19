@@ -26,7 +26,7 @@ export function Intro({
   badgeText,
   imageSrc,
   button1,
-  button1Theme = ThemeButton.BLACK,
+  button1Theme = ThemeButton.ALPHAMARK,
   button2,
   type = "with-border",
 }: IntroProps) {
@@ -48,14 +48,18 @@ export function Intro({
         </div>
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        <div className={styles.buttons}>
-          <Button theme={button1Theme} onClick={handleButton1Click}>
-            {button1.text}
-          </Button>
-          {button2 ? (
-            <Button theme={ThemeButton.GREEN} onClick={button2.onClick}>
-              {button2.text}
+        <div className={`${styles.buttons} ${button2 ? styles.buttonsPair : ""}`.trim()}>
+          <div className={styles.buttonCell}>
+            <Button theme={button1Theme} onClick={handleButton1Click}>
+              {button1.text}
             </Button>
+          </div>
+          {button2 ? (
+            <div className={styles.buttonCell}>
+              <Button theme={ThemeButton.BLACK} onClick={button2.onClick}>
+                {button2.text}
+              </Button>
+            </div>
           ) : null}
         </div>
       </div>

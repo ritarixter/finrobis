@@ -17,7 +17,6 @@
   --cl-gray-15: #262626;
   --cl-gray-70: #b3b3b3;
   --cl-gray-11: #1c1c1c;
-
 }
 
 * {
@@ -25,9 +24,13 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
+  overflow-x: hidden;
+  overflow-x: clip;
   color: var(--cl-gray-70, #b3b3b3);
   font-family: "Lexend", sans-serif;
   font-size: 18px;
@@ -91,14 +94,14 @@ body {
 @keyframes blockReveal {
   0% {
     opacity: 0;
-    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 52px), 0) scale(1);
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 40px), 0);
   }
   55% {
     opacity: 1;
   }
   100% {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -117,7 +120,7 @@ article,
 [class*="Card"],
 [class*="Block"] {
   --reveal-x: 0px;
-  --reveal-y: 52px;
+  --reveal-y: 40px;
   opacity: 0;
   will-change: transform, opacity;
   animation: blockReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -138,7 +141,7 @@ article:nth-of-type(odd),
 [class*="Section"]:nth-of-type(odd),
 [class*="Card"]:nth-of-type(odd),
 [class*="Block"]:nth-of-type(odd) {
-  --reveal-x: -96px;
+  --reveal-x: -28px;
 }
 
 .section:nth-of-type(even),
@@ -154,7 +157,7 @@ article:nth-of-type(even),
 [class*="Section"]:nth-of-type(even),
 [class*="Card"]:nth-of-type(even),
 [class*="Block"]:nth-of-type(even) {
-  --reveal-x: 96px;
+  --reveal-x: 28px;
 }
 
 h1,
@@ -184,6 +187,8 @@ h1 {
   font-weight: 700;
   line-height: 150%;
   color: var(--cl-white);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 h2 {
@@ -192,6 +197,8 @@ h2 {
   font-weight: 500;
   line-height: 150%;
   color: var(--cl-white);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 h3 {
@@ -200,6 +207,47 @@ h3 {
   font-weight: 500;
   line-height: 150%;
   color: var(--cl-white);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+@include responsive(screen) {
+  h1,
+  h2 {
+    font-size: 42px;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-size: 36px;
+    line-height: 1.35;
+  }
+}
+
+@include responsive(tablet) {
+  h1,
+  h2 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+}
+
+@include responsive(phone) {
+  h1,
+  h2 {
+    font-size: clamp(28px, 8vw, 32px);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
 }
 
 .yellow {

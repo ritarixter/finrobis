@@ -5,11 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(24px, 4vw, 60px);
+  gap: clamp(32px, 4vw, 60px);
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
-  padding: clamp(32px, 6vw, 80px);
+  padding: clamp(36px, 5vw, 80px);
   border-radius: 20px;
   border: 1px solid var(--cl-gray-15, #262626);
   background:
@@ -24,7 +24,7 @@
     padding-right: 0;
 
     & .image {
-      width: 100%;
+      width: min(48%, 760px);
       max-width: 760px;
     }
   }
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex: 1 1 auto;
+  flex: 1 1 52%;
   min-width: 0;
 }
 
@@ -70,7 +70,7 @@
 
 .subtitle {
   margin: 0 0 40px;
-  max-width: 520px;
+  max-width: 620px;
   color: var(--cl-gray-70, #b3b3b3);
   font-size: 21px;
   font-weight: 300;
@@ -83,12 +83,32 @@
   gap: 16px;
 }
 
+.buttonsPair {
+  display: grid;
+  width: max-content;
+  max-width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.buttonCell {
+  display: flex;
+  min-width: 0;
+}
+
+.buttonsPair .buttonCell > button {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+}
+
 .image {
   position: relative;
   z-index: 2;
-  flex-shrink: 0;
+  flex: 0 1 520px;
   width: min(520px, 38%);
+  max-width: 42%;
   height: auto;
+  object-fit: contain;
 }
 
 @include responsive(fullscreen) {
@@ -97,9 +117,58 @@
   }
 }
 
-@include responsive(screen) {
+@media (max-width: 1320px) {
+  .intro {
+    gap: clamp(24px, 2.8vw, 36px);
+    padding: clamp(36px, 4vw, 52px);
+
+    &.withoutBorder .image {
+      width: min(49%, 600px);
+      max-width: 49%;
+    }
+  }
+
+  .title {
+    font-size: clamp(34px, 3.5vw, 44px);
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    margin-bottom: 32px;
+    font-size: 18px;
+  }
+
   .image {
-    width: min(420px, 34%);
+    width: min(440px, 40%);
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .intro {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    padding: 40px;
+
+    &.withoutBorder .image {
+      width: 100%;
+      max-width: 640px;
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .subtitle {
+    max-width: 760px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 520px;
+    align-self: center;
   }
 }
 
@@ -162,7 +231,13 @@
     align-items: stretch;
   }
 
-  .buttons :global(.button) {
+  .buttonsPair {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .buttonCell > button {
     padding: 12px 18px;
     font-size: 13px;
     line-height: 1.2;

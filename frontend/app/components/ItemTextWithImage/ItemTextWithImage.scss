@@ -11,8 +11,12 @@
 }
 
 .item-text-with-image--left {
-  > *:first-child { order: 2; }
-  > *:last-child  { order: 1; }
+  > *:first-child {
+    order: 2;
+  }
+  > *:last-child {
+    order: 1;
+  }
 }
 
 .item-text-with-image--bottom {
@@ -36,7 +40,7 @@
   position: relative;
   display: inline-block;
   border-radius: 12px;
-  padding: 2px;                 /* толщина обводки */
+  padding: 2px; /* толщина обводки */
   overflow: hidden;
   isolation: isolate;
   background: rgba(202, 255, 51, 0.1); /* лёгкий фон рамки в покое */
@@ -49,17 +53,17 @@
   top: 50%;
   left: 50%;
   width: 200%;
-  aspect-ratio: 1 / 1;          /* квадрат, чтобы при вращении не оголялись углы */
+  aspect-ratio: 1 / 1; /* квадрат, чтобы при вращении не оголялись углы */
   translate: -50% -50%;
   background: conic-gradient(
     from 0deg,
-    transparent        0deg,
-    transparent      280deg,
+    transparent 0deg,
+    transparent 280deg,
     rgba(202, 255, 51, 0.4) 300deg,
-    #CAFF33          330deg,
-    #ffffff          345deg,
-    #CAFF33          355deg,
-    transparent      360deg
+    #caff33 330deg,
+    #ffffff 345deg,
+    #caff33 355deg,
+    transparent 360deg
   );
   animation: itemTextImageContourGlow 2.5s linear infinite;
   pointer-events: none;
@@ -73,15 +77,17 @@
 .item-text-with-image__media::after {
   content: "";
   position: absolute;
-  inset: 2px;                   /* = padding у media → толщина рамки */
-  border-radius: 10px;          /* = border-radius media − padding */
+  inset: 2px; /* = padding у media → толщина рамки */
+  border-radius: 10px; /* = border-radius media − padding */
   background: var(--item-text-with-image-bg, #0e0e0e);
   z-index: 1;
   pointer-events: none;
 }
 
 @keyframes itemTextImageContourGlow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ============================================================
@@ -97,7 +103,7 @@
   object-fit: cover;
   border-radius: 10px;
   align-self: center;
-  z-index: 2;                   /* поверх крышки и блика */
+  z-index: 2; /* поверх крышки и блика */
 }
 
 .item-text-with-image--bottom .item-text-with-image__content {
@@ -108,14 +114,22 @@
    АДАПТИВ
    ============================================================ */
 @include responsive(tablet) {
-  .item-text-with-image > * { order: initial; }
+  .item-text-with-image > * {
+    order: initial;
+  }
 
   .item-text-with-image--left > *:first-child,
-  .item-text-with-image--left > *:last-child { order: initial; }
+  .item-text-with-image--left > *:last-child {
+    order: initial;
+  }
 
-  .item-text-with-image--left { flex-direction: column; }
+  .item-text-with-image--left {
+    flex-direction: column;
+  }
 
-  .item-text-with-image__content { width: 100%; }
+  .item-text-with-image__content {
+    width: 100%;
+  }
 
   .item-text-with-image__image {
     width: 100%;
@@ -124,16 +138,26 @@
 }
 
 @include responsive(phone) {
-  .item-text-with-image { gap: 24px; }
+  .item-text-with-image {
+    gap: 24px;
+  }
 
-  .item-text-with-image > * { order: initial; }
+  .item-text-with-image > * {
+    order: initial;
+  }
 
   .item-text-with-image--left > *:first-child,
-  .item-text-with-image--left > *:last-child { order: initial; }
+  .item-text-with-image--left > *:last-child {
+    order: initial;
+  }
 
-  .item-text-with-image--left { flex-direction: column; }
+  .item-text-with-image--left {
+    flex-direction: column;
+  }
 
-  .item-text-with-image__content { width: 100%; }
+  .item-text-with-image__content {
+    width: 100%;
+  }
 
   .item-text-with-image__image {
     width: 100%;

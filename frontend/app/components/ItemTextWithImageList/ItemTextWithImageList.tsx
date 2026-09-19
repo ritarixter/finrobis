@@ -5,10 +5,7 @@ import {
 } from "../ItemTextWithImage/ItemTextWithImage";
 import "./ItemTextWithImageList.scss";
 
-export interface ItemTextWithImageListItem extends Omit<
-  ItemTextWithImageProps,
-  "className"
-> {
+export interface ItemTextWithImageListItem extends Omit<ItemTextWithImageProps, "className"> {
   id?: string | number;
 }
 

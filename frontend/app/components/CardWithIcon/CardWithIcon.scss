@@ -29,20 +29,20 @@
 .card-with-icon::before {
   content: "";
   position: absolute;
-  inset: 0;                             
-  border-radius: inherit;              
-  padding: 2px;                         
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
   box-sizing: border-box;
   background: conic-gradient(
     from var(--card-glow-angle),
-    transparent        0deg,
-    transparent      270deg,
+    transparent 0deg,
+    transparent 270deg,
     rgba(202, 255, 51, 0.15) 290deg,
-    #CAFF33          320deg,
-    #ffffff          340deg,
-    #CAFF33          355deg,
+    #caff33 320deg,
+    #ffffff 340deg,
+    #caff33 355deg,
     rgba(202, 255, 51, 0.15) 358deg,
-    transparent      360deg
+    transparent 360deg
   );
   animation: cardWithIconContourGlow 3s linear infinite;
   pointer-events: none;
@@ -52,15 +52,17 @@
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-          mask:
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
 }
 
 @keyframes cardWithIconContourGlow {
-  to { --card-glow-angle: 360deg; }
+  to {
+    --card-glow-angle: 360deg;
+  }
 }
 
 .card-with-icon > * {

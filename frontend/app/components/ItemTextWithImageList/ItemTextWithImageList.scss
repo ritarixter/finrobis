@@ -16,7 +16,6 @@
   height: var(--item-text-with-image-list-item-height, 156px);
 }
 
-
 @include responsive(screen) {
   .item-text-with-image-list .item-text-with-image__image {
     width: var(--item-text-with-image-tablet-image-width, min(560px, 100%));

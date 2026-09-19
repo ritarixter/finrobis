@@ -59,7 +59,8 @@ export function WhoWeServeFintechsPage() {
 
       <section className={styles.solutionsSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeFintechs.solutions.title} <span>{whoWeServeFintechs.solutions.accentTitle}</span>
+          {whoWeServeFintechs.solutions.title}{" "}
+          <span>{whoWeServeFintechs.solutions.accentTitle}</span>
         </h2>
 
         <CardsWithImage items={whoWeServeFintechs.solutions.items} />

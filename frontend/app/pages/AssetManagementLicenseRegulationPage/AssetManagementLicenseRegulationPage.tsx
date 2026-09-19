@@ -21,7 +21,7 @@ export function AssetManagementLicenseRegulationPage() {
           badgeText={licenseRegulation.intro.badgeText}
           imageSrc={licenseRegulation.intro.image}
           button1={{ text: licenseRegulation.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>

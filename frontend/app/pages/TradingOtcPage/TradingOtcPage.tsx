@@ -22,7 +22,7 @@ export function TradingOtcPage() {
           badgeText={otc.intro.badgeText}
           imageSrc={otc.intro.image}
           button1={{ text: otc.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>

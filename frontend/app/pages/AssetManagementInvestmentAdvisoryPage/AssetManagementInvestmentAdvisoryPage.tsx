@@ -24,7 +24,7 @@ export function AssetManagementInvestmentAdvisoryPage() {
           badgeText={investmentAdvisory.intro.badgeText}
           imageSrc={investmentAdvisory.intro.image}
           button1={{ text: investmentAdvisory.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
@@ -80,8 +80,7 @@ export function AssetManagementInvestmentAdvisoryPage() {
 
       <section className={styles.researchSection}>
         <h2 className={styles.sectionTitle}>
-          {investmentAdvisory.research.title}{" "}
-          <span>{investmentAdvisory.research.accentTitle}</span>
+          {investmentAdvisory.research.title} <span>{investmentAdvisory.research.accentTitle}</span>
         </h2>
 
         <p className={styles.sectionDescription}>{investmentAdvisory.research.description}</p>

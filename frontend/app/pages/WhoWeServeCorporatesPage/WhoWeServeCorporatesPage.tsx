@@ -53,7 +53,8 @@ export function WhoWeServeCorporatesPage() {
 
       <section className={styles.solutionsSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeCorporates.solutions.title} <span>{whoWeServeCorporates.solutions.accentTitle}</span>
+          {whoWeServeCorporates.solutions.title}{" "}
+          <span>{whoWeServeCorporates.solutions.accentTitle}</span>
         </h2>
 
         <CardsWithImage items={whoWeServeCorporates.solutions.items} />
@@ -61,7 +62,8 @@ export function WhoWeServeCorporatesPage() {
 
       <section className={styles.useCasesSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeCorporates.useCases.title} <span>{whoWeServeCorporates.useCases.accentTitle}</span>
+          {whoWeServeCorporates.useCases.title}{" "}
+          <span>{whoWeServeCorporates.useCases.accentTitle}</span>
         </h2>
 
         <div className={styles.useCasesGrid}>

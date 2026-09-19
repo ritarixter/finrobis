@@ -53,7 +53,8 @@ export function ResourcesCaseStudiesPage() {
 
       <section className={styles.commonSection}>
         <h2 className={styles.sectionTitle}>
-          {resourcesCaseStudies.commonSection.title} <span>{resourcesCaseStudies.commonSection.accentTitle}</span>
+          {resourcesCaseStudies.commonSection.title}{" "}
+          <span>{resourcesCaseStudies.commonSection.accentTitle}</span>
         </h2>
 
         <ItemTextWithImageList

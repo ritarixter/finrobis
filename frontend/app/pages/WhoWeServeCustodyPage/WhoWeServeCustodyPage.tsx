@@ -23,7 +23,7 @@ export function WhoWeServeCustodyPage() {
           badgeText={whoWeServeCustody.intro.badgeText}
           imageSrc={whoWeServeCustody.intro.imageSrc}
           button1={{ text: whoWeServeCustody.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
@@ -87,7 +87,8 @@ export function WhoWeServeCustodyPage() {
 
       <section className={styles.complianceSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeCustody.compliance.title} <span>{whoWeServeCustody.compliance.accentTitle}</span>
+          {whoWeServeCustody.compliance.title}{" "}
+          <span>{whoWeServeCustody.compliance.accentTitle}</span>
         </h2>
 
         <div className={styles.complianceGrid}>
