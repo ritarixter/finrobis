@@ -34,6 +34,7 @@ export function TradingStablecoinAccessPage() {
           imageSrc={stablecoinAccess.marketData.imageSrc}
           imageAlt={stablecoinAccess.marketData.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -75,6 +76,7 @@ export function TradingStablecoinAccessPage() {
           imageSrc={stablecoinAccess.compliance.imageSrc}
           imageAlt={stablecoinAccess.compliance.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -102,7 +104,7 @@ export function TradingStablecoinAccessPage() {
           <span>{stablecoinAccess.faqStablecoins.accentTitle}</span>
         </h2>
 
-        <Questions items={stablecoinAccess.faqStablecoins.items} />
+        <Questions items={stablecoinAccess.faqStablecoins.items} interactiveDots />
       </section>
     </main>
   );

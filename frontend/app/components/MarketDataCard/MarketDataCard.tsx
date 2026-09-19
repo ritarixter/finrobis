@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, PointerEvent, ReactNode } from "react";
 import "./MarketDataCard.scss";
 
 export interface MarketDataCardItem {
@@ -14,6 +14,7 @@ export interface MarketDataCardProps {
   body?: ReactNode;
   imageSrc: string;
   imageAlt?: string;
+  interactiveDots?: boolean;
   variant?: "compact" | "wide";
   className?: string;
   style?: CSSProperties;
@@ -37,6 +38,7 @@ export function MarketDataCard({
   body,
   imageSrc,
   imageAlt = "",
+  interactiveDots = false,
   variant = "compact",
   className = "",
   style,
@@ -53,7 +55,12 @@ export function MarketDataCard({
   imageWrapperStyle,
   imageStyle,
 }: MarketDataCardProps) {
-  const rootClassName = ["market-data-card", `market-data-card--${variant}`, className]
+  const rootClassName = [
+    "market-data-card",
+    `market-data-card--${variant}`,
+    interactiveDots ? "market-data-card--interactive-dots" : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
   const contentName = ["market-data-card__content", contentClassName].filter(Boolean).join(" ");
@@ -71,8 +78,16 @@ export function MarketDataCard({
     .join(" ");
   const imageName = ["market-data-card__image", imageClassName].filter(Boolean).join(" ");
 
+  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (!interactiveDots || event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty("--market-dots-x", `${event.clientX - bounds.left}px`);
+    event.currentTarget.style.setProperty("--market-dots-y", `${event.clientY - bounds.top}px`);
+  };
+
   return (
-    <article className={rootClassName} style={style}>
+    <article className={rootClassName} style={style} onPointerMove={handlePointerMove}>
       <div className={contentName}>
         <div className={titleName}>{title}</div>
         {body ? <div className={bodyName}>{body}</div> : null}
@@ -94,8 +109,16 @@ export function MarketDataCard({
         ) : null}
       </div>
 
-      <div className={imageWrapperName} aria-hidden={imageAlt === ""} style={imageWrapperStyle}>
-        <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />
+      <div
+        className={imageWrapperName}
+        aria-hidden={interactiveDots || imageAlt === ""}
+        style={imageWrapperStyle}
+      >
+        {interactiveDots ? (
+          <div className="market-data-card__dots" aria-hidden="true" />
+        ) : (
+          <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />
+        )}
       </div>
     </article>
   );

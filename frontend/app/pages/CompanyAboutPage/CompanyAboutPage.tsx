@@ -10,6 +10,29 @@ import { useLang } from "~/hooks/useLang";
 
 import styles from "./CompanyAboutPage.module.scss";
 
+function MarketBackgroundAnimation({ className = "" }: { className?: string }) {
+  return (
+    <div className={`${styles.marketAnimation} ${className}`.trim()} aria-hidden="true">
+      <svg className={styles.marketTrend} viewBox="0 0 1000 320" preserveAspectRatio="none">
+        <path
+          className={styles.marketTrendGlow}
+          d="M0 278 C80 254 128 280 190 224 S302 246 370 185 S478 218 550 150 S665 180 728 112 S842 134 1000 28"
+        />
+        <path
+          className={styles.marketTrendLine}
+          d="M0 278 C80 254 128 280 190 224 S302 246 370 185 S478 218 550 150 S665 180 728 112 S842 134 1000 28"
+        />
+      </svg>
+
+      <span className={`${styles.dotCloud} ${styles.dotCloudPrimary}`} />
+      <span className={`${styles.dotCloud} ${styles.dotCloudSecondary}`} />
+      <span className={`${styles.tradeNode} ${styles.tradeNodeOne}`} />
+      <span className={`${styles.tradeNode} ${styles.tradeNodeTwo}`} />
+      <span className={`${styles.tradeNode} ${styles.tradeNodeThree}`} />
+    </div>
+  );
+}
+
 export function CompanyAboutPage() {
   const { company } = useLang().content.pages;
   const about = company.about;
@@ -22,14 +45,8 @@ export function CompanyAboutPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={about.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={about.intro.imageSrc} alt={about.intro.title} />
+        <MarketBackgroundAnimation className={styles.heroMarketAnimation} />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{about.intro.title}</h1>
@@ -48,6 +65,7 @@ export function CompanyAboutPage() {
           imageSrc={about.story.imageSrc}
           imageAlt={about.story.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -66,7 +84,14 @@ export function CompanyAboutPage() {
         <div className={styles.missionContent}>
           <TextList items={[about.mission.quote]} className={styles.missionQuoteList} />
 
-          <img className={styles.missionImage} src={about.mission.imageSrc} alt={about.mission.imageAlt} />
+          <div className={styles.missionVisual}>
+            <img
+              className={styles.missionImage}
+              src={about.mission.imageSrc}
+              alt={about.mission.imageAlt}
+            />
+            <MarketBackgroundAnimation />
+          </div>
         </div>
       </section>
 
@@ -104,7 +129,7 @@ export function CompanyAboutPage() {
           {about.faqAbout.title} <span>{about.faqAbout.accentTitle}</span>
         </h2>
 
-        <Questions items={about.faqAbout.items} />
+        <Questions items={about.faqAbout.items} interactiveDots />
       </section>
     </main>
   );

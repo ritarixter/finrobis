@@ -7,6 +7,7 @@
   border: 1px solid #262626;
   background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
   overflow: hidden;
+  cursor: none;
 }
 
 .market-data-card--compact {
@@ -55,6 +56,53 @@
   height: 100%;
   max-width: min(283px, 100%);
   object-fit: contain;
+}
+
+.market-data-card--interactive-dots {
+  --market-dots-x: 14%;
+  --market-dots-y: 32%;
+  cursor: none;
+}
+
+.market-data-card--interactive-dots .market-data-card__image-wrapper {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.market-data-card__dots {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image: radial-gradient(circle, rgba(202, 255, 51, 0.95) 0 1.15px, transparent 1.45px);
+  background-position: 0 0;
+  background-size: 7px 7px;
+  mask-image: radial-gradient(
+    circle 112px at var(--market-dots-x) var(--market-dots-y),
+    #000 0,
+    rgba(0, 0, 0, 0.92) 32%,
+    rgba(0, 0, 0, 0.34) 68%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 112px at var(--market-dots-x) var(--market-dots-y),
+    #000 0,
+    rgba(0, 0, 0, 0.92) 32%,
+    rgba(0, 0, 0, 0.34) 68%,
+    transparent 100%
+  );
+  transition: opacity 220ms ease;
+  will-change: opacity, mask-image;
+}
+
+.market-data-card--interactive-dots:hover .market-data-card__dots {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-data-card__dots {
+    transition: none;
+  }
 }
 
 .market-data-card--wide .market-data-card__title {
@@ -220,6 +268,12 @@
   .market-data-card--wide .market-data-card__image-wrapper {
     width: auto;
   }
+
+  .market-data-card--interactive-dots .market-data-card__image-wrapper {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @include responsive(tablet) {
@@ -252,6 +306,12 @@
     left: -32px;
     width: min(240px, 48vw);
     height: auto;
+  }
+
+  .market-data-card--interactive-dots .market-data-card__image-wrapper {
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .market-data-card--wide .market-data-card__image {
@@ -318,6 +378,12 @@
     width: min(230px, 46vw);
     height: auto;
     margin: 0;
+  }
+
+  .market-data-card--interactive-dots .market-data-card__image-wrapper {
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .market-data-card--wide .market-data-card__image {

@@ -34,6 +34,7 @@ export function TradingOtcPage() {
           imageSrc={otc.marketData.imageSrc}
           imageAlt={otc.marketData.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -64,6 +65,7 @@ export function TradingOtcPage() {
           imageSrc={otc.pricingSpreads.imageSrc}
           imageAlt={otc.pricingSpreads.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -72,7 +74,7 @@ export function TradingOtcPage() {
           {otc.faq.title} <span>{otc.faq.accentTitle}</span>
         </h2>
 
-        <Questions items={otc.faq.items} />
+        <Questions items={otc.faq.items} interactiveDots />
       </section>
     </main>
   );

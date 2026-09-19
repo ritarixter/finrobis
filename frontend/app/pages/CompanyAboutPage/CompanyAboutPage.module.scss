@@ -19,17 +19,6 @@
   box-sizing: border-box;
 }
 
-.heroDecor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(360px, 28vw);
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
 .heroImage {
   position: absolute;
   top: 50px;
@@ -40,6 +29,115 @@
   object-fit: cover;
   border-radius: 20px;
   z-index: 1;
+}
+
+.heroMarketAnimation {
+  inset: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.marketAnimation {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 48%, rgba(9, 14, 7, 0.2) 100%);
+}
+
+.marketTrend {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5%;
+  width: 100%;
+  height: 56%;
+  overflow: visible;
+}
+
+.marketTrendLine,
+.marketTrendGlow {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  animation: marketLine 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.marketTrendLine {
+  stroke: rgba(202, 255, 51, 0.74);
+  stroke-width: 2;
+}
+
+.marketTrendGlow {
+  stroke: rgba(202, 255, 51, 0.2);
+  stroke-width: 15;
+  filter: blur(7px);
+}
+
+.dotCloud {
+  position: absolute;
+  width: clamp(150px, 19vw, 260px);
+  aspect-ratio: 1;
+  opacity: 0;
+  background-image: radial-gradient(circle, rgba(202, 255, 51, 0.94) 0 1.15px, transparent 1.45px);
+  background-size: 7px 7px;
+  mask-image: radial-gradient(circle, #000 0, rgba(0, 0, 0, 0.86) 38%, transparent 72%);
+  -webkit-mask-image: radial-gradient(circle, #000 0, rgba(0, 0, 0, 0.86) 38%, transparent 72%);
+  will-change: top, left, opacity, transform;
+}
+
+.dotCloudPrimary {
+  animation: marketCloudRoute 11s ease-in-out infinite;
+}
+
+.dotCloudSecondary {
+  width: clamp(110px, 14vw, 190px);
+  animation: marketCloudRoute 11s ease-in-out -5.5s infinite;
+}
+
+.tradeNode {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #eaffad;
+  box-shadow: 0 0 12px #caff33;
+}
+
+.tradeNode::before {
+  position: absolute;
+  inset: -12px;
+  content: "";
+  border: 1px solid rgba(202, 255, 51, 0.8);
+  border-radius: 50%;
+  animation: tradeNodePulse 2.8s ease-out infinite;
+}
+
+.tradeNodeOne {
+  left: 19%;
+  top: 60%;
+}
+
+.tradeNodeTwo {
+  left: 55%;
+  top: 43%;
+}
+
+.tradeNodeThree {
+  left: 82%;
+  top: 25%;
+}
+
+.tradeNodeTwo::before {
+  animation-delay: 0.9s;
+}
+
+.tradeNodeThree::before {
+  animation-delay: 1.8s;
 }
 
 .heroCard {
@@ -57,7 +155,7 @@
   flex-shrink: 0;
   border-radius: 20px 0 80px 20px;
   background: var(--Grey-10, #1a1a1a);
-  z-index: 2;
+  z-index: 3;
 }
 
 .title {
@@ -149,12 +247,110 @@
   content: none;
 }
 
-.missionImage {
-  display: block;
+.missionVisual {
+  position: relative;
   width: min(740px, 100%);
-  height: auto;
+  flex: 0 1 740px;
+  aspect-ratio: 813 / 423;
+  overflow: hidden;
   border-radius: 20px;
+  background: #1a1a1a;
+}
+
+.missionImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  clip-path: inset(14.18% 7.38% 14.66% 7.38% round 20px);
+}
+
+@keyframes marketLine {
+  0% {
+    stroke-dashoffset: 1300;
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  68% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  88%,
+  100% {
+    stroke-dashoffset: -1300;
+    opacity: 0;
+  }
+}
+
+@keyframes marketCloudRoute {
+  0% {
+    left: -16%;
+    top: 66%;
+    opacity: 0;
+    transform: scale(0.66);
+  }
+  12% {
+    opacity: 0.9;
+  }
+  28% {
+    left: 18%;
+    top: 48%;
+    transform: scale(0.92);
+  }
+  52% {
+    left: 43%;
+    top: 52%;
+    transform: scale(0.78);
+  }
+  74% {
+    left: 67%;
+    top: 25%;
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  100% {
+    left: 94%;
+    top: 5%;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes tradeNodePulse {
+  from {
+    opacity: 0.85;
+    transform: scale(0.25);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketTrendLine,
+  .marketTrendGlow,
+  .dotCloud,
+  .tradeNode::before {
+    animation: none;
+  }
+
+  .marketTrendLine,
+  .marketTrendGlow {
+    opacity: 0.7;
+    stroke-dashoffset: 0;
+  }
+
+  .dotCloudPrimary {
+    left: 55%;
+    top: 28%;
+    opacity: 0.7;
+  }
 }
 
 .valuesSection,
@@ -225,10 +421,6 @@
     min-height: auto;
   }
 
-  .heroDecor {
-    width: min(280px, 40vw);
-  }
-
   .heroImage {
     position: relative;
     top: auto;
@@ -239,6 +431,11 @@
     aspect-ratio: 153 / 101;
     border-radius: 0 0 20px 20px;
     order: 2;
+  }
+
+  .heroMarketAnimation {
+    inset: 0;
+    width: 100%;
   }
 
   .heroCard {
@@ -287,8 +484,9 @@
     max-width: 100%;
   }
 
-  .missionImage {
+  .missionVisual {
     width: 100%;
+    flex-basis: auto;
   }
 
   .valuesSection {
@@ -375,7 +573,7 @@
     max-width: 100%;
   }
 
-  .missionImage {
+  .missionVisual {
     width: 100%;
   }
 

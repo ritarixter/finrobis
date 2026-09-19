@@ -10,9 +10,10 @@ export interface QuestionsItem extends QuestionItemProps {
 export interface QuestionsProps {
   items: QuestionsItem[];
   defaultOpenIndex?: number;
+  interactiveDots?: boolean;
 }
 
-export function Questions({ items, defaultOpenIndex = -1 }: QuestionsProps) {
+export function Questions({ items, defaultOpenIndex = -1, interactiveDots = false }: QuestionsProps) {
   const [openIndex, setOpenIndex] = useState<number>(defaultOpenIndex);
 
   const handleToggle = (index: number) => {
@@ -31,6 +32,7 @@ export function Questions({ items, defaultOpenIndex = -1 }: QuestionsProps) {
               {...itemProps}
               isOpen={openIndex === index}
               onToggle={() => handleToggle(index)}
+              interactiveDots={interactiveDots}
             />
           </div>
         );
