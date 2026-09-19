@@ -2,6 +2,7 @@ import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemTextWithImageList } from "~/components/ItemTextWithImageList/ItemTextWithImageList";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -19,17 +20,11 @@ export function ResourcesCaseStudiesPage() {
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
         <img
-          className={styles.heroDecor}
-          src={resourcesCaseStudies.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <img
           className={styles.heroImage}
           src={resourcesCaseStudies.intro.imageSrc}
           alt={resourcesCaseStudies.intro.title}
         />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{resourcesCaseStudies.intro.title}</h1>

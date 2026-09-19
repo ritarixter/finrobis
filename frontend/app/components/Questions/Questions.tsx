@@ -13,7 +13,7 @@ export interface QuestionsProps {
   interactiveDots?: boolean;
 }
 
-export function Questions({ items, defaultOpenIndex = -1, interactiveDots = false }: QuestionsProps) {
+export function Questions({ items, defaultOpenIndex = -1, interactiveDots = true }: QuestionsProps) {
   const [openIndex, setOpenIndex] = useState<number>(defaultOpenIndex);
 
   const handleToggle = (index: number) => {

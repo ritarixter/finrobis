@@ -55,10 +55,11 @@ export function MarketDataCard({
   imageWrapperStyle,
   imageStyle,
 }: MarketDataCardProps) {
+  const hasInteractiveDots = variant === "wide" || interactiveDots;
   const rootClassName = [
     "market-data-card",
     `market-data-card--${variant}`,
-    interactiveDots ? "market-data-card--interactive-dots" : "",
+    hasInteractiveDots ? "market-data-card--interactive-dots" : "",
     className,
   ]
     .filter(Boolean)
@@ -79,7 +80,7 @@ export function MarketDataCard({
   const imageName = ["market-data-card__image", imageClassName].filter(Boolean).join(" ");
 
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
-    if (!interactiveDots || event.pointerType === "touch") return;
+    if (!hasInteractiveDots || event.pointerType === "touch") return;
 
     const bounds = event.currentTarget.getBoundingClientRect();
     event.currentTarget.style.setProperty("--market-dots-x", `${event.clientX - bounds.left}px`);
@@ -111,10 +112,10 @@ export function MarketDataCard({
 
       <div
         className={imageWrapperName}
-        aria-hidden={interactiveDots || imageAlt === ""}
+        aria-hidden={hasInteractiveDots || imageAlt === ""}
         style={imageWrapperStyle}
       >
-        {interactiveDots ? (
+        {hasInteractiveDots ? (
           <div className="market-data-card__dots" aria-hidden="true" />
         ) : (
           <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />

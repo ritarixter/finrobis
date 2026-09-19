@@ -5,33 +5,11 @@ import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
 import { TextList } from "~/components/TextList/TextList";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./CompanyAboutPage.module.scss";
-
-function MarketBackgroundAnimation({ className = "" }: { className?: string }) {
-  return (
-    <div className={`${styles.marketAnimation} ${className}`.trim()} aria-hidden="true">
-      <svg className={styles.marketTrend} viewBox="0 0 1000 320" preserveAspectRatio="none">
-        <path
-          className={styles.marketTrendGlow}
-          d="M0 278 C80 254 128 280 190 224 S302 246 370 185 S478 218 550 150 S665 180 728 112 S842 134 1000 28"
-        />
-        <path
-          className={styles.marketTrendLine}
-          d="M0 278 C80 254 128 280 190 224 S302 246 370 185 S478 218 550 150 S665 180 728 112 S842 134 1000 28"
-        />
-      </svg>
-
-      <span className={`${styles.dotCloud} ${styles.dotCloudPrimary}`} />
-      <span className={`${styles.dotCloud} ${styles.dotCloudSecondary}`} />
-      <span className={`${styles.tradeNode} ${styles.tradeNodeOne}`} />
-      <span className={`${styles.tradeNode} ${styles.tradeNodeTwo}`} />
-      <span className={`${styles.tradeNode} ${styles.tradeNodeThree}`} />
-    </div>
-  );
-}
 
 export function CompanyAboutPage() {
   const { company } = useLang().content.pages;

@@ -2,6 +2,7 @@ import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -18,14 +19,8 @@ export function ResourcesNewsPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={resourcesNews.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={resourcesNews.intro.imageSrc} alt={resourcesNews.intro.title} />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{resourcesNews.intro.title}</h1>

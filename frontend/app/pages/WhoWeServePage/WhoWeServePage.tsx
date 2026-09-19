@@ -4,6 +4,7 @@ import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -20,14 +21,8 @@ export function WhoWeServePage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={whoWeServe.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={whoWeServe.intro.imageSrc} alt={whoWeServe.intro.title} />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{whoWeServe.intro.title}</h1>

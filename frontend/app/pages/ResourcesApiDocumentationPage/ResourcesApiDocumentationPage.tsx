@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
@@ -7,9 +7,9 @@ import { MarketDataCard } from "~/components/MarketDataCard/MarketDataCard";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
-import assetLiquidityImage from "~/assets/images/Asset_Liquidity.png";
 
 import styles from "./ResourcesApiDocumentationPage.module.scss";
 
@@ -28,6 +28,48 @@ hashlib.sha256).hexdigest()
 headers = {«X-API-Key»: API_KEY, «X-Timestamp»: ts, «X-Signature»: sig}
 return requests.post(f“{BASE_URL}/orders“, data=payload, headers=headers).json()`;
 
+function subscribeToReducedMotion(onChange: () => void) {
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", onChange);
+  return () => mediaQuery.removeEventListener("change", onChange);
+}
+
+function getReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function TypedCode({ code }: { code: string }) {
+  const [visibleCharacters, setVisibleCharacters] = useState(0);
+  const reduceMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, () => false);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const isComplete = visibleCharacters >= code.length;
+    const nextCharacter = code[visibleCharacters];
+    const delay = isComplete ? 2600 : nextCharacter === "\n" ? 100 : 22;
+    const timeout = window.setTimeout(
+      () => setVisibleCharacters(isComplete ? 0 : visibleCharacters + 1),
+      delay,
+    );
+
+    return () => window.clearTimeout(timeout);
+  }, [code, reduceMotion, visibleCharacters]);
+
+  return (
+    <div className={styles.codeViewport}>
+      <pre className={styles.screenReaderCode}>{code}</pre>
+      <pre className={`${styles.codeExampleText} ${styles.codeSizer}`} aria-hidden="true">
+        {code}
+      </pre>
+      <pre className={`${styles.codeExampleText} ${styles.typedCode}`} aria-hidden="true">
+        <code>{code.slice(0, reduceMotion ? code.length : visibleCharacters)}</code>
+        <span className={styles.codeCursor} />
+      </pre>
+    </div>
+  );
+}
+
 export function ResourcesApiDocumentationPage() {
   const { resourcesApiDocumentation } = useLang().content.pages;
   const navigate = useNavigate();
@@ -44,17 +86,11 @@ export function ResourcesApiDocumentationPage() {
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
         <img
-          className={styles.heroDecor}
-          src={resourcesApiDocumentation.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <img
           className={styles.heroImage}
           src={resourcesApiDocumentation.intro.imageSrc}
           alt={resourcesApiDocumentation.intro.title}
         />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{resourcesApiDocumentation.intro.title}</h1>
@@ -98,7 +134,9 @@ export function ResourcesApiDocumentationPage() {
             imageSrc={card.imageSrc}
             imageAlt={card.imageAlt}
             variant="compact"
-            className={card.title === "Authentication" ? styles.authenticationCard : ""}
+            className={`${styles.endpointCard} ${
+              card.title === "Authentication" ? styles.authenticationCard : ""
+            }`.trim()}
           />
         ))}
       </section>
@@ -124,15 +162,16 @@ export function ResourcesApiDocumentationPage() {
         </h2>
 
         <div className={styles.codeExampleCard}>
-          <img
-            className={styles.codeExampleImage}
-            src={assetLiquidityImage}
-            alt=""
-            aria-hidden="true"
-          />
+          <div className={styles.terminalGlow} aria-hidden="true" />
           <div className={styles.codeExampleContent}>
+            <div className={styles.terminalBar} aria-hidden="true">
+              <span />
+              <span />
+              <span />
+              <small>finorbis-api / python</small>
+            </div>
             <h3 className={styles.codeExampleTitle}>Python — Place Market Order</h3>
-            <pre className={styles.codeExampleText}>{codeExample}</pre>
+            <TypedCode code={codeExample} />
           </div>
         </div>
       </section>

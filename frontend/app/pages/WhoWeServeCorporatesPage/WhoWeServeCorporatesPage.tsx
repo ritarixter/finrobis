@@ -4,6 +4,7 @@ import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./WhoWeServeCorporatesPage.module.scss";
@@ -15,17 +16,11 @@ export function WhoWeServeCorporatesPage() {
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
         <img
-          className={styles.heroDecor}
-          src={whoWeServeCorporates.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <img
           className={styles.heroImage}
           src={whoWeServeCorporates.intro.imageSrc}
           alt={whoWeServeCorporates.intro.title}
         />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{whoWeServeCorporates.intro.title}</h1>

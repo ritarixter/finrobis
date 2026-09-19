@@ -33,7 +33,6 @@ type TFormProps = {
   buttonText: string;
   errorMessages: TFormErrors;
   variant?: "default" | "contact";
-  decorImageSrc?: string;
   style?: CSSProperties;
   onSubmit?: (data: {
     firstName: string;
@@ -60,7 +59,6 @@ export function Form({
   buttonText,
   errorMessages,
   variant = "default",
-  decorImageSrc,
   style,
   onSubmit,
 }: TFormProps) {
@@ -78,13 +76,6 @@ export function Form({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isFloating = (field: keyof FormData) => focusedField === field || formData[field] !== "";
-
-  const rootStyle = decorImageSrc
-    ? ({
-        ...style,
-        ["--form-decor-image" as string]: `url("${decorImageSrc}")`,
-      } as CSSProperties)
-    : style;
 
   const firstNameLabel = labels.firstName ?? labels.name ?? "";
   const showExtendedFields = isContactVariant || Boolean(labels.lastName) || Boolean(labels.phoneNumber);
@@ -154,7 +145,15 @@ export function Form({
     .join(" ");
 
   return (
-    <form className={rootClassName} style={rootStyle} onSubmit={handleSubmit} noValidate>
+    <form className={rootClassName} style={style} onSubmit={handleSubmit} noValidate>
+      {isContactVariant ? (
+        <div className={styles.dotAnimation} aria-hidden="true">
+          <span className={styles.dotDonut} />
+          <span className={styles.dotWave} />
+          <span className={styles.dotWaveSecondary} />
+        </div>
+      ) : null}
+
       <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.fields}>

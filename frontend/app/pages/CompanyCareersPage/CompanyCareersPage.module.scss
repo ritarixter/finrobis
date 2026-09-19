@@ -19,17 +19,6 @@
   box-sizing: border-box;
 }
 
-.heroDecor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(360px, 28vw);
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
 .heroImage {
   position: absolute;
   top: 50px;
@@ -40,6 +29,12 @@
   object-fit: cover;
   border-radius: 20px;
   z-index: 1;
+}
+
+.heroMarketAnimation {
+  inset: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 .heroCard {
@@ -57,7 +52,7 @@
   flex-shrink: 0;
   border-radius: 20px 0 80px 20px;
   background: var(--Grey-10, #1a1a1a);
-  z-index: 2;
+  z-index: 3;
 }
 
 .title {
@@ -171,10 +166,6 @@
     display: flex;
     flex-direction: column;
     min-height: auto;
-  }
-
-  .heroDecor {
-    width: min(280px, 40vw);
   }
 
   .heroImage {

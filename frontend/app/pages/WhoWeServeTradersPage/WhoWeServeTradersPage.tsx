@@ -5,6 +5,7 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { ItemTextWithImage } from "~/components/ItemTextWithImage/ItemTextWithImage";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -22,17 +23,11 @@ export function WhoWeServeTradersPage() {
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
         <img
-          className={styles.heroDecor}
-          src={whoWeServeTraders.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <img
           className={styles.heroImage}
           src={whoWeServeTraders.intro.imageSrc}
           alt={whoWeServeTraders.intro.title}
         />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{whoWeServeTraders.intro.title}</h1>
