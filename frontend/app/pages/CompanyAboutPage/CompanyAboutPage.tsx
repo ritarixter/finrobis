@@ -66,7 +66,11 @@ export function CompanyAboutPage() {
         <div className={styles.missionContent}>
           <TextList items={[about.mission.quote]} className={styles.missionQuoteList} />
 
-          <img className={styles.missionImage} src={about.mission.imageSrc} alt={about.mission.imageAlt} />
+          <img
+            className={styles.missionImage}
+            src={about.mission.imageSrc}
+            alt={about.mission.imageAlt}
+          />
         </div>
       </section>
 

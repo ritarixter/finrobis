@@ -24,7 +24,7 @@ export function CustodyStakingPage() {
           badgeText={custodyStaking.intro.badgeText}
           imageSrc={custodyStaking.intro.imageSrc}
           button1={{ text: custodyStaking.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
@@ -62,7 +62,8 @@ export function CustodyStakingPage() {
 
       <section className={styles.stakingModelsSection}>
         <h2 className={styles.sectionTitle}>
-          {custodyStaking.stakingModels.title} <span>{custodyStaking.stakingModels.accentTitle}</span>
+          {custodyStaking.stakingModels.title}{" "}
+          <span>{custodyStaking.stakingModels.accentTitle}</span>
         </h2>
 
         <ItemsContainer
@@ -74,7 +75,8 @@ export function CustodyStakingPage() {
 
       <section className={styles.riskManagementSection}>
         <h2 className={styles.sectionTitle}>
-          {custodyStaking.riskManagement.title} <span>{custodyStaking.riskManagement.accentTitle}</span>
+          {custodyStaking.riskManagement.title}{" "}
+          <span>{custodyStaking.riskManagement.accentTitle}</span>
         </h2>
 
         <ItemTextWithImageList

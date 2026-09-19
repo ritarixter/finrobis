@@ -64,9 +64,7 @@ export default function TermsPage() {
       <section className={styles.targetAudienceSection}>
         <h2 className={styles.sectionTitle}>
           {terms.targetAudience.title}{" "}
-          <span className={styles.sectionTitleAccent}>
-            {terms.targetAudience.accentTitle}
-          </span>
+          <span className={styles.sectionTitleAccent}>{terms.targetAudience.accentTitle}</span>
         </h2>
 
         <TextList
@@ -149,10 +147,12 @@ export default function TermsPage() {
               title={item.title}
               text={item.text}
               srcImage={item.srcImage}
-              className={index === 0 ? styles.amendmentHistoryCardFirst : styles.amendmentHistoryCardSecond}
+              className={
+                index === 0 ? styles.amendmentHistoryCardFirst : styles.amendmentHistoryCardSecond
+              }
               style={
                 index === 0
-                    ? {
+                  ? {
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "flex-start",
@@ -201,7 +201,8 @@ export default function TermsPage() {
 
       <section className={styles.faqSection}>
         <h2 className={styles.sectionTitle}>
-          {terms.faq.title} <span className={styles.sectionTitleAccent}>{terms.faq.accentTitle}</span>
+          {terms.faq.title}{" "}
+          <span className={styles.sectionTitleAccent}>{terms.faq.accentTitle}</span>
         </h2>
 
         <div className={styles.faqQuestions}>

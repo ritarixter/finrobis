@@ -25,7 +25,11 @@ export function ResourcesNewsPage() {
           aria-hidden="true"
         />
 
-        <img className={styles.heroImage} src={resourcesNews.intro.imageSrc} alt={resourcesNews.intro.title} />
+        <img
+          className={styles.heroImage}
+          src={resourcesNews.intro.imageSrc}
+          alt={resourcesNews.intro.title}
+        />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{resourcesNews.intro.title}</h1>

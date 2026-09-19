@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Button, ThemeButton } from "~/components/ui/Button/Button";
 import { Benefits } from "~/components/Benefits/Benefits";
 import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
@@ -9,6 +9,7 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
+import { typeTwitter } from "~/animations/typetwitter";
 import assetLiquidityImage from "~/assets/images/Asset_Liquidity.png";
 
 import styles from "./ResourcesApiDocumentationPage.module.scss";
@@ -31,9 +32,16 @@ return requests.post(f“{BASE_URL}/orders“, data=payload, headers=headers).js
 export function ResourcesApiDocumentationPage() {
   const { resourcesApiDocumentation } = useLang().content.pages;
   const navigate = useNavigate();
+  const codeExampleRef = useRef<HTMLPreElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (!codeExampleRef.current) return;
+
+    return typeTwitter(codeExampleRef.current, codeExample);
   }, []);
 
   const handleContactUsClick = () => {
@@ -132,14 +140,17 @@ export function ResourcesApiDocumentationPage() {
           />
           <div className={styles.codeExampleContent}>
             <h3 className={styles.codeExampleTitle}>Python — Place Market Order</h3>
-            <pre className={styles.codeExampleText}>{codeExample}</pre>
+            <pre ref={codeExampleRef} className={styles.codeExampleText}>
+              {codeExample}
+            </pre>
           </div>
         </div>
       </section>
 
       <section className={styles.fixSection}>
         <h2 className={styles.sectionTitle}>
-          {resourcesApiDocumentation.fixApi.title} <span>{resourcesApiDocumentation.fixApi.accentTitle}</span>
+          {resourcesApiDocumentation.fixApi.title}{" "}
+          <span>{resourcesApiDocumentation.fixApi.accentTitle}</span>
         </h2>
 
         <p className={styles.apiText}>{resourcesApiDocumentation.fixApi.text}</p>
@@ -170,7 +181,8 @@ export function ResourcesApiDocumentationPage() {
 
       <section className={styles.sandboxSection}>
         <h2 className={styles.sectionTitle}>
-          {resourcesApiDocumentation.sandboxTesting.title} <span>{resourcesApiDocumentation.sandboxTesting.accentTitle}</span>
+          {resourcesApiDocumentation.sandboxTesting.title}{" "}
+          <span>{resourcesApiDocumentation.sandboxTesting.accentTitle}</span>
         </h2>
 
         <p className={styles.apiText}>{resourcesApiDocumentation.sandboxTesting.text}</p>

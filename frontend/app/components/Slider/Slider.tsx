@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import type { EmblaOptionsType } from "embla-carousel";
+import type { EmblaOptionsType, EngineType, ScrollBodyType } from "embla-carousel";
 import styles from "./Slider.module.scss";
 
 export interface SliderProps {
@@ -8,27 +8,53 @@ export interface SliderProps {
   className?: string;
   slideClassName?: string;
   options?: EmblaOptionsType;
-  showArrows?: boolean;
   showFade?: boolean;
+  autoPlay?: boolean;
+  autoPlayDelay?: number;
+  autoScrollSpeed?: number;
 }
 
-function ArrowIcon({ direction }: { direction: "prev" | "next" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      style={direction === "prev" ? { transform: "rotate(180deg)" } : undefined}
-      aria-hidden="true"
-    >
-      <path
-        d="M5 12h14m0 0-6-6m6 6-6 6"
-        stroke="currentColor"
-        strokeWidth={1.75}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+function createContinuousScrollBody(engine: EngineType, speed: number): ScrollBodyType {
+  const { location, previousLocation, target, scrollTarget, index, indexPrevious, eventHandler } =
+    engine;
+  const velocity = -Math.abs(speed);
+  const noop = () => scrollBody;
+  let direction = -1;
+  let rawLocation = location.get();
+  let previousRawLocation = rawLocation;
+
+  const scrollBody: ScrollBodyType = {
+    direction: () => direction,
+    duration: () => -1,
+    velocity: () => velocity,
+    settled: () => false,
+    seek: () => {
+      previousLocation.set(location);
+      rawLocation += velocity;
+      location.add(velocity);
+      target.set(location);
+
+      direction = Math.sign(rawLocation - previousRawLocation);
+      previousRawLocation = rawLocation;
+
+      const previousIndex = index.get();
+      const nextIndex = scrollTarget.byDistance(0, false).index;
+
+      if (previousIndex !== nextIndex) {
+        indexPrevious.set(previousIndex);
+        index.set(nextIndex);
+        eventHandler.emit("select");
+      }
+
+      return scrollBody;
+    },
+    useBaseFriction: noop,
+    useBaseDuration: noop,
+    useFriction: noop,
+    useDuration: noop,
+  };
+
+  return scrollBody;
 }
 
 export function Slider({
@@ -36,63 +62,85 @@ export function Slider({
   className = "",
   slideClassName = "",
   options,
-  showArrows = true,
   showFade = true,
+  autoPlay = true,
+  autoPlayDelay = 600,
+  autoScrollSpeed = 0.6,
 }: SliderProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
-    loop: false,
+    duration: 40,
     ...options,
+    loop: true,
+    watchDrag: false,
   });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    const animationFrame = window.requestAnimationFrame(updatePreference);
 
-  const onSelect = useCallback((api: NonNullable<typeof emblaApi>) => {
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
+    mediaQuery.addEventListener("change", updatePreference);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      mediaQuery.removeEventListener("change", updatePreference);
+    };
   }, []);
 
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || !autoPlay || prefersReducedMotion || slides.length < 2) {
+      return;
+    }
 
-    onSelect(emblaApi);
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
+    const engine = emblaApi.internalEngine();
+    const defaultScrollBody = engine.scrollBody;
+    const continuousScrollBody = createContinuousScrollBody(engine, autoScrollSpeed);
+    const startTimer = window.setTimeout(() => {
+      engine.scrollBody = continuousScrollBody;
+      engine.animation.start();
+    }, autoPlayDelay);
 
     return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
+      window.clearTimeout(startTimer);
+
+      if (engine.scrollBody === continuousScrollBody) {
+        engine.scrollBody = defaultScrollBody;
+      }
     };
-  }, [emblaApi, onSelect]);
+  }, [autoPlay, autoPlayDelay, autoScrollSpeed, emblaApi, prefersReducedMotion, slides.length]);
+
+  const carouselSlides =
+    slides.length > 1 && slides.length < 6
+      ? Array.from({ length: Math.ceil(6 / slides.length) }, () => slides).flat()
+      : slides;
 
   const rootClassName = [styles.slider, className].filter(Boolean).join(" ");
   const slideItemClassName = [styles.slide, slideClassName].filter(Boolean).join(" ");
 
   return (
-    <div className={rootClassName}>
-      {showArrows && (
-        <button
-          type="button"
-          className={styles.button}
-          onClick={scrollPrev}
-          disabled={!canScrollPrev}
-          aria-label="Previous slide"
-        >
-          <ArrowIcon direction="prev" />
-        </button>
-      )}
-
-      <div className={styles.viewport} ref={emblaRef}>
+    <div className={rootClassName} role="region" aria-label="Content carousel">
+      <div className={styles.viewport} ref={emblaRef} aria-live="off">
         <div className={styles.container}>
-          {slides.map((slide, index) => (
-            <div className={slideItemClassName} key={index}>
-              <img className={styles.slide__image} src={slide.imageSrc} alt={slide.title} />
-              <p className={styles.slide__title}>{slide.title}</p>
-            </div>
-          ))}
+          {carouselSlides.map((slide, index) => {
+            const isClone = index >= slides.length;
+
+            return (
+              <div
+                className={slideItemClassName}
+                key={`${slide.imageSrc}-${index}`}
+                aria-hidden={isClone || undefined}
+              >
+                <img
+                  className={styles.slide__image}
+                  src={slide.imageSrc}
+                  alt={isClone ? "" : slide.title}
+                />
+                <p className={styles.slide__title}>{slide.title}</p>
+              </div>
+            );
+          })}
         </div>
 
         {showFade && (
@@ -102,18 +150,6 @@ export function Slider({
           </>
         )}
       </div>
-
-      {showArrows && (
-        <button
-          type="button"
-          className={styles.button}
-          onClick={scrollNext}
-          disabled={!canScrollNext}
-          aria-label="Next slide"
-        >
-          <ArrowIcon direction="next" />
-        </button>
-      )}
     </div>
   );
 }

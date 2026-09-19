@@ -22,7 +22,7 @@ export function CustodyKycAmlPage() {
           badgeText={custodyKycAml.intro.badgeText}
           imageSrc={custodyKycAml.intro.imageSrc}
           button1={{ text: custodyKycAml.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>

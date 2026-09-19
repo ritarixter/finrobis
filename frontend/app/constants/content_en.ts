@@ -297,14 +297,6 @@ export const content_en = {
           title: "Traders\n(OTC, algorithms)",
           imageSrc: slideTraders,
         },
-        {
-          title: "Corporates\n(Treasury, Conversion)",
-          imageSrc: slideCorp,
-        },
-        {
-          title: "Traders\n(OTC, algorithms)",
-          imageSrc: slideTraders,
-        },
       ],
       technologyItems: [
         {
@@ -374,8 +366,7 @@ export const content_en = {
         },
         story: {
           title: "Our Story",
-          body:
-            "In 2016, our founders recognized that institutional investors were ready to enter digital assets — but the infrastructure simply did not exist. No institutional standards, no scalable solutions, fragmented markets, offshore desks, no regulation, and no trustworthy counterparties for serious execution.\n\nThey founded Finorbis in Switzerland — with a clear mission: to consolidate the market and become the counterparty that institutions can trust. No shortcuts, no noise. Licensed from day one, built without compromise — scaled from a founder-led desk to a trusted partner behind billions in institutional volume.",
+          body: "In 2016, our founders recognized that institutional investors were ready to enter digital assets — but the infrastructure simply did not exist. No institutional standards, no scalable solutions, fragmented markets, offshore desks, no regulation, and no trustworthy counterparties for serious execution.\n\nThey founded Finorbis in Switzerland — with a clear mission: to consolidate the market and become the counterparty that institutions can trust. No shortcuts, no noise. Licensed from day one, built without compromise — scaled from a founder-led desk to a trusted partner behind billions in institutional volume.",
           imageSrc: assetLiquidityImage,
           imageAlt: "Our Story",
         },
@@ -388,7 +379,12 @@ export const content_en = {
             text: "E-daily trading volume",
           },
           { iconSrc: groupsIcon, iconAlt: "Clients", title: "150+", text: "Clients" },
-          { iconSrc: planetIcon, iconAlt: "Countries Served", title: "40+", text: "Countries Served" },
+          {
+            iconSrc: planetIcon,
+            iconAlt: "Countries Served",
+            title: "40+",
+            text: "Countries Served",
+          },
         ],
         mission: {
           title: "Our",
@@ -504,8 +500,7 @@ export const content_en = {
       },
       marketData: {
         title: "Who Trusts Finorbis ?",
-        body:
-          "Finorbis serves a broad spectrum of institutional and professional clients — from growing fintechs requiring regulated trading infrastructure to global banks scaling their crypto strategy. What unites them all: the demand for security, compliance, and execution quality.",
+        body: "Finorbis serves a broad spectrum of institutional and professional clients — from growing fintechs requiring regulated trading infrastructure to global banks scaling their crypto strategy. What unites them all: the demand for security, compliance, and execution quality.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Who Trusts Finorbis",
       },
@@ -647,8 +642,7 @@ export const content_en = {
       },
       marketData: {
         title: "The Finorbis Advantage for Fintechs",
-        body:
-          "Fintechs need fast, reliable, and compliance-compliant crypto infrastructure — without months of in-house development or the risks of unregulated offshore infrastructure. Finorbis delivers trading, custody, staking, and on/off-ramps via a single, Swiss-licensed API.",
+        body: "Fintechs need fast, reliable, and compliance-compliant crypto infrastructure — without months of in-house development or the risks of unregulated offshore infrastructure. Finorbis delivers trading, custody, staking, and on/off-ramps via a single, Swiss-licensed API.",
         imageSrc: assetLiquidityImage,
         imageAlt: "The Finorbis Advantage for Fintechs",
       },
@@ -780,8 +774,7 @@ export const content_en = {
       },
       marketData: {
         title: "Crypto in Everyday Business",
-        body:
-          "An increasing number of companies generate revenues in cryptocurrencies or use digital assets for international payments and treasury diversification. Finorbis offers corporates a regulated, Swiss infrastructure to handle these activities securely, compliantly, and efficiently.",
+        body: "An increasing number of companies generate revenues in cryptocurrencies or use digital assets for international payments and treasury diversification. Finorbis offers corporates a regulated, Swiss infrastructure to handle these activities securely, compliantly, and efficiently.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Crypto in Everyday Business",
       },
@@ -936,8 +929,7 @@ export const content_en = {
       },
       marketData: {
         title: "Built for Professional Traders",
-        body:
-          "Finorbis is the preferred trading platform for trading desks, prop trading firms, and brokers requiring institutional liquidity depth, best-in-class execution quality, and 24/7 availability. No order book risk, no slippage, no counterparty chaos — direct execution against Finorbis as a regulated counterparty.",
+        body: "Finorbis is the preferred trading platform for trading desks, prop trading firms, and brokers requiring institutional liquidity depth, best-in-class execution quality, and 24/7 availability. No order book risk, no slippage, no counterparty chaos — direct execution against Finorbis as a regulated counterparty.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Built for Professional Traders",
       },
@@ -1067,8 +1059,7 @@ export const content_en = {
       },
       marketData: {
         title: "The One-Stop Shop for Institutions",
-        body:
-          "Large institutions — banks, hedge funds, asset managers, pension funds, and regulated brokers — need a partner that meets all regulatory, operational, and security requirements. As a Swiss VQF-regulated provider, Finorbis offers trading, custody, staking, and asset management from a single source — fully integrated and auditable.",
+        body: "Large institutions — banks, hedge funds, asset managers, pension funds, and regulated brokers — need a partner that meets all regulatory, operational, and security requirements. As a Swiss VQF-regulated provider, Finorbis offers trading, custody, staking, and asset management from a single source — fully integrated and auditable.",
         imageSrc: assetLiquidityImage,
         imageAlt: "The One-Stop Shop for Institutions",
       },
@@ -1218,8 +1209,7 @@ export const content_en = {
       },
       marketData: {
         title: "Crypto Investments with an Institutional Framework",
-        body:
-          "Professional investors — family offices, high-net-worth individuals, pension funds, and foundations — seek a partner that implements crypto investments in a regulated, transparent manner with clear governance. Finorbis offers discretionary portfolio management, investment advisory, and access to structured products — all under VQF supervision.",
+        body: "Professional investors — family offices, high-net-worth individuals, pension funds, and foundations — seek a partner that implements crypto investments in a regulated, transparent manner with clear governance. Finorbis offers discretionary portfolio management, investment advisory, and access to structured products — all under VQF supervision.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Crypto Investments with an Institutional Framework",
       },
@@ -1353,7 +1343,8 @@ export const content_en = {
     resourcesNews: {
       meta: {
         title: "News - Finorbis",
-        description: "Partnership updates, product news, and market insights from the Finorbis ecosystem.",
+        description:
+          "Partnership updates, product news, and market insights from the Finorbis ecosystem.",
       },
       intro: {
         title: "News",
@@ -1364,8 +1355,7 @@ export const content_en = {
       },
       marketData: {
         title: "Latest Updates",
-        body:
-          "Finorbis regularly publishes news on partnerships, product developments, regulatory topics, and market trends. All updates are aimed at institutional investors and partners.",
+        body: "Finorbis regularly publishes news on partnerships, product developments, regulatory topics, and market trends. All updates are aimed at institutional investors and partners.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Latest Updates",
       },
@@ -1460,8 +1450,7 @@ export const content_en = {
       },
       marketData: {
         title: "Client Success Stories",
-        body:
-          "Finorbis case studies show how different institutions — from Bitcoin investment apps to global staking platforms — have solved their specific challenges using the Finorbis infrastructure. All case studies are based on real client relationships.",
+        body: "Finorbis case studies show how different institutions — from Bitcoin investment apps to global staking platforms — have solved their specific challenges using the Finorbis infrastructure. All case studies are based on real client relationships.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Client Success Stories",
       },
@@ -1664,8 +1653,7 @@ export const content_en = {
       fixApi: {
         title: "FIX API",
         accentTitle: "(Protocol 4.2 / 4.4)",
-        text:
-          "The Finorbis FIX API supports the industry standard for direct integration with order management systems (OMS) and execution management systems (EMS).",
+        text: "The Finorbis FIX API supports the industry standard for direct integration with order management systems (OMS) and execution management systems (EMS).",
         items: [
           {
             iconSrc: structureIcon,
@@ -1728,8 +1716,7 @@ export const content_en = {
       sandboxTesting: {
         title: "Sandbox &",
         accentTitle: "Testing",
-        text:
-          "Finorbis provides a fully separate sandbox environment — with simulated market data, virtual account balances, and identical API endpoints. Immediate sandbox access after KYC onboarding.",
+        text: "Finorbis provides a fully separate sandbox environment — with simulated market data, virtual account balances, and identical API endpoints. Immediate sandbox access after KYC onboarding.",
         items: [
           {
             title: "REST Sandbox URL",
@@ -1857,8 +1844,7 @@ export const content_en = {
       },
       marketData: {
         title: "Custody at Institutional Level",
-        body:
-          "Finorbis offers a fully regulated custody solution for digital assets. Built on technology, complemented by proprietary governance structures and hardware security modules — for institutions that make no compromises on security and compliance.",
+        body: "Finorbis offers a fully regulated custody solution for digital assets. Built on technology, complemented by proprietary governance structures and hardware security modules — for institutions that make no compromises on security and compliance.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Custody at Institutional Level",
       },
@@ -1944,8 +1930,7 @@ export const content_en = {
         accentTitle: "Custody",
         item: {
           title: "Segregated Custody",
-          text:
-            "Each Finorbis client receives dedicated sub-wallets per asset — completely separate from other clients and from Finorbis's own holdings. Custody is off-balance-sheet, ensuring direct ownership rights and maximum transparency.",
+          text: "Each Finorbis client receives dedicated sub-wallets per asset — completely separate from other clients and from Finorbis's own holdings. Custody is off-balance-sheet, ensuring direct ownership rights and maximum transparency.",
           imageSrc: whoWeServeCustodyCard5Image,
           imageAlt: "Segregated Custody",
           imagePlacement: "right" as ImagePlacement,
@@ -2041,8 +2026,7 @@ export const content_en = {
       },
       marketData: {
         title: "What is Multi-Party Computation?",
-        body:
-          "Multi-Party Computation (MPC) is a cryptographic method in which a private key never exists in its entirety in a single location. Instead, it is split into multiple encrypted key shares stored on independent systems in different geographic regions. Transactions are authorized through the collaborative computation of these shares — without the full key ever being reconstructed.",
+        body: "Multi-Party Computation (MPC) is a cryptographic method in which a private key never exists in its entirety in a single location. Instead, it is split into multiple encrypted key shares stored on independent systems in different geographic regions. Transactions are authorized through the collaborative computation of these shares — without the full key ever being reconstructed.",
         imageSrc: assetLiquidityImage,
         imageAlt: "What is Multi-Party Computation?",
       },
@@ -2212,8 +2196,7 @@ export const content_en = {
       },
       marketData: {
         title: "What is Staking?",
-        body:
-          "Staking refers to active participation in proof-of-stake blockchain networks: clients provide their crypto assets as collateral to participate in transaction validation and receive network rewards in return. Staking is one of the safest and most predictable methods of generating a regular return on crypto holdings.",
+        body: "Staking refers to active participation in proof-of-stake blockchain networks: clients provide their crypto assets as collateral to participate in transaction validation and receive network rewards in return. Staking is one of the safest and most predictable methods of generating a regular return on crypto holdings.",
         imageSrc: assetLiquidityImage,
         imageAlt: "What is Staking?",
       },
@@ -2403,8 +2386,7 @@ export const content_en = {
       },
       marketData: {
         title: "Compliance as a Foundation",
-        body:
-          "As a VQF member, Finorbis is subject to Swiss anti-money laundering regulations and conducts full KYC and AML checks for all clients. Blockchain analytics and real-time transaction monitoring are firmly integrated into the custody infrastructure — not as an afterthought, but as part of the core architecture.",
+        body: "As a VQF member, Finorbis is subject to Swiss anti-money laundering regulations and conducts full KYC and AML checks for all clients. Blockchain analytics and real-time transaction monitoring are firmly integrated into the custody infrastructure — not as an afterthought, but as part of the core architecture.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Compliance as a Foundation",
       },
@@ -2579,312 +2561,311 @@ export const content_en = {
         ],
       },
     },
-      careers: {
-        meta: {
-          title: "Careers - Finorbis",
-          description: "Join Finorbis and help build institutional crypto infrastructure.",
-        },
-        intro: {
-          title: "Careers",
-          text: "Join the team redefining institutional crypto infrastructure — with precision, trust, and market speed",
-          button1: "Contact us",
-          imageSrc: companyCareersHeroImage,
-          backgroundImageSrc: companyAboutBackgroundImage,
-        },
-        marketData: {
-          title: "Why Finorbis?",
-          body:
-            "Finorbis builds infrastructure that institutions worldwide rely on — every day, around the clock. We are a small, high-performing team of trading, technology, and compliance experts who act fast, embrace clear accountability, and challenge one another. If you want to work in an environment where your contribution is directly visible, Finorbis is the right place for you.",
-          imageSrc: companyAboutBackgroundImage,
-          imageAlt: "",
-        },
-        benefits: [
-          { iconSrc: globalIcon, iconAlt: "Global", title: "Global", text: "Remote-first culture" },
-          { iconSrc: flatIcon, iconAlt: "Flat", title: "Flat", text: "Flat hierarchies" },
-          { iconSrc: timesIcon, iconAlt: "24/7", title: "24/7", text: "Markets that never sleep" },
-          { iconSrc: impactIcon, iconAlt: "Impact", title: "Impact", text: "Directly measurable" },
-        ],
-        workCulture: {
-          title: "Our Work",
-          accentTitle: "Culture",
-          items: [
-            {
-              id: 1,
-              title: "Ownership Mindset",
-              text: "Every person takes ownership of their area — no micromanagement, no hiding behind processes. We solve, we deliver.",
-              srcImage: companyCareersCulture1Image,
-            },
-            {
-              id: 2,
-              title: "Direct Communication",
-              text: "Clear, fast, and honest. We say what we mean and mean what we say — internally and with clients.",
-              srcImage: companyCareersCulture2Image,
-            },
-            {
-              id: 3,
-              title: "Continuous Learning",
-              text: "Crypto and TradFi evolve daily. We encourage active learning, conference participation, and knowledge sharing within the team.",
-              srcImage: companyCareersCulture3Image,
-            },
-            {
-              id: 4,
-              title: "High Performance",
-              text: "We set high standards — for execution quality, client service, and operational excellence. Mediocrity is not an option.",
-              srcImage: companyCareersCulture4Image,
-            },
-            {
-              id: 5,
-              title: "Diversity & Backgrounds",
-              text: "The team combines TradFi and crypto expertise from around the world. Diverse backgrounds make us stronger — in product decisions and client dialogue.",
-              srcImage: companyCareersCulture5Image,
-            },
-            {
-              id: 6,
-              title: "Trust & Autonomy",
-              text: "We trust our team. Remote work, flexible hours, and results orientation — without constant oversight.",
-              srcImage: companyCareersCulture6Image,
-            },
-          ],
-        },
-        offer: {
-          title: "What We",
-          accentTitle: "Offer",
-          items: [
-            {
-              id: 1,
-              title: "Compensation",
-              text: "Competitive total package of base salary and performance-based bonus — aligned with market and role.",
-            },
-            {
-              id: 2,
-              title: "Flexibility",
-              text: "Remote-first with the option of office presence in Zug or other company jurisdictions. Flexible working hours within team requirements.",
-            },
-            {
-              id: 3,
-              title: "Professional Development",
-              text: "Conferences, courses, certifications, and relevant specialist literature — we invest in your growth.",
-            },
-            {
-              id: 4,
-              title: "Team Culture",
-              text: "Flat hierarchies, open communication, regular team events, and a work environment where good work is recognized.",
-            },
-            {
-              id: 5,
-              title: "Impact",
-              text: "Direct contribution to products and processes used daily by clients in 40+ countries.",
-            },
-          ],
-        },
-        process: {
-          title: "Our Asset Management",
-          accentTitle: "Solutions",
-          items: [
-            {
-              id: 1,
-              title: "Application",
-              text: "CV and brief cover letter (optional) — no elaborate cover letters required. We value clarity over length.",
-            },
-            {
-              id: 2,
-              title: "Intro Call",
-              text: "30-minute introductory call with HR or the hiring manager — mutual assessment, no stress questions.",
-            },
-            {
-              id: 3,
-              title: "Technical Interview",
-              text: "In-depth discussion of specialist competence and concrete experience — sometimes with a brief case study.",
-            },
-            {
-              id: 4,
-              title: "Team Interview",
-              text: "Getting to know the direct team — cultural fit, working style, and mutual expectations.",
-            },
-            {
-              id: 5,
-              title: "Offer",
-              text: "Fast decision — we respect your time. Onboarding within 2–4 weeks of acceptance.",
-            },
-          ],
-        },
-        faq: {
-          title: "FAQ —",
-          accentTitle: "Careers",
-          items: [
-            {
-              id: 1,
-              question: "Is crypto experience strictly required?",
-              answer: "answer",
-            },
-            {
-              id: 2,
-              question: "Does Finorbis offer remote work?",
-              answer:
-                "Yes. Finorbis is remote-first — most roles can be performed fully remotely. Some positions (particularly in trading) require occasional presence in our offices.",
-            },
-            {
-              id: 3,
-              question: "How quickly does the application process move?",
-              answer: "answer",
-            },
-            {
-              id: 4,
-              question: "How quickly does the application process move?",
-              answer: "answer",
-            },
-            {
-              id: 5,
-              question: "How quickly does the application process move?",
-              answer: "answer",
-            },
-          ],
-        },
+    careers: {
+      meta: {
+        title: "Careers - Finorbis",
+        description: "Join Finorbis and help build institutional crypto infrastructure.",
       },
-      contact: {
-        meta: {
-          title: "Contact - Finorbis",
-          description: "Get in touch with Finorbis for new client inquiries, partnerships, or general questions.",
-        },
-        intro: {
-          title: "Contact",
-          text: "Your direct line to Finorbis — for new client inquiries, partnerships, or general questions",
-          button1: "Contact Us",
-          imageSrc: companyContactHeroImage,
-          backgroundImageSrc: companyAboutBackgroundImage,
-        },
-        cta: {
-          title: "How Can We Help?",
-          text: "Whether you want to get to know Finorbis as a client, explore a partnership, or discuss an existing business relationship — our team responds quickly and directly. No anonymous ticketing system, no call center.",
-          imageSrc: assetLiquidityImage,
-          imageAlt: "",
-        },
-        reasons: [
+      intro: {
+        title: "Careers",
+        text: "Join the team redefining institutional crypto infrastructure — with precision, trust, and market speed",
+        button1: "Contact us",
+        imageSrc: companyCareersHeroImage,
+        backgroundImageSrc: companyAboutBackgroundImage,
+      },
+      marketData: {
+        title: "Why Finorbis?",
+        body: "Finorbis builds infrastructure that institutions worldwide rely on — every day, around the clock. We are a small, high-performing team of trading, technology, and compliance experts who act fast, embrace clear accountability, and challenge one another. If you want to work in an environment where your contribution is directly visible, Finorbis is the right place for you.",
+        imageSrc: companyAboutBackgroundImage,
+        imageAlt: "",
+      },
+      benefits: [
+        { iconSrc: globalIcon, iconAlt: "Global", title: "Global", text: "Remote-first culture" },
+        { iconSrc: flatIcon, iconAlt: "Flat", title: "Flat", text: "Flat hierarchies" },
+        { iconSrc: timesIcon, iconAlt: "24/7", title: "24/7", text: "Markets that never sleep" },
+        { iconSrc: impactIcon, iconAlt: "Impact", title: "Impact", text: "Directly measurable" },
+      ],
+      workCulture: {
+        title: "Our Work",
+        accentTitle: "Culture",
+        items: [
           {
-            title: "New Clients",
-            text: "Would you like to use trading, custody, or asset management with Finorbis? Our sales team will guide you from the first conversation through to onboarding.",
+            id: 1,
+            title: "Ownership Mindset",
+            text: "Every person takes ownership of their area — no micromanagement, no hiding behind processes. We solve, we deliver.",
+            srcImage: companyCareersCulture1Image,
           },
           {
-            title: "Partnerships",
-            text: "Technology partners, liquidity providers, or strategic alliances — we welcome partnership inquiries that offer clear mutual value.",
+            id: 2,
+            title: "Direct Communication",
+            text: "Clear, fast, and honest. We say what we mean and mean what we say — internally and with clients.",
+            srcImage: companyCareersCulture2Image,
           },
           {
-            title: "Press & Media",
-            text: "Journalists and analysts receive fast, well-informed responses on market topics, corporate statements, and product updates.",
+            id: 3,
+            title: "Continuous Learning",
+            text: "Crypto and TradFi evolve daily. We encourage active learning, conference participation, and knowledge sharing within the team.",
+            srcImage: companyCareersCulture3Image,
+          },
+          {
+            id: 4,
+            title: "High Performance",
+            text: "We set high standards — for execution quality, client service, and operational excellence. Mediocrity is not an option.",
+            srcImage: companyCareersCulture4Image,
+          },
+          {
+            id: 5,
+            title: "Diversity & Backgrounds",
+            text: "The team combines TradFi and crypto expertise from around the world. Diverse backgrounds make us stronger — in product decisions and client dialogue.",
+            srcImage: companyCareersCulture5Image,
+          },
+          {
+            id: 6,
+            title: "Trust & Autonomy",
+            text: "We trust our team. Remote work, flexible hours, and results orientation — without constant oversight.",
+            srcImage: companyCareersCulture6Image,
           },
         ],
-        form: {
-          title: "Get in touch",
-          labels: {
-            firstName: "First Name",
-            lastName: "Last Name",
-            company: "Company",
-            email: "Business Email",
-            phoneNumber: "Phone Number",
-            message: "Write your message",
+      },
+      offer: {
+        title: "What We",
+        accentTitle: "Offer",
+        items: [
+          {
+            id: 1,
+            title: "Compensation",
+            text: "Competitive total package of base salary and performance-based bonus — aligned with market and role.",
           },
-          buttonText: "Send message",
-          backgroundImageSrc: companyAboutBackgroundImage,
-          errorMessages: {
-            emailRequired: "Please enter your business email.",
-            emailInvalid: "Please enter a valid email address.",
+          {
+            id: 2,
+            title: "Flexibility",
+            text: "Remote-first with the option of office presence in Zug or other company jurisdictions. Flexible working hours within team requirements.",
           },
-        },
-        directContact: {
-          title: "Direct",
-          accentTitle: "Contact",
-          items: [
-            { title: "General Inquiries", text: "info@finorbis.com" },
-            { title: "Sales & Onboarding", text: "sales@finorbis.com" },
-            { title: "Press & Media", text: "press@finorbis.com" },
-            { title: "Careers & Applications", text: "info@finorbis.com" },
-            { title: "Compliance", text: "compliance@finorbis.com" },
-          ],
-        },
-        locations: {
-          title: "Location",
-          office: {
-            title: "Head Office Zug",
-            text:
-              "Zugerstrasse 46, 6314 Unterägeri, Switzerland. Office for business development, sales, asset management, and corporate functions.",
+          {
+            id: 3,
+            title: "Professional Development",
+            text: "Conferences, courses, certifications, and relevant specialist literature — we invest in your growth.",
           },
-          panelImageSrc: companyAboutBackgroundImage,
-          panelAlt: "Finorbis office",
+          {
+            id: 4,
+            title: "Team Culture",
+            text: "Flat hierarchies, open communication, regular team events, and a work environment where good work is recognized.",
+          },
+          {
+            id: 5,
+            title: "Impact",
+            text: "Direct contribution to products and processes used daily by clients in 40+ countries.",
+          },
+        ],
+      },
+      process: {
+        title: "Our Asset Management",
+        accentTitle: "Solutions",
+        items: [
+          {
+            id: 1,
+            title: "Application",
+            text: "CV and brief cover letter (optional) — no elaborate cover letters required. We value clarity over length.",
+          },
+          {
+            id: 2,
+            title: "Intro Call",
+            text: "30-minute introductory call with HR or the hiring manager — mutual assessment, no stress questions.",
+          },
+          {
+            id: 3,
+            title: "Technical Interview",
+            text: "In-depth discussion of specialist competence and concrete experience — sometimes with a brief case study.",
+          },
+          {
+            id: 4,
+            title: "Team Interview",
+            text: "Getting to know the direct team — cultural fit, working style, and mutual expectations.",
+          },
+          {
+            id: 5,
+            title: "Offer",
+            text: "Fast decision — we respect your time. Onboarding within 2–4 weeks of acceptance.",
+          },
+        ],
+      },
+      faq: {
+        title: "FAQ —",
+        accentTitle: "Careers",
+        items: [
+          {
+            id: 1,
+            question: "Is crypto experience strictly required?",
+            answer: "answer",
+          },
+          {
+            id: 2,
+            question: "Does Finorbis offer remote work?",
+            answer:
+              "Yes. Finorbis is remote-first — most roles can be performed fully remotely. Some positions (particularly in trading) require occasional presence in our offices.",
+          },
+          {
+            id: 3,
+            question: "How quickly does the application process move?",
+            answer: "answer",
+          },
+          {
+            id: 4,
+            question: "How quickly does the application process move?",
+            answer: "answer",
+          },
+          {
+            id: 5,
+            question: "How quickly does the application process move?",
+            answer: "answer",
+          },
+        ],
+      },
+    },
+    contact: {
+      meta: {
+        title: "Contact - Finorbis",
+        description:
+          "Get in touch with Finorbis for new client inquiries, partnerships, or general questions.",
+      },
+      intro: {
+        title: "Contact",
+        text: "Your direct line to Finorbis — for new client inquiries, partnerships, or general questions",
+        button1: "Contact Us",
+        imageSrc: companyContactHeroImage,
+        backgroundImageSrc: companyAboutBackgroundImage,
+      },
+      cta: {
+        title: "How Can We Help?",
+        text: "Whether you want to get to know Finorbis as a client, explore a partnership, or discuss an existing business relationship — our team responds quickly and directly. No anonymous ticketing system, no call center.",
+        imageSrc: assetLiquidityImage,
+        imageAlt: "",
+      },
+      reasons: [
+        {
+          title: "New Clients",
+          text: "Would you like to use trading, custody, or asset management with Finorbis? Our sales team will guide you from the first conversation through to onboarding.",
         },
-        onboarding: {
-          title: "Onboarding Process for",
-          accentTitle: "New Clients",
-          primaryItems: [
-            {
-              id: 1,
-              title: "Step 1",
-              subtitle: "Initial Contact",
-              text: "Fill in the form or write directly to sales@finorbis.com. A relationship manager will get in touch within 24 hours.",
-            },
-            {
-              id: 2,
-              title: "Step 2",
-              subtitle: "Discovery Call",
-              text: "30-minute conversation for needs assessment — which products, which volumes, which regulatory requirements.",
-            },
-            {
-              id: 3,
-              title: "Step 3",
-              subtitle: "KYC Documents",
-              text: "You will receive a secure link for submitting your KYC/AML documents — fully digitized and encrypted.",
-            },
-          ],
-          secondaryItems: [
-            {
-              id: 4,
-              title: "Step 4",
-              subtitle: "Review",
-              text: "Compliance review of your documents — typically 48–72 hours. Your relationship manager will keep you continuously updated.",
-            },
-            {
-              id: 5,
-              title: "Step 5",
-              subtitle: "Go Live",
-              text: "Contract signing and immediate access to the platform. Your dedicated account manager will support the onboarding.",
-            },
-          ],
+        {
+          title: "Partnerships",
+          text: "Technology partners, liquidity providers, or strategic alliances — we welcome partnership inquiries that offer clear mutual value.",
         },
-        faq: {
-          title: "FAQ —",
-          accentTitle: "Contact",
-          items: [
-            {
-              id: 1,
-              question: "Does Finorbis also handle inquiries from private individuals?",
-              answer: "answer",
-            },
-            {
-              id: 2,
-              question: "Does Finorbis also handle inquiries from private individuals?",
-              answer: "answer",
-            },
-            {
-              id: 3,
-              question: "In which languages can I communicate with Finorbis?",
-              answer: "answer",
-            },
-            {
-              id: 4,
-              question: "Can I also reach Finorbis by phone?",
-              answer: "answer",
-            },
-            {
-              id: 5,
-              question: "How quickly will I receive a response?",
-              answer:
-                "Existing clients have access to a 24/7 support channel via their dedicated relationship manager. New inquiries are requested to first use the contact form or email so we can correctly route your query.",
-            },
-          ],
+        {
+          title: "Press & Media",
+          text: "Journalists and analysts receive fast, well-informed responses on market topics, corporate statements, and product updates.",
+        },
+      ],
+      form: {
+        title: "Get in touch",
+        labels: {
+          firstName: "First Name",
+          lastName: "Last Name",
+          company: "Company",
+          email: "Business Email",
+          phoneNumber: "Phone Number",
+          message: "Write your message",
+        },
+        buttonText: "Send message",
+        backgroundImageSrc: companyAboutBackgroundImage,
+        errorMessages: {
+          emailRequired: "Please enter your business email.",
+          emailInvalid: "Please enter a valid email address.",
         },
       },
-      trading: {
-        meta: {
-          title: "Trading - Finorbis",
+      directContact: {
+        title: "Direct",
+        accentTitle: "Contact",
+        items: [
+          { title: "General Inquiries", text: "info@finorbis.com" },
+          { title: "Sales & Onboarding", text: "sales@finorbis.com" },
+          { title: "Press & Media", text: "press@finorbis.com" },
+          { title: "Careers & Applications", text: "info@finorbis.com" },
+          { title: "Compliance", text: "compliance@finorbis.com" },
+        ],
+      },
+      locations: {
+        title: "Location",
+        office: {
+          title: "Head Office Zug",
+          text: "Zugerstrasse 46, 6314 Unterägeri, Switzerland. Office for business development, sales, asset management, and corporate functions.",
+        },
+        panelImageSrc: companyAboutBackgroundImage,
+        panelAlt: "Finorbis office",
+      },
+      onboarding: {
+        title: "Onboarding Process for",
+        accentTitle: "New Clients",
+        primaryItems: [
+          {
+            id: 1,
+            title: "Step 1",
+            subtitle: "Initial Contact",
+            text: "Fill in the form or write directly to sales@finorbis.com. A relationship manager will get in touch within 24 hours.",
+          },
+          {
+            id: 2,
+            title: "Step 2",
+            subtitle: "Discovery Call",
+            text: "30-minute conversation for needs assessment — which products, which volumes, which regulatory requirements.",
+          },
+          {
+            id: 3,
+            title: "Step 3",
+            subtitle: "KYC Documents",
+            text: "You will receive a secure link for submitting your KYC/AML documents — fully digitized and encrypted.",
+          },
+        ],
+        secondaryItems: [
+          {
+            id: 4,
+            title: "Step 4",
+            subtitle: "Review",
+            text: "Compliance review of your documents — typically 48–72 hours. Your relationship manager will keep you continuously updated.",
+          },
+          {
+            id: 5,
+            title: "Step 5",
+            subtitle: "Go Live",
+            text: "Contract signing and immediate access to the platform. Your dedicated account manager will support the onboarding.",
+          },
+        ],
+      },
+      faq: {
+        title: "FAQ —",
+        accentTitle: "Contact",
+        items: [
+          {
+            id: 1,
+            question: "Does Finorbis also handle inquiries from private individuals?",
+            answer: "answer",
+          },
+          {
+            id: 2,
+            question: "Does Finorbis also handle inquiries from private individuals?",
+            answer: "answer",
+          },
+          {
+            id: 3,
+            question: "In which languages can I communicate with Finorbis?",
+            answer: "answer",
+          },
+          {
+            id: 4,
+            question: "Can I also reach Finorbis by phone?",
+            answer: "answer",
+          },
+          {
+            id: 5,
+            question: "How quickly will I receive a response?",
+            answer:
+              "Existing clients have access to a 24/7 support channel via their dedicated relationship manager. New inquiries are requested to first use the contact form or email so we can correctly route your query.",
+          },
+        ],
+      },
+    },
+    trading: {
+      meta: {
+        title: "Trading - Finorbis",
         description:
           "OTC and spot execution, market data, and regulated trading infrastructure through a Swiss licensed platform.",
       },
@@ -2899,8 +2880,7 @@ export const content_en = {
       },
       marketData: {
         title: "Overview",
-        body:
-          "Finorbis provides institutional clients with seamless access to crypto markets - without compromising on liquidity, compliance, or execution quality. Whether OTC block trades, spot orders, or stablecoin payment flows: everything runs through a single, regulated infrastructure.",
+        body: "Finorbis provides institutional clients with seamless access to crypto markets - without compromising on liquidity, compliance, or execution quality. Whether OTC block trades, spot orders, or stablecoin payment flows: everything runs through a single, regulated infrastructure.",
         imageSrc: assetLiquidityImage,
         imageAlt: "",
         items: [
@@ -3052,13 +3032,17 @@ export const content_en = {
         },
         marketData: {
           title: "Stablecoins as Infrastructure",
-          body:
-            "Stablecoins are more than a trading instrument — they are the foundation of modern digital payment infrastructure. Finorbis provides institutions with direct access to the most liquid stablecoins for treasury management, FX conversions, and international settlements.",
+          body: "Stablecoins are more than a trading instrument — they are the foundation of modern digital payment infrastructure. Finorbis provides institutions with direct access to the most liquid stablecoins for treasury management, FX conversions, and international settlements.",
           imageSrc: stablecoinAccessCardImage,
           imageAlt: "",
         },
         benefits: [
-          { iconSrc: moneyIcon, iconAlt: "Currencies Available", title: "10+", text: "Currencies Available" },
+          {
+            iconSrc: moneyIcon,
+            iconAlt: "Currencies Available",
+            title: "10+",
+            text: "Currencies Available",
+          },
           {
             iconSrc: timesIcon,
             iconAlt: "Settlement Without Interruption",
@@ -3071,7 +3055,12 @@ export const content_en = {
             title: "100%",
             text: "KYC/AML compliant",
           },
-          { iconSrc: euroIcon, iconAlt: "Core Fiat Rails", title: "CHF/EUR/USD", text: "Core Fiat Rails" },
+          {
+            iconSrc: euroIcon,
+            iconAlt: "Core Fiat Rails",
+            title: "CHF/EUR/USD",
+            text: "Core Fiat Rails",
+          },
         ],
         supportedStablecoins: {
           title: "Supported",
@@ -3139,8 +3128,7 @@ export const content_en = {
         },
         compliance: {
           title: "Compliance & Transparency",
-          body:
-            "All stablecoin transactions are processed through Finorbis in full compliance with KYC/AML requirements. Every transaction is traceable both on-chain and off-chain. Know Your Transaction (KYT) filters block wallets associated with illegal activities.",
+          body: "All stablecoin transactions are processed through Finorbis in full compliance with KYC/AML requirements. Every transaction is traceable both on-chain and off-chain. Know Your Transaction (KYT) filters block wallets associated with illegal activities.",
           imageSrc: stablecoinAccessCardImage,
           imageAlt: "",
         },
@@ -3209,7 +3197,12 @@ export const content_en = {
         { iconSrc: assetsIcon, iconAlt: "Assets", title: "250+", text: "Tradeable Assets" },
         { iconSrc: timesIcon, iconAlt: "Trading Hours", title: "24/7", text: "Trading Hours" },
         { iconSrc: moneyIcon, iconAlt: "Fiat Currencies", title: "10+", text: "Fiat Currencies" },
-        { iconSrc: planetIcon, iconAlt: "Countries Served", title: "40+", text: "Countries Served" },
+        {
+          iconSrc: planetIcon,
+          iconAlt: "Countries Served",
+          title: "40+",
+          text: "Countries Served",
+        },
       ],
       otc: {
         meta: {
@@ -3227,13 +3220,17 @@ export const content_en = {
         },
         marketData: {
           title: "What is OTC & Spot Trading at Finorbis ?",
-          body:
-            "Over-the-counter (OTC) trading enables the direct trading of large volumes outside public order books — without slippage, without market impact. Spot trading offers immediate execution at the current market price. Finorbis combines both in a single, Swiss-licensed platform.",
+          body: "Over-the-counter (OTC) trading enables the direct trading of large volumes outside public order books — without slippage, without market impact. Spot trading offers immediate execution at the current market price. Finorbis combines both in a single, Swiss-licensed platform.",
           imageSrc: assetLiquidityImage,
           imageAlt: "",
         },
         benefits: [
-          { iconSrc: dollarIcon, iconAlt: "Supported Assets", title: "1.100+", text: "Supported Assets" },
+          {
+            iconSrc: dollarIcon,
+            iconAlt: "Supported Assets",
+            title: "1.100+",
+            text: "Supported Assets",
+          },
           { iconSrc: assetsNoneIcon, iconAlt: "Hidden Fees", title: "0", text: "Hidden Fees" },
         ],
         orderTypes: {
@@ -3276,8 +3273,7 @@ export const content_en = {
         },
         pricingSpreads: {
           title: "Pricing & Spreads",
-          body:
-            "Finorbis offers competitive, transparent spreads without hidden fees. The displayed price is the execution price. Individual conditions are available for institutional volumes.",
+          body: "Finorbis offers competitive, transparent spreads without hidden fees. The displayed price is the execution price. Individual conditions are available for institutional volumes.",
           imageSrc: assetLiquidityImage,
           imageAlt: "",
         },
@@ -3351,15 +3347,13 @@ export const content_en = {
       intro: {
         title: "Asset Management",
         badgeText: "Join the our crypto exchange",
-        subtitle:
-          "Tailored investment solutions for digital assets — licensed, Swiss-managed",
+        subtitle: "Tailored investment solutions for digital assets — licensed, Swiss-managed",
         button1: "Contact us",
         image: assetManagementIntroImage,
       },
       marketData: {
         title: "Professional Management of Digital Assets",
-        body:
-          "Finorbis offers institutional and professional investors discretionary portfolio management as well as investment advisory services for digital assets. As a licensed asset manager, Finorbis operates within Switzerland's strictest regulatory framework — with full transparency, independent auditing, and a clear fiduciary duty towards our clients.",
+        body: "Finorbis offers institutional and professional investors discretionary portfolio management as well as investment advisory services for digital assets. As a licensed asset manager, Finorbis operates within Switzerland's strictest regulatory framework — with full transparency, independent auditing, and a clear fiduciary duty towards our clients.",
         imageSrc: assetLiquidityImage,
         imageAlt: "",
       },
@@ -3465,7 +3459,7 @@ export const content_en = {
             id: 1,
             title: "!",
             subtitle: "Risk Disclaimer",
-            text: "Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure \"Risks in Trading Financial Instruments\" prior to concluding a contract.",
+            text: 'Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure "Risks in Trading Financial Instruments" prior to concluding a contract.',
           },
         ],
       },
@@ -3517,8 +3511,7 @@ export const content_en = {
         },
         marketData: {
           title: "Regulatory Framework",
-          body:
-            "Finorbis is a VQF Member. This license commits Finorbis to the highest organizational, financial, and conduct-related standards of Swiss financial market law — independently audited and supervised.",
+          body: "Finorbis is a VQF Member. This license commits Finorbis to the highest organizational, financial, and conduct-related standards of Swiss financial market law — independently audited and supervised.",
           imageSrc: assetLiquidityImage,
           imageAlt: "",
         },
@@ -3612,8 +3605,7 @@ export const content_en = {
         },
         marketData: {
           title: "Advisory That Preserves Decision-Making Authority",
-          body:
-            "Under an advisory mandate, Finorbis advises institutional and professional investors on their investment decisions in digital assets — without assuming decision-making authority. The client receives well-founded, contextualized recommendations and makes all buy and sell decisions independently.",
+          body: "Under an advisory mandate, Finorbis advises institutional and professional investors on their investment decisions in digital assets — without assuming decision-making authority. The client receives well-founded, contextualized recommendations and makes all buy and sell decisions independently.",
           imageSrc: assetLiquidityImage,
           imageAlt: "",
         },
@@ -3773,7 +3765,7 @@ export const content_en = {
               id: 1,
               title: "!",
               subtitle: "Risk Disclaimer",
-              text: "Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure \"Risks in Trading Financial Instruments\" prior to concluding a contract.",
+              text: 'Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure "Risks in Trading Financial Instruments" prior to concluding a contract.',
             },
           ],
         },
@@ -3826,8 +3818,7 @@ export const content_en = {
         },
         marketData: {
           title: "What is discretionary portfolio management?",
-          body:
-            "In a discretionary mandate, the investor fully delegates investment decisions to Finorbis. Within the jointly defined investment strategy — risk profile, target return, asset classes — the investment team independently makes all buy and sell decisions, documenting them fully and transparently.",
+          body: "In a discretionary mandate, the investor fully delegates investment decisions to Finorbis. Within the jointly defined investment strategy — risk profile, target return, asset classes — the investment team independently makes all buy and sell decisions, documenting them fully and transparently.",
           imageSrc: assetLiquidityImage,
           imageAlt: "",
         },
@@ -4002,7 +3993,7 @@ export const content_en = {
               id: 1,
               title: "!",
               subtitle: "Risk Disclaimer",
-              text: "Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure \"Risks in Trading Financial Instruments\" prior to concluding a contract.",
+              text: 'Portfolio management and investment advisory services involve financial risks. Finorbis guarantees neither returns nor the performance of investments. The value of investments may rise or fall. Clients receive the brochure "Risks in Trading Financial Instruments" prior to concluding a contract.',
             },
           ],
         },
@@ -4057,12 +4048,10 @@ export const content_en = {
       },
       hero: {
         title: "Disclaimer & Terms of Use",
-        text:
-          "Legal notices on the use of finorbis.com — disclaimer, copyright, and permitted use.",
+        text: "Legal notices on the use of finorbis.com — disclaimer, copyright, and permitted use.",
       },
       marketData: {
-        text:
-          'The use of finorbis.com (the "Website") is subject to these terms of use. By accessing the website, you expressly accept these terms. If you do not agree, please leave the website. Operator: Finorbis AG',
+        text: 'The use of finorbis.com (the "Website") is subject to these terms of use. By accessing the website, you expressly accept these terms. If you do not agree, please leave the website. Operator: Finorbis AG',
         imageSrc: assetLiquidityImage,
         imageAlt: "Asset Liquidity",
       },
@@ -4072,23 +4061,19 @@ export const content_en = {
         items: [
           {
             title: "1.1 General Disclaimer",
-            text:
-              "The information provided on finorbis.com is for informational purposes only. It does not constitute investment advice, tax advice, or legal advice, and should not be understood as such. Finorbis accepts no liability for losses or damages arising from the use of the information contained on this website.",
+            text: "The information provided on finorbis.com is for informational purposes only. It does not constitute investment advice, tax advice, or legal advice, and should not be understood as such. Finorbis accepts no liability for losses or damages arising from the use of the information contained on this website.",
           },
           {
             title: "1.2 No Investment Recommendation",
-            text:
-              "All financial strategies, investment examples, and return figures presented on this website are for illustrative purposes only. They do not constitute a recommendation to buy, sell, or hold cryptocurrencies or other financial instruments. Past performance is not a reliable indicator of future results.",
+            text: "All financial strategies, investment examples, and return figures presented on this website are for illustrative purposes only. They do not constitute a recommendation to buy, sell, or hold cryptocurrencies or other financial instruments. Past performance is not a reliable indicator of future results.",
           },
           {
             title: "1.3 Accuracy and Completeness",
-            text:
-              "Finorbis strives to ensure the accuracy and completeness of the information published on the website. Nevertheless, Finorbis provides no warranty as to its timeliness, accuracy, completeness, or suitability for any particular purpose. Information may be changed without prior notice.",
+            text: "Finorbis strives to ensure the accuracy and completeness of the information published on the website. Nevertheless, Finorbis provides no warranty as to its timeliness, accuracy, completeness, or suitability for any particular purpose. Information may be changed without prior notice.",
           },
           {
             title: "1.4 External Links",
-            text:
-              "The website may contain links to external websites. Finorbis has no influence over the content of these websites and accepts no liability for their content, offers, or services. Access to linked external pages is at the user's own risk.",
+            text: "The website may contain links to external websites. Finorbis has no influence over the content of these websites and accepts no liability for their content, offers, or services. Access to linked external pages is at the user's own risk.",
           },
         ],
       },
@@ -4103,8 +4088,7 @@ export const content_en = {
       investmentDisclaimer: {
         title: "III. Investment-Disclaimer",
         accentTitle: "(FINMA-regulated Activities)",
-        text:
-          "Finorbis AG is a VQF-licensed portfolio manager. The following notices apply to all investment-related content:",
+        text: "Finorbis AG is a VQF-licensed portfolio manager. The following notices apply to all investment-related content:",
         items: [
           "The information is intended exclusively for qualified investors and clients.",
           "The content does not take into account the individual circumstances, objectives, or financial situation of users.",
@@ -4118,26 +4102,22 @@ export const content_en = {
         items: [
           {
             title: "4.1 Permitted Use",
-            text:
-              "The website may only be used for lawful purposes. Any use that violates applicable Swiss law or international law is prohibited. In particular, it is forbidden to use the website for money laundering, terrorist financing, market manipulation, or other illegal activities.",
+            text: "The website may only be used for lawful purposes. Any use that violates applicable Swiss law or international law is prohibited. In particular, it is forbidden to use the website for money laundering, terrorist financing, market manipulation, or other illegal activities.",
           },
           {
             title: "4.2 Prohibited Activities",
-            text:
-              "The following activities are expressly prohibited: (i) scraping, automated reading, or bulk downloading of content; (ii) attempts to circumvent security mechanisms; (iii) distribution of malware or harmful code; (iv) use of the website to spread false or misleading information about Finorbis or crypto markets.",
+            text: "The following activities are expressly prohibited: (i) scraping, automated reading, or bulk downloading of content; (ii) attempts to circumvent security mechanisms; (iii) distribution of malware or harmful code; (iv) use of the website to spread false or misleading information about Finorbis or crypto markets.",
           },
           {
             title: "4.3 Access and Availability",
-            text:
-              "Finorbis reserves the right to restrict or terminate access to the website at any time and without stating reasons. Finorbis provides no guarantee of uninterrupted availability of the website.",
+            text: "Finorbis reserves the right to restrict or terminate access to the website at any time and without stating reasons. Finorbis provides no guarantee of uninterrupted availability of the website.",
           },
         ],
       },
       copyright: {
         title: "V. Copyright and",
         accentTitle: "Intellectual Property",
-        text:
-          "All content on the website — texts, graphics, logos, icons, images, audio clips, digital downloads, and software — is the property of Finorbis or its licensors and is protected by Swiss and international copyright law.",
+        text: "All content on the website — texts, graphics, logos, icons, images, audio clips, digital downloads, and software — is the property of Finorbis or its licensors and is protected by Swiss and international copyright law.",
       },
       applicableLaw: {
         title: "VI. Applicable Law and",
@@ -4145,29 +4125,25 @@ export const content_en = {
         items: [
           {
             title: "Applicable Law",
-            text:
-              "Swiss law, in particular the Federal Act on Private International Law (PILA) and the Code of Obligations (CO).",
+            text: "Swiss law, in particular the Federal Act on Private International Law (PILA) and the Code of Obligations (CO).",
             iconSrc: likeIcon,
             iconAlt: "Applicable Law",
           },
           {
             title: "Jurisdiction",
-            text:
-              "Zurich, Switzerland — for all disputes in connection with the use of this website or the services described thereon.",
+            text: "Zurich, Switzerland — for all disputes in connection with the use of this website or the services described thereon.",
             iconSrc: dislikeIcon,
             iconAlt: "Jurisdiction",
           },
           {
             title: "Language",
-            text:
-              "In the event of a dispute, the German-language version of these terms of use shall be authoritative.",
+            text: "In the event of a dispute, the German-language version of these terms of use shall be authoritative.",
             iconSrc: scalesIcon,
             iconAlt: "Language",
           },
           {
             title: "Right to Amend",
-            text:
-              "Finorbis reserves the right to amend these terms of use at any time and without prior notice. Continued use of the website constitutes acceptance of the amended terms.",
+            text: "Finorbis reserves the right to amend these terms of use at any time and without prior notice. Continued use of the website constitutes acceptance of the amended terms.",
             iconSrc: apiIcon,
             iconAlt: "Right to Amend",
           },
@@ -4179,14 +4155,12 @@ export const content_en = {
         items: [
           {
             title: "April 2026",
-            text:
-              "Initial publication of the disclaimer & terms of use for finorbis.com. Adapted to the nFADP (September 2023) and current FINMA requirements.",
+            text: "Initial publication of the disclaimer & terms of use for finorbis.com. Adapted to the nFADP (September 2023) and current FINMA requirements.",
             srcImage: assetLiquidityImage,
           },
           {
             title: "Planned 2026",
-            text:
-              "Update in the course of CARF implementation (Crypto-Asset Reporting Framework, OECD) as of 1 January 2026 in Switzerland.",
+            text: "Update in the course of CARF implementation (Crypto-Asset Reporting Framework, OECD) as of 1 January 2026 in Switzerland.",
             srcImage: assetLiquidityImage,
           },
         ],
@@ -4231,8 +4205,7 @@ export const content_en = {
       },
       hero: {
         title: "Privacy Policy",
-        text:
-          "How Finorbis collects, processes, and protects personal data — in accordance with the nFADP (Switzerland) and GDPR (EU).",
+        text: "How Finorbis collects, processes, and protects personal data — in accordance with the nFADP (Switzerland) and GDPR (EU).",
       },
       marketData: {
         title: "Scope of Application",
@@ -4253,8 +4226,7 @@ export const content_en = {
       legalBases: {
         title: "II.",
         accentTitle: "Legal Bases",
-        text:
-          "The processing of personal data by Finorbis is carried out on the basis of the following legal grounds:",
+        text: "The processing of personal data by Finorbis is carried out on the basis of the following legal grounds:",
         items: [
           "Federal Act on Data Protection (nFADP / DSG), in force since September 2023",
           "Telecommunications Act (TCA), Art. 45c — regulation on the use of cookies and tracking technologies",
@@ -4269,18 +4241,15 @@ export const content_en = {
         items: [
           {
             title: "3.1 Technical Usage Data",
-            text:
-              "When visiting the website, the following data are collected automatically: IP address (anonymized after 6 months), browser type and version, operating system, referrer URL, date and time of access, pages visited, and time spent. Legal basis: legitimate interest (Art. 31 nFADP).",
+            text: "When visiting the website, the following data are collected automatically: IP address (anonymized after 6 months), browser type and version, operating system, referrer URL, date and time of access, pages visited, and time spent. Legal basis: legitimate interest (Art. 31 nFADP).",
           },
           {
             title: "3.2 Contact and Contract Data",
-            text:
-              "When using the contact form or in the context of a business relationship: first and last name, company name, email address, phone number, position/role. Legal basis: contract performance, legitimate interest.",
+            text: "When using the contact form or in the context of a business relationship: first and last name, company name, email address, phone number, position/role. Legal basis: contract performance, legitimate interest.",
           },
           {
             title: "3.3 KYC/AML Data (Clients)",
-            text:
-              "As part of the legally required client identification: identity documents (passport, national ID card), proof of residence, company documents (for legal entities), beneficial owners (UBO). Legal basis: legal obligation (AMLA, FinSA).",
+            text: "As part of the legally required client identification: identity documents (passport, national ID card), proof of residence, company documents (for legal entities), beneficial owners (UBO). Legal basis: legal obligation (AMLA, FinSA).",
           },
         ],
       },
@@ -4471,8 +4440,7 @@ export const content_en = {
       },
       riskNotices: {
         title: "General Risk Notices",
-        text:
-          "The portfolio management and investment advisory services offered by Finorbis AG involve significant financial risks. Finorbis expressly draws attention to the following:",
+        text: "The portfolio management and investment advisory services offered by Finorbis AG involve significant financial risks. Finorbis expressly draws attention to the following:",
         items: [
           "Finorbis AG guarantees neither returns nor the preservation of the value of investments.",
           "The value of digital assets can fluctuate significantly and may both rise and fall.",
@@ -4485,7 +4453,8 @@ export const content_en = {
     cookies: {
       meta: {
         title: "Cookie Policy - Finorbis",
-        description: "Which cookies Finorbis uses, for what purpose, and how you can manage your consent.",
+        description:
+          "Which cookies Finorbis uses, for what purpose, and how you can manage your consent.",
       },
       hero: {
         title: "Cookie Policy",
@@ -4493,8 +4462,7 @@ export const content_en = {
       },
       marketData: {
         title: "What Are Cookies?",
-        text:
-          "Cookies are small text files stored on your device (computer, tablet, smartphone) when you visit a website. They allow websites to store information about your visit and retrieve it on a subsequent visit. Cookies generally do not contain personally identifiable information, but may be combined with other data.",
+        text: "Cookies are small text files stored on your device (computer, tablet, smartphone) when you visit a website. They allow websites to store information about your visit and retrieve it on a subsequent visit. Cookies generally do not contain personally identifiable information, but may be combined with other data.",
         imageSrc: assetLiquidityImage,
         imageAlt: "Asset Liquidity",
       },
@@ -4522,7 +4490,8 @@ export const content_en = {
           },
           {
             category: "Analytics",
-            purpose: "Anonymized usage analysis for website improvement (no personal identification)",
+            purpose:
+              "Anonymized usage analysis for website improvement (no personal identification)",
             examples: "_ga, _gid (anonymized)",
             deactivatable: "Yes",
           },
@@ -4562,29 +4531,25 @@ export const content_en = {
         items: [
           {
             title: "Necessary Cookies (kein Consent nötig)",
-            text:
-              "Technically required cookies may be set without consent, as their use is considered proportionate — they are essential for the operation of the website (Art. 45c TCA, nFADP).",
+            text: "Technically required cookies may be set without consent, as their use is considered proportionate — they are essential for the operation of the website (Art. 45c TCA, nFADP).",
             iconSrc: cookieIcon,
             iconAlt: "Necessary Cookies",
           },
           {
             title: "Non-Necessary Cookies (consent required)",
-            text:
-              "Analytics, preference, and marketing cookies require your explicit consent. This can be given or withdrawn at any time via the cookie banner or the consent management tool.",
+            text: "Analytics, preference, and marketing cookies require your explicit consent. This can be given or withdrawn at any time via the cookie banner or the consent management tool.",
             iconSrc: cookieNoneIcon,
             iconAlt: "Non-Necessary Cookies",
           },
           {
             title: "EU Users (GDPR)",
-            text:
-              "For users from EU member states, the GDPR additionally applies. All non-necessary cookies require explicit, prior consent (opt-in). No pre-ticked boxes, no dark patterns.",
+            text: "For users from EU member states, the GDPR additionally applies. All non-necessary cookies require explicit, prior consent (opt-in). No pre-ticked boxes, no dark patterns.",
             iconSrc: mensIcon,
             iconAlt: "EU Users",
           },
           {
             title: "Third-Party Cookies",
-            text:
-              "Some cookies are set by third-party providers (Google, HubSpot, Cloudflare). Their privacy policies apply in addition to this cookie policy.",
+            text: "Some cookies are set by third-party providers (Google, HubSpot, Cloudflare). Their privacy policies apply in addition to this cookie policy.",
             iconSrc: hsmIcon,
             iconAlt: "Third-Party Cookies",
           },

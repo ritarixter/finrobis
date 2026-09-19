@@ -1,9 +1,10 @@
+import { Link } from "react-router";
 import styles from "./Footer.module.scss";
 import logo from "../../assets/images/logo.svg";
 import linkedinIcon from "../../assets/images/icons/in.svg";
 import telegramIcon from "../../assets/images/icons/tg.svg";
 import xIcon from "../../assets/images/icons/x.svg";
-import { useLang } from "../../hooks/useLang";
+import { useLang, type Lang } from "../../hooks/useLang";
 
 const contacts = [
   { label: "11111111111.com", icon: "globe" },
@@ -16,6 +17,51 @@ const socialLinks = [
   { label: "X", icon: xIcon },
   { label: "Telegram", icon: telegramIcon },
 ];
+
+const footerCopy = {
+  en: {
+    navigation: {
+      trading: "Trading",
+      company: "Company",
+      custody: "Custody",
+      audience: "Who We Serve",
+      assets: "Asset Management",
+      resources: "Resources",
+    },
+    copyright: "Finorbis. All rights reserved",
+    privacy: "Privacy Policy",
+    regulatory: "Regulatory Information",
+    cookies: "Cookie Policy",
+    aria: {
+      home: "Finorbis home",
+      navigation: "Footer navigation",
+      socials: "Social media",
+      legal: "Legal navigation",
+    },
+  },
+  de: {
+    navigation: {
+      trading: "Handel",
+      company: "Unternehmen",
+      custody: "Verwahrung",
+      audience: "Unsere Kunden",
+      assets: "Vermögensverwaltung",
+      resources: "Ressourcen",
+    },
+    copyright: "Finorbis. Alle Rechte vorbehalten",
+    privacy: "Datenschutzerklärung",
+    regulatory: "Regulatorische Informationen",
+    cookies: "Cookie-Richtlinie",
+    aria: {
+      home: "Finorbis Startseite",
+      navigation: "Fußzeilennavigation",
+      socials: "Soziale Medien",
+      legal: "Rechtliche Navigation",
+    },
+  },
+} as const;
+
+const getCopy = (lang: Lang) => footerCopy[lang];
 
 function ContactIcon({ type }: { type: string }) {
   if (type === "phone") {
@@ -44,26 +90,29 @@ function ContactIcon({ type }: { type: string }) {
 }
 
 export function Footer() {
-  const { buildHref } = useLang();
+  const { lang, buildHref } = useLang();
+  const copy = getCopy(lang);
   const navigation = [
-    { label: "Trading", href: buildHref("/trading") },
-    { label: "Company", href: buildHref("/company-about") },
-    { label: "Custody", href: buildHref("/custody") },
-    { label: "Who We Serve", href: buildHref("/whoweserve") },
-    { label: "Asset Management", href: buildHref("/asset-management") },
-    { label: "Resources", href: buildHref("/resources") },
+    { label: copy.navigation.trading, href: buildHref("/trading") },
+    { label: copy.navigation.company, href: buildHref("/company-about") },
+    { label: copy.navigation.custody, href: buildHref("/custody") },
+    { label: copy.navigation.audience, href: buildHref("/whoweserve") },
+    { label: copy.navigation.assets, href: buildHref("/asset-management") },
+    { label: copy.navigation.resources, href: buildHref("/resources") },
   ];
 
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__wrapper}>
         <div className={styles.top}>
-          <img className={styles.logo} src={logo} alt="Finorbis" />
-          <nav className={styles.navigation} aria-label="Footer navigation">
+          <Link className={styles.logoLink} to={buildHref("/")} aria-label={copy.aria.home}>
+            <img className={styles.logo} src={logo} alt="Finorbis" />
+          </Link>
+          <nav className={styles.navigation} aria-label={copy.aria.navigation}>
             {navigation.map((item) => (
-              <a key={item.label} href={item.href}>
+              <Link key={item.href} to={item.href}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
@@ -82,22 +131,22 @@ export function Footer() {
         <div className={styles.divider} />
 
         <div className={styles.bottom}>
-          <div className={styles.socials} aria-label="Social media">
+          <div className={styles.socials} aria-label={copy.aria.socials}>
             {socialLinks.map((label) => (
               <a key={label.label} href="/" aria-label={label.label}>
                 <img src={label.icon} alt="" aria-hidden="true" />
               </a>
             ))}
           </div>
-          <nav className={styles.legal} aria-label="Legal navigation">
-            <a href={buildHref("/terms")} className={styles.legalPrimary}>
-              Finorbis All Rights Reserved
-            </a>
-            <a href={buildHref("/privacypolicy")}>Privacy Policy</a>
+          <Link className={styles.copyright} to={buildHref("/terms")}>
+            {copy.copyright}
+          </Link>
+          <nav className={styles.legal} aria-label={copy.aria.legal}>
+            <Link to={buildHref("/privacypolicy")}>{copy.privacy}</Link>
             <span aria-hidden="true" />
-            <a href={buildHref("/regulatory-information")}>Regulatory Information</a>
+            <Link to={buildHref("/regulatory-information")}>{copy.regulatory}</Link>
             <span aria-hidden="true" />
-            <a href={buildHref("/cookies")}>Cookie Policy</a>
+            <Link to={buildHref("/cookies")}>{copy.cookies}</Link>
           </nav>
         </div>
       </div>

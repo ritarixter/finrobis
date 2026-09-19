@@ -21,7 +21,7 @@ export function AssetManagementPage() {
           badgeText={assetManagement.intro.badgeText}
           imageSrc={assetManagement.intro.image}
           button1={{ text: assetManagement.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>

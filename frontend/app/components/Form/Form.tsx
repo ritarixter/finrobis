@@ -87,7 +87,8 @@ export function Form({
     : style;
 
   const firstNameLabel = labels.firstName ?? labels.name ?? "";
-  const showExtendedFields = isContactVariant || Boolean(labels.lastName) || Boolean(labels.phoneNumber);
+  const showExtendedFields =
+    isContactVariant || Boolean(labels.lastName) || Boolean(labels.phoneNumber);
   const hideLabel = (field: keyof FormData) =>
     isContactVariant && (focusedField === field || formData[field].length > 0);
 
@@ -146,10 +147,7 @@ export function Form({
   const emailErrorText =
     emailError === "required" ? errorMessages.emailRequired : errorMessages.emailInvalid;
 
-  const rootClassName = [
-    styles.form,
-    isContactVariant ? styles["form--contact"] : "",
-  ]
+  const rootClassName = [styles.form, isContactVariant ? styles["form--contact"] : ""]
     .filter(Boolean)
     .join(" ");
 
@@ -181,10 +179,10 @@ export function Form({
 
         {showExtendedFields ? (
           <div className={styles.field}>
-          <label
-            htmlFor="form-lastName"
-            className={`${styles.label} ${isFloating("lastName") ? styles.labelFloating : ""} ${hideLabel("lastName") ? styles.labelHidden : ""}`}
-          >
+            <label
+              htmlFor="form-lastName"
+              className={`${styles.label} ${isFloating("lastName") ? styles.labelFloating : ""} ${hideLabel("lastName") ? styles.labelHidden : ""}`}
+            >
               {labels.lastName ?? "Last Name"}
             </label>
             <input
@@ -254,10 +252,10 @@ export function Form({
 
         {showExtendedFields ? (
           <div className={styles.field}>
-          <label
-            htmlFor="form-phoneNumber"
-            className={`${styles.label} ${isFloating("phoneNumber") ? styles.labelFloating : ""} ${hideLabel("phoneNumber") ? styles.labelHidden : ""}`}
-          >
+            <label
+              htmlFor="form-phoneNumber"
+              className={`${styles.label} ${isFloating("phoneNumber") ? styles.labelFloating : ""} ${hideLabel("phoneNumber") ? styles.labelHidden : ""}`}
+            >
               {labels.phoneNumber ?? "Phone Number"}
             </label>
             <input

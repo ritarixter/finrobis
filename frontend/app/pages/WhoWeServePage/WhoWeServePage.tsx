@@ -27,7 +27,11 @@ export function WhoWeServePage() {
           aria-hidden="true"
         />
 
-        <img className={styles.heroImage} src={whoWeServe.intro.imageSrc} alt={whoWeServe.intro.title} />
+        <img
+          className={styles.heroImage}
+          src={whoWeServe.intro.imageSrc}
+          alt={whoWeServe.intro.title}
+        />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{whoWeServe.intro.title}</h1>

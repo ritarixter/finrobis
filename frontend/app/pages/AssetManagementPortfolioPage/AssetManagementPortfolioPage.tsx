@@ -24,7 +24,7 @@ export function AssetManagementPortfolioPage() {
           badgeText={portfolio.intro.badgeText}
           imageSrc={portfolio.intro.image}
           button1={{ text: portfolio.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>

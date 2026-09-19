@@ -23,12 +23,7 @@ export function RegulatoryInformationPage() {
         </h2>
 
         <article className={styles.entityCard}>
-          <img
-            className={styles.entityDecor}
-            src={assetLiquidityImage}
-            alt=""
-            aria-hidden="true"
-          />
+          <img className={styles.entityDecor} src={assetLiquidityImage} alt="" aria-hidden="true" />
 
           <div className={styles.entityPanel}>
             <div className={styles.entityList}>
@@ -44,9 +39,7 @@ export function RegulatoryInformationPage() {
       </section>
 
       <section className={styles.riskNoticesSection}>
-        <h2 className={styles.sectionTitle}>
-          {regulatoryInformation.riskNotices.title}
-        </h2>
+        <h2 className={styles.sectionTitle}>{regulatoryInformation.riskNotices.title}</h2>
 
         <p className={styles.text}>{regulatoryInformation.riskNotices.text}</p>
 

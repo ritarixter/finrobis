@@ -22,7 +22,7 @@ export function TradingPage() {
           badgeText={trading.intro.badgeText}
           imageSrc={trading.intro.image}
           button1={{ text: trading.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
@@ -79,7 +79,10 @@ export function TradingPage() {
           {trading.supportedFiat.title} <span>{trading.supportedFiat.accentTitle}</span>
         </h2>
 
-        <ItemTextWithImageList className={styles.supportedFiatList} items={trading.supportedFiat.items} />
+        <ItemTextWithImageList
+          className={styles.supportedFiatList}
+          items={trading.supportedFiat.items}
+        />
       </section>
 
       <section className={styles.faqSection}>

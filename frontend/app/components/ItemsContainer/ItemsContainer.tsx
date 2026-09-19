@@ -19,7 +19,10 @@ export function ItemsContainer({ items, className = "", showMarker = true }: Ite
     <div className={rootClassName}>
       {items.map((item, index) => (
         <article
-          className={["items-container__item", !showMarker ? "items-container__item--no-marker" : ""]
+          className={[
+            "items-container__item",
+            !showMarker ? "items-container__item--no-marker" : "",
+          ]
             .filter(Boolean)
             .join(" ")}
           key={`${index}-${item.text}`}
@@ -34,7 +37,9 @@ export function ItemsContainer({ items, className = "", showMarker = true }: Ite
           {item.title || item.subtitle ? (
             <div className="items-container__content">
               {item.title ? <h3 className="items-container__title">{item.title}</h3> : null}
-              {item.subtitle ? <h4 className="items-container__subtitle">{item.subtitle}</h4> : null}
+              {item.subtitle ? (
+                <h4 className="items-container__subtitle">{item.subtitle}</h4>
+              ) : null}
               <p className="items-container__text">{item.text}</p>
             </div>
           ) : (

@@ -1,7 +1,11 @@
 @use "../../styles/responsive.scss" as *;
 
 .sectionTitle {
-  margin-bottom: 80px;
+  margin-bottom: clamp(36px, 5vw, 80px);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .trust {
@@ -38,7 +42,27 @@
   width: 100%;
 }
 
+@include responsive(tablet) {
+  .sectionTitle {
+    margin-bottom: 44px;
+    font-size: clamp(32px, 5vw, 38px);
+  }
+
+  .why .sectionTitle {
+    margin-bottom: 44px;
+  }
+}
+
 @include responsive(phone) {
+  .sectionTitle {
+    margin-bottom: 32px;
+    font-size: clamp(28px, 8vw, 32px);
+  }
+
+  .why .sectionTitle {
+    margin-bottom: 32px;
+  }
+
   .technologyCardsContainer {
     flex-direction: column;
     gap: 24px;

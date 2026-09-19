@@ -22,7 +22,7 @@ export function TradingStablecoinAccessPage() {
           badgeText={stablecoinAccess.intro.badgeText}
           imageSrc={stablecoinAccess.intro.image}
           button1={{ text: stablecoinAccess.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
