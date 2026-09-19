@@ -68,7 +68,8 @@ export function WhoWeServeTradersPage() {
 
       <section className={styles.executionAccessSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeTraders.executionAccess.title} <span>{whoWeServeTraders.executionAccess.accentTitle}</span>
+          {whoWeServeTraders.executionAccess.title}{" "}
+          <span>{whoWeServeTraders.executionAccess.accentTitle}</span>
         </h2>
 
         <ItemTextWithImage
@@ -81,7 +82,8 @@ export function WhoWeServeTradersPage() {
 
       <section className={styles.supportedAssetsSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeTraders.supportedAssets.title} <span>{whoWeServeTraders.supportedAssets.accentTitle}</span>
+          {whoWeServeTraders.supportedAssets.title}{" "}
+          <span>{whoWeServeTraders.supportedAssets.accentTitle}</span>
         </h2>
 
         <div className={styles.supportedAssetsGrid}>

@@ -68,7 +68,8 @@ export function WhoWeServeInvestorsPage() {
 
       <section className={styles.strategiesSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeInvestors.strategies.title} <span>{whoWeServeInvestors.strategies.accentTitle}</span>
+          {whoWeServeInvestors.strategies.title}{" "}
+          <span>{whoWeServeInvestors.strategies.accentTitle}</span>
         </h2>
 
         <div className={styles.strategiesGrid}>
@@ -86,10 +87,13 @@ export function WhoWeServeInvestorsPage() {
 
       <section className={styles.familyOfficesSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeInvestors.familyOffices.title} <span>{whoWeServeInvestors.familyOffices.accentTitle}</span>
+          {whoWeServeInvestors.familyOffices.title}{" "}
+          <span>{whoWeServeInvestors.familyOffices.accentTitle}</span>
         </h2>
 
-        <p className={styles.familyOfficesDescription}>{whoWeServeInvestors.familyOffices.description}</p>
+        <p className={styles.familyOfficesDescription}>
+          {whoWeServeInvestors.familyOffices.description}
+        </p>
 
         <ItemsContainer
           items={whoWeServeInvestors.familyOffices.items}

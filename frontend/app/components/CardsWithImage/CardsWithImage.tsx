@@ -10,7 +10,12 @@ interface CardsWithImageProps {
   itemClassName?: string;
 }
 
-export function CardsWithImage({ items, className = "", style, itemClassName = "" }: CardsWithImageProps) {
+export function CardsWithImage({
+  items,
+  className = "",
+  style,
+  itemClassName = "",
+}: CardsWithImageProps) {
   const rootClassName = [styles.grid, className].filter(Boolean).join(" ");
 
   return (

@@ -31,7 +31,7 @@
 
 .items-container__title {
   margin: 0;
-  color: #CAFF33;
+  color: #caff33;
   font-family: var(--font-family-main, "Lexend", sans-serif);
   font-size: clamp(35px, 3vw, 40px);
   font-style: normal;
@@ -77,17 +77,15 @@
   flex: 0 0 60px;
   width: 60px;
   height: 60px;
-  color: #CAFF33;
+  color: #caff33;
   font-size: 40px;
   font-weight: 800;
   line-height: 1.5;
   background: none;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #CAFF33;
+  -webkit-text-fill-color: #caff33;
 }
-
-
 
 .items-container__text {
   margin: 0;

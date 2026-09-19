@@ -34,9 +34,7 @@ export function ItemTextWithImage({
   ]
     .filter(Boolean)
     .join(" ");
-  const imageName = ["item-text-with-image__image", imageClassName]
-    .filter(Boolean)
-    .join(" ");
+  const imageName = ["item-text-with-image__image", imageClassName].filter(Boolean).join(" ");
 
   return (
     <section className={rootClassName} style={style}>
@@ -44,12 +42,7 @@ export function ItemTextWithImage({
         <ItemText title={title} text={text} className={itemTextClassName} />
       </div>
       <div className="item-text-with-image__media">
-        <img
-          className={imageName}
-          src={imageSrc}
-          alt={imageAlt}
-          style={imageStyle}
-        />
+        <img className={imageName} src={imageSrc} alt={imageAlt} style={imageStyle} />
       </div>
     </section>
   );

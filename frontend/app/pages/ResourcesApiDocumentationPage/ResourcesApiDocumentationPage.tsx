@@ -178,7 +178,8 @@ export function ResourcesApiDocumentationPage() {
 
       <section className={styles.fixSection}>
         <h2 className={styles.sectionTitle}>
-          {resourcesApiDocumentation.fixApi.title} <span>{resourcesApiDocumentation.fixApi.accentTitle}</span>
+          {resourcesApiDocumentation.fixApi.title}{" "}
+          <span>{resourcesApiDocumentation.fixApi.accentTitle}</span>
         </h2>
 
         <p className={styles.apiText}>{resourcesApiDocumentation.fixApi.text}</p>
@@ -209,7 +210,8 @@ export function ResourcesApiDocumentationPage() {
 
       <section className={styles.sandboxSection}>
         <h2 className={styles.sectionTitle}>
-          {resourcesApiDocumentation.sandboxTesting.title} <span>{resourcesApiDocumentation.sandboxTesting.accentTitle}</span>
+          {resourcesApiDocumentation.sandboxTesting.title}{" "}
+          <span>{resourcesApiDocumentation.sandboxTesting.accentTitle}</span>
         </h2>
 
         <p className={styles.apiText}>{resourcesApiDocumentation.sandboxTesting.text}</p>

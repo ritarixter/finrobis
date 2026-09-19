@@ -37,7 +37,8 @@ export default function CookiesPage() {
 
       <section className={styles.categoriesSection}>
         <h2 className={styles.sectionTitle}>
-          {cookies.categories.title} <span className={styles.sectionTitleAccent}>{cookies.categories.accentTitle}</span>
+          {cookies.categories.title}{" "}
+          <span className={styles.sectionTitleAccent}>{cookies.categories.accentTitle}</span>
         </h2>
 
         <article className={styles.categoriesCard}>
@@ -69,15 +70,21 @@ export default function CookiesPage() {
                     <span className={styles.categoriesCellValue}>{row.category}</span>
                   </div>
                   <div className={styles.categoriesCell}>
-                    <span className={styles.categoriesCellLabel}>{cookies.categories.headers[1]}</span>
+                    <span className={styles.categoriesCellLabel}>
+                      {cookies.categories.headers[1]}
+                    </span>
                     <span className={styles.categoriesCellValue}>{row.purpose}</span>
                   </div>
                   <div className={styles.categoriesCell}>
-                    <span className={styles.categoriesCellLabel}>{cookies.categories.headers[2]}</span>
+                    <span className={styles.categoriesCellLabel}>
+                      {cookies.categories.headers[2]}
+                    </span>
                     <span className={styles.categoriesCellValue}>{row.examples}</span>
                   </div>
                   <div className={styles.categoriesCell}>
-                    <span className={styles.categoriesCellLabel}>{cookies.categories.headers[3]}</span>
+                    <span className={styles.categoriesCellLabel}>
+                      {cookies.categories.headers[3]}
+                    </span>
                     <span className={styles.categoriesCellValue}>{row.deactivatable}</span>
                   </div>
                 </div>

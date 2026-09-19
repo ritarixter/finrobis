@@ -414,6 +414,47 @@
   font-weight: 300;
   line-height: 1.5;
   white-space: pre-wrap;
+
+  &[data-typing="active"] {
+    text-shadow: 0 0 18px rgb(202 255 51 / 8%);
+  }
+
+  &[data-typing="waiting"]::after,
+  &[data-typing="active"]::after,
+  &[data-typing="done"]::after {
+    display: inline-block;
+    width: 0.5em;
+    height: 1.05em;
+    margin-left: 0.16em;
+    border-radius: 2px;
+    background: var(--cl-main);
+    box-shadow: 0 0 14px rgb(202 255 51 / 45%);
+    content: "";
+    vertical-align: -0.18em;
+    animation: codeCursorBlink 800ms steps(1, end) infinite;
+  }
+
+  &[data-typing="done"]::after {
+    animation: codeCursorFade 500ms ease 700ms forwards;
+  }
+}
+
+@keyframes codeCursorBlink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes codeCursorFade {
+  to {
+    opacity: 0;
+  }
 }
 
 .codeViewport {

@@ -10,7 +10,10 @@
     linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%),
     url("../../assets/images/bg_circles.svg") no-repeat 30% center,
     #1c1c1c;
-  background-size: auto, 30% 100%, auto;
+  background-size:
+    auto,
+    30% 100%,
+    auto;
   overflow: hidden;
   transition: border-color 0.2s ease-in-out;
   -webkit-transition: border-color 0.2s ease-in-out;
@@ -19,9 +22,7 @@
 
 .item_open {
   border-color: var(--cl-main, #caff33);
-  background:
-    linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%),
-    #1c1c1c;
+  background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
 }
 
 .item_interactive {
@@ -163,7 +164,10 @@
       auto,
       clamp(440px, 70vw, 560px) 100%,
       auto;
-    background-position: 0 0, -24px center, 0 0;
+    background-position:
+      0 0,
+      -24px center,
+      0 0;
   }
 
   .trigger {

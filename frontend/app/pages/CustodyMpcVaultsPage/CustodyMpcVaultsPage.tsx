@@ -23,7 +23,7 @@ export function CustodyMpcVaultsPage() {
           badgeText={custodyMpcVaults.intro.badgeText}
           imageSrc={custodyMpcVaults.intro.imageSrc}
           button1={{ text: custodyMpcVaults.intro.button1, onClick: () => {} }}
-          button1Theme={ThemeButton.GREEN}
+          button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"
         />
       </section>
@@ -65,7 +65,10 @@ export function CustodyMpcVaultsPage() {
           <span>{custodyMpcVaults.technicalArchitecture.accentTitle}</span>
         </h2>
 
-        <CardsWithImage items={custodyMpcVaults.technicalArchitecture.cards} className={styles.technicalCardsGrid} />
+        <CardsWithImage
+          items={custodyMpcVaults.technicalArchitecture.cards}
+          className={styles.technicalCardsGrid}
+        />
       </section>
 
       <section className={styles.vaultArchitectureSection}>

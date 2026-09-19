@@ -2,11 +2,13 @@
 
 .header {
   position: relative;
+  z-index: 30;
   width: 100%;
-  max-width: 1596px;
+  max-width: 1644px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 24px;
   box-sizing: border-box;
+  font-family: var(--font-family-main, "Lexend", sans-serif);
 }
 
 .navbar {
@@ -14,51 +16,81 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 55px;
-  padding: 20px 34px;
-  border: 1px solid #262626;
+  min-height: 72px;
+  padding: 12px 22px;
+  border: 1px solid #303030;
   border-radius: 100px;
-  background: #1c1c1c;
+  background: rgba(28, 28, 28, 0.96);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
   color: #fff;
-  font-family: var(--font-familycd-main, "Lexend", sans-serif);
-  gap: 26px;
+  gap: clamp(14px, 1.4vw, 24px);
 }
 
 .logoLink {
   display: flex;
-  flex: 0 0 154px;
+  flex: 0 0 clamp(128px, 10vw, 154px);
   align-items: center;
 }
 
 .logo {
   display: block;
-  width: 154px;
-  height: 55px;
+  width: clamp(128px, 10vw, 154px);
+  height: auto;
   object-fit: contain;
 }
 
 .navigation {
   position: relative;
   display: flex;
+  min-width: 0;
   align-items: center;
-  gap: 26px;
+  justify-content: center;
+  gap: clamp(12px, 1.3vw, 24px);
   white-space: nowrap;
 }
 
 .navigation a,
-.navigationPlaceholder,
 .login {
   color: inherit;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.4;
   text-decoration: none;
-  transition: color 160ms ease;
+}
+
+.navigation a {
+  position: relative;
+  padding: 7px 0;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.navigation a::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 1px;
+  border-radius: 1px;
+  background: #caff33;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.35);
+  transition:
+    opacity 180ms ease,
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .navigation a:hover,
-.navigationPlaceholder:hover,
-.login:hover {
+.login:hover,
+.pagesToggle:hover {
   color: #caff33;
+}
+
+.navigation a:hover::after,
+.navigation a.activeLink::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .navigation a.activeLink,
@@ -73,92 +105,141 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  padding: 0;
-  border: none;
+  padding: 7px 0;
+  border: 0;
   background: transparent;
   color: inherit;
-  font: inherit;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.4;
   cursor: pointer;
-  transition: color 160ms ease;
-}
-
-.pagesToggle:hover {
-  color: #caff33;
+  transition: color 180ms ease;
 }
 
 .pagesToggleActive,
-.pagesToggleActive:hover {
+.pagesToggleActive:hover,
+.pagesToggleOpen {
   color: #caff33;
+}
+
+.pagesChevron {
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pagesToggleOpen .pagesChevron {
+  margin-top: 3px;
+  transform: rotate(225deg);
 }
 
 .pagesDropdown {
   position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  width: min(1596px, calc(100vw - 50px));
   z-index: 20;
-  transform: translateX(-50%);
+  top: calc(100% + 8px);
+  left: 24px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  padding: 28px;
-  border: 1px solid #262626;
+  width: calc(100% - 48px);
+  max-height: calc(100dvh - 140px);
+  overflow-y: auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 32px;
+  padding: 30px;
+  border: 1px solid #303030;
   border-radius: 28px;
-  background: #1c1c1c;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  background: radial-gradient(circle at 100% 0, rgba(202, 255, 51, 0.07), transparent 30%), #1c1c1c;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+  transform-origin: top center;
+  scrollbar-color: #535353 transparent;
+  scrollbar-width: thin;
 }
 
 .pagesGroup {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  gap: 14px;
+  gap: 13px;
+}
+
+.pagesGroupTitle,
+.mobileMenuTitle {
+  margin: 0;
+  opacity: 1;
+  animation: none;
+  transform: none;
 }
 
 .pagesGroupTitle {
-  margin: 0;
   color: #ffd700;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.055em;
   text-transform: uppercase;
 }
 
 .pagesLinks {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 }
 
 .pagesLink {
+  margin-left: -10px;
+  padding: 7px 10px;
+  border-radius: 9px;
   color: #fff;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .pagesLink:hover {
+  background: rgba(255, 255, 255, 0.055);
   color: #caff33;
+  transform: translateX(3px);
 }
 
 .mobileMenu {
   display: none;
 }
 
+.mobileMenuInner {
+  display: grid;
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+  gap: 26px 30px;
+  padding: 24px;
+  scrollbar-color: #535353 transparent;
+  scrollbar-width: thin;
+}
+
 .mobileMenuSection {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  opacity: 1;
+  animation: none;
 }
 
 .mobileMenuTitle {
-  margin: 0;
   color: #ffd700;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.055em;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 
@@ -168,19 +249,27 @@
 
 .mobileMenuLinks {
   display: flex;
+  min-width: 0;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
 }
 
 .mobileMenuLink {
+  margin-left: -8px;
+  padding: 6px 8px;
+  border-radius: 8px;
   color: #fff;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
 }
 
 .mobileMenuLink:hover {
+  background: rgba(255, 255, 255, 0.055);
   color: #caff33;
 }
 
@@ -188,206 +277,171 @@
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 18px;
+  gap: 10px;
 }
 
 .language,
 .login {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 30px;
   border-radius: 82px;
   font-family: inherit;
-  font-size: 18px;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.2;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .language {
+  min-width: 58px;
+  padding: 0 15px;
   border: 1px solid #caff33;
   background: #caff33;
   color: #1c1c1c;
+  font-size: 14px;
   cursor: pointer;
+}
+
+.language:hover {
+  background: #d6ff5e;
+  transform: translateY(-1px);
 }
 
 .login {
+  min-width: 96px;
+  padding: 0 20px;
   border: 1px solid #caff33;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.login:hover {
+  background: rgba(202, 255, 51, 0.08);
+  transform: translateY(-1px);
 }
 
 .menuToggle {
+  position: relative;
   display: none;
-  width: 48px;
-  height: 48px;
-  padding: 12px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  padding: 0;
   border: 1px solid #caff33;
   border-radius: 50%;
   background: transparent;
+  color: #caff33;
   cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.menuToggle:hover {
+  background: rgba(202, 255, 51, 0.09);
 }
 
 .menuToggle span {
+  position: absolute;
+  top: 50%;
+  left: 12px;
   display: block;
-  height: 1px;
-  margin: 5px 0;
-  background: #caff33;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@include responsive(tablet) {
+.menuToggle span:first-child {
+  transform: translateY(-4px);
+}
+
+.menuToggle span:last-child {
+  transform: translateY(4px);
+}
+
+.menuToggleOpen span:first-child {
+  transform: rotate(45deg);
+}
+
+.menuToggleOpen span:last-child {
+  transform: rotate(-45deg);
+}
+
+.navigation a:focus-visible,
+.pagesToggle:focus-visible,
+.language:focus-visible,
+.login:focus-visible,
+.menuToggle:focus-visible,
+.pagesLink:focus-visible,
+.mobileMenuLink:focus-visible {
+  outline: 2px solid #caff33;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1360px) and (min-width: 961px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 16px 24px 14px;
+    border-radius: 34px;
+    gap: 12px 20px;
+  }
+
+  .logoLink {
+    order: 1;
+  }
+
+  .actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .navigation {
+    order: 3;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid #303030;
+    gap: clamp(16px, 2.1vw, 28px);
+  }
+
+  .navigation a,
+  .pagesToggle {
+    font-size: 14px;
+  }
+
+  .pagesDropdown {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
   .header {
     padding: 16px 20px;
   }
 
   .navbar {
-    flex-wrap: wrap;
-    padding: 16px 24px;
-    gap: 14px;
+    min-height: 66px;
+    padding: 10px 14px;
+    gap: 12px;
   }
 
   .logoLink {
-    flex: 0 0 108px;
+    flex-basis: 118px;
   }
 
-  .logo {
-    width: 108px;
-    height: 38px;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .navigation {
-    gap: 14px;
-  }
-
-  .navigation a,
-  .navigationPlaceholder,
-  .login,
-  .language {
-    font-size: 13px;
-  }
-
-  .language,
-  .login {
-    min-height: 40px;
-    padding: 0 12px;
-  }
-
-  .login {
-    width: 80px;
-    min-width: 80px;
-    flex: 0 0 80px;
-    padding: 0 8px;
-  }
-
-  .pagesDropdown {
-    width: min(1596px, calc(100vw - 40px));
-    gap: 20px;
-    padding: 24px;
-  }
-
-  .mobileMenu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 12px;
-    padding: 20px;
-    border: 1px solid #262626;
-    border-radius: 24px;
-    background: #1c1c1c;
-  }
-
-  .menuToggle {
-    display: block;
-  }
-}
-
-@include responsive(screen) {
-  .navigation a,
-  .navigationPlaceholder,
-  .login,
-  .language {
-    font-size: 13px;
-  }
-
-  .language,
-  .login {
-    min-height: 40px;
-    padding: 0 12px;
-  }
-
-  .login {
-    width: 100px;
-    min-width: 100px;
-    flex: 0 0 100px;
-    padding: 0 8px;
-  }
-}
-
-@include responsive(phone) {
-  .header {
-    padding: 12px 20px;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    padding: 10px 14px;
-    border-radius: 32px;
-    gap: 10px;
-  }
-
-  .logoLink,
   .logo {
     width: 118px;
-    height: 42px;
   }
 
-  .logoLink {
-    flex: 0 0 118px;
-  }
-
-  .navigation {
-    top: calc(100% + 12px);
-    left: 0;
-    display: none;
-    width: 100%;
-    padding: 20px;
-    border: 1px solid #262626;
-    border-radius: 24px;
-    background: #1c1c1c;
-    transform: none;
-    white-space: normal;
-  }
-
-  .pagesToggle {
-    width: 100%;
-    justify-content: space-between;
-    padding: 8px 0 0;
-    font-size: 14px;
-  }
-
+  .navigation,
   .pagesDropdown {
-    position: static;
-    width: 100%;
-    transform: none;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 16px;
-    padding: 20px;
-    border-radius: 20px;
-  }
-
-  .navigation_open {
     display: none;
-  }
-
-  .navigation a,
-  .navigationPlaceholder,
-  .login,
-  .language {
-    font-size: 14px;
   }
 
   .actions {
@@ -397,8 +451,19 @@
 
   .language,
   .login {
-    min-height: 38px;
+    min-height: 40px;
+  }
+
+  .language {
+    min-width: 50px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .login {
+    min-width: 84px;
     padding: 0 14px;
+    font-size: 13px;
   }
 
   .menuToggle {
@@ -406,19 +471,95 @@
   }
 
   .mobileMenu {
-    display: none;
+    display: block;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 1px solid #303030;
+    border-radius: 26px;
+    background:
+      radial-gradient(circle at 100% 0, rgba(202, 255, 51, 0.06), transparent 34%), #1c1c1c;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.32);
   }
 }
 
 @include responsive(phone) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .navbar {
+    min-height: 60px;
+    padding: 8px 10px 8px 12px;
+    border-radius: 32px;
+    gap: 8px;
+  }
+
+  .logoLink {
+    flex-basis: 108px;
+  }
+
+  .logo {
+    width: 108px;
+  }
+
   .mobileMenu {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 12px;
+    margin-top: 8px;
+    border-radius: 22px;
+  }
+
+  .mobileMenuInner {
+    gap: 24px;
     padding: 20px;
-    border: 1px solid #262626;
-    border-radius: 24px;
-    background: #1c1c1c;
+  }
+}
+
+@media (max-width: 520px) {
+  .login {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .logoLink {
+    flex-basis: 98px;
+  }
+
+  .logo {
+    width: 98px;
+  }
+
+  .language {
+    min-width: 46px;
+    padding: 0 10px;
+  }
+
+  .menuToggle {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .menuToggle span {
+    left: 11px;
+    width: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation a,
+  .pagesToggle,
+  .pagesChevron,
+  .pagesLink,
+  .mobileMenuLink,
+  .language,
+  .login,
+  .menuToggle,
+  .menuToggle span {
+    transition-duration: 0.01ms;
   }
 }

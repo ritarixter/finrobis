@@ -1,7 +1,7 @@
 @use "../../styles/responsive.scss" as *;
 
 .card {
-  position: relative;                
+  position: relative;
   padding: 30px;
   padding-bottom: 90px;
   flex-direction: column;
@@ -9,7 +9,7 @@
   border-radius: 40px 40px 16px 16px;
   border: 1px solid var(--cl-gray-15, #262626);
   background: var(--cl-gray-11, #1c1c1c);
-  overflow: hidden;                  
+  overflow: hidden;
   isolation: isolate;
 }
 
@@ -23,25 +23,25 @@
   translate: -50% -50%;
   background: conic-gradient(
     from 0deg,
-    transparent        0deg,
-    transparent      270deg,
+    transparent 0deg,
+    transparent 270deg,
     rgba(202, 255, 51, 0.15) 290deg,
-    #CAFF33          320deg,
-    #ffffff          340deg,
-    #CAFF33          355deg,
+    #caff33 320deg,
+    #ffffff 340deg,
+    #caff33 355deg,
     rgba(202, 255, 51, 0.15) 358deg,
-    transparent      360deg
+    transparent 360deg
   );
   animation: cardContourGlow 3s linear infinite;
   pointer-events: none;
   z-index: 0;
-  filter: blur(2px) saturate(1.3);   
+  filter: blur(2px) saturate(1.3);
 }
 .card::after {
   content: "";
   position: absolute;
-  inset: 1px;                     
-  border-radius: 39px 39px 15px 15px; 
+  inset: 1px;
+  border-radius: 39px 39px 15px 15px;
   background: var(--cl-gray-11, #1c1c1c);
   z-index: 0;
   pointer-events: none;
@@ -53,7 +53,9 @@
 }
 
 @keyframes cardContourGlow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .card__image {

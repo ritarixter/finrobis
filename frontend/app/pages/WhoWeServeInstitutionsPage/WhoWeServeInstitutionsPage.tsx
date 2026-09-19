@@ -54,7 +54,8 @@ export function WhoWeServeInstitutionsPage() {
 
       <section className={styles.solutionsSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeInstitutions.solutions.title} <span>{whoWeServeInstitutions.solutions.accentTitle}</span>
+          {whoWeServeInstitutions.solutions.title}{" "}
+          <span>{whoWeServeInstitutions.solutions.accentTitle}</span>
         </h2>
 
         <CardsWithImage items={whoWeServeInstitutions.solutions.items} />
@@ -62,7 +63,8 @@ export function WhoWeServeInstitutionsPage() {
 
       <section className={styles.clientsSection}>
         <h2 className={styles.sectionTitle}>
-          {whoWeServeInstitutions.clients.title} <span>{whoWeServeInstitutions.clients.accentTitle}</span>
+          {whoWeServeInstitutions.clients.title}{" "}
+          <span>{whoWeServeInstitutions.clients.accentTitle}</span>
         </h2>
 
         <div className={styles.clientsGrid}>

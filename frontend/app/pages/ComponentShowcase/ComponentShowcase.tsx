@@ -190,6 +190,9 @@ const sections: ShowcaseSection[] = [
         <Button theme={ThemeButton.GREEN} onClick={() => {}}>
           Green Button
         </Button>
+        <Button theme={ThemeButton.ALPHAMARK} onClick={() => {}}>
+          Transform my brand
+        </Button>
         <Button theme={ThemeButton.GREEN} disabled onClick={() => {}}>
           Disabled
         </Button>

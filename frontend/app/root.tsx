@@ -14,6 +14,7 @@ import "./styles/responsive.scss";
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import { CursorSpeckles } from "./components/CursorSpeckles/CursorSpeckles";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -49,6 +50,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="appWrapper">
+      <CursorSpeckles />
       <Header />
       <Outlet />
       <Footer />
