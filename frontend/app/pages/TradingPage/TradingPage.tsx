@@ -34,6 +34,7 @@ export function TradingPage() {
           imageSrc={trading.marketData.imageSrc}
           imageAlt={trading.marketData.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -90,7 +91,7 @@ export function TradingPage() {
           {trading.faq.title} <span>{trading.faq.accentTitle}</span>
         </h2>
 
-        <Questions items={trading.faq.items} />
+        <Questions items={trading.faq.items} interactiveDots />
       </section>
     </main>
   );

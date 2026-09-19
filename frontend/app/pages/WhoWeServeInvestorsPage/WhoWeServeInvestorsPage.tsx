@@ -5,6 +5,7 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -22,17 +23,11 @@ export function WhoWeServeInvestorsPage() {
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
         <img
-          className={styles.heroDecor}
-          src={whoWeServeInvestors.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
-        <img
           className={styles.heroImage}
           src={whoWeServeInvestors.intro.imageSrc}
           alt={whoWeServeInvestors.intro.title}
         />
+        <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{whoWeServeInvestors.intro.title}</h1>

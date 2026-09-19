@@ -5,6 +5,7 @@ import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { Questions } from "~/components/Questions/Questions";
 import { TextList } from "~/components/TextList/TextList";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -22,14 +23,8 @@ export function CompanyAboutPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={about.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={about.intro.imageSrc} alt={about.intro.title} />
+        <MarketBackgroundAnimation className={styles.heroMarketAnimation} />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{about.intro.title}</h1>
@@ -48,6 +43,7 @@ export function CompanyAboutPage() {
           imageSrc={about.story.imageSrc}
           imageAlt={about.story.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -66,11 +62,14 @@ export function CompanyAboutPage() {
         <div className={styles.missionContent}>
           <TextList items={[about.mission.quote]} className={styles.missionQuoteList} />
 
-          <img
-            className={styles.missionImage}
-            src={about.mission.imageSrc}
-            alt={about.mission.imageAlt}
-          />
+          <div className={styles.missionVisual}>
+            <img
+              className={styles.missionImage}
+              src={about.mission.imageSrc}
+              alt={about.mission.imageAlt}
+            />
+            <MarketBackgroundAnimation />
+          </div>
         </div>
       </section>
 
@@ -108,7 +107,7 @@ export function CompanyAboutPage() {
           {about.faqAbout.title} <span>{about.faqAbout.accentTitle}</span>
         </h2>
 
-        <Questions items={about.faqAbout.items} />
+        <Questions items={about.faqAbout.items} interactiveDots />
       </section>
     </main>
   );

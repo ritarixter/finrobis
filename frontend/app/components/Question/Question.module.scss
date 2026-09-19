@@ -25,6 +25,49 @@
   background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
 }
 
+.item_interactive {
+  --question-dots-x: 14%;
+  --question-dots-y: 50%;
+  position: relative;
+  cursor: pointer;
+  background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
+}
+
+.item_interactive::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  background-image: radial-gradient(circle, rgba(202, 255, 51, 0.95) 0 1.15px, transparent 1.45px);
+  background-size: 7px 7px;
+  mask-image: radial-gradient(
+    circle 112px at var(--question-dots-x) var(--question-dots-y),
+    #000 0,
+    rgba(0, 0, 0, 0.92) 32%,
+    rgba(0, 0, 0, 0.34) 68%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 112px at var(--question-dots-x) var(--question-dots-y),
+    #000 0,
+    rgba(0, 0, 0, 0.92) 32%,
+    rgba(0, 0, 0, 0.34) 68%,
+    transparent 100%
+  );
+  transition: opacity 220ms ease;
+}
+
+.item_interactive:hover::before {
+  opacity: 1;
+}
+
+.item_interactive .heading,
+.item_interactive .panel {
+  position: relative;
+  z-index: 1;
+}
+
 .heading {
   margin: 0;
   font-weight: inherit;
@@ -97,7 +140,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .item,
-  .icon {
+  .icon,
+  .item_interactive::before {
     transition: none;
   }
 }

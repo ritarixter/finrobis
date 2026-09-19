@@ -4,9 +4,45 @@ import { ItemText } from "~/components/ItemText/ItemText";
 import { Form } from "~/components/Form/Form";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useLang } from "~/hooks/useLang";
 
 import styles from "./CompanyContactPage.module.scss";
+
+function ContactCardAnimation() {
+  return (
+    <div className={styles.contactCardAnimation} aria-hidden="true">
+      <svg className={styles.network} viewBox="0 0 700 620" preserveAspectRatio="none">
+        <g className={styles.networkLines}>
+          <path d="M-30 115 L120 58 L245 145 L390 72 L540 168 L730 90" />
+          <path d="M-20 420 L105 330 L250 390 L405 285 L555 370 L720 255" />
+          <path d="M120 58 L105 330 M245 145 L250 390 M390 72 L405 285 M540 168 L555 370" />
+          <path d="M105 330 L245 145 M250 390 L390 72 M405 285 L540 168" />
+        </g>
+
+        <g className={styles.networkNodes}>
+          {[
+            [120, 58],
+            [245, 145],
+            [390, 72],
+            [540, 168],
+            [105, 330],
+            [250, 390],
+            [405, 285],
+            [555, 370],
+          ].map(([cx, cy], index) => (
+            <g key={`${cx}-${cy}`} style={{ animationDelay: `${index * 320}ms` }}>
+              <circle className={styles.nodePulse} cx={cx} cy={cy} r="20" />
+              <circle className={styles.nodeCore} cx={cx} cy={cy} r="4" />
+            </g>
+          ))}
+        </g>
+      </svg>
+
+      <span className={styles.networkSweep} />
+    </div>
+  );
+}
 
 export function CompanyContactPage() {
   const { contact } = useLang().content.pages;
@@ -18,14 +54,8 @@ export function CompanyContactPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={contact.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={contact.intro.imageSrc} alt={contact.intro.title} />
+        <MarketBackgroundAnimation className={styles.heroMarketAnimation} />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{contact.intro.title}</h1>
@@ -44,6 +74,7 @@ export function CompanyContactPage() {
           imageSrc={contact.cta.imageSrc}
           imageAlt={contact.cta.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -66,7 +97,6 @@ export function CompanyContactPage() {
           buttonText={contact.form.buttonText}
           errorMessages={contact.form.errorMessages}
           variant="contact"
-          decorImageSrc={contact.form.backgroundImageSrc}
         />
       </section>
 
@@ -80,12 +110,7 @@ export function CompanyContactPage() {
 
         <div className={styles.contactCardsGrid}>
           <article className={styles.contactCard}>
-            <img
-              className={styles.contactCardDecor}
-              src={contact.cta.imageSrc}
-              alt=""
-              aria-hidden="true"
-            />
+            <ContactCardAnimation />
 
             <div className={styles.contactCardPanel}>
               <div className={styles.contactList}>
@@ -100,12 +125,7 @@ export function CompanyContactPage() {
           </article>
 
           <article className={styles.contactCard}>
-            <img
-              className={styles.contactCardDecor}
-              src={contact.cta.imageSrc}
-              alt=""
-              aria-hidden="true"
-            />
+            <ContactCardAnimation />
 
             <div className={styles.contactCardPanel}>
               <div className={styles.locationCardContent}>
@@ -140,7 +160,7 @@ export function CompanyContactPage() {
           {contact.faq.title} <span>{contact.faq.accentTitle}</span>
         </h2>
 
-        <Questions items={contact.faq.items} />
+        <Questions items={contact.faq.items} interactiveDots />
       </section>
     </main>
   );

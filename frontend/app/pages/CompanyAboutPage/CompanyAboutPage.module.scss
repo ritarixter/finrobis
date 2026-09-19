@@ -19,17 +19,6 @@
   box-sizing: border-box;
 }
 
-.heroDecor {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: min(360px, 28vw);
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
 .heroImage {
   position: absolute;
   top: 50px;
@@ -40,6 +29,12 @@
   object-fit: cover;
   border-radius: 20px;
   z-index: 1;
+}
+
+.heroMarketAnimation {
+  inset: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 .heroCard {
@@ -57,7 +52,7 @@
   flex-shrink: 0;
   border-radius: 20px 0 80px 20px;
   background: var(--Grey-10, #1a1a1a);
-  z-index: 2;
+  z-index: 3;
 }
 
 .title {
@@ -149,12 +144,25 @@
   content: none;
 }
 
-.missionImage {
-  display: block;
+.missionVisual {
+  position: relative;
   width: min(740px, 100%);
-  height: auto;
+  flex: 0 1 740px;
+  aspect-ratio: 813 / 423;
+  overflow: hidden;
   border-radius: 20px;
+  background: #1a1a1a;
+}
+
+.missionImage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  clip-path: inset(14.18% 7.38% 14.66% 7.38% round 20px);
 }
 
 .valuesSection,
@@ -225,10 +233,6 @@
     min-height: auto;
   }
 
-  .heroDecor {
-    width: min(280px, 40vw);
-  }
-
   .heroImage {
     position: relative;
     top: auto;
@@ -239,6 +243,11 @@
     aspect-ratio: 153 / 101;
     border-radius: 0 0 20px 20px;
     order: 2;
+  }
+
+  .heroMarketAnimation {
+    inset: 0;
+    width: 100%;
   }
 
   .heroCard {
@@ -287,8 +296,9 @@
     max-width: 100%;
   }
 
-  .missionImage {
+  .missionVisual {
     width: 100%;
+    flex-basis: auto;
   }
 
   .valuesSection {
@@ -375,7 +385,7 @@
     max-width: 100%;
   }
 
-  .missionImage {
+  .missionVisual {
     width: 100%;
   }
 

@@ -5,6 +5,7 @@ import { CardsWithImage } from "~/components/CardsWithImage/CardsWithImage";
 import { ItemText } from "~/components/ItemText/ItemText";
 import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
+import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
 
@@ -21,14 +22,8 @@ export function CompanyCareersPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img
-          className={styles.heroDecor}
-          src={careers.intro.backgroundImageSrc}
-          alt=""
-          aria-hidden="true"
-        />
-
         <img className={styles.heroImage} src={careers.intro.imageSrc} alt={careers.intro.title} />
+        <MarketBackgroundAnimation className={styles.heroMarketAnimation} />
 
         <div className={styles.heroCard}>
           <h1 className={styles.title}>{careers.intro.title}</h1>
@@ -47,6 +42,7 @@ export function CompanyCareersPage() {
           imageSrc={careers.marketData.imageSrc}
           imageAlt={careers.marketData.imageAlt}
           variant="wide"
+          interactiveDots
         />
       </section>
 
@@ -90,7 +86,7 @@ export function CompanyCareersPage() {
           {careers.faq.title} <span>{careers.faq.accentTitle}</span>
         </h2>
 
-        <Questions items={careers.faq.items} />
+        <Questions items={careers.faq.items} interactiveDots />
       </section>
     </main>
   );

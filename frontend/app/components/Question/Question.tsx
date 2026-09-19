@@ -1,4 +1,5 @@
 import { useId } from "react";
+import type { PointerEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Question.module.scss";
 
@@ -10,14 +11,34 @@ export interface QuestionItemProps {
 export interface QuestionProps extends QuestionItemProps {
   isOpen: boolean;
   onToggle: () => void;
+  interactiveDots?: boolean;
 }
 
-export function Question({ question, answer, isOpen, onToggle }: QuestionProps) {
+export function Question({
+  question,
+  answer,
+  isOpen,
+  onToggle,
+  interactiveDots = false,
+}: QuestionProps) {
   const buttonId = useId();
   const panelId = useId();
 
+  const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (!interactiveDots || event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty("--question-dots-x", `${event.clientX - bounds.left}px`);
+    event.currentTarget.style.setProperty("--question-dots-y", `${event.clientY - bounds.top}px`);
+  };
+
   return (
-    <div className={`${styles.item} ${isOpen ? styles.item_open : ""}`.trim()}>
+    <div
+      className={`${styles.item} ${isOpen ? styles.item_open : ""} ${
+        interactiveDots ? styles.item_interactive : ""
+      }`.trim()}
+      onPointerMove={interactiveDots ? handlePointerMove : undefined}
+    >
       <div className={styles.heading}>
         <button
           type="button"

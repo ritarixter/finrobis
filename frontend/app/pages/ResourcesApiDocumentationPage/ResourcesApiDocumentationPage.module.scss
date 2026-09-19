@@ -164,6 +164,114 @@
   padding: 80px !important;
 }
 
+.endpointCard {
+  isolation: isolate;
+}
+
+.endpointCard::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.32;
+  background:
+    linear-gradient(90deg, transparent 0 49.8%, rgba(202, 255, 51, 0.08) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 0 49.8%, rgba(202, 255, 51, 0.06) 50%, transparent 50.2%);
+  background-size: 42px 42px;
+}
+
+.endpointCard::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 110px;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(180deg, transparent, rgba(202, 255, 51, 0.08), transparent);
+  animation: endpointScan 7s ease-in-out infinite;
+}
+
+.endpointCard :global(.market-data-card__content) {
+  position: relative;
+  z-index: 1;
+}
+
+.endpointCard :global(.market-data-card__image-wrapper) {
+  display: none;
+}
+
+.endpointCard :global(.market-data-card__method),
+.endpointCard :global(.market-data-card__path),
+.endpointCard :global(.market-data-card__description) {
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);
+  animation: endpointTyping 9s steps(24, end) infinite;
+}
+
+.endpointCard :global(.market-data-card__path)::after {
+  content: "_";
+  color: #caff33;
+  animation: terminalCursor 0.72s steps(1, end) infinite;
+}
+
+@for $item from 1 through 8 {
+  .endpointCard
+    :global(.market-data-card__item:nth-child(#{$item}) .market-data-card__method) {
+    animation-delay: #{($item - 1) * 0.72}s;
+  }
+
+  .endpointCard :global(.market-data-card__item:nth-child(#{$item}) .market-data-card__path) {
+    animation-delay: #{(($item - 1) * 0.72) + 0.16}s;
+  }
+
+  .endpointCard
+    :global(.market-data-card__item:nth-child(#{$item}) .market-data-card__description) {
+    animation-delay: #{(($item - 1) * 0.72) + 0.32}s;
+  }
+}
+
+@keyframes endpointTyping {
+  0%,
+  5% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  12% {
+    opacity: 1;
+  }
+  42%,
+  82% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  94%,
+  100% {
+    opacity: 0;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes endpointScan {
+  0%,
+  12% {
+    top: -18%;
+    opacity: 0;
+  }
+  28% {
+    opacity: 1;
+  }
+  78%,
+  100% {
+    top: 92%;
+    opacity: 0;
+  }
+}
+
 .apiSection {
   display: flex;
   flex-direction: column;
@@ -233,22 +341,58 @@
   overflow: hidden;
   border-radius: 20px;
   border: 1px solid #262626;
-  background: linear-gradient(267deg, #1c1c1c 40.67%, rgba(28, 28, 28, 0) 99.81%), #1c1c1c;
+  background:
+    linear-gradient(180deg, rgba(202, 255, 51, 0.025), transparent 38%),
+    #121512;
+  box-shadow: inset 0 1px 0 rgba(202, 255, 51, 0.08);
 }
 
-.codeExampleImage {
+.terminalGlow {
   position: absolute;
-  top: 0;
-  left: -5px;
-  width: 283px;
-  height: 283px;
-  object-fit: contain;
+  inset: 0;
   pointer-events: none;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(202, 255, 51, 0.1), transparent 28%),
+    repeating-linear-gradient(0deg, transparent 0 4px, rgba(255, 255, 255, 0.012) 5px);
+  animation: terminalGlow 5s ease-in-out infinite alternate;
 }
 
 .codeExampleContent {
   position: relative;
   z-index: 1;
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(202, 255, 51, 0.12);
+}
+
+.terminalBar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.terminalBar span:nth-child(2) {
+  background: rgba(255, 215, 0, 0.55);
+}
+
+.terminalBar span:nth-child(3) {
+  background: rgba(202, 255, 51, 0.72);
+  box-shadow: 0 0 9px rgba(202, 255, 51, 0.45);
+}
+
+.terminalBar small {
+  margin-left: 8px;
+  color: rgba(255, 255, 255, 0.36);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
 }
 
 .codeExampleTitle {
@@ -264,7 +408,7 @@
 .codeExampleText {
   margin: 0;
   color: var(--Grey-70, #b3b3b3);
-  font-family: var(--font-family-main, "Lexend", sans-serif);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
@@ -310,6 +454,78 @@
 @keyframes codeCursorFade {
   to {
     opacity: 0;
+  }
+}
+
+.codeViewport {
+  position: relative;
+}
+
+.screenReaderCode {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: pre;
+  border: 0;
+}
+
+.codeSizer {
+  visibility: hidden;
+}
+
+.typedCode {
+  position: absolute;
+  inset: 0;
+}
+
+.codeCursor {
+  display: inline-block;
+  width: 0.62em;
+  height: 1.05em;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  background: #caff33;
+  box-shadow: 0 0 10px rgba(202, 255, 51, 0.7);
+  animation: terminalCursor 0.72s steps(1, end) infinite;
+}
+
+@keyframes terminalCursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes terminalGlow {
+  from {
+    opacity: 0.45;
+    transform: translate3d(-1%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(1%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .endpointCard::after,
+  .endpointCard :global(.market-data-card__method),
+  .endpointCard :global(.market-data-card__path),
+  .endpointCard :global(.market-data-card__description),
+  .endpointCard :global(.market-data-card__path)::after,
+  .terminalGlow,
+  .codeCursor {
+    animation: none;
+  }
+
+  .endpointCard :global(.market-data-card__method),
+  .endpointCard :global(.market-data-card__path),
+  .endpointCard :global(.market-data-card__description) {
+    opacity: 1;
+    clip-path: none;
   }
 }
 
