@@ -91,8 +91,8 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  height: 342px;
-  min-height: 342px;
+  height: fit-content;
+  min-height: unset;
   padding: 80px;
 }
 
@@ -151,7 +151,7 @@
 
 .commonList :global(.item-text__title) {
   font-size: clamp(48px, 4vw, 58px);
-  line-height: 1.5;
+  line-height: 1.1;
   white-space: pre-line;
 }
 
@@ -161,6 +161,10 @@
   gap: 88px;
   width: 100%;
   margin-top: 143px;
+}
+
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 @include responsive(tablet) {

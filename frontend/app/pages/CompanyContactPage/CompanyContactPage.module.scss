@@ -91,8 +91,9 @@
 }
 
 .ctaSection :global(.market-data-card--wide) {
-  height: 288px;
+  height: auto;
   min-height: 288px;
+  padding: 80px;
 }
 
 .summarySection {
@@ -107,6 +108,14 @@
 
 .summaryItemText {
   max-width: 100%;
+}
+
+.summaryItemTitle {
+  font-family: Lexend, var(--font-family-main, sans-serif);
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .formSection {
@@ -326,6 +335,7 @@
   .ctaSection :global(.market-data-card--wide) {
     height: 288px;
     min-height: 288px;
+    padding: 32px;
   }
 
   .summarySection,
@@ -397,6 +407,7 @@
   .ctaSection :global(.market-data-card--wide) {
     height: auto;
     min-height: unset;
+    padding: 25px;
   }
 
   .summarySection,

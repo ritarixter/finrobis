@@ -80,7 +80,7 @@ export function CompanyCareersPage() {
         </h2>
 
         <ItemsContainer
-          items={careers.process.items.map((item) => ({ text: item.text }))}
+          items={careers.process.items.map((item) => ({ title: item.title, text: item.text }))}
           className={styles.processItems}
         />
       </section>

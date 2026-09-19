@@ -136,6 +136,10 @@ import whoWeServeCustodyCard2Image from "../assets/images/custody/cards_2.png";
 import whoWeServeCustodyCard3Image from "../assets/images/custody/cards_3.png";
 import whoWeServeCustodyCard4Image from "../assets/images/custody/cards_4.png";
 import whoWeServeCustodyCard5Image from "../assets/images/custody/cards_5.png";
+import custodyMpcVaultsCard1Image from "../assets/images/custody/cardss_1.png";
+import custodyMpcVaultsCard2Image from "../assets/images/custody/cardss_2.png";
+import custodyMpcVaultsCard3Image from "../assets/images/custody/cardss_3.png";
+import custodyMpcVaultsCard4Image from "../assets/images/custody/cardss_4.png";
 import whoWeServeCustodyWalletImage from "../assets/images/custody/wallet.png";
 import whoWeServeCustodyChartImage from "../assets/images/custody/chart.png";
 import whoWeServeCustodyArchitecture1Image from "../assets/images/custody/Architecture_1.png";
@@ -1708,17 +1712,17 @@ export const content_de: ContentType = {
           {
             title: "TLS 1.3 erforderlich",
             text: "Alle API-Verbindungen benötigen TLS 1.3. Ältere Protokollversionen werden abgelehnt. Certificate Pinning auf Anfrage verfügbar.",
-            srcImage: apiSecurityCard2Image,
+            srcImage: whoWeServeCustodyArchitecture2Image,
           },
           {
             title: "IP-Whitelisting",
             text: "Optionales IP-Whitelisting pro API-Key, im Dashboard konfigurierbar. Für Produktionsschlüssel in fester Infrastruktur empfohlen.",
-            srcImage: apiSecurityCard3Image,
+            srcImage: whoWeServeCustodyArchitecture3Image,
           },
           {
             title: "Rollenbasierte Schlüssel",
             text: "Read-only-, Trade- und Admin-Keys mit unterschiedlichen Berechtigungsstufen. Separate Schlüssel für Reporting, Trading und Account-Management.",
-            srcImage: apiSecurityCard4Image,
+            srcImage: whoWeServeCustodyArchitecture4Image,
           },
         ],
       },
@@ -2089,25 +2093,25 @@ export const content_de: ContentType = {
             id: 1,
             title: "Verteilung der Schlüsselanteile",
             text: "Schlüsselanteile werden auf mehrere unabhängige Systeme in verschiedenen Regionen verteilt gespeichert. Keine einzelne Partei kennt den vollständigen Schlüssel.",
-            srcImage: whoWeServeCustodyCard1Image,
+            srcImage: custodyMpcVaultsCard1Image,
           },
           {
             id: 2,
             title: "Signierungsprozess",
             text: "Transaktionen werden durch kollaborative kryptografische Berechnung zwischen den Share-Inhabern autorisiert — in Millisekunden und ohne Schlüsselrekonstruktion.",
-            srcImage: whoWeServeCustodyCard2Image,
+            srcImage: custodyMpcVaultsCard2Image,
           },
           {
             id: 3,
             title: "Hardware-Sicherheitsmodule",
             text: "Jeder Schlüsselanteil ist durch ein HSM gegen physische und digitale Manipulation geschützt (FIPS 140-2 Level 3 zertifiziert).",
-            srcImage: whoWeServeCustodyCard3Image,
+            srcImage: custodyMpcVaultsCard3Image,
           },
           {
             id: 4,
             title: "Freigabe-Workflows",
             text: "Konfigurierbare Freigaberegeln: Definieren Sie, wie viele und welche Signaturen für verschiedene Transaktionstypen und Volumina erforderlich sind.",
-            srcImage: whoWeServeCustodyCard4Image,
+            srcImage: custodyMpcVaultsCard4Image,
           },
         ],
       },
@@ -2472,7 +2476,7 @@ export const content_de: ContentType = {
         accentTitle: "(AML)",
         items: [
           {
-            title: "",
+            title: "Transaction Monitoring",
             text: "Jede Transaktion wird in Echtzeit gegen AML-Risikomodelle geprüft. Verdächtige Muster — etwa ungewöhnliche Volumina, Geschwindigkeit oder Gegenparteien — lösen automatisierte Prüfprozesse aus.",
             imageSrc: whoWeServeCustodyKycAml1Image,
             imageAlt: "Transaktionsmonitoring",
@@ -2680,23 +2684,28 @@ export const content_de: ContentType = {
           items: [
             {
               id: 1,
-              text: "Bewerbung\nLebenslauf und kurzes Anschreiben (optional) — keine langen Motivationsschreiben nötig. Wir schätzen Klarheit vor Länge.",
+              title: "Bewerbung",
+              text: "Lebenslauf und kurzes Anschreiben (optional) — keine langen Motivationsschreiben nötig. Wir schätzen Klarheit vor Länge.",
             },
             {
               id: 2,
-              text: "Erstgespräch\n30-minütiges Kennenlerngespräch mit HR oder der Hiring Managerin bzw. dem Hiring Manager — beidseitige Einschätzung, kein Stress.",
+              title: "Erstgespräch",
+              text: "30-minütiges Kennenlerngespräch mit HR oder der Hiring Managerin bzw. dem Hiring Manager — beidseitige Einschätzung, kein Stress.",
             },
             {
               id: 3,
-              text: "Fachinterview\nVertiefte Diskussion der fachlichen Kompetenz und konkreter Erfahrungen — gelegentlich mit kurzer Case Study.",
+              title: "Fachinterview",
+              text: "Vertiefte Diskussion der fachlichen Kompetenz und konkreter Erfahrungen — gelegentlich mit kurzer Case Study.",
             },
             {
               id: 4,
-              text: "Teaminterview\nKennenlernen des direkten Teams — kulturelle Passung, Arbeitsstil und gegenseitige Erwartungen.",
+              title: "Teaminterview",
+              text: "Kennenlernen des direkten Teams — kulturelle Passung, Arbeitsstil und gegenseitige Erwartungen.",
             },
             {
               id: 5,
-              text: "Angebot\nSchnelle Entscheidung — wir respektieren Ihre Zeit. Onboarding innerhalb von 2–4 Wochen nach Annahme.",
+              title: "Angebot",
+              text: "Schnelle Entscheidung — wir respektieren Ihre Zeit. Onboarding innerhalb von 2–4 Wochen nach Annahme.",
             },
           ],
         },

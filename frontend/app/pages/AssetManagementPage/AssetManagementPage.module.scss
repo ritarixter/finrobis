@@ -8,7 +8,7 @@
 }
 
 .introSection {
-  margin-bottom: 272px;
+  margin-bottom: 50px;
 }
 
 .marketDataSection {
@@ -34,6 +34,10 @@
   margin-bottom: 117px;
 }
 
+.whySection .sectionTitle span {
+  color: var(--cl-white);
+}
+
 .whyItemTextWithImageList :global(.item-text-with-image__image) {
   width: min(716px, 100%);
   height: 258px;
@@ -51,7 +55,7 @@
 
 .whyItemTextWithImageList :global(.item-text__title) {
   font-size: clamp(48px, 4vw, 58px);
-  line-height: 1.5;
+  line-height: 1.1;
   white-space: pre-line;
 }
 
@@ -75,7 +79,11 @@
   flex-direction: column;
   gap: 90px;
   width: 100%;
-  margin-top: 143px;
+  margin-top: 0;
+}
+
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 .sectionTitle {
@@ -121,6 +129,10 @@
 .riskDisclaimerItems :global(.items-container__item) {
   width: 100%;
   max-width: 1120px;
+}
+
+.riskDisclaimerItems :global(.items-container__text) {
+  color: var(--Grey-70, #b3b3b3);
 }
 
 @include responsive(tablet) {

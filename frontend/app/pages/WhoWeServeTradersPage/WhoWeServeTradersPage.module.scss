@@ -92,8 +92,9 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  height: 342px;
-  min-height: 342px;
+  height: fit-content;
+  min-height: unset;
+  padding: 80px;
 }
 
 .benefitsSection {
@@ -131,6 +132,10 @@
 
 .faqSection {
   margin-top: 143px;
+}
+
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 .sectionTitle {

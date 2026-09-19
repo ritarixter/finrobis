@@ -49,7 +49,13 @@ export function CompanyContactPage() {
 
       <section className={styles.summarySection}>
         {contact.reasons.map((reason) => (
-          <ItemText key={reason.title} title={reason.title} text={reason.text} className={styles.summaryItemText} />
+          <ItemText
+            key={reason.title}
+            title={reason.title}
+            text={reason.text}
+            className={styles.summaryItemText}
+            titleClassName={styles.summaryItemTitle}
+          />
         ))}
       </section>
 

@@ -68,6 +68,7 @@
   }
 
   .solutionItem :global(.item-text__text) {
+    color: var(--Grey-70, #b3b3b3);
     font-size: 15px;
   }
 }

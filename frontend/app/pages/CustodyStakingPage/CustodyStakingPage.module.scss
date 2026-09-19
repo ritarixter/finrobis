@@ -8,7 +8,7 @@
 }
 
 .introSection {
-  margin-bottom: 80px;
+  margin-bottom: 0;
 }
 
 .marketDataSection {
@@ -20,8 +20,9 @@
 }
 
 .marketDataSection :global(.market-data-card--wide) {
-  min-height: 342px;
-  height: 342px;
+  min-height: unset;
+  height: fit-content;
+  padding: 80px;
 }
 
 .benefitsSection {
@@ -62,6 +63,11 @@
 .faqSection {
   margin-top: 143px;
   gap: 80px;
+}
+
+.stakingFlowSection .sectionTitle span,
+.faqSection .sectionTitle span {
+  color: var(--cl-white);
 }
 
 .sectionTitle {

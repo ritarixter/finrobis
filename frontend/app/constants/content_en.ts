@@ -135,6 +135,10 @@ import whoWeServeCustodyCard2Image from "../assets/images/custody/cards_2.png";
 import whoWeServeCustodyCard3Image from "../assets/images/custody/cards_3.png";
 import whoWeServeCustodyCard4Image from "../assets/images/custody/cards_4.png";
 import whoWeServeCustodyCard5Image from "../assets/images/custody/cards_5.png";
+import custodyMpcVaultsCard1Image from "../assets/images/custody/cardss_1.png";
+import custodyMpcVaultsCard2Image from "../assets/images/custody/cardss_2.png";
+import custodyMpcVaultsCard3Image from "../assets/images/custody/cardss_3.png";
+import custodyMpcVaultsCard4Image from "../assets/images/custody/cardss_4.png";
 import whoWeServeCustodyWalletImage from "../assets/images/custody/wallet.png";
 import whoWeServeCustodyChartImage from "../assets/images/custody/chart.png";
 import whoWeServeCustodyArchitecture1Image from "../assets/images/custody/Architecture_1.png";
@@ -768,7 +772,7 @@ export const content_en = {
           "Crypto-to-fiat conversion, treasury management, and regulated settlement for companies with digital assets.",
       },
       intro: {
-        title: "Corporates.",
+        title: "Corporates",
         text: "Crypto-to-fiat conversion, treasury management, and regulated settlement for companies with digital assets",
         button1: "Contact us",
         imageSrc: whoWeServeIntroCorporatesImage,
@@ -1707,17 +1711,17 @@ export const content_en = {
           {
             title: "TLS 1.3 Required",
             text: "All API connections require TLS 1.3. Older protocol versions are rejected. Certificate pinning available on request.",
-            srcImage: apiSecurityCard2Image,
+            srcImage: whoWeServeCustodyArchitecture2Image,
           },
           {
             title: "IP Whitelisting",
             text: "Optional IP whitelisting per API key, configurable in the dashboard. Recommended for production keys in fixed infrastructure.",
-            srcImage: apiSecurityCard3Image,
+            srcImage: whoWeServeCustodyArchitecture3Image,
           },
           {
             title: "Role-Based Keys",
             text: "Read-only, trade, and admin keys with different permission levels. Separate keys for reporting, trading, and account management.",
-            srcImage: apiSecurityCard4Image,
+            srcImage: whoWeServeCustodyArchitecture4Image,
           },
         ],
       },
@@ -2088,25 +2092,25 @@ export const content_en = {
             id: 1,
             title: "Key Share Distribution",
             text: "Key shares are stored on multiple independent systems in different regions. No single party knows the complete key.",
-            srcImage: whoWeServeCustodyCard1Image,
+            srcImage: custodyMpcVaultsCard1Image,
           },
           {
             id: 2,
             title: "Signing Process",
             text: "Transactions are authorized through collaborative cryptographic computation between share holders — in milliseconds, without key reconstruction.",
-            srcImage: whoWeServeCustodyCard2Image,
+            srcImage: custodyMpcVaultsCard2Image,
           },
           {
             id: 3,
             title: "Hardware Security Modules",
             text: "Each key share is secured against physical and digital tampering by an HSM (FIPS 140-2 Level 3 certified).",
-            srcImage: whoWeServeCustodyCard3Image,
+            srcImage: custodyMpcVaultsCard3Image,
           },
           {
             id: 4,
             title: "Approval Workflows",
             text: "Configurable approval rules: define how many and which signatures are required for different transaction types and volumes.",
-            srcImage: whoWeServeCustodyCard4Image,
+            srcImage: custodyMpcVaultsCard4Image,
           },
         ],
       },
@@ -2471,7 +2475,7 @@ export const content_en = {
         accentTitle: "(AML)",
         items: [
           {
-            title: "",
+            title: "Transaction Monitoring",
             text: "Every transaction is checked against AML risk models in real time. Suspicious patterns — such as unusual volumes, velocity, or counterparties — trigger automated review processes.",
             imageSrc: whoWeServeCustodyKycAml1Image,
             imageAlt: "Transaction Monitoring",
@@ -2679,23 +2683,28 @@ export const content_en = {
           items: [
             {
               id: 1,
-              text: "Application\nCV and brief cover letter (optional) — no elaborate cover letters required. We value clarity over length.",
+              title: "Application",
+              text: "CV and brief cover letter (optional) — no elaborate cover letters required. We value clarity over length.",
             },
             {
               id: 2,
-              text: "Intro Call\n30-minute introductory call with HR or the hiring manager — mutual assessment, no stress questions.",
+              title: "Intro Call",
+              text: "30-minute introductory call with HR or the hiring manager — mutual assessment, no stress questions.",
             },
             {
               id: 3,
-              text: "Technical Interview\nIn-depth discussion of specialist competence and concrete experience — sometimes with a brief case study.",
+              title: "Technical Interview",
+              text: "In-depth discussion of specialist competence and concrete experience — sometimes with a brief case study.",
             },
             {
               id: 4,
-              text: "Team Interview\nGetting to know the direct team — cultural fit, working style, and mutual expectations.",
+              title: "Team Interview",
+              text: "Getting to know the direct team — cultural fit, working style, and mutual expectations.",
             },
             {
               id: 5,
-              text: "Offer\nFast decision — we respect your time. Onboarding within 2–4 weeks of acceptance.",
+              title: "Offer",
+              text: "Fast decision — we respect your time. Onboarding within 2–4 weeks of acceptance.",
             },
           ],
         },
