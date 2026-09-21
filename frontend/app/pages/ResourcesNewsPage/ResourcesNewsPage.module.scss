@@ -531,19 +531,35 @@
     min-height: auto;
   }
 
-  .newsSidebar {
-    padding: 20px;
-    align-items: center;
+ .newsSection {
     flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .newsSidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 20px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
     flex-wrap: nowrap;
   }
 
   .categoryButton {
-    min-height: 54px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
     padding: 10px 16px;
     font-size: 15px;
-    align-self: center;
+    align-self: stretch;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+    box-sizing: border-box;
   }
 
   .newsGrid {

@@ -225,7 +225,7 @@ export const content_en = {
         core: { title: "Core", accentTitle: "Solutions" },
         why: { title: "Why", accentTitle: "Finorbis" },
         whoWeServe: { title: "Who We", accentTitle: "Serve" },
-        programmaticAccess: { title: "Programmatic Access to", accentTitle: "Markets" },
+        programmaticAccess: { title: "Programmatic Access to ", accentTitle: "Markets" },
         institutions: { title: "How Institutions Trust", accentTitle: "Finorbis" },
       },
       benefits: [

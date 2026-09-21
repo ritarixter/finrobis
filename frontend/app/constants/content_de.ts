@@ -226,7 +226,7 @@ export const content_de: ContentType = {
         core: { title: "Kern", accentTitle: "Lösungen" },
         why: { title: "Warum", accentTitle: "Finorbis" },
         whoWeServe: { title: "Für wen", accentTitle: "wir arbeiten" },
-        programmaticAccess: { title: "Programmierten Zugang zu", accentTitle: "Märkten" },
+        programmaticAccess: { title: "Programmierten Zugang zu ", accentTitle: "Märkten" },
         institutions: { title: "Wie Institutionen Finorbis", accentTitle: "vertrauen" },
       },
       benefits: [
