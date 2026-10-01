@@ -173,6 +173,20 @@
   gap: 50px 80px;
 }
 
+.onboardingMotionRoot {
+  width: 100%;
+}
+
+.onboardingMotionRoot :global(.items-container__item[data-step-scroll-item]) {
+  --step-hidden-transform: translate3d(-42px, 48px, 0) scale(0.94);
+  --step-hidden-filter: blur(4px);
+  transform-origin: center;
+}
+
+.onboardingMotionRoot :global(.items-container__item[data-step-scroll-item]:nth-child(even)) {
+  --step-hidden-transform: translate3d(42px, 48px, 0) scale(0.94);
+}
+
 .onboardingItems :global(.items-container__item) {
   align-items: center;
 }

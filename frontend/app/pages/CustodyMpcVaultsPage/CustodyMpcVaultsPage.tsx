@@ -8,11 +8,13 @@ import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
 import { ThemeButton } from "~/components/ui/Button/Button";
 import { useLang } from "~/hooks/useLang";
+import { useSteppedScrollReveal } from "~/hooks/useSteppedScrollReveal";
 
 import styles from "./CustodyMpcVaultsPage.module.scss";
 
 export function CustodyMpcVaultsPage() {
   const { custodyMpcVaults } = useLang().content.pages;
+  const governanceRef = useSteppedScrollReveal<HTMLDivElement>(".items-container__item");
 
   return (
     <main className={`section ${styles.page}`}>
@@ -112,11 +114,17 @@ export function CustodyMpcVaultsPage() {
           {custodyMpcVaults.governance.title} <span>{custodyMpcVaults.governance.accentTitle}</span>
         </h2>
 
-        <ItemsContainer
-          items={custodyMpcVaults.governance.items}
-          className={styles.governanceItems}
-          showMarker={false}
-        />
+        <div
+          ref={governanceRef}
+          className={styles.governanceMotionRoot}
+          data-scroll-motion-root="governance-control"
+        >
+          <ItemsContainer
+            items={custodyMpcVaults.governance.items}
+            className={styles.governanceItems}
+            showMarker={false}
+          />
+        </div>
       </section>
 
       <section className={styles.faqSection}>

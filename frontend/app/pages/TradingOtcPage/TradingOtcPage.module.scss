@@ -33,11 +33,56 @@
 }
 
 .orderTypesSection {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 80px;
   margin-top: 143px;
   width: 100%;
+  isolation: isolate;
+}
+
+.orderTypesSection::before {
+  content: "";
+  position: absolute;
+  top: 150px;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(202, 255, 51, 0.75) 0 var(--scroll-section-percent, 0%),
+    rgba(202, 255, 51, 0.08) var(--scroll-section-percent, 0%) 100%
+  );
+  box-shadow: 0 0 14px rgba(202, 255, 51, 0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orderTypesSection :global(.item-text-with-image-list) {
+  position: relative;
+  z-index: 1;
+}
+
+.orderTypesSection :global(.item-text-with-image[data-scroll-motion-item]) {
+  --scroll-motion-transform: translate3d(
+      var(--scroll-card-x, 0),
+      var(--scroll-card-y, 0),
+      0
+    )
+    scale(var(--scroll-card-scale, 1));
+  --scroll-motion-filter: blur(var(--scroll-card-blur, 0));
+  clip-path: inset(0 var(--scroll-card-clip, 0) 0 0 round 24px);
+}
+
+.orderTypesSection :global(.item-text-with-image[data-scroll-motion-item]:nth-child(even)) {
+  clip-path: inset(0 0 0 var(--scroll-card-clip, 0) round 24px);
+}
+
+.orderTypesSection
+  :global(.item-text-with-image[data-scroll-motion-item] .item-text-with-image__image) {
+  transform: translate3d(var(--scroll-card-image-x, 0), 0, 0) scale(1.04);
+  will-change: transform;
 }
 
 .pricingSpreadsSection {
@@ -189,6 +234,11 @@
   .orderTypesSection {
     gap: 40px;
     margin-top: 64px;
+  }
+
+  .orderTypesSection::before {
+    left: 18px;
+    opacity: 0.5;
   }
 
   .pricingSpreadsSection {

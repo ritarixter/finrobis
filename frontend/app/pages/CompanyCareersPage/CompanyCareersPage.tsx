@@ -8,12 +8,15 @@ import { Questions } from "~/components/Questions/Questions";
 import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
+import { useScrollCardMotion } from "~/hooks/useScrollCardMotion";
 
 import styles from "./CompanyCareersPage.module.scss";
 
 export function CompanyCareersPage() {
   const { careers } = useLang().content.pages;
   const navigate = useNavigate();
+  const workCultureRef = useScrollCardMotion<HTMLDivElement>(`.${styles.workCultureMotionCard}`);
+  const offerRef = useScrollCardMotion<HTMLDivElement>(`.${styles.offerMotionCard}`);
 
   const handleContactUsClick = () => {
     navigate("/company/contact#form");
@@ -55,7 +58,16 @@ export function CompanyCareersPage() {
           {careers.workCulture.title} <span>{careers.workCulture.accentTitle}</span>
         </h2>
 
-        <CardsWithImage items={careers.workCulture.items} />
+        <div
+          ref={workCultureRef}
+          className={styles.workCultureMotionRoot}
+          data-scroll-motion-root="work-culture"
+        >
+          <CardsWithImage
+            items={careers.workCulture.items}
+            itemClassName={styles.workCultureMotionCard}
+          />
+        </div>
       </section>
 
       <section className={styles.offerSection}>
@@ -63,9 +75,18 @@ export function CompanyCareersPage() {
           {careers.offer.title} <span>{careers.offer.accentTitle}</span>
         </h2>
 
-        <div className={styles.offerItems}>
+        <div
+          ref={offerRef}
+          className={styles.offerItems}
+          data-scroll-motion-root="career-offer"
+        >
           {careers.offer.items.map((item) => (
-            <ItemText key={item.id} title={item.title} text={item.text} />
+            <ItemText
+              key={item.id}
+              className={styles.offerMotionCard}
+              title={item.title}
+              text={item.text}
+            />
           ))}
         </div>
       </section>

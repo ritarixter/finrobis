@@ -6,12 +6,14 @@ import { SlideImageList } from "~/components/SlideImageList/SlideImageList";
 import { Questions } from "~/components/Questions/Questions";
 import { useLang } from "~/hooks/useLang";
 import { ThemeButton } from "~/components/ui/Button/Button";
+import { useScrollCardMotion } from "~/hooks/useScrollCardMotion";
 
 import styles from "./TradingOtcPage.module.scss";
 
 export function TradingOtcPage() {
   const { trading } = useLang().content.pages;
   const otc = trading.otc;
+  const orderTypesRef = useScrollCardMotion<HTMLElement>(".item-text-with-image");
 
   return (
     <main className={`section ${styles.page}`}>
@@ -42,7 +44,11 @@ export function TradingOtcPage() {
         <Benefits items={otc.benefits} />
       </section>
 
-      <section className={styles.orderTypesSection}>
+      <section
+        ref={orderTypesRef}
+        className={styles.orderTypesSection}
+        data-scroll-motion-root="otc-order-types"
+      >
         <h2 className={styles.orderTypesTitle}>
           {otc.orderTypes.title} <span>{otc.orderTypes.accentTitle}</span>
         </h2>

@@ -34,11 +34,26 @@
 }
 
 .supportedStablecoinsSection {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 80px;
   margin-top: 143px;
   width: 100%;
+  isolation: isolate;
+}
+
+.supportedStablecoinsSection::before {
+  content: "";
+  position: absolute;
+  inset: 110px -30px -50px;
+  background: radial-gradient(
+    circle at var(--scroll-section-percent, 50%) 54%,
+    rgba(202, 255, 51, 0.12),
+    transparent 30%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .supportedStablecoinsTitle {
@@ -57,12 +72,42 @@
 }
 
 .supportedStablecoinsGrid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 50px;
   width: min(1480px, 100%);
   margin: 0 auto;
   align-items: stretch;
+}
+
+.stablecoinMotionCard {
+  --scroll-motion-transform: translate3d(0, var(--scroll-card-y-soft, 0), 0)
+    scale(var(--scroll-card-scale-soft, 1));
+  --scroll-motion-filter: none;
+  clip-path: inset(0 var(--scroll-card-aperture, 0) 0 var(--scroll-card-aperture, 0) round 20px 50px);
+
+  :global(.card-with-icon__icon-wrapper) {
+    transform: translateY(-5px);
+  }
+}
+
+.stablecoinMotionCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 32%,
+    rgba(202, 255, 51, 0.16) 50%,
+    transparent 68%
+  );
+  background-position: var(--scroll-card-shine, 100%) 50%;
+  background-size: 220% 100%;
+  opacity: var(--scroll-card-glow, 0);
+  pointer-events: none;
 }
 
 .useCasesSection {
@@ -262,6 +307,10 @@
     grid-template-columns: 1fr;
     gap: 24px;
     width: 100%;
+  }
+
+  .supportedStablecoinsSection::before {
+    opacity: 0.55;
   }
 
   .useCasesSection {
