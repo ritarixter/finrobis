@@ -8,6 +8,7 @@ import { TextList } from "~/components/TextList/TextList";
 import { MarketBackgroundAnimation } from "~/components/MarketBackgroundAnimation/MarketBackgroundAnimation";
 import { useNavigate } from "react-router";
 import { useLang } from "~/hooks/useLang";
+import { useScrollCardMotion } from "~/hooks/useScrollCardMotion";
 
 import styles from "./CompanyAboutPage.module.scss";
 
@@ -15,6 +16,8 @@ export function CompanyAboutPage() {
   const { company } = useLang().content.pages;
   const about = company.about;
   const navigate = useNavigate();
+  const valuesRef = useScrollCardMotion<HTMLDivElement>(`.${styles.valuesMotionCard}`);
+  const regulatoryRef = useScrollCardMotion<HTMLDivElement>(`.${styles.regulatoryMotionCard}`);
 
   const handleContactUsClick = () => {
     navigate("/company/contact#form");
@@ -78,7 +81,16 @@ export function CompanyAboutPage() {
           {about.values.title} <span>{about.values.accentTitle}</span>
         </h2>
 
-        <CardsWithImage items={about.values.items} />
+        <div
+          ref={valuesRef}
+          className={styles.valuesMotionRoot}
+          data-scroll-motion-root="company-values"
+        >
+          <CardsWithImage
+            items={about.values.items}
+            itemClassName={styles.valuesMotionCard}
+          />
+        </div>
       </section>
 
       <section className={styles.regulatorySection}>
@@ -86,15 +98,25 @@ export function CompanyAboutPage() {
           {about.regulatoryFramework.title} <span>{about.regulatoryFramework.accentTitle}</span>
         </h2>
 
-        <div className={styles.regulatoryItems}>
+        <div
+          ref={regulatoryRef}
+          className={styles.regulatoryItems}
+          data-scroll-motion-root="regulatory-framework"
+        >
           <div className={styles.regulatoryTopRow}>
             {about.regulatoryFramework.items.slice(0, 2).map((item) => (
-              <ItemText key={item.id} title={item.title} text={item.text} />
+              <ItemText
+                key={item.id}
+                className={styles.regulatoryMotionCard}
+                title={item.title}
+                text={item.text}
+              />
             ))}
           </div>
 
           <div className={styles.regulatoryBottomRow}>
             <ItemText
+              className={styles.regulatoryMotionCard}
               title={about.regulatoryFramework.items[2].title}
               text={about.regulatoryFramework.items[2].text}
             />

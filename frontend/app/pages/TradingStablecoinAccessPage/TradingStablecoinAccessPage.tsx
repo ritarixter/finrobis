@@ -6,12 +6,14 @@ import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
 import { useLang } from "~/hooks/useLang";
 import { ThemeButton } from "~/components/ui/Button/Button";
+import { useScrollCardMotion } from "~/hooks/useScrollCardMotion";
 
 import styles from "./TradingStablecoinAccessPage.module.scss";
 
 export function TradingStablecoinAccessPage() {
   const { trading } = useLang().content.pages;
   const stablecoinAccess = trading.stablecoinAccess;
+  const stablecoinsRef = useScrollCardMotion<HTMLElement>(`.${styles.stablecoinMotionCard}`);
 
   return (
     <main className={`section ${styles.page}`}>
@@ -42,7 +44,11 @@ export function TradingStablecoinAccessPage() {
         <Benefits items={stablecoinAccess.benefits} />
       </section>
 
-      <section className={styles.supportedStablecoinsSection}>
+      <section
+        ref={stablecoinsRef}
+        className={styles.supportedStablecoinsSection}
+        data-scroll-motion-root="stablecoin-cards"
+      >
         <h2 className={styles.supportedStablecoinsTitle}>
           {stablecoinAccess.supportedStablecoins.title}{" "}
           <span>{stablecoinAccess.supportedStablecoins.accentTitle}</span>
@@ -52,6 +58,7 @@ export function TradingStablecoinAccessPage() {
           {stablecoinAccess.supportedStablecoins.items.map((item) => (
             <CardWithIcon
               key={item.id}
+              className={styles.stablecoinMotionCard}
               iconSrc={item.iconSrc}
               iconAlt={item.iconAlt}
               title={item.title}

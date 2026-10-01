@@ -135,6 +135,17 @@
   width: 100%;
 }
 
+.governanceMotionRoot {
+  width: 100%;
+  perspective: 1000px;
+}
+
+.governanceMotionRoot :global(.items-container__item[data-step-scroll-item]) {
+  --step-hidden-transform: perspective(900px) translate3d(0, 28px, -110px) scale(0.9);
+  --step-hidden-filter: blur(7px);
+  transform-origin: center;
+}
+
 @include responsive(tablet) {
   .page {
     padding-top: 24px;

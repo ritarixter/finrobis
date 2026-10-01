@@ -178,6 +178,23 @@
   margin-top: 173px;
 }
 
+.valuesMotionRoot {
+  position: relative;
+  isolation: isolate;
+}
+
+.valuesMotionCard {
+  --scroll-motion-transform: translate3d(0, var(--scroll-card-y-soft, 0), 0)
+    scale(var(--scroll-card-scale, 1));
+  --scroll-motion-filter: blur(var(--scroll-card-blur, 0));
+}
+
+.valuesMotionCard > img {
+  transform: translate3d(0, var(--scroll-card-image-y, 0), 0)
+    scale(var(--scroll-card-image-scale, 1));
+  will-change: transform;
+}
+
 .regulatorySection {
   margin-top: 143px;
 }
@@ -219,6 +236,30 @@
 
 .regulatoryBottomRow {
   width: min(50%, 760px);
+}
+
+.regulatoryMotionCard {
+  position: relative;
+  --scroll-motion-transform: translate3d(0, var(--scroll-card-y-soft, 0), 0);
+  --scroll-motion-filter: none;
+  clip-path: inset(0 var(--scroll-card-horizontal-reveal, 0) 0 0);
+}
+
+.regulatoryMotionCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--scroll-card-progress-percent, 100%);
+  width: 2px;
+  border-radius: 999px;
+  background: #caff33;
+  box-shadow:
+    0 0 10px rgba(202, 255, 51, 0.75),
+    0 0 24px rgba(202, 255, 51, 0.28);
+  opacity: var(--scroll-card-glow, 0);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 @include responsive(tablet) {

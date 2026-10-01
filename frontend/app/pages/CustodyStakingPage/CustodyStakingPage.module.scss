@@ -106,6 +106,17 @@
   width: 100%;
 }
 
+.stakingModelsMotionRoot {
+  width: 100%;
+}
+
+.stakingModelsMotionRoot :global(.items-container__item[data-step-scroll-item]) {
+  --step-hidden-transform: translate3d(0, 64px, 0) scaleY(0.86);
+  --step-hidden-filter: blur(3px);
+  --step-hidden-clip: inset(100% 0 0 0);
+  transform-origin: center bottom;
+}
+
 .riskManagementList {
   width: 100%;
 }

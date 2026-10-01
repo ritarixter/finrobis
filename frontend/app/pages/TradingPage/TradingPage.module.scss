@@ -19,11 +19,27 @@
 }
 
 .solutionsSection {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 80px;
   margin-bottom: 143px;
   width: 100%;
+  isolation: isolate;
+}
+
+.solutionsSection::before {
+  content: "";
+  position: absolute;
+  inset: 96px -24px -24px;
+  background: radial-gradient(
+    circle at 50% var(--scroll-section-percent, 0%),
+    rgba(202, 255, 51, 0.1),
+    transparent 34%
+  );
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .solutionsTitle {
@@ -42,10 +58,36 @@
 }
 
 .solutionsGrid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 80px;
   align-items: stretch;
+}
+
+.solutionsMotionCard {
+  position: relative;
+  --scroll-motion-transform: translate3d(0, var(--scroll-card-y-soft, 0), 0)
+    scale(var(--scroll-card-scale-soft, 1));
+  --scroll-motion-filter: none;
+  clip-path: inset(var(--scroll-card-reveal, 0) 0 0 0);
+}
+
+.solutionsMotionCard::after {
+  content: "";
+  position: absolute;
+  top: var(--scroll-card-progress-percent, 100%);
+  left: -2px;
+  width: 3px;
+  height: 42px;
+  border-radius: 999px;
+  background: #caff33;
+  box-shadow:
+    0 0 12px rgba(202, 255, 51, 0.8),
+    0 0 30px rgba(202, 255, 51, 0.35);
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .benefitsSection {
@@ -251,6 +293,10 @@
   .solutionsGrid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .solutionsSection::before {
+    display: none;
   }
 
   .whyTradingSection {

@@ -7,11 +7,13 @@ import { ItemsContainer } from "~/components/ItemsContainer/ItemsContainer";
 import { Questions } from "~/components/Questions/Questions";
 import { ThemeButton } from "~/components/ui/Button/Button";
 import { useLang } from "~/hooks/useLang";
+import { useSteppedScrollReveal } from "~/hooks/useSteppedScrollReveal";
 
 import styles from "./CustodyKycAmlPage.module.scss";
 
 export function CustodyKycAmlPage() {
   const { custodyKycAml } = useLang().content.pages;
+  const onboardingRef = useSteppedScrollReveal<HTMLDivElement>(".items-container__item");
 
   return (
     <main className={`section ${styles.page}`}>
@@ -90,11 +92,17 @@ export function CustodyKycAmlPage() {
           {custodyKycAml.onboarding.title} <span>{custodyKycAml.onboarding.accentTitle}</span>
         </h2>
 
-        <ItemsContainer
-          items={custodyKycAml.onboarding.items}
-          className={styles.onboardingItems}
-          showMarker={false}
-        />
+        <div
+          ref={onboardingRef}
+          className={styles.onboardingMotionRoot}
+          data-scroll-motion-root="onboarding-process"
+        >
+          <ItemsContainer
+            items={custodyKycAml.onboarding.items}
+            className={styles.onboardingItems}
+            showMarker={false}
+          />
+        </div>
       </section>
 
       <section className={styles.faqSection}>

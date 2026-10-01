@@ -7,11 +7,13 @@ import { Questions } from "~/components/Questions/Questions";
 import { Benefits } from "~/components/Benefits/Benefits";
 import { useLang } from "~/hooks/useLang";
 import { ThemeButton } from "~/components/ui/Button/Button";
+import { useScrollCardMotion } from "~/hooks/useScrollCardMotion";
 
 import styles from "./TradingPage.module.scss";
 
 export function TradingPage() {
   const { trading } = useLang().content.pages;
+  const solutionsRef = useScrollCardMotion<HTMLElement>(`.${styles.solutionsMotionCard}`);
 
   return (
     <main className={`section ${styles.page}`}>
@@ -42,14 +44,23 @@ export function TradingPage() {
         <Benefits items={trading.benefits} />
       </section>
 
-      <section className={styles.solutionsSection}>
+      <section
+        ref={solutionsRef}
+        className={styles.solutionsSection}
+        data-scroll-motion-root="trading-solutions"
+      >
         <h2 className={styles.solutionsTitle}>
           {trading.solutions.title} <span>{trading.solutions.accentTitle}</span>
         </h2>
 
         <div className={styles.solutionsGrid}>
           {trading.solutions.items.map((item) => (
-            <ItemText key={item.id} title={item.title} text={item.text} />
+            <ItemText
+              key={item.id}
+              className={styles.solutionsMotionCard}
+              title={item.title}
+              text={item.text}
+            />
           ))}
         </div>
       </section>

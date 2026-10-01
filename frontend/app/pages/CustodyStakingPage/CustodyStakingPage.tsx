@@ -9,11 +9,13 @@ import { CardWithIcon } from "~/components/CardWithIcon/CardWithIcon";
 import { Questions } from "~/components/Questions/Questions";
 import { ThemeButton } from "~/components/ui/Button/Button";
 import { useLang } from "~/hooks/useLang";
+import { useSteppedScrollReveal } from "~/hooks/useSteppedScrollReveal";
 
 import styles from "./CustodyStakingPage.module.scss";
 
 export function CustodyStakingPage() {
   const { custodyStaking } = useLang().content.pages;
+  const stakingModelsRef = useSteppedScrollReveal<HTMLDivElement>(".items-container__item");
 
   return (
     <main className={`section ${styles.page}`}>
@@ -66,11 +68,17 @@ export function CustodyStakingPage() {
           <span>{custodyStaking.stakingModels.accentTitle}</span>
         </h2>
 
-        <ItemsContainer
-          items={custodyStaking.stakingModels.items}
-          className={styles.stakingModelsItems}
-          showMarker={false}
-        />
+        <div
+          ref={stakingModelsRef}
+          className={styles.stakingModelsMotionRoot}
+          data-scroll-motion-root="staking-models"
+        >
+          <ItemsContainer
+            items={custodyStaking.stakingModels.items}
+            className={styles.stakingModelsItems}
+            showMarker={false}
+          />
+        </div>
       </section>
 
       <section className={styles.riskManagementSection}>
