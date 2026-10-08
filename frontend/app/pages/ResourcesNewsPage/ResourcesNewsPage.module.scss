@@ -587,7 +587,12 @@
   }
 
   .categoriesItems {
+    grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .categoriesItems :global(.items-container__item) {
+    width: 100%;
   }
 
   .sectionTitle {

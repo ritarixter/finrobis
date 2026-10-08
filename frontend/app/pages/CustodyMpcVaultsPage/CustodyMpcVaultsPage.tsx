@@ -22,6 +22,7 @@ export function CustodyMpcVaultsPage() {
           subtitle={custodyMpcVaults.intro.text}
           badgeText={custodyMpcVaults.intro.badgeText}
           imageSrc={custodyMpcVaults.intro.imageSrc}
+          imageClassName={styles.introImage}
           button1={{ text: custodyMpcVaults.intro.button1, onClick: () => {} }}
           button1Theme={ThemeButton.GREEN}
           type="without-border"

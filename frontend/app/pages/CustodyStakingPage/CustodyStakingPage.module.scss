@@ -11,6 +11,10 @@
   margin-bottom: 0;
 }
 
+.page .introSection .introImage {
+  max-width: 690px;
+}
+
 .marketDataSection {
   display: flex;
   justify-content: flex-start;
@@ -143,6 +147,12 @@
 
 .supportedNetworksGrid :global(.item-text) {
   width: 100%;
+}
+
+@include responsive(screen) {
+  .benefitsSection :global(.benefits) {
+    gap: clamp(32px, 4vw, 56px);
+  }
 }
 
 @include responsive(tablet) {

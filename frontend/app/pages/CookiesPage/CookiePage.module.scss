@@ -255,6 +255,100 @@
   max-width: 1120px;
 }
 
+@media (min-width: 1201px) {
+  .categoriesHeaderCell:nth-child(2),
+  .categoriesRow .categoriesCell:nth-child(2) {
+    margin-left: -65px;
+  }
+}
+
+@media (min-width: 841px) and (max-width: 1200px) {
+  .categoriesCard {
+    padding: 40px;
+  }
+
+  .categoriesPanel {
+    padding: 40px 30px 50px;
+  }
+
+  .categoriesHeaderRow,
+  .categoriesRow {
+    grid-template-columns: minmax(120px, 0.75fr) minmax(220px, 1.35fr) minmax(160px, 0.95fr) minmax(110px, 0.55fr);
+    column-gap: 32px;
+  }
+
+  .categoriesHeaderCell {
+    font-size: 20px;
+  }
+
+  .categoriesHeaderCell:nth-child(4) {
+    font-size: 16px;
+  }
+
+  .categoriesCellValue {
+    font-size: 16px;
+  }
+
+  .categoriesRow .categoriesCell:nth-child(1) .categoriesCellValue {
+    max-width: 120px;
+    overflow-wrap: anywhere;
+  }
+
+  .categoriesRow .categoriesCell:nth-child(2) .categoriesCellValue {
+    max-width: 240px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@include responsive(tablet) {
+  .categoriesSection {
+    margin-top: 100px;
+  }
+
+  .categoriesCard {
+    min-height: 0;
+    padding: 30px;
+  }
+
+  .categoriesPanel {
+    padding: 30px 20px 40px;
+  }
+
+  .categoriesHeaderRow {
+    display: none;
+  }
+
+  .categoriesBody {
+    gap: 28px;
+  }
+
+  .categoriesRow {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .categoriesCell {
+    gap: 6px;
+  }
+
+  .categoriesCellLabel {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .categoriesCellLabelAccent {
+    color: #ffd700;
+  }
+
+  .categoriesCellValue {
+    font-size: 16px;
+  }
+}
+
 @include responsive(phone) {
   .page {
     padding-top: 120px;
