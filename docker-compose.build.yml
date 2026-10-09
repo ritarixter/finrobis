@@ -1,7 +1,7 @@
 
 services:
   frontend:
-    image: arsernst/finexa-frontend:latest
+    image: arsernst/finorbis-frontend:latest
     build:
       context: ./frontend 
       dockerfile: Dockerfile
