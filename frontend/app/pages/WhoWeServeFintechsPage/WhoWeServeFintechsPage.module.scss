@@ -157,6 +157,18 @@
   width: 100%;
 }
 
+@media (min-width: 601px) and (max-width: 999px) {
+  .benefitsSection :global(.benefits) {
+    gap: clamp(48px, 8vw, 80px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1280px) {
+  .benefitsSection :global(.benefits) {
+    gap: clamp(130px, 9vw, 150px);
+  }
+}
+
 @include responsive(tablet) {
   .page {
     padding-top: 24px;

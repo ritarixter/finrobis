@@ -11,6 +11,10 @@
   margin-bottom: 0;
 }
 
+.page .introSection .introImage {
+  max-width: 690px;
+}
+
 .marketDataSection {
   display: flex;
   justify-content: flex-start;
@@ -144,6 +148,16 @@
   --step-hidden-transform: perspective(900px) translate3d(0, 28px, -110px) scale(0.9);
   --step-hidden-filter: blur(7px);
   transform-origin: center;
+}
+
+@include responsive(screen) {
+  .benefitsSection :global(.benefits) {
+    gap: 80px;
+  }
+
+  .benefitsSection :global(.benefit__title) {
+    font-size: 40px;
+  }
 }
 
 @include responsive(tablet) {

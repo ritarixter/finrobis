@@ -22,6 +22,7 @@ export function WhoWeServeCustodyPage() {
           subtitle={whoWeServeCustody.intro.text}
           badgeText={whoWeServeCustody.intro.badgeText}
           imageSrc={whoWeServeCustody.intro.imageSrc}
+          imageClassName={styles.introImage}
           button1={{ text: whoWeServeCustody.intro.button1, onClick: () => {} }}
           button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"

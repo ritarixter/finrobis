@@ -25,6 +25,7 @@ export function CustodyStakingPage() {
           subtitle={custodyStaking.intro.text}
           badgeText={custodyStaking.intro.badgeText}
           imageSrc={custodyStaking.intro.imageSrc}
+          imageClassName={styles.introImage}
           button1={{ text: custodyStaking.intro.button1, onClick: () => {} }}
           button1Theme={ThemeButton.ALPHAMARK}
           type="without-border"

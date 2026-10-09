@@ -17,6 +17,7 @@ interface IntroProps {
     text: string;
     onClick?: () => void;
   };
+  imageClassName?: string;
   type?: "with-border" | "without-border";
 }
 
@@ -28,9 +29,11 @@ export function Intro({
   button1,
   button1Theme = ThemeButton.ALPHAMARK,
   button2,
+  imageClassName = "",
   type = "with-border",
 }: IntroProps) {
   const navigate = useNavigate();
+  const imageClasses = [styles.image, imageClassName].filter(Boolean).join(" ");
 
   const handleButton1Click = () => {
     button1.onClick?.();
@@ -64,7 +67,7 @@ export function Intro({
         </div>
       </div>
 
-      <img className={styles.image} src={imageSrc} alt={`Intro ${title}`} />
+      <img className={imageClasses} src={imageSrc} alt={`Intro ${title}`} />
     </section>
   );
 }
