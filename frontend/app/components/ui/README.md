@@ -1,7 +1,7 @@
 # Finorbis UI Kit
 
 The UI Kit implements the reusable application controls from Figma nodes
-`115:4078` and `115:4431`. Import public APIs only from:
+`115:4078`, `115:4431`, and `127:5794`. Import public APIs only from:
 
 ```tsx
 import {
@@ -15,6 +15,7 @@ import {
   Icon,
   IconButton,
   InputField,
+  Modal,
   NavigationButton,
   SelectField,
   Switch,
@@ -28,7 +29,8 @@ import {
 - `Button`: `appearance` = `primary | secondary | ghost | filled | danger`;
   `size` = `xs | sm | md | lg`; supports icons, full width, active,
   loading, and disabled. The legacy `ThemeButton` API remains supported.
-- `IconButton`: circular icon action. `label` is required for accessibility.
+- `IconButton`: circular icon action with configurable control and icon sizes.
+  `label` is required for accessibility.
 - `NavigationButton`: full-width sidebar item with icon, active, expanded,
   and badge states.
 - `ActionButton`: action/tab/pill variants from the application screens.
@@ -46,6 +48,10 @@ import {
   controlled/uncontrolled values, and completion callback.
 - `Badge`: status tones matching pending, completed, failed, processing,
   reversed, rejected, and verified states.
+- `Modal`: responsive dialog with a required title, close icon and Close
+  button. Content is passed through `children`; the title icon and primary
+  action are optional. It traps focus, closes on Escape or overlay click, and
+  restores focus to the trigger.
 - `Icon`: typed registry backed by individual SVG files in
   `app/assets/ui-icons/`.
 
@@ -74,6 +80,21 @@ import {
   maxLength={220}
   showCount
 />
+```
+
+## Modal example
+
+```tsx
+<Modal
+  open={isOpen}
+  title="Add Beneficiary Bank Account"
+  titleIcon="payments"
+  onClose={() => setIsOpen(false)}
+  action={() => saveBeneficiary()}
+  actionText="Save"
+>
+  <BeneficiaryForm />
+</Modal>
 ```
 
 ## Rules
