@@ -21,7 +21,11 @@ export function WhoWeServePage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img className={styles.heroImage} src={whoWeServe.intro.imageSrc} alt={whoWeServe.intro.title} />
+        <img
+          className={styles.heroImage}
+          src={whoWeServe.intro.imageSrc}
+          alt={whoWeServe.intro.title}
+        />
         <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>

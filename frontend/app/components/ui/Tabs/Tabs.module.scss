@@ -1,0 +1,154 @@
+.tabs {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: stretch;
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--ui-text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.tab:focus-visible {
+  z-index: 1;
+  outline: 2px solid var(--ui-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ui-focus-ring);
+}
+
+.tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.segmented {
+  gap: 4px;
+}
+
+.segmented .tab {
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: var(--ui-radius-pill);
+}
+
+.segmented .tab.active {
+  background: color-mix(in srgb, var(--ui-accent) 15%, transparent);
+  color: var(--ui-accent);
+}
+
+.underline {
+  width: 100%;
+  border-bottom: 1px solid var(--ui-border);
+}
+
+.underline .tab {
+  min-height: 52px;
+  flex: 1 1 0;
+  padding: 0 16px;
+}
+
+.underline .tab::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: transparent;
+  content: "";
+}
+
+.underline .tab.active {
+  color: var(--ui-text);
+}
+
+.underline .tab.active::after {
+  background: var(--ui-accent);
+}
+
+.group {
+  overflow: auto hidden;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-surface);
+}
+
+.group .tab {
+  min-height: 38px;
+  padding: 0 14px;
+  border-right: 1px solid var(--ui-border);
+}
+
+.group .tab:last-child {
+  border-right: 0;
+}
+
+.group .tab.active {
+  background: var(--ui-surface-active);
+  color: var(--ui-accent);
+}
+
+.count {
+  min-width: 18px;
+  padding: 2px 5px;
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-surface-active);
+  font-size: 10px;
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+.fullWidth .tab {
+  flex: 1 1 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tab:hover:not(:disabled) {
+    color: var(--ui-text);
+  }
+
+  .segmented .tab:hover:not(:disabled),
+  .group .tab:hover:not(:disabled) {
+    background: var(--ui-surface-hover);
+  }
+}
+
+@media (max-width: 720px) {
+  .tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .underline .tab {
+    min-width: max-content;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab {
+    transition: none;
+  }
+}

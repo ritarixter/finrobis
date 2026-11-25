@@ -24,7 +24,7 @@ export function useScrollCardMotion<T extends HTMLElement>(itemSelector: string)
         ? 1
         : clamp(
             (viewportHeight * 0.88 - rootBounds.top) /
-              Math.max(viewportHeight * 0.58 + rootBounds.height, 1),
+              Math.max(viewportHeight * 0.58 + rootBounds.height, 1)
           );
 
       root.style.setProperty("--scroll-section-progress", sectionProgress.toFixed(4));
@@ -63,7 +63,7 @@ export function useScrollCardMotion<T extends HTMLElement>(itemSelector: string)
         item.style.setProperty("--scroll-card-shine", `${100 - progress * 200}%`);
         item.style.setProperty(
           "--scroll-card-glow",
-          (Math.sin(progress * Math.PI) * 0.38).toFixed(4),
+          (Math.sin(progress * Math.PI) * 0.38).toFixed(4)
         );
       });
     };

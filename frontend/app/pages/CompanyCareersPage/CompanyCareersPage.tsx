@@ -75,11 +75,7 @@ export function CompanyCareersPage() {
           {careers.offer.title} <span>{careers.offer.accentTitle}</span>
         </h2>
 
-        <div
-          ref={offerRef}
-          className={styles.offerItems}
-          data-scroll-motion-root="career-offer"
-        >
+        <div ref={offerRef} className={styles.offerItems} data-scroll-motion-root="career-offer">
           {careers.offer.items.map((item) => (
             <ItemText
               key={item.id}

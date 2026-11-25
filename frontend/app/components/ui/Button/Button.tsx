@@ -7,25 +7,68 @@ export enum ThemeButton {
   ALPHAMARK = "alphamark",
 }
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export type ButtonAppearance = "primary" | "secondary" | "ghost" | "filled" | "danger";
+export type ButtonSize = "xs" | "sm" | "md" | "lg";
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   style?: CSSProperties;
   theme?: ThemeButton;
-  disabled?: boolean;
+  appearance?: ButtonAppearance;
+  size?: ButtonSize;
+  leadingIcon?: ReactNode;
+  trailingIcon?: ReactNode;
+  fullWidth?: boolean;
+  active?: boolean;
+  loading?: boolean;
   children: ReactNode;
 }
 
-export const Button = memo((props: IButtonProps) => {
-  const { style, disabled = false, theme = ThemeButton.GREEN, children, ...otherProps } = props;
+export const Button = memo((props: ButtonProps) => {
+  const {
+    style,
+    className = "",
+    disabled = false,
+    theme,
+    appearance,
+    size = "md",
+    leadingIcon,
+    trailingIcon,
+    fullWidth = false,
+    active = false,
+    loading = false,
+    children,
+    type = "button",
+    ...otherProps
+  } = props;
+  const isLegacy = theme !== undefined || appearance === undefined;
+  const legacyTheme = theme ?? ThemeButton.GREEN;
+  const classes = [
+    styles.button,
+    isLegacy ? styles[legacyTheme] : styles.uiKit,
+    !isLegacy && appearance ? styles[appearance] : "",
+    !isLegacy ? styles[size] : "",
+    fullWidth ? styles.fullWidth : "",
+    active ? styles.active : "",
+    loading ? styles.loading : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <button
+      type={type}
       style={style}
-      className={`${styles.button} ${styles[theme]}`}
-      disabled={disabled}
+      className={classes}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
+      aria-pressed={active || undefined}
       {...otherProps}
     >
+      {loading ? <span className={styles.spinner} aria-hidden="true" /> : leadingIcon}
       <span className={styles.label}>{children}</span>
-      {theme === ThemeButton.ALPHAMARK && (
+      {!loading && trailingIcon}
+      {legacyTheme === ThemeButton.ALPHAMARK && (
         <span className={styles.alphamarkArrow} aria-hidden="true">
           <svg
             width="100%"

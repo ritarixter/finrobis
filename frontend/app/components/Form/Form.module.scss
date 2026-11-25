@@ -91,7 +91,12 @@ $label-bg: #1b1414;
   width: 136%;
   height: 48%;
   opacity: 0.52;
-  mask-image: radial-gradient(ellipse 54% 72% at 50% 50%, #000 0 34%, rgba(0, 0, 0, 0.55) 52%, transparent 74%);
+  mask-image: radial-gradient(
+    ellipse 54% 72% at 50% 50%,
+    #000 0 34%,
+    rgba(0, 0, 0, 0.55) 52%,
+    transparent 74%
+  );
   -webkit-mask-image: radial-gradient(
     ellipse 54% 72% at 50% 50%,
     #000 0 34%,

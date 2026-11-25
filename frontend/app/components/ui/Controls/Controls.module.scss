@@ -1,0 +1,223 @@
+.iconButton,
+.navigationButton,
+.actionButton,
+.sortButton {
+  border: 1px solid transparent;
+  color: var(--ui-text-secondary);
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 100ms ease;
+}
+
+.iconButton:focus-visible,
+.navigationButton:focus-visible,
+.actionButton:focus-visible,
+.sortButton:focus-visible,
+.linkButton:focus-visible {
+  outline: 2px solid var(--ui-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ui-focus-ring);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--ui-border);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.iconButton.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.iconButton.md {
+  width: 36px;
+  height: 36px;
+}
+
+.iconButton.lg {
+  width: 40px;
+  height: 40px;
+}
+
+.iconButton.active {
+  border-color: var(--ui-accent);
+  background: color-mix(in srgb, var(--ui-accent) 10%, transparent);
+  color: var(--ui-accent);
+}
+
+.iconButton.danger {
+  color: var(--ui-danger);
+}
+
+.navigationButton {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto auto;
+  gap: 10px;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  align-items: center;
+  border-radius: var(--ui-radius-md);
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.navigationButton.active {
+  background: var(--ui-surface-hover);
+  color: var(--ui-text);
+}
+
+.navigationButton.active::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: -1px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--ui-accent);
+  content: "";
+}
+
+.navigationLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navigationBadge {
+  min-width: 18px;
+  padding: 2px 5px;
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-surface-active);
+  color: var(--ui-text);
+  font-size: 10px;
+  text-align: center;
+}
+
+.actionButton {
+  display: inline-flex;
+  min-height: 38px;
+  padding: 0 14px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--ui-radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.actionButton.outline {
+  border-color: var(--ui-border);
+}
+
+.actionButton.primary {
+  border-color: var(--ui-accent);
+  background: var(--ui-accent);
+  color: var(--ui-bg);
+}
+
+.actionButton.tab {
+  width: min(201px, 100%);
+  border-radius: var(--ui-radius-md);
+}
+
+.actionButton.tab.active {
+  color: var(--ui-accent);
+}
+
+.linkButton {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--ui-text-secondary);
+  font-size: 12px;
+  line-height: 1.3;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.linkButton.active {
+  color: var(--ui-accent);
+}
+
+.sortButton {
+  display: inline-flex;
+  min-height: 28px;
+  padding: 4px 2px;
+  align-items: center;
+  gap: 5px;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.sortButton.active {
+  color: var(--ui-text);
+}
+
+.iconButton:active:not(:disabled),
+.navigationButton:active:not(:disabled),
+.actionButton:active:not(:disabled),
+.sortButton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.iconButton:disabled,
+.navigationButton:disabled,
+.actionButton:disabled,
+.sortButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .iconButton:hover:not(:disabled),
+  .navigationButton:hover:not(:disabled),
+  .actionButton.outline:hover:not(:disabled),
+  .sortButton:hover:not(:disabled) {
+    border-color: var(--ui-border-strong);
+    background: var(--ui-surface-hover);
+    color: var(--ui-text);
+  }
+
+  .actionButton.primary:hover:not(:disabled) {
+    background: var(--ui-accent-hover);
+  }
+
+  .actionButton.tab:hover:not(:disabled),
+  .linkButton:hover {
+    color: var(--ui-accent);
+  }
+}
+
+@media (max-width: 480px) {
+  .navigationButton {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconButton,
+  .navigationButton,
+  .actionButton,
+  .sortButton,
+  .linkButton {
+    transition: none;
+  }
+}

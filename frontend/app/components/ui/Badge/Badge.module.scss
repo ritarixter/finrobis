@@ -1,0 +1,62 @@
+.badge {
+  display: inline-flex;
+  min-height: 25px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-pill);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.neutral {
+  border-color: var(--ui-border);
+  background: var(--ui-surface);
+  color: var(--ui-text-secondary);
+}
+
+.pending,
+.verified {
+  background: var(--ui-warning-surface);
+  color: var(--ui-warning);
+}
+
+.completed {
+  background: var(--ui-success-surface);
+  color: var(--ui-success);
+}
+
+.failed,
+.rejected {
+  background: var(--ui-danger-surface);
+  color: var(--ui-danger);
+}
+
+.processing {
+  background: var(--ui-info-surface);
+  color: var(--ui-info);
+}
+
+.reversed {
+  background: rgba(255, 139, 148, 0.12);
+  color: #ff8b94;
+}
+
+.verified {
+  color: var(--ui-accent);
+}

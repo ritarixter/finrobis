@@ -86,7 +86,9 @@
   --scroll-motion-transform: translate3d(0, var(--scroll-card-y-soft, 0), 0)
     scale(var(--scroll-card-scale-soft, 1));
   --scroll-motion-filter: none;
-  clip-path: inset(0 var(--scroll-card-aperture, 0) 0 var(--scroll-card-aperture, 0) round 20px 50px);
+  clip-path: inset(
+    0 var(--scroll-card-aperture, 0) 0 var(--scroll-card-aperture, 0) round 20px 50px
+  );
 
   :global(.card-with-icon__icon-wrapper) {
     transform: translateY(-5px);

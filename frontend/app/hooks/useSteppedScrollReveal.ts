@@ -26,7 +26,7 @@ export function useSteppedScrollReveal<T extends HTMLElement>(itemSelector: stri
       const start = viewportHeight * 0.9;
       const scrollDistance = Math.max(
         viewportHeight * 0.66,
-        Math.min(bounds.height * 0.78, viewportHeight * 1.2),
+        Math.min(bounds.height * 0.78, viewportHeight * 1.2)
       );
       const progress = reducedMotion ? 1 : clamp((start - bounds.top) / scrollDistance);
 
