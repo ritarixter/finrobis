@@ -40,7 +40,11 @@ function getReducedMotion() {
 
 function TypedCode({ code }: { code: string }) {
   const [visibleCharacters, setVisibleCharacters] = useState(0);
-  const reduceMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, () => false);
+  const reduceMotion = useSyncExternalStore(
+    subscribeToReducedMotion,
+    getReducedMotion,
+    () => false
+  );
 
   useEffect(() => {
     if (reduceMotion) return;
@@ -50,7 +54,7 @@ function TypedCode({ code }: { code: string }) {
     const delay = isComplete ? 2600 : nextCharacter === "\n" ? 100 : 22;
     const timeout = window.setTimeout(
       () => setVisibleCharacters(isComplete ? 0 : visibleCharacters + 1),
-      delay,
+      delay
     );
 
     return () => window.clearTimeout(timeout);

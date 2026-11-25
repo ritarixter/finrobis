@@ -86,10 +86,7 @@ export function CompanyAboutPage() {
           className={styles.valuesMotionRoot}
           data-scroll-motion-root="company-values"
         >
-          <CardsWithImage
-            items={about.values.items}
-            itemClassName={styles.valuesMotionCard}
-          />
+          <CardsWithImage items={about.values.items} itemClassName={styles.valuesMotionCard} />
         </div>
       </section>
 

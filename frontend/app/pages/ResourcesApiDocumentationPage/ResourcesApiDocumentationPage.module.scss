@@ -220,8 +220,7 @@
 }
 
 @for $item from 1 through 8 {
-  .endpointCard
-    :global(.market-data-card__item:nth-child(#{$item}) .market-data-card__method) {
+  .endpointCard :global(.market-data-card__item:nth-child(#{$item}) .market-data-card__method) {
     animation-delay: #{($item - 1) * 0.72}s;
   }
 
@@ -341,9 +340,7 @@
   overflow: hidden;
   border-radius: 20px;
   border: 1px solid #262626;
-  background:
-    linear-gradient(180deg, rgba(202, 255, 51, 0.025), transparent 38%),
-    #121512;
+  background: linear-gradient(180deg, rgba(202, 255, 51, 0.025), transparent 38%), #121512;
   box-shadow: inset 0 1px 0 rgba(202, 255, 51, 0.08);
 }
 

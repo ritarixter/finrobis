@@ -19,7 +19,11 @@ export function ResourcesNewsPage() {
   return (
     <main className={`section ${styles.page}`}>
       <section className={styles.hero}>
-        <img className={styles.heroImage} src={resourcesNews.intro.imageSrc} alt={resourcesNews.intro.title} />
+        <img
+          className={styles.heroImage}
+          src={resourcesNews.intro.imageSrc}
+          alt={resourcesNews.intro.title}
+        />
         <MarketBackgroundAnimation />
 
         <div className={styles.heroCard}>

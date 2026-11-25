@@ -276,7 +276,10 @@
 
   .categoriesHeaderRow,
   .categoriesRow {
-    grid-template-columns: minmax(120px, 0.75fr) minmax(220px, 1.35fr) minmax(160px, 0.95fr) minmax(110px, 0.55fr);
+    grid-template-columns: minmax(120px, 0.75fr) minmax(220px, 1.35fr) minmax(160px, 0.95fr) minmax(
+        110px,
+        0.55fr
+      );
     column-gap: 32px;
   }
 

@@ -323,7 +323,14 @@ export function Header() {
           >
             {lang.toUpperCase()}
           </button>
-          <Link className={styles.login} to={buildHref("/")}>
+          <Link
+            className={styles.login}
+            to="/account"
+            onClick={() => {
+              setIsPagesOpen(false);
+              setIsMenuOpen(false);
+            }}
+          >
             {copy.login}
           </Link>
           <button

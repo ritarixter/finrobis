@@ -20,6 +20,136 @@
   color: var(--cl-black);
 }
 
+.uiKit {
+  min-width: 0;
+  padding: 0 14px;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  color: var(--ui-text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 100ms ease;
+}
+
+.xs {
+  min-height: 28px;
+  padding-inline: 10px;
+  font-size: 11px;
+}
+
+.sm {
+  min-height: var(--ui-control-sm);
+  padding-inline: 12px;
+}
+
+.md {
+  min-height: 40px;
+}
+
+.lg {
+  min-height: 44px;
+  padding-inline: 18px;
+  font-size: 14px;
+}
+
+.primary {
+  background: var(--ui-accent);
+  color: var(--ui-bg);
+}
+
+.secondary {
+  border-color: var(--ui-border);
+  background: transparent;
+  color: var(--ui-text);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ui-text-secondary);
+}
+
+.filled {
+  background: var(--ui-surface);
+  color: var(--ui-text);
+}
+
+.danger {
+  border-color: color-mix(in srgb, var(--ui-danger) 45%, transparent);
+  background: var(--ui-danger-surface);
+  color: var(--ui-danger);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.uiKit:focus-visible,
+.green:focus-visible,
+.black:focus-visible {
+  outline: 2px solid var(--ui-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ui-focus-ring);
+}
+
+.uiKit:active:not(:disabled),
+.uiKit.active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.uiKit:disabled,
+.green:disabled,
+.black:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ui-button-spin 700ms linear infinite;
+}
+
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover:not(:disabled) {
+    background: var(--ui-accent-hover);
+  }
+
+  .secondary:hover:not(:disabled),
+  .filled:hover:not(:disabled) {
+    border-color: var(--ui-border-strong);
+    background: var(--ui-surface-hover);
+  }
+
+  .ghost:hover:not(:disabled) {
+    background: var(--ui-surface);
+    color: var(--ui-text);
+  }
+
+  .danger:hover:not(:disabled) {
+    border-color: var(--ui-danger);
+    background: color-mix(in srgb, var(--ui-danger) 18%, transparent);
+  }
+}
+
 .button.alphamark {
   width: fit-content;
   padding: 0.625em;
@@ -90,7 +220,10 @@
 @media (prefers-reduced-motion: reduce) {
   .button.alphamark,
   .alphamarkArrow,
-  .alphamarkArrow svg {
+  .alphamarkArrow svg,
+  .uiKit,
+  .spinner {
     transition: none;
+    animation: none;
   }
 }

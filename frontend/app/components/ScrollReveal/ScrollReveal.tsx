@@ -47,7 +47,7 @@ export function ScrollReveal() {
 
   useLayoutEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)).filter(
-      (element) => !element.closest("[data-scroll-motion-root]"),
+      (element) => !element.closest("[data-scroll-motion-root]")
     );
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -68,7 +68,7 @@ export function ScrollReveal() {
       {
         threshold: 0.08,
         rootMargin: "0px 0px -8% 0px",
-      },
+      }
     );
 
     elements.forEach((element) => {

@@ -65,11 +65,7 @@
 }
 
 .orderTypesSection :global(.item-text-with-image[data-scroll-motion-item]) {
-  --scroll-motion-transform: translate3d(
-      var(--scroll-card-x, 0),
-      var(--scroll-card-y, 0),
-      0
-    )
+  --scroll-motion-transform: translate3d(var(--scroll-card-x, 0), var(--scroll-card-y, 0), 0)
     scale(var(--scroll-card-scale, 1));
   --scroll-motion-filter: blur(var(--scroll-card-blur, 0));
   clip-path: inset(0 var(--scroll-card-clip, 0) 0 0 round 24px);

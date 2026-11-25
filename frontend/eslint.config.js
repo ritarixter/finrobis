@@ -26,5 +26,31 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     },
   },
+  {
+    files: ["app/routes/**/*.{ts,tsx}", "app/root.tsx"],
+    rules: {
+      // React Router route modules intentionally export framework APIs beside
+      // their component. These exports are safe for Fast Refresh.
+      "react-refresh/only-export-components": [
+        "warn",
+        {
+          allowConstantExport: true,
+          allowExportNames: [
+            "action",
+            "clientAction",
+            "clientLoader",
+            "clientMiddleware",
+            "handle",
+            "headers",
+            "links",
+            "loader",
+            "meta",
+            "middleware",
+            "shouldRevalidate",
+          ],
+        },
+      ],
+    },
+  },
   prettierConfig
 );
