@@ -6,6 +6,7 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   icon: IconName;
   label: string;
   size?: "sm" | "md" | "lg";
+  iconSize?: number | string;
   tone?: "default" | "danger";
   active?: boolean;
 }
@@ -14,6 +15,7 @@ export function IconButton({
   icon,
   label,
   size = "md",
+  iconSize,
   tone = "default",
   active = false,
   className = "",
@@ -28,7 +30,7 @@ export function IconButton({
       aria-label={label}
       aria-pressed={active || undefined}
     >
-      <Icon name={icon} size={size === "sm" ? 14 : size === "lg" ? 20 : 16} />
+      <Icon name={icon} size={iconSize ?? (size === "sm" ? 14 : size === "lg" ? 20 : 16)} />
     </button>
   );
 }

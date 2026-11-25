@@ -42,5 +42,6 @@ export {
 export { Tabs, type TabItem, type TabsProps } from "./Tabs/Tabs";
 export { CodeInput, type CodeInputProps } from "./CodeInput/CodeInput";
 export { Badge, type BadgeProps, type BadgeTone } from "./Badge/Badge";
+export { Modal, type ModalProps } from "./Modal/Modal";
 export { Slider } from "../Slider/Slider";
 export type { SliderProps } from "../Slider/Slider";
